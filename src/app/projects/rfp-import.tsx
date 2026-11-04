@@ -1,17 +1,64 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useState } from "react";
 import { FileText, Sparkles, X } from "lucide-react";
 import { ProjectForm, type ProjectDefaults, type ScopeDraft } from "@/components/project-form";
+import { createClient } from "@/lib/supabase/client";
 import type { ClientRow } from "@/lib/types";
 import { createProject, extractRfp, type RfpState } from "./actions";
 
+const MAX_PDF_BYTES = 25 * 1024 * 1024;
+
 export function RfpImport({ organizationId, clients }: { organizationId: string; clients: ClientRow[] }) {
   const [open, setOpen] = useState(false);
-  const [state, action, pending] = useActionState<RfpState, FormData>(extractRfp, {});
+  const [state, setState] = useState<RfpState>({});
+  const [pending, setPending] = useState(false);
 
   function close() {
     setOpen(false);
+    setState({});
+    setPending(false);
+  }
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const input = e.currentTarget.elements.namedItem("file") as HTMLInputElement | null;
+    const file = input?.files?.[0];
+    if (!file) return setState({ error: "أرفق ملف RFP بصيغة PDF." });
+    if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+      return setState({ error: "الملف يجب أن يكون PDF." });
+    }
+    if (file.size > MAX_PDF_BYTES) {
+      return setState({ error: "حجم الملف كبير. الحد الأقصى 25 ميجابايت." });
+    }
+
+    setPending(true);
+    setState({});
+    try {
+      const supabase = createClient();
+      const { data: userData } = await supabase.auth.getUser();
+      const uid = userData.user?.id;
+      if (!uid) {
+        setState({ error: "انتهت الجلسة. سجّل الدخول من جديد." });
+        return;
+      }
+      const path = `${uid}/${crypto.randomUUID()}.pdf`;
+      const { error: upError } = await supabase.storage
+        .from("rfp-uploads")
+        .upload(path, file, { contentType: "application/pdf", upsert: false });
+      if (upError) {
+        setState({ error: "تعذّر رفع الملف. تحقّق من اتصالك وحاول مجددًا." });
+        return;
+      }
+      const fd = new FormData();
+      fd.set("path", path);
+      const result = await extractRfp({}, fd);
+      setState(result);
+    } catch {
+      setState({ error: "حدث خطأ غير متوقع. حاول مجددًا." });
+    } finally {
+      setPending(false);
+    }
   }
 
   if (!open) {
@@ -54,13 +101,13 @@ export function RfpImport({ organizationId, clients }: { organizationId: string;
         </div>
 
         {!data ? (
-          <form action={action} className="space-y-4">
+          <form onSubmit={onSubmit} className="space-y-4">
             <p className="text-sm text-slate-400">
               ارفع ملف الـRFP بصيغة PDF، ونقرأه لك ونعبّئ بيانات المشروع تلقائيًا: الجهة، النوع، الموقع، التواريخ، نطاق العمل والمخرجات.
             </p>
             <label className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-slate-700 bg-slate-950 p-6 text-center hover:border-emerald-600">
               <FileText size={28} className="text-emerald-400" />
-              <span className="text-sm text-slate-300">اختر ملف PDF (حتى 15 ميجابايت)</span>
+              <span className="text-sm text-slate-300">اختر ملف PDF (حتى 25 ميجابايت)</span>
               <input type="file" name="file" accept="application/pdf,.pdf" required className="block w-full text-xs text-slate-400 file:mr-3 file:rounded-md file:border-0 file:bg-slate-700 file:px-3 file:py-1.5 file:text-slate-100" />
             </label>
             {state.error && <p className="text-sm text-red-400">{state.error}</p>}

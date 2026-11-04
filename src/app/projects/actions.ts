@@ -116,28 +116,41 @@ export async function createProject(_prev: ActionState, formData: FormData): Pro
   redirect(`/projects/${data.id}`);
 }
 
-const MAX_PDF_BYTES = 15 * 1024 * 1024;
-
-/** Reads an uploaded RFP PDF and returns extracted project fields for review. */
+/**
+ * Reads an RFP PDF the browser already uploaded to the `rfp-uploads` bucket and
+ * returns extracted project fields for review. The file is uploaded straight to
+ * storage (not through this action) so it is not bound by the serverless
+ * request-size limit; here we only receive its storage path.
+ */
 export async function extractRfp(_prev: RfpState, formData: FormData): Promise<RfpState> {
-  const file = formData.get("file");
-  if (!(file instanceof File) || file.size === 0) return { error: "أرفق ملف RFP بصيغة PDF." };
-  if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
-    return { error: "الملف يجب أن يكون PDF." };
-  }
-  if (file.size > MAX_PDF_BYTES) return { error: "حجم الملف كبير. الحد الأقصى 15 ميجابايت." };
+  const path = String(formData.get("path") ?? "").trim();
+  if (!path || !path.toLowerCase().endsWith(".pdf")) return { error: "أرفق ملف RFP بصيغة PDF." };
 
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
-  if (!claims?.claims?.sub) return { error: "انتهت الجلسة. سجّل الدخول من جديد." };
+  const uid = claims?.claims?.sub as string | undefined;
+  if (!uid) return { error: "انتهت الجلسة. سجّل الدخول من جديد." };
+  if (!path.startsWith(`${uid}/`)) return { error: "مسار الملف غير صالح." };
 
   try {
-    const base64 = Buffer.from(await file.arrayBuffer()).toString("base64");
+    const { data: blob, error: dlError } = await supabase.storage
+      .from("rfp-uploads")
+      .download(path);
+    if (dlError || !blob) return { error: "تعذّر قراءة الملف المرفوع. حاول مجددًا." };
+
+    const base64 = Buffer.from(await blob.arrayBuffer()).toString("base64");
     const data = await extractRfpFromPdf(base64);
     return { data };
   } catch (e) {
     if (e instanceof RfpConfigError) return { error: e.message };
     return { error: (e as Error).message || "تعذّرت قراءة الملف." };
+  } finally {
+    // Best-effort cleanup of the temporary upload.
+    try {
+      await supabase.storage.from("rfp-uploads").remove([path]);
+    } catch {
+      // leave the temp file; a storage lifecycle rule can sweep it later
+    }
   }
 }
 
