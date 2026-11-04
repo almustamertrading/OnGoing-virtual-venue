@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>خريطة مواقع الفعاليات في السعودية</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#f6f7f9;--panel:#ffffff;--text:#1a1d21;--muted:#5f6670;--line:#e3e6ea;--accent:#0b6e4f;--chip:#eef1f4;--chip-on:#0b6e4f;--chip-on-text:#fff;
+ --c-exhibition:#c0392b;--c-conference:#8e44ad;--c-arena:#e67e22;--c-stadium:#2e86de;--c-theatre:#16a085;--c-hall:#d35400;--c-hotel:#7f8c8d;--c-entertainment:#d4ac0d;--c-outdoor:#27ae60}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111417;--panel:#181c21;--text:#e8eaed;--muted:#9aa3ad;--line:#2a3038;--chip:#242a31;--chip-on:#2fbf8f;--chip-on-text:#0b1f17}}
+:root[data-theme="dark"]{--bg:#111417;--panel:#181c21;--text:#e8eaed;--muted:#9aa3ad;--line:#2a3038;--chip:#242a31;--chip-on:#2fbf8f;--chip-on-text:#0b1f17}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--text);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;display:flex;flex-direction:column}
+header{padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+header h1{font-size:18px;margin:0;font-weight:700}
+header .count{color:var(--muted);font-size:13px}
+main{flex:1;display:grid;grid-template-columns:340px 1fr;min-height:0}
+aside{background:var(--panel);border-inline-end:1px solid var(--line);overflow:auto;padding:12px 16px}
+#map{min-height:360px}
+.row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{border:1px solid var(--line);background:var(--chip);color:var(--text);border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;user-select:none;font-family:inherit}
+.chip.on{background:var(--chip-on);color:var(--chip-on-text);border-color:var(--chip-on)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:5px;vertical-align:middle}
+label.sec{display:block;font-size:12px;color:var(--muted);margin-top:12px}
+input[type=search]{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit;font-size:14px}
+ul.list{list-style:none;margin:10px 0 0;padding:0}
+ul.list li{padding:8px 6px;border-bottom:1px solid var(--line);cursor:pointer;font-size:13.5px}
+ul.list li:hover{background:var(--chip)}
+ul.list li .m{color:var(--muted);font-size:12px;display:block}
+.badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;background:var(--chip);color:var(--muted);margin-inline-start:6px}
+.leaflet-popup-content{font-family:inherit;direction:rtl;text-align:right;min-width:220px}
+.leaflet-popup-content h3{margin:0 0 4px;font-size:15px}
+.leaflet-popup-content p{margin:3px 0;font-size:13px}
+.leaflet-popup-content a{color:var(--accent)}
+.pin{width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.pin.approx{border-style:dashed}
+footer{font-size:12px;color:var(--muted);padding:6px 16px;border-top:1px solid var(--line);background:var(--panel)}
+@media (max-width:820px){main{grid-template-columns:1fr;grid-template-rows:auto 1fr}aside{max-height:46vh;border-inline-end:0;border-bottom:1px solid var(--line)}#map{min-height:50vh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>مواقع الفعاليات في مدن المملكة</h1>
+  <span class="count" id="count"></span>
+</header>
+<main>
+<aside>
+  <input id="q" type="search" placeholder="ابحث باسم الموقع أو الحي…">
+  <label class="sec">المدينة</label>
+  <div class="row" id="cities"></div>
+  <label class="sec">نوع الموقع</label>
+  <div class="row" id="cats"></div>
+  <label class="sec">المصدر</label>
+  <div class="row" id="tiers"></div>
+  <ul class="list" id="list"></ul>
+</aside>
+<div id="map"></div>
+</main>
+<footer>البيانات: قائمة منسّقة + OpenStreetMap + Wikidata. النقاط ذات الحدود المتقطعة مواقع تقريبية (±500 م). خريطة الأساس © OpenStreetMap.</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script src="data/venues.js"></script>
+<script>
+const V = window.VENUES || [];
+const CITY_ORDER = ["riyadh","jeddah","khobar","dammam","dhahran","qatif"];
+const CITY_AR = {riyadh:"الرياض",jeddah:"جدة",khobar:"الخبر",dammam:"الدمام",dhahran:"الظهران",qatif:"القطيف"};
+const CAT_ORDER = ["exhibition","conference","arena","stadium","theatre","hall","hotel","entertainment","outdoor"];
+const CAT_AR = {exhibition:"مراكز معارض",conference:"مراكز مؤتمرات",arena:"صالات/أرينا",stadium:"استادات وملاعب",theatre:"مسارح ومراكز ثقافية",hall:"قاعات مناسبات",hotel:"فنادق (قاعات)",entertainment:"وجهات ترفيهية",outdoor:"مواقع مفتوحة"};
+const TIER_AR = {major:"المواقع الرئيسية",osm:"إضافات OpenStreetMap"};
+const color = c => getComputedStyle(document.documentElement).getPropertyValue("--c-"+c).trim();
+const cats = () => CAT_ORDER.filter(c=>V.some(v=>v.category===c));
+const cities = () => CITY_ORDER.filter(c=>V.some(v=>v.city===c));
+const state = {q:"", cities:new Set(cities()), cats:new Set(cats()), tiers:new Set(["major","osm"])};
+const map = L.map("map").setView([24.3,45.5],5);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(map);
+const cluster = L.markerClusterGroup({maxClusterRadius:45,disableClusteringAtZoom:15});
+map.addLayer(cluster);
+const markers = new Map();
+V.forEach(v=>{
+  const icon = L.divIcon({className:"",html:`<div class="pin ${v.precision==="approx"?"approx":""}" style="background:${color(v.category)}"></div>`,iconSize:[14,14],iconAnchor:[7,7]});
+  const m = L.marker([v.lat,v.lon],{icon,title:v.name_ar});
+  m.bindPopup(popup(v)); markers.set(v.id,m);
+});
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function popup(v){
+  const cap = v.capacity?`<p>السعة: ${Number(v.capacity).toLocaleString("ar-EG")}</p>`:"";
+  const note = v.note?`<p>${esc(v.note)}</p>`:"";
+  const en = v.name_en && v.name_en!==v.name_ar?`<p dir="ltr" style="text-align:left;color:var(--muted)">${esc(v.name_en)}</p>`:"";
+  const ref = v.ref_url?` · <a href="${esc(v.ref_url)}" target="_blank" rel="noopener">المصدر</a>`:"";
+  return `<h3>${esc(v.name_ar)}</h3>${en}<p>${CITY_AR[v.city]||esc(v.city)} · ${CAT_AR[v.category]}${v.precision==="approx"?' <span class="badge">موقع تقريبي</span>':""}</p>${cap}${note}<p><a href="${esc(v.maps)}" target="_blank" rel="noopener">افتح في خرائط Google</a>${ref}</p>`;
+}
+function chips(el,items,labels,set,field,colored){
+  el.innerHTML="";
+  items.forEach(k=>{
+    const b=document.createElement("button"); b.type="button"; b.className="chip"+(set.has(k)?" on":"");
+    const n=V.filter(v=>v[field]===k).length;
+    b.innerHTML=(colored?`<span class="dot" style="background:${color(k)}"></span>`:"")+labels[k]+` <span style="opacity:.7">(${n})</span>`;
+    b.onclick=()=>{
+      if(set.has(k)&&set.size===1){ items.forEach(i=>set.add(i)); }
+      else if(set.has(k)&&set.size===items.length){ set.clear(); set.add(k); }
+      else if(set.has(k)) set.delete(k); else set.add(k);
+      userMoved=false; render();
+    };
+    el.appendChild(b);
+  });
+}
+function filtered(){
+  const q=state.q.trim().toLowerCase();
+  return V.filter(v=>state.cities.has(v.city)&&state.cats.has(v.category)&&state.tiers.has(v.tier)&&(!q||(v.name_ar+" "+(v.name_en||"")+" "+(v.note||"")).toLowerCase().includes(q)));
+}
+let userMoved=false;
+function render(){
+  chips(document.getElementById("cities"),cities(),CITY_AR,state.cities,"city",false);
+  chips(document.getElementById("cats"),cats(),CAT_AR,state.cats,"category",true);
+  chips(document.getElementById("tiers"),["major","osm"],TIER_AR,state.tiers,"tier",false);
+  const f=filtered();
+  cluster.clearLayers(); f.forEach(v=>cluster.addLayer(markers.get(v.id)));
+  document.getElementById("count").textContent=`${f.length} موقعاً من أصل ${V.length}`;
+  const ul=document.getElementById("list"); ul.innerHTML="";
+  f.slice().sort((a,b)=>(a.tier===b.tier?0:a.tier==="major"?-1:1)||a.name_ar.localeCompare(b.name_ar,"ar")).slice(0,500).forEach(v=>{
+    const li=document.createElement("li");
+    li.innerHTML=`<span class="dot" style="background:${color(v.category)}"></span>${esc(v.name_ar)}${v.precision==="approx"?'<span class="badge">تقريبي</span>':""}<span class="m">${CITY_AR[v.city]||esc(v.city)} · ${CAT_AR[v.category]}${v.note?" · "+esc(v.note):""}</span>`;
+    li.onclick=()=>{ userMoved=true; const m=markers.get(v.id); map.setView([v.lat,v.lon],16); cluster.zoomToShowLayer(m,()=>m.openPopup()); };
+    ul.appendChild(li);
+  });
+  if(f.length && !userMoved){ map.fitBounds(L.latLngBounds(f.map(v=>[v.lat,v.lon])).pad(0.1)); }
+}
+map.on("dragstart",()=>{userMoved=true;});
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value; userMoved=false; render();});
+render();
+</script>
+</body>
+</html>

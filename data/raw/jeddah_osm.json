@@ -1,0 +1,4875 @@
+[
+{
+"osm_type": "way",
+"osm_id": 409291581,
+"name": "قاعة الملكة للاحتفالات",
+"namedetails": {
+"name": "قاعة الملكة للاحتفالات"
+},
+"category": "landuse",
+"type": "commercial",
+"lat": 21.4988732,
+"lon": 39.2126822,
+"display_name": "قاعة الملكة للاحتفالات, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"commercial": "قاعة الملكة للاحتفالات",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11871652324,
+"name": "أمّ القطع",
+"namedetails": {
+"name": "أمّ القطع",
+"name:ar": "أمّ القطع",
+"name:en": "Umm al Qat`",
+"alt_name": "Umm al Qaţ‘"
+},
+"category": "natural",
+"type": "reef",
+"lat": 21.432091,
+"lon": 39.109613,
+"display_name": "أمّ القطع, جدة, السعودية",
+"address": {
+"reef": "أمّ القطع",
+"city": "جدة",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 507684079,
+"name": "قاعة باريس للاحتفالات",
+"namedetails": {
+"name": "قاعة باريس للاحتفالات"
+},
+"category": "building",
+"type": "yes",
+"lat": 21.5113482,
+"lon": 39.2304625,
+"display_name": "قاعة باريس للاحتفالات, أبي العباس الحديثي, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23233, السعودية",
+"address": {
+"building": "قاعة باريس للاحتفالات",
+"road": "أبي العباس الحديثي",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4488133494,
+"name": "قاعة الفردوس",
+"namedetails": {
+"name": "قاعة الفردوس",
+"name:ar": "قاعة الفردوس",
+"name:en": "ALFERDUS HALL"
+},
+"category": "amenity",
+"type": "post_office",
+"lat": 21.581243,
+"lon": 39.196135,
+"display_name": "قاعة الفردوس, 5774, طريق صاري, الربوة, جدة, محافظة جدة, منطقة مكة المكرمة, 23448, السعودية",
+"address": {
+"amenity": "قاعة الفردوس",
+"house_number": "5774",
+"road": "طريق صاري",
+"neighbourhood": "الربوة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23448",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"level": "3",
+"branch": "قاعة الفردوس",
+"wheelchair": "yes",
+"description": "قاعة افراح",
+"opening_hours": "24/7",
+"internet_access": "no"
+},
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4984716221,
+"name": "قاعة زفاف",
+"namedetails": {
+"name": "قاعة زفاف",
+"name:ar": "قاعة زفاف"
+},
+"category": "amenity",
+"type": "theatre",
+"lat": 21.4213335,
+"lon": 39.294584,
+"display_name": "قاعة زفاف, طريق جدة - مكة السريع, الامير فواز الجنوبى, جدة, محافظة جدة, منطقة مكة المكرمة, 22441, السعودية",
+"address": {
+"amenity": "قاعة زفاف",
+"road": "طريق جدة - مكة السريع",
+"neighbourhood": "الامير فواز الجنوبى",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22441",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 10047667305,
+"name": "قاعة افراح الذهبيه",
+"namedetails": {
+"name": "قاعة افراح الذهبيه"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 21.4490593,
+"lon": 39.281024,
+"display_name": "قاعة افراح الذهبيه, طريق الحرمين, العدل, جدة, محافظة جدة, منطقة مكة المكرمة, 22361, السعودية",
+"address": {
+"amenity": "قاعة افراح الذهبيه",
+"road": "طريق الحرمين",
+"neighbourhood": "العدل",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22361",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"email": "info.goldenhall@gmail.com",
+"phone": "0559995791",
+"description": "wedding hall - concer hall",
+"internet_access": "yes"
+},
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 9995709295,
+"name": "قاعة الدانه للمناسبات",
+"namedetails": {
+"name": "قاعة الدانه للمناسبات",
+"name:ar": "قاعة الدانه للمناسبات",
+"name:en": "ALDANAH HALL"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 21.4499072,
+"lon": 39.2828472,
+"display_name": "قاعة الدانه للمناسبات, 2373, طريق الحرمين, العدل, جدة, محافظة جدة, منطقة مكة المكرمة, 22361, السعودية",
+"address": {
+"amenity": "قاعة الدانه للمناسبات",
+"house_number": "2373",
+"road": "طريق الحرمين",
+"neighbourhood": "العدل",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22361",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"ele": "5",
+"fax": "0126230886",
+"email": "danah.hall12@gmail.com",
+"image": "https://goo.gl/maps/vkPM65iNoxC3FHr67",
+"level": "3",
+"phone": "0569090625",
+"min_age": "0",
+"smoking": "outside",
+"website": "https://event-venue-925.business.site/",
+"start_date": "2000-01-01",
+"wheelchair": "yes",
+"description": "wedding hall - concer hall",
+"internet_access": "yes",
+"air_conditioning": "yes",
+"internet_access:fee": "no"
+},
+"kw": "قاعة",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1530437149,
+"name": "قاعات لادونا للإحتفالات",
+"namedetails": {
+"name": "قاعات لادونا للإحتفالات"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 21.594071,
+"lon": 39.1934809,
+"display_name": "قاعات لادونا للإحتفالات, طريق الأمير ماجد, الربوة, جدة, محافظة جدة, منطقة مكة المكرمة, 23448, السعودية",
+"address": {
+"amenity": "قاعات لادونا للإحتفالات",
+"road": "طريق الأمير ماجد",
+"neighbourhood": "الربوة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23448",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 56 000 6605",
+"building": "yes",
+"contact:instagram": "https://www.instagram.com/ladona.hall.ksa/"
+},
+"kw": "قاعات",
+"city": "jeddah"
+},
+{
+"osm_type": "relation",
+"osm_id": 20056128,
+"name": "صالة 1",
+"namedetails": {
+"name": "صالة 1",
+"name:ar": "صالة 1",
+"name:en": "Terminal 1"
+},
+"category": "aeroway",
+"type": "terminal",
+"lat": 21.6672665,
+"lon": 39.171167,
+"display_name": "صالة 1, Medina Road, مطار الملك عبد العزيز, جدة, محافظة جدة, منطقة مكة المكرمة, 21474, السعودية",
+"address": {
+"aeroway": "صالة 1",
+"road": "Medina Road",
+"neighbourhood": "مطار الملك عبد العزيز",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21474",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"layer": "1",
+"building": "yes"
+},
+"kw": "صالة",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 555211141,
+"name": "صالة المها",
+"namedetails": {
+"name": "صالة المها"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 21.5207196,
+"lon": 39.2305159,
+"display_name": "صالة المها, مصطفي الطويسي, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"amenity": "صالة المها",
+"road": "مصطفي الطويسي",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "صالة",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14156731001,
+"name": "صالة الرفادة العربية التجارية للمواد الغذائية جملة - قطاعي",
+"namedetails": {
+"name": "صالة الرفادة العربية التجارية للمواد الغذائية جملة - قطاعي"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.5137825,
+"lon": 39.2557579,
+"display_name": "صالة الرفادة العربية التجارية للمواد الغذائية جملة - قطاعي, طريق الملك عبدالله, النخيل, جدة, محافظة جدة, منطقة مكة المكرمة, 22265, السعودية",
+"address": {
+"shop": "صالة الرفادة العربية التجارية للمواد الغذائية جملة - قطاعي",
+"road": "طريق الملك عبدالله",
+"neighbourhood": "النخيل",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22265",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "Sa- Th 06:00-26:00, Fr 13:00-26:00"
+},
+"kw": "صالة",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 41407718,
+"name": "قصر خزام",
+"namedetails": {
+"name": "قصر خزام"
+},
+"category": "highway",
+"type": "residential",
+"lat": 21.4736946,
+"lon": 39.212593,
+"display_name": "قصر خزام, النزلة اليمانية, جدة, محافظة جدة, منطقة مكة المكرمة, 21472, السعودية",
+"address": {
+"road": "قصر خزام",
+"neighbourhood": "النزلة اليمانية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21472",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"oneway": "no"
+},
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1265771814,
+"name": "قصر السلام الملكي",
+"namedetails": {
+"name": "قصر السلام الملكي",
+"name:ar": "قصر السلام الملكي",
+"name:en": "Alsalam Royal Palace"
+},
+"category": "historic",
+"type": "castle",
+"lat": 21.5386449,
+"lon": 39.1437621,
+"display_name": "قصر السلام الملكي, طريق الأندلس, الأندلس, جدة, محافظة جدة, منطقة مكة المكرمة, 23322, السعودية",
+"address": {
+"historic": "قصر السلام الملكي",
+"road": "طريق الأندلس",
+"neighbourhood": "الأندلس",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23322",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes",
+"historic": "castle",
+"castle_type": "palace"
+},
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 660699608,
+"name": "قصر اماسي للافراح",
+"namedetails": {
+"name": "قصر اماسي للافراح"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 21.4841723,
+"lon": 39.2301209,
+"display_name": "قصر اماسي للافراح, عبد بن ابي لبابه, الفيحاء, جدة, محافظة جدة, منطقة مكة المكرمة, 22246, السعودية",
+"address": {
+"amenity": "قصر اماسي للافراح",
+"road": "عبد بن ابي لبابه",
+"neighbourhood": "الفيحاء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22246",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 12185387206,
+"name": "مطعم قصر الصين",
+"namedetails": {
+"name": "مطعم قصر الصين"
+},
+"category": "amenity",
+"type": "restaurant",
+"lat": 21.556626,
+"lon": 39.1780087,
+"display_name": "مطعم قصر الصين, شارع الأمير محمد بن عبدالعزيز, العزيزية, جدة, محافظة جدة, منطقة مكة المكرمة, 21553, السعودية",
+"address": {
+"amenity": "مطعم قصر الصين",
+"road": "شارع الأمير محمد بن عبدالعزيز",
+"neighbourhood": "العزيزية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21553",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"cuisine": "chinese",
+"outdoor_seating": "no"
+},
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4570896689,
+"name": "فندق قصر التين جدة",
+"namedetails": {
+"name": "فندق قصر التين جدة",
+"name:ar": "فندق قصر التين جدة"
+},
+"category": "shop",
+"type": "bookmaker",
+"lat": 21.5577216,
+"lon": 39.1186144,
+"display_name": "فندق قصر التين جدة, طريق الكورنيش الشمالي, الشاطئ, جدة, محافظة جدة, منطقة مكة المكرمة, 21432, السعودية",
+"address": {
+"shop": "فندق قصر التين جدة",
+"road": "طريق الكورنيش الشمالي",
+"neighbourhood": "الشاطئ",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21432",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4643771838,
+"name": "فندق قصر العرب",
+"namedetails": {
+"name": "فندق قصر العرب"
+},
+"category": "tourism",
+"type": "hotel",
+"lat": 21.464349,
+"lon": 39.2408861,
+"display_name": "فندق قصر العرب, شارع الاسكان, مدائن الفهد, جدة, محافظة جدة, منطقة مكة المكرمة, 22343, السعودية",
+"address": {
+"tourism": "فندق قصر العرب",
+"road": "شارع الاسكان",
+"neighbourhood": "مدائن الفهد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22343",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4644476768,
+"name": "فندق قصر المدينة",
+"namedetails": {
+"name": "فندق قصر المدينة"
+},
+"category": "tourism",
+"type": "hotel",
+"lat": 21.4954369,
+"lon": 39.1741751,
+"display_name": "فندق قصر المدينة, المدارس, البغدادية الغربية, جدة, محافظة جدة, منطقة مكة المكرمة, 22232, السعودية",
+"address": {
+"tourism": "فندق قصر المدينة",
+"road": "المدارس",
+"neighbourhood": "البغدادية الغربية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22232",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 758501358,
+"name": "قصر بن محفوظ",
+"namedetails": {
+"name": "قصر بن محفوظ"
+},
+"category": "building",
+"type": "house",
+"lat": 21.457221,
+"lon": 39.285055,
+"display_name": "قصر بن محفوظ, طريق الحرمين, المنتزهات, جدة, محافظة جدة, منطقة مكة المكرمة, 21372, السعودية",
+"address": {
+"building": "قصر بن محفوظ",
+"road": "طريق الحرمين",
+"neighbourhood": "المنتزهات",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21372",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قصر",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11135363711,
+"name": "معارض الذهب والمجوهرات",
+"namedetails": {
+"name": "معارض الذهب والمجوهرات"
+},
+"category": "shop",
+"type": "jewelry",
+"lat": 21.5918456,
+"lon": 39.1696646,
+"display_name": "معارض الذهب والمجوهرات, الخطيب التبريزي, البوادي, جدة, محافظة جدة, منطقة مكة المكرمة, 23443, السعودية",
+"address": {
+"shop": "معارض الذهب والمجوهرات",
+"road": "الخطيب التبريزي",
+"neighbourhood": "البوادي",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23443",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "معارض",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 3662512322,
+"name": "مستودع شركة معارض السلام العالمية",
+"namedetails": {
+"name": "مستودع شركة معارض السلام العالمية"
+},
+"category": "office",
+"type": "company",
+"lat": 21.3515537,
+"lon": 39.2048627,
+"display_name": "مستودع شركة معارض السلام العالمية, الغرفه التجارية المرحله الثانيه, طريق الملك فيصل, السروات, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"office": "مستودع شركة معارض السلام العالمية",
+"house_number": "الغرفه التجارية المرحله الثانيه",
+"road": "طريق الملك فيصل",
+"neighbourhood": "السروات",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "00966558873056",
+"smoking": "no"
+},
+"kw": "معارض",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1087872789,
+"name": "استاد جامعة جدة",
+"namedetails": {
+"name": "استاد جامعة جدة"
+},
+"category": "leisure",
+"type": "pitch",
+"lat": 21.8892002,
+"lon": 39.2550683,
+"display_name": "استاد جامعة جدة, طريق جامعة جدة, الصفوة, الصفحة, عسفان, محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"leisure": "استاد جامعة جدة",
+"road": "طريق جامعة جدة",
+"neighbourhood": "الصفوة",
+"hamlet": "الصفحة",
+"village": "عسفان",
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"lit": "yes",
+"sport": "soccer;volleyball;basketball",
+"surface": "artificial_turf"
+},
+"kw": "استاد",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1559873396,
+"name": "أستاد الأمير عبدالله الفيصل",
+"namedetails": {
+"name": "أستاد الأمير عبدالله الفيصل"
+},
+"category": "leisure",
+"type": "pitch",
+"lat": 21.4465906,
+"lon": 39.2516312,
+"display_name": "أستاد الأمير عبدالله الفيصل, الاستاد الرياضي, الوزيرية, جدة, محافظة جدة, منطقة مكة المكرمة, 21465, السعودية",
+"address": {
+"leisure": "أستاد الأمير عبدالله الفيصل",
+"road": "الاستاد الرياضي",
+"neighbourhood": "الوزيرية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21465",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"lit": "yes",
+"sport": "soccer",
+"access": "private",
+"height": "1",
+"indoor": "no",
+"covered": "no",
+"surface": "grass"
+},
+"kw": "استاد",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 404674646,
+"name": "ملعب",
+"namedetails": {
+"name": "ملعب"
+},
+"category": "building",
+"type": "yes",
+"lat": 21.2656123,
+"lon": 39.1741844,
+"display_name": "ملعب, شارع ابناء السيد, القوزين, صميمة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"building": "ملعب",
+"road": "شارع ابناء السيد",
+"neighbourhood": "القوزين",
+"suburb": "القوزين",
+"village": "صميمة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1301828763,
+"name": "ملعب",
+"namedetails": {
+"name": "ملعب"
+},
+"category": "leisure",
+"type": "pitch",
+"lat": 21.8495373,
+"lon": 38.9964366,
+"display_name": "ملعب, ممشى, المروج, محافظة جدة, منطقة مكة المكرمة, 23841, السعودية",
+"address": {
+"leisure": "ملعب",
+"road": "ممشى",
+"neighbourhood": "المروج",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23841",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"sport": "soccer",
+"access": "yes",
+"surface": "grass"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 406856121,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6176164,
+"lon": 39.216325,
+"display_name": "شارع إبراهيم محمد عبدالوهاب, المروة, جدة, محافظة جدة, منطقة مكة المكرمة, 23452, السعودية",
+"address": {
+"road": "شارع إبراهيم محمد عبدالوهاب",
+"neighbourhood": "المروة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23452",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1317007556,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5898189,
+"lon": 39.1820208,
+"display_name": "شارع سعيد الأسدي, الربوة, جدة, محافظة جدة, منطقة مكة المكرمة, 23534, السعودية",
+"address": {
+"road": "شارع سعيد الأسدي",
+"neighbourhood": "الربوة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23534",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 135459169,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5141324,
+"lon": 39.192029,
+"display_name": "طريق الملك فهد, الشرفية, جدة, محافظة جدة, منطقة مكة المكرمة, 23218, السعودية",
+"address": {
+"road": "طريق الملك فهد",
+"neighbourhood": "الشرفية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23218",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 609206228,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5223577,
+"lon": 39.2268057,
+"display_name": "الحارث القباع, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"road": "الحارث القباع",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 623185595,
+"name": "Hilton park Playground",
+"namedetails": {
+"name": "Hilton park Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5949407,
+"lon": 39.1094505,
+"display_name": "Hilton park Playground, شارع الأمير فيصل بن فهد, الشاطئ, جدة, محافظة جدة, منطقة مكة المكرمة, 21462, السعودية",
+"address": {
+"leisure": "Hilton park Playground",
+"road": "شارع الأمير فيصل بن فهد",
+"neighbourhood": "الشاطئ",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21462",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "sand"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1376545937,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6010231,
+"lon": 39.1438947,
+"display_name": "طريق الأمير سلطان, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23525, السعودية",
+"address": {
+"road": "طريق الأمير سلطان",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23525",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1491780946,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5943596,
+"lon": 39.2530089,
+"display_name": "شارع معاوية السلمي, الأجواد, جدة, محافظة جدة, منطقة مكة المكرمة, 23465, السعودية",
+"address": {
+"road": "شارع معاوية السلمي",
+"neighbourhood": "الأجواد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23465",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"shade": "yes",
+"access": "yes",
+"max_age": "11",
+"min_age": "4",
+"surface": "rubber"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1502183464,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6232757,
+"lon": 39.1429985,
+"display_name": "شارع الأمل, النعيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23622, السعودية",
+"address": {
+"road": "شارع الأمل",
+"neighbourhood": "النعيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23622",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 831643314,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6751478,
+"lon": 39.1247998,
+"display_name": "اسماعيل بن كثير, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"road": "اسماعيل بن كثير",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 302780924,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6955022,
+"lon": 39.1098374,
+"display_name": "طريق الملك عبد العزيز, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"road": "طريق الملك عبد العزيز",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"area": "yes",
+"highway": "footway"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 7764374106,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6703802,
+"lon": 39.1230383,
+"display_name": "شارع السلام, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"road": "شارع السلام",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 7764374098,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6751227,
+"lon": 39.1248249,
+"display_name": "اسماعيل بن كثير, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"road": "اسماعيل بن كثير",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5885636144,
+"name": "Hilton Park Playground",
+"namedetails": {
+"name": "Hilton Park Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5948991,
+"lon": 39.109472,
+"display_name": "Hilton Park Playground, شارع الأمير فيصل بن فهد, الشاطئ, جدة, محافظة جدة, منطقة مكة المكرمة, 21462, السعودية",
+"address": {
+"leisure": "Hilton Park Playground",
+"road": "شارع الأمير فيصل بن فهد",
+"neighbourhood": "الشاطئ",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21462",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "sand"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 1495209887,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5129648,
+"lon": 39.1898863,
+"display_name": "شارع التوبة, الشرفية, جدة, محافظة جدة, منطقة مكة المكرمة, 23218, السعودية",
+"address": {
+"road": "شارع التوبة",
+"neighbourhood": "الشرفية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23218",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8043892123,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6787088,
+"lon": 39.120856,
+"display_name": "طريق الأمير سلطان, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"road": "طريق الأمير سلطان",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 1997560713,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6220774,
+"lon": 39.139235,
+"display_name": "شارع الأمل, النعيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23622, السعودية",
+"address": {
+"road": "شارع الأمل",
+"neighbourhood": "النعيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23622",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8422270573,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.8453418,
+"lon": 39.4460843,
+"display_name": "طريق المدينة المنورة, عسفان, محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"road": "طريق المدينة المنورة",
+"village": "عسفان",
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 790554778,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.7731988,
+"lon": 39.1310171,
+"display_name": "شارع الأمير عبدالله الفيصل, أبحر الشمالية, محافظة جدة, منطقة مكة المكرمة, 23732, السعودية",
+"address": {
+"road": "شارع الأمير عبدالله الفيصل",
+"neighbourhood": "أبحر الشمالية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23732",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 135456063,
+"name": "Eskan Alshrafiyah playground",
+"namedetails": {
+"name": "Eskan Alshrafiyah playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5138579,
+"lon": 39.1909473,
+"display_name": "Eskan Alshrafiyah playground, شارع الفارسي, الشرفية, جدة, محافظة جدة, منطقة مكة المكرمة, 23217, السعودية",
+"address": {
+"leisure": "Eskan Alshrafiyah playground",
+"road": "شارع الفارسي",
+"neighbourhood": "الشرفية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23217",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1518960483,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.526259,
+"lon": 39.1875265,
+"display_name": "شارع ذي النورين, الشرفية, جدة, محافظة جدة, منطقة مكة المكرمة, 23218, السعودية",
+"address": {
+"road": "شارع ذي النورين",
+"neighbourhood": "الشرفية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23218",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"surface": "rubber"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 209848847,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5569722,
+"lon": 39.2051901,
+"display_name": "Al-Sakhawi, العزيزية, جدة, محافظة جدة, منطقة مكة المكرمة, 23342, السعودية",
+"address": {
+"road": "Al-Sakhawi",
+"neighbourhood": "العزيزية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23342",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 904397552,
+"name": ",",
+"namedetails": {
+"name": ","
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5422584,
+"lon": 39.1697936,
+"display_name": ",, شارع عرفات, الحمراء, جدة, محافظة جدة, منطقة مكة المكرمة, 21412, السعودية",
+"address": {
+"leisure": ",",
+"road": "شارع عرفات",
+"neighbourhood": "الحمراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1490607414,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6076327,
+"lon": 39.1499661,
+"display_name": "أحمد زينل, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23525, السعودية",
+"address": {
+"road": "أحمد زينل",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23525",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1292984392,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5863403,
+"lon": 39.1484489,
+"display_name": "ممشى اليمامة, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23436, السعودية",
+"address": {
+"road": "ممشى اليمامة",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23436",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"shade": "yes",
+"access": "yes",
+"surface": "paving_stones"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1292984391,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5901931,
+"lon": 39.147178,
+"display_name": "ممشى اليمامة, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23437, السعودية",
+"address": {
+"road": "ممشى اليمامة",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23437",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"shade": "yes",
+"access": "yes",
+"surface": "paving_stones"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1320156397,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5876691,
+"lon": 39.1555915,
+"display_name": "Ibn Abi Al Wafa, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23437, السعودية",
+"address": {
+"road": "Ibn Abi Al Wafa",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23437",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1323009844,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6124053,
+"lon": 39.1073371,
+"display_name": "طريق الكورنيش الشمالي, الشاطئ, جدة, محافظة جدة, منطقة مكة المكرمة, 21362, السعودية",
+"address": {
+"road": "طريق الكورنيش الشمالي",
+"neighbourhood": "الشاطئ",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21362",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 623178056,
+"name": "Alkazemi park Playground",
+"namedetails": {
+"name": "Alkazemi park Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5697474,
+"lon": 39.1514809,
+"display_name": "Alkazemi park Playground, Alkazemi park Walkpath, الروضة, جدة, محافظة جدة, منطقة مكة المكرمة, 23435, السعودية",
+"address": {
+"leisure": "Alkazemi park Playground",
+"road": "Alkazemi park Walkpath",
+"neighbourhood": "الروضة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23435",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "sand"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 623174122,
+"name": "Rawdah Park Playground",
+"namedetails": {
+"name": "Rawdah Park Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5565131,
+"lon": 39.1456623,
+"display_name": "Rawdah Park Playground, Rawdah Park pathway, الروضة, جدة, محافظة جدة, منطقة مكة المكرمة, 23431, السعودية",
+"address": {
+"leisure": "Rawdah Park Playground",
+"road": "Rawdah Park pathway",
+"neighbourhood": "الروضة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23431",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "sand"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1445801065,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6260836,
+"lon": 39.1316979,
+"display_name": "abn albokhare, النهضة, جدة, محافظة جدة, منطقة مكة المكرمة, 23615, السعودية",
+"address": {
+"road": "abn albokhare",
+"neighbourhood": "النهضة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23615",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1337178657,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5915046,
+"lon": 39.1493071,
+"display_name": "شارع منارة المكيين, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23437, السعودية",
+"address": {
+"road": "شارع منارة المكيين",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23437",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 623177550,
+"name": "Abdul Rahman Al Mufti Playground",
+"namedetails": {
+"name": "Abdul Rahman Al Mufti Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 21.5675767,
+"lon": 39.1540599,
+"display_name": "Abdul Rahman Al Mufti Playground, Abdul Rahman Al Mufti Walkpath, الروضة, جدة, محافظة جدة, منطقة مكة المكرمة, 21424, السعودية",
+"address": {
+"leisure": "Abdul Rahman Al Mufti Playground",
+"road": "Abdul Rahman Al Mufti Walkpath",
+"neighbourhood": "الروضة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21424",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "sand"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1341612596,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5925766,
+"lon": 39.1362797,
+"display_name": "شارع اسامه الجنفى, الزهراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23521, السعودية",
+"address": {
+"road": "شارع اسامه الجنفى",
+"neighbourhood": "الزهراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23521",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13621030549,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6465265,
+"lon": 39.1016695,
+"display_name": "طريق الكورنيش الشمالي, الشاطئ, جدة, محافظة جدة, منطقة مكة المكرمة, 23613, السعودية",
+"address": {
+"road": "طريق الكورنيش الشمالي",
+"neighbourhood": "الشاطئ",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23613",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5810942553,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5229159,
+"lon": 39.1691138,
+"display_name": "شارع حائل, الرويس, جدة, محافظة جدة, منطقة مكة المكرمة, 23213, السعودية",
+"address": {
+"road": "شارع حائل",
+"neighbourhood": "الرويس",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23213",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 1997560711,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.6241395,
+"lon": 39.1336668,
+"display_name": "abn albokhare, النهضة, جدة, محافظة جدة, منطقة مكة المكرمة, 23615, السعودية",
+"address": {
+"road": "abn albokhare",
+"neighbourhood": "النهضة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23615",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1540855026,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.3104646,
+"lon": 39.2318849,
+"display_name": "ممشى القرينية, القرينية, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"road": "ممشى القرينية",
+"neighbourhood": "القرينية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11499848169,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.8900979,
+"lon": 39.1251206,
+"display_name": "5, الهزاعية, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"road": "5",
+"neighbourhood": "الهزاعية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1530311086,
+"name": "ملعب كرة القدم",
+"namedetails": {
+"name": "football field",
+"name:ar": "ملعب كرة القدم"
+},
+"category": "natural",
+"type": "grassland",
+"lat": 21.8890823,
+"lon": 39.254722,
+"display_name": "ملعب كرة القدم, محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"grassland": "ملعب كرة القدم",
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1292984394,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5814607,
+"lon": 39.1500154,
+"display_name": "ممشى اليمامة, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23436, السعودية",
+"address": {
+"road": "ممشى اليمامة",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23436",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"shade": "yes",
+"access": "yes",
+"surface": "paving_stones"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1364824600,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 21.5925828,
+"lon": 39.136101,
+"display_name": "شارع اسامه الجنفى, الزهراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23521, السعودية",
+"address": {
+"road": "شارع اسامه الجنفى",
+"neighbourhood": "الزهراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23521",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1551990468,
+"name": "كورة ارينا",
+"namedetails": {
+"name": "كورة ارينا",
+"name:ar": "كورة ارينا",
+"name:en": "Koora Arena"
+},
+"category": "club",
+"type": "sport",
+"lat": 21.7129933,
+"lon": 39.1005468,
+"display_name": "كورة ارينا, طريق الكورنيش الشمالي, أبحر الجنوبية, محافظة جدة, منطقة مكة المكرمة, 23732, السعودية",
+"address": {
+"club": "كورة ارينا",
+"road": "طريق الكورنيش الشمالي",
+"neighbourhood": "أبحر الجنوبية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23732",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"sport": "soccer;tennis;basketball;volleyball;badminton",
+"contact:twitter": "https://x.com/kooraarena",
+"contact:whatsapp": "https://wa.me/966569138835"
+},
+"kw": "أرينا",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 556022178,
+"name": "مركز الملك فهد للبحوث الطبية",
+"namedetails": {
+"name": "King Fahad Medical Research Center",
+"name:ar": "مركز الملك فهد للبحوث الطبية",
+"name:en": "King Fahad Medical Research Center"
+},
+"category": "amenity",
+"type": "university",
+"lat": 21.4992451,
+"lon": 39.2314251,
+"display_name": "مركز الملك فهد للبحوث الطبية, 534, شارع الملاعب, جامعة الملك عبدالعزيز, جدة, محافظة جدة, منطقة مكة المكرمة, 22253, السعودية",
+"address": {
+"amenity": "مركز الملك فهد للبحوث الطبية",
+"house_number": "534",
+"road": "شارع الملاعب",
+"neighbourhood": "جامعة الملك عبدالعزيز",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"wikidata": "Q12242273",
+"wikipedia": "ar:مركز الملك فهد للبحوث الطبية",
+"university": "faculty"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 515010659,
+"name": "مركز جدة العلمي",
+"namedetails": {
+"name": "مركز جدة العلمي",
+"name:ar": "مركز جدة العلمي",
+"name:en": "Jeddah Scince Center"
+},
+"category": "amenity",
+"type": "college",
+"lat": 21.5671761,
+"lon": 39.1742507,
+"display_name": "مركز جدة العلمي, شارع الإمام عبد العزيز, الفيصلية, جدة, محافظة جدة, منطقة مكة المكرمة, 23442, السعودية",
+"address": {
+"amenity": "مركز جدة العلمي",
+"road": "شارع الإمام عبد العزيز",
+"neighbourhood": "الفيصلية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23442",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://edu.moe.gov.sa/"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 113818902,
+"name": "مركز الجمجوم التجاري",
+"namedetails": {
+"name": "مركز الجمجوم التجاري",
+"name:ar": "مركز الجمجوم التجاري",
+"name:en": "Jamjoom Commercial Center",
+"int_name": "مركز جمجوم التجاري",
+"addr:housename": "Jamjoom Commercial Center"
+},
+"category": "shop",
+"type": "mall",
+"lat": 21.5213976,
+"lon": 39.1560576,
+"display_name": "مركز الجمجوم التجاري, طريق فلسطين, الحمراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23212, السعودية",
+"address": {
+"shop": "مركز الجمجوم التجاري",
+"road": "طريق فلسطين",
+"neighbourhood": "الحمراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23212",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes",
+"designation": "Jamjoom Commercial Center - Shopping Center & Offices"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1135825794,
+"name": "مركز جدة للمنتديات والفعاليات",
+"namedetails": {
+"name": "مركز جدة للمنتديات والفعاليات",
+"name:ar": "مركز جدة للمنتديات والفعاليات",
+"name:en": "Jeddah International Exhibition and Convention Center"
+},
+"category": "amenity",
+"type": "community_centre",
+"lat": 21.6169571,
+"lon": 39.1564679,
+"display_name": "مركز جدة للمنتديات والفعاليات, شارع سلطان بن سلمان, النزهة, جدة, محافظة جدة, منطقة مكة المكرمة, 23526, السعودية",
+"address": {
+"amenity": "مركز جدة للمنتديات والفعاليات",
+"road": "شارع سلطان بن سلمان",
+"neighbourhood": "النزهة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23526",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://www.jcci.org.sa/%D9%85%D8%B1%D9%83%D8%B2-%D8%AC%D8%AF%D8%A9-%D9%84%D9%84%D9%85%D9%86%D8%AA%D8%AF%D9%8A%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A7%D8%AA",
+"building": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1159296889,
+"name": "مركز المساعدية التخصصي",
+"namedetails": {
+"name": "مركز المساعدية التخصصي"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.5426299,
+"lon": 39.165073,
+"display_name": "مركز المساعدية التخصصي, شارع عرفات, الحمراء, جدة, محافظة جدة, منطقة مكة المكرمة, 21412, السعودية",
+"address": {
+"amenity": "مركز المساعدية التخصصي",
+"road": "شارع عرفات",
+"neighbourhood": "الحمراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 314909081,
+"name": "مركز اللغة الانجليزية",
+"namedetails": {
+"name": "مركز اللغة الانجليزية"
+},
+"category": "building",
+"type": "university",
+"lat": 21.4877274,
+"lon": 39.251108,
+"display_name": "مركز اللغة الانجليزية, شارع الإسكان, جامعة الملك عبدالعزيز, جدة, محافظة جدة, منطقة مكة المكرمة, 21589, السعودية",
+"address": {
+"building": "مركز اللغة الانجليزية",
+"road": "شارع الإسكان",
+"neighbourhood": "جامعة الملك عبدالعزيز",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21589",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1159298188,
+"name": "مركز الدكتور سليمان فقيه الطبي",
+"namedetails": {
+"name": "مركز الدكتور سليمان فقيه الطبي",
+"name:ar": "مركز الدكتور سليمان فقيه الطبي",
+"name:en": "Dr Soliman Fakeeh Medical Center"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.6693499,
+"lon": 39.1219213,
+"display_name": "مركز الدكتور سليمان فقيه الطبي, طريق الأمير سلطان, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"amenity": "مركز الدكتور سليمان فقيه الطبي",
+"road": "طريق الأمير سلطان",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 92 001 2777",
+"website": "https://en.dsfhjeddah.fakeeh.care/",
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1159296890,
+"name": "مركز الأمير عبد المجيد للغسيل الكلوي",
+"namedetails": {
+"name": "مركز الأمير عبد المجيد للغسيل الكلوي",
+"name:ar": "مركز الأمير عبد المجيد للغسيل الكلوي",
+"name:en": "Prince Abdal Majeed Dialysis Center"
+},
+"category": "amenity",
+"type": "clinic",
+"lat": 21.5445995,
+"lon": 39.165645,
+"display_name": "مركز الأمير عبد المجيد للغسيل الكلوي, شارع ابراهيم الجفالي, الأندلس, جدة, محافظة جدة, منطقة مكة المكرمة, 23124, السعودية",
+"address": {
+"amenity": "مركز الأمير عبد المجيد للغسيل الكلوي",
+"road": "شارع ابراهيم الجفالي",
+"neighbourhood": "الأندلس",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23124",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes",
+"operator": "Diaverum",
+"healthcare": "dialysis",
+"healthcare:speciality": "nephrology"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1283507273,
+"name": "مركز شرطة السلامة",
+"namedetails": {
+"name": "مركز شرطة السلامة",
+"name:ar": "مركز شرطة السلامة",
+"name:en": "AL-Salama Police Station"
+},
+"category": "amenity",
+"type": "police",
+"lat": 21.5941709,
+"lon": 39.1377573,
+"display_name": "مركز شرطة السلامة, شارع علي طنطاوي, الزهراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23521, السعودية",
+"address": {
+"amenity": "مركز شرطة السلامة",
+"road": "شارع علي طنطاوي",
+"neighbourhood": "الزهراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23521",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966-12-6834889",
+"building": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 407258612,
+"name": "مركز شرطة الجامعة",
+"namedetails": {
+"name": "مركز شرطة الجامعة"
+},
+"category": "amenity",
+"type": "police",
+"lat": 21.5074629,
+"lon": 39.244128,
+"display_name": "مركز شرطة الجامعة, أسيد بن عروة, السليمانية, جدة, محافظة جدة, منطقة مكة المكرمة, 22253, السعودية",
+"address": {
+"amenity": "مركز شرطة الجامعة",
+"road": "أسيد بن عروة",
+"neighbourhood": "السليمانية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1159296892,
+"name": "مركز بن سليمان",
+"namedetails": {
+"name": "مركز بن سليمان"
+},
+"category": "building",
+"type": "commercial",
+"lat": 21.559361,
+"lon": 39.1420486,
+"display_name": "مركز بن سليمان, شارع الأمير سعود الفيصل, الخالدية, جدة, محافظة جدة, منطقة مكة المكرمة, 23431, السعودية",
+"address": {
+"building": "مركز بن سليمان",
+"road": "شارع الأمير سعود الفيصل",
+"neighbourhood": "الخالدية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23431",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"notes": "The Jeddah Bin Sulaiman business centre is situated in a building that's notable for striking and innovative architecture and with exterior lighting ensures it as a landmark by night and day. Services: virtual office, meeting room, day office, etc.",
+"phone_1": "+966122203002",
+"phone_2": "+966122203003"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 426412972,
+"name": "مركز اليمامة للأعمال",
+"namedetails": {
+"name": "مركز اليمامة للأعمال"
+},
+"category": "building",
+"type": "yes",
+"lat": 21.5801939,
+"lon": 39.1498216,
+"display_name": "مركز اليمامة للأعمال, شارع اليمامة, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23436, السعودية",
+"address": {
+"building": "مركز اليمامة للأعمال",
+"road": "شارع اليمامة",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23436",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 407175627,
+"name": "مركز صحي السيلمانية",
+"namedetails": {
+"name": "مركز صحي السيلمانية"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.5075006,
+"lon": 39.2400433,
+"display_name": "مركز صحي السيلمانية, الإمام البغوي, السليمانية, جدة, محافظة جدة, منطقة مكة المكرمة, 22253, السعودية",
+"address": {
+"amenity": "مركز صحي السيلمانية",
+"road": "الإمام البغوي",
+"neighbourhood": "السليمانية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 573649143,
+"name": "مركز النسيم التجاري",
+"namedetails": {
+"name": "مركز النسيم التجاري"
+},
+"category": "building",
+"type": "retail",
+"lat": 21.5201416,
+"lon": 39.2327359,
+"display_name": "مركز النسيم التجاري, عزالدين بن فهد, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"building": "مركز النسيم التجاري",
+"road": "عزالدين بن فهد",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 407256579,
+"name": "مركز صحي المطار القديم",
+"namedetails": {
+"name": "مركز صحي المطار القديم"
+},
+"category": "amenity",
+"type": "clinic",
+"lat": 21.5180668,
+"lon": 39.2335806,
+"display_name": "مركز صحي المطار القديم, JBNA3634, أبي محمد القاصي, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23233, السعودية",
+"address": {
+"amenity": "مركز صحي المطار القديم",
+"house_number": "JBNA3634",
+"road": "أبي محمد القاصي",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes",
+"operator": "وزارة الصحة",
+"healthcare": "clinic"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13335254384,
+"name": "مركز التنمية الاجتماعية بجدة",
+"namedetails": {
+"name": "مركز التنمية الاجتماعية بجدة",
+"name:ar": "مركز التنمية الاجتماعية بجدة",
+"name:en": "Social Development Center"
+},
+"category": "amenity",
+"type": "social_facility",
+"lat": 21.5322609,
+"lon": 39.1727543,
+"display_name": "مركز التنمية الاجتماعية بجدة, شارع الحمرا, الحمراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23324-4438, السعودية",
+"address": {
+"amenity": "مركز التنمية الاجتماعية بجدة",
+"road": "شارع الحمرا",
+"neighbourhood": "الحمراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23324-4438",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"office": "government",
+"website": "https://www.hrsd.gov.sa",
+"operator": "وزارة الموارد البشرية والتنمية الاجتماعية",
+"government": "ministry",
+"wheelchair": "yes",
+"operator:en": "Ministry of Human Resources and Social Development",
+"social_facility": "outreach"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4124767590,
+"name": "مجموعة سند الأعمال",
+"namedetails": {
+"name": "مجموعة سند الأعمال"
+},
+"category": "office",
+"type": "telecommunication",
+"lat": 21.5177731,
+"lon": 39.1826354,
+"display_name": "مجموعة سند الأعمال, مركز سلمى التجاري, طريق المدينة المنورة, الشرفية, جدة, محافظة جدة, منطقة مكة المكرمة, 22234, السعودية",
+"address": {
+"office": "مجموعة سند الأعمال",
+"house_number": "مركز سلمى التجاري",
+"road": "طريق المدينة المنورة",
+"neighbourhood": "الشرفية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"email": "info@bsgroup-sa.com",
+"phone": "00966126525832",
+"website": "www.bsgroup-sa.com",
+"opening_hours": "Sa-Th 08:00-17:00",
+"internet_access": "wlan"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 6414923647,
+"name": "مركز نادي النسيم النسائي الرياضي",
+"namedetails": {
+"name": "مركز نادي النسيم النسائي الرياضي",
+"name:ar": "مركز نادي النسيم النسائي الرياضي",
+"name:en": "Legend Ladies Gym"
+},
+"category": "leisure",
+"type": "fitness_centre",
+"lat": 21.5200089,
+"lon": 39.2341379,
+"display_name": "مركز نادي النسيم النسائي الرياضي, شارع إياس بن أوس, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"leisure": "مركز نادي النسيم النسائي الرياضي",
+"road": "شارع إياس بن أوس",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13951277501,
+"name": "مركز صحي المروة",
+"namedetails": {
+"name": "مركز صحي المروة"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.6188922,
+"lon": 39.1887403,
+"display_name": "مركز صحي المروة, شارع حراء, المروة, جدة, محافظة جدة, منطقة مكة المكرمة, 23542, السعودية",
+"address": {
+"amenity": "مركز صحي المروة",
+"road": "شارع حراء",
+"neighbourhood": "المروة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23542",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14157307301,
+"name": "مركز تحطيم الأسعار",
+"namedetails": {
+"name": "مركز تحطيم الأسعار"
+},
+"category": "shop",
+"type": "clothes",
+"lat": 21.5806832,
+"lon": 39.2223996,
+"display_name": "مركز تحطيم الأسعار, عبد العزيز بن ابراهيم, الصفاء, جدة, محافظة جدة, منطقة مكة المكرمة, 23454, السعودية",
+"address": {
+"shop": "مركز تحطيم الأسعار",
+"road": "عبد العزيز بن ابراهيم",
+"neighbourhood": "الصفاء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23454",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8866724606,
+"name": "مركز ريهام للتموينات الغذائية",
+"namedetails": {
+"name": "مركز ريهام للتموينات الغذائية"
+},
+"category": "shop",
+"type": "convenience",
+"lat": 21.5953522,
+"lon": 39.1677097,
+"display_name": "مركز ريهام للتموينات الغذائية, الخطيب التبريزي, البوادي, جدة, محافظة جدة, منطقة مكة المكرمة, 23443, السعودية",
+"address": {
+"shop": "مركز ريهام للتموينات الغذائية",
+"road": "الخطيب التبريزي",
+"neighbourhood": "البوادي",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23443",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966126827426",
+"payment:cash": "yes",
+"payment:debit_cards": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8866689075,
+"name": "مركز و مخابز غذاء للتسويق",
+"namedetails": {
+"name": "مركز و مخابز غذاء للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.5960184,
+"lon": 39.1673466,
+"display_name": "مركز و مخابز غذاء للتسويق, الخطيب التبريزي, البوادي, جدة, محافظة جدة, منطقة مكة المكرمة, 23443, السعودية",
+"address": {
+"shop": "مركز و مخابز غذاء للتسويق",
+"road": "الخطيب التبريزي",
+"neighbourhood": "البوادي",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23443",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"check_date": "2024-02-02",
+"payment:cash": "yes",
+"opening_hours": "24/7",
+"payment:debit_cards": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5237526722,
+"name": "مركز رزان للتسويق",
+"namedetails": {
+"name": "مركز رزان للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.5794689,
+"lon": 39.2395592,
+"display_name": "مركز رزان للتسويق, شارع الأمير محمد بن عبدالعزيز, السامر, جدة, محافظة جدة, منطقة مكة المكرمة, 23345, السعودية",
+"address": {
+"shop": "مركز رزان للتسويق",
+"road": "شارع الأمير محمد بن عبدالعزيز",
+"neighbourhood": "السامر",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23345",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13820887601,
+"name": "مركز صحي النعيم",
+"namedetails": {
+"name": "مركز صحي النعيم",
+"name:ar": "مركز صحي النعيم",
+"name:en": "Alnaeim Healthcare Center"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.617104,
+"lon": 39.1446257,
+"display_name": "مركز صحي النعيم, شارع النعيم, النعيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23622, السعودية",
+"address": {
+"amenity": "مركز صحي النعيم",
+"road": "شارع النعيم",
+"neighbourhood": "النعيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23622",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "0126111525;0515313972",
+"website": "https://www.moh.gov.sa/",
+"opening_hours": "Su-Th 09:00-00:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13460165441,
+"name": "مركز صيانة نجيب أوتوي",
+"namedetails": {
+"name": "Najeeb Auto Service Center",
+"brand": "Suzuki",
+"name:ar": "مركز صيانة نجيب أوتوي"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.5385819,
+"lon": 39.2211646,
+"display_name": "مركز صيانة نجيب أوتوي, طريق فلسطين, الرحاب, جدة, محافظة جدة, منطقة مكة المكرمة, 23341, السعودية",
+"address": {
+"shop": "مركز صيانة نجيب أوتوي",
+"road": "طريق فلسطين",
+"neighbourhood": "الرحاب",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23341",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 244 4441",
+"website": "https://suzukinajeebauto.com",
+"instagram": "https://www.instagram.com/najeebauto",
+"opening_hours": "Mo-Th,Sa-Su 10:00-16:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5239310139,
+"name": "مركز الجوهره للتسويق",
+"namedetails": {
+"name": "مركز الجوهره للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.6975,
+"lon": 39.1173567,
+"display_name": "مركز الجوهره للتسويق, اسماعيل بن كثير, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23719, السعودية",
+"address": {
+"shop": "مركز الجوهره للتسويق",
+"road": "اسماعيل بن كثير",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23719",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210325,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.5866784,
+"lon": 39.1640658,
+"display_name": "مركز خدمة شل, زينب بنت رسول الله, البوادي, جدة, محافظة جدة, منطقة مكة المكرمة, 23443, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "زينب بنت رسول الله",
+"neighbourhood": "البوادي",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23443",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11492422069,
+"name": "مركز لمسات",
+"namedetails": {
+"name": "مركز لمسات",
+"name:ar": "مركز لمسات",
+"name:en": "Lamast Center"
+},
+"category": "shop",
+"type": "clothes",
+"lat": 21.5916667,
+"lon": 39.1741282,
+"display_name": "مركز لمسات, King Fahd road, البوادي, جدة, محافظة جدة, منطقة مكة المكرمة, 23443, السعودية",
+"address": {
+"shop": "مركز لمسات",
+"road": "King Fahd road",
+"neighbourhood": "البوادي",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23443",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5237526723,
+"name": "مركز جوهرة الخط السريع للتسويق",
+"namedetails": {
+"name": "مركز جوهرة الخط السريع للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.6699767,
+"lon": 39.2047567,
+"display_name": "مركز جوهرة الخط السريع للتسويق, طريق الحرمين, مطار الملك عبد العزيز, جدة, محافظة جدة, منطقة مكة المكرمة, 23743, السعودية",
+"address": {
+"shop": "مركز جوهرة الخط السريع للتسويق",
+"road": "طريق الحرمين",
+"neighbourhood": "مطار الملك عبد العزيز",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23743",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4644381067,
+"name": "مركز فلسطين التجاري",
+"namedetails": {
+"name": "مركز فلسطين التجاري"
+},
+"category": "amenity",
+"type": "marketplace",
+"lat": 21.5220283,
+"lon": 39.1629696,
+"display_name": "مركز فلسطين التجاري, المغرب العربي, الحمراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23212, السعودية",
+"address": {
+"amenity": "مركز فلسطين التجاري",
+"road": "المغرب العربي",
+"neighbourhood": "الحمراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23212",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5125150222,
+"name": "مركز الجوازات الهندية",
+"namedetails": {
+"name": "مركز الجوازات الهندية",
+"name:ar": "مركز الجوازات الهندية",
+"name:fr": "Visas indiens"
+},
+"category": "office",
+"type": "diplomatic",
+"lat": 21.508399,
+"lon": 39.1774349,
+"display_name": "مركز الجوازات الهندية, شارع حائل, البغدادية الغربية, جدة, محافظة جدة, منطقة مكة المكرمة, 21313, السعودية",
+"address": {
+"office": "مركز الجوازات الهندية",
+"road": "شارع حائل",
+"neighbourhood": "البغدادية الغربية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21313",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"target": "SA",
+"country": "IN",
+"consulate": "consular_office",
+"diplomatic": "consulate"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13437456601,
+"name": "Quick Repair مركز الاصلاح العاجل لصيانة السيارات",
+"namedetails": {
+"name": "Quick Repair مركز الاصلاح العاجل لصيانة السيارات"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.5383683,
+"lon": 39.2448435,
+"display_name": "Quick Repair مركز الاصلاح العاجل لصيانة السيارات, موازي طريق الحرمين, النخيل, جدة, محافظة جدة, منطقة مكة المكرمة, 23242, السعودية",
+"address": {
+"shop": "Quick Repair مركز الاصلاح العاجل لصيانة السيارات",
+"road": "موازي طريق الحرمين",
+"neighbourhood": "النخيل",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23242",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "054 880 2040",
+"opening_hours": "Sa-Th 08:00-17:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210320,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.6779905,
+"lon": 39.1248762,
+"display_name": "مركز خدمة شل, اسماعيل بن كثير, البساتين, جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "اسماعيل بن كثير",
+"neighbourhood": "البساتين",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11993705508,
+"name": "مركز الأندلس للتسويق",
+"namedetails": {
+"name": "مركز الأندلس للتسويق",
+"name:ar": "مركز الأندلس للتسويق",
+"name:en": "Al Andalus Supermarket"
+},
+"category": "shop",
+"type": "convenience",
+"lat": 21.590747,
+"lon": 39.157075,
+"display_name": "مركز الأندلس للتسويق, شارع عبد الرحمن بن أحمد السديري, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23437, السعودية",
+"address": {
+"shop": "مركز الأندلس للتسويق",
+"road": "شارع عبد الرحمن بن أحمد السديري",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23437",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8116242650,
+"name": "مركز أجمل مساج",
+"namedetails": {
+"name": "مركز أجمل مساج"
+},
+"category": "shop",
+"type": "massage",
+"lat": 21.5647502,
+"lon": 39.1855386,
+"display_name": "مركز أجمل مساج, طريق الملك فهد, الفيصلية, جدة, محافظة جدة, منطقة مكة المكرمة, 23441, السعودية",
+"address": {
+"shop": "مركز أجمل مساج",
+"road": "طريق الملك فهد",
+"neighbourhood": "الفيصلية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23441",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "0501467813",
+"website": "https://ajmalmassage.wordpress.com/",
+"operator": "مركز أجمل للمساج والحمام المغربي",
+"payment:cash": "yes",
+"opening_hours": "Mo-Su 13:30-01:30",
+"payment:credit_cards": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5410423752,
+"name": "مركز اسعاف النسيم",
+"namedetails": {
+"name": "مركز اسعاف النسيم"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.5166617,
+"lon": 39.2344814,
+"display_name": "مركز اسعاف النسيم, شارع سليمان بن حبيب, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"amenity": "مركز اسعاف النسيم",
+"road": "شارع سليمان بن حبيب",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"emergency": "yes",
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5447879710,
+"name": "مركز طيبة للحوم",
+"namedetails": {
+"name": "مركز طيبة للحوم"
+},
+"category": "shop",
+"type": "butcher",
+"lat": 21.5195696,
+"lon": 39.2395269,
+"display_name": "مركز طيبة للحوم, شلرع احمد الشاوري, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"shop": "مركز طيبة للحوم",
+"road": "شلرع احمد الشاوري",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4316440698,
+"name": "مركز طابا التجاري",
+"namedetails": {
+"name": "مركز طابا التجاري"
+},
+"category": "shop",
+"type": "clothes",
+"lat": 21.5491458,
+"lon": 39.2042319,
+"display_name": "مركز طابا التجاري, طريق الأمير ماجد, العزيزية, جدة, محافظة جدة, منطقة مكة المكرمة, 23342, السعودية",
+"address": {
+"shop": "مركز طابا التجاري",
+"road": "طريق الأمير ماجد",
+"neighbourhood": "العزيزية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23342",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4248784931,
+"name": "مركز صحة السلامه",
+"namedetails": {
+"name": "مركز صحة السلامه"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.5914054,
+"lon": 39.1537103,
+"display_name": "مركز صحة السلامه, Ibn Abi Al Wafa, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23437, السعودية",
+"address": {
+"amenity": "مركز صحة السلامه",
+"road": "Ibn Abi Al Wafa",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23437",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4747793888,
+"name": "مركز خدمات إطارات بيريللي",
+"namedetails": {
+"name": "مركز خدمات إطارات بيريللي"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.4808192,
+"lon": 39.2131324,
+"display_name": "مركز خدمات إطارات بيريللي, قصر خزام, النزلة الشرقية, جدة, محافظة جدة, منطقة مكة المكرمة, 21472, السعودية",
+"address": {
+"shop": "مركز خدمات إطارات بيريللي",
+"road": "قصر خزام",
+"neighbourhood": "النزلة الشرقية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21472",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 1096434773,
+"name": "مركز الكورنيش التجاري",
+"namedetails": {
+"name": "مركز الكورنيش التجاري",
+"name:ar": "مركز الكورنيش التجاري",
+"name:en": "Corniche Center"
+},
+"category": "tourism",
+"type": "shopping center",
+"lat": 21.4861398,
+"lon": 39.1825357,
+"display_name": "مركز الكورنيش التجاري, طريق الملك عبدالعزيز, البلد, جدة, محافظة جدة, منطقة مكة المكرمة, 22233, السعودية",
+"address": {
+"tourism": "مركز الكورنيش التجاري",
+"road": "طريق الملك عبدالعزيز",
+"neighbourhood": "البلد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"description": "malls & shop"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4643125258,
+"name": "مركز بن لادن بلازا",
+"namedetails": {
+"name": "مركز بن لادن بلازا"
+},
+"category": "shop",
+"type": "mall",
+"lat": 21.4988483,
+"lon": 39.1939507,
+"display_name": "مركز بن لادن بلازا, المدارس, البغدادية الشرقية, جدة, محافظة جدة, منطقة مكة المكرمة, 16992, السعودية",
+"address": {
+"shop": "مركز بن لادن بلازا",
+"road": "المدارس",
+"neighbourhood": "البغدادية الشرقية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "16992",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13273605201,
+"name": "مركز غيل باوزير",
+"namedetails": {
+"name": "مركز غيل باوزير",
+"name:ar": "مركز غيل باوزير",
+"name:en": "Gheel BAWAZIR center"
+},
+"category": "shop",
+"type": "variety_store",
+"lat": 21.4822746,
+"lon": 39.1832313,
+"display_name": "مركز غيل باوزير, طريق الملك عبدالعزيز, البلد, جدة, محافظة جدة, منطقة مكة المكرمة, 22233, السعودية",
+"address": {
+"shop": "مركز غيل باوزير",
+"road": "طريق الملك عبدالعزيز",
+"neighbourhood": "البلد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4643172515,
+"name": "مركز الشعله",
+"namedetails": {
+"name": "مركز الشعله"
+},
+"category": "highway",
+"type": "bus_stop",
+"lat": 21.4861279,
+"lon": 39.1914938,
+"display_name": "مركز الشعله, شارع خالد بن الوليد, البلد, جدة, محافظة جدة, منطقة مكة المكرمة, 22236, السعودية",
+"address": {
+"highway": "مركز الشعله",
+"road": "شارع خالد بن الوليد",
+"neighbourhood": "البلد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22236",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"bus": "yes",
+"shop": "mall",
+"public_transport": "platform"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4644476769,
+"name": "البنك الأهلي التجاري - مركز تقنية المعلومات الرئيسي",
+"namedetails": {
+"name": "البنك الأهلي التجاري - مركز تقنية المعلومات الرئيسي"
+},
+"category": "amenity",
+"type": "bank",
+"lat": 21.4916083,
+"lon": 39.1791214,
+"display_name": "البنك الأهلي التجاري - مركز تقنية المعلومات الرئيسي, الواحة, البغدادية الغربية, جدة, محافظة جدة, منطقة مكة المكرمة, 22232, السعودية",
+"address": {
+"amenity": "البنك الأهلي التجاري - مركز تقنية المعلومات الرئيسي",
+"road": "الواحة",
+"neighbourhood": "البغدادية الغربية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22232",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14285049264,
+"name": "مركز الابتكار في الطب الشخصي",
+"namedetails": {
+"name": "مركز الابتكار في الطب الشخصي",
+"name:ar": "مركز الابتكار في الطب الشخصي",
+"name:en": "Personalized Medicine Innovation Center"
+},
+"category": "office",
+"type": "research",
+"lat": 21.4991426,
+"lon": 39.2319357,
+"display_name": "مركز الابتكار في الطب الشخصي, 534, شارع الملاعب, جامعة الملك عبدالعزيز, جدة, محافظة جدة, منطقة مكة المكرمة, 22253, السعودية",
+"address": {
+"office": "مركز الابتكار في الطب الشخصي",
+"house_number": "534",
+"road": "شارع الملاعب",
+"neighbourhood": "جامعة الملك عبدالعزيز",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://kau.edu.sa/ar/page/personalized-medicine-innovation-center",
+"operator": "جامعة الملك عبد العزيز"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14285049265,
+"name": "مركز التميز البحثي في علوم الجينوم الطبي",
+"namedetails": {
+"name": "مركز التميز البحثي في علوم الجينوم الطبي",
+"name:ar": "مركز التميز البحثي في علوم الجينوم الطبي",
+"name:en": "Center of Excellence in Genomic Medicine Research"
+},
+"category": "office",
+"type": "research",
+"lat": 21.4992481,
+"lon": 39.2319444,
+"display_name": "مركز التميز البحثي في علوم الجينوم الطبي, 534, شارع الملاعب, جامعة الملك عبدالعزيز, جدة, محافظة جدة, منطقة مكة المكرمة, 22253, السعودية",
+"address": {
+"office": "مركز التميز البحثي في علوم الجينوم الطبي",
+"house_number": "534",
+"road": "شارع الملاعب",
+"neighbourhood": "جامعة الملك عبدالعزيز",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"operator": "جامعة الملك عبد العزيز"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14184101183,
+"name": "مركز العناية بالعملاء عبدالواحد",
+"namedetails": {
+"name": "مركز العناية بالعملاء عبدالواحد"
+},
+"category": "office",
+"type": "company",
+"lat": 21.5080568,
+"lon": 39.1774193,
+"display_name": "مركز العناية بالعملاء عبدالواحد, شارع حائل, البغدادية الغربية, جدة, محافظة جدة, منطقة مكة المكرمة, 21313, السعودية",
+"address": {
+"office": "مركز العناية بالعملاء عبدالواحد",
+"road": "شارع حائل",
+"neighbourhood": "البغدادية الغربية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21313",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://abdulwahed.com"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11151493705,
+"name": "مركز المطابخ الأوربية",
+"namedetails": {
+"name": "مركز المطابخ الأوربية"
+},
+"category": "shop",
+"type": "kitchen",
+"lat": 21.5950398,
+"lon": 39.1513123,
+"display_name": "مركز المطابخ الأوربية, شارع قريش, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23524, السعودية",
+"address": {
+"shop": "مركز المطابخ الأوربية",
+"road": "شارع قريش",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23524",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 12127927735,
+"name": "مركز الأندلس للحوم",
+"namedetails": {
+"name": "مركز الأندلس للحوم"
+},
+"category": "shop",
+"type": "butcher",
+"lat": 21.5919208,
+"lon": 39.1408029,
+"display_name": "مركز الأندلس للحوم, شارع حلمى كتبى, الزهراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23521, السعودية",
+"address": {
+"shop": "مركز الأندلس للحوم",
+"road": "شارع حلمى كتبى",
+"neighbourhood": "الزهراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23521",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 9886172294,
+"name": "مركز جيل بلازا الطبي",
+"namedetails": {
+"name": "مركز جيل بلازا الطبي",
+"name:ar": "مركز جيل بلازا الطبي",
+"name:en": "JEEL PLAZA"
+},
+"category": "amenity",
+"type": "clinic",
+"lat": 21.6069308,
+"lon": 39.1228249,
+"display_name": "مركز جيل بلازا الطبي, شارع حراء, النهضة, جدة, محافظة جدة, منطقة مكة المكرمة, 21543, السعودية",
+"address": {
+"amenity": "مركز جيل بلازا الطبي",
+"road": "شارع حراء",
+"neighbourhood": "النهضة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21543",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966500560044",
+"healthcare": "clinic",
+"opening_hours": "24/7",
+"healthcare:speciality": "general"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 12060779186,
+"name": "شركة محمد يوسف ناغي للصيارات - مركز صيانة",
+"namedetails": {
+"name": "شركة محمد يوسف ناغي للصيارات - مركز صيانة"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.7563887,
+"lon": 39.19765,
+"display_name": "شركة محمد يوسف ناغي للصيارات - مركز صيانة, شارع الحمدانية, الحمدانية, محافظة جدة, منطقة مكة المكرمة, 23761, السعودية",
+"address": {
+"shop": "شركة محمد يوسف ناغي للصيارات - مركز صيانة",
+"road": "شارع الحمدانية",
+"neighbourhood": "الحمدانية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23761",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 160122569,
+"name": "مركز الرحيلي ط. الحرمين",
+"namedetails": {
+"name": "مركز الرحيلي ط. الحرمين"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.7899983,
+"lon": 39.1294554,
+"display_name": "مركز الرحيلي ط. الحرمين, 5, طيبة, محافظة جدة, منطقة مكة المكرمة, 23734, السعودية",
+"address": {
+"shop": "مركز الرحيلي ط. الحرمين",
+"road": "5",
+"neighbourhood": "طيبة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23734",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210329,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.765075,
+"lon": 39.1120614,
+"display_name": "مركز خدمة شل, عابر القارات, أبحر الشمالية, محافظة جدة, منطقة مكة المكرمة, 23734, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "عابر القارات",
+"neighbourhood": "أبحر الشمالية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23734",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 10:00-16:00,21:00-03:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4807513322,
+"name": "مركز الصواري لخدمة السيارات",
+"namedetails": {
+"name": "مركز الصواري لخدمة السيارات"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.7950032,
+"lon": 39.0888339,
+"display_name": "مركز الصواري لخدمة السيارات, شارع عابر القارات, الصواري, محافظة جدة, منطقة مكة المكرمة, 23734, السعودية",
+"address": {
+"shop": "مركز الصواري لخدمة السيارات",
+"road": "شارع عابر القارات",
+"neighbourhood": "الصواري",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23734",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "Mo-Su 06:00-00:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5263208421,
+"name": "مركز الجوهرة للتسوق",
+"namedetails": {
+"name": "مركز الجوهرة للتسوق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.7700681,
+"lon": 39.1619037,
+"display_name": "مركز الجوهرة للتسوق, Prince Khalid Bin Abdullah Road, محافظة جدة, منطقة مكة المكرمة, 23762, السعودية",
+"address": {
+"shop": "مركز الجوهرة للتسوق",
+"road": "Prince Khalid Bin Abdullah Road",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23762",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14224754186,
+"name": "مركز النهظة لصيانة السيارات الاوربية",
+"namedetails": {
+"name": "مركز النهظة لصيانة السيارات الاوربية"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.9171248,
+"lon": 39.3080027,
+"display_name": "مركز النهظة لصيانة السيارات الاوربية, طريق جامعة جدة, الصفحة, عسفان, محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"shop": "مركز النهظة لصيانة السيارات الاوربية",
+"road": "طريق جامعة جدة",
+"hamlet": "الصفحة",
+"village": "عسفان",
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"description": "سمكرة-ميكانيكي-كهربائي-فحص كمبيوتر-برمجة كمبيوتر"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5229892021,
+"name": "مركز السعاده",
+"namedetails": {
+"name": "مركز السعاده"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.8977283,
+"lon": 39.3512233,
+"display_name": "مركز السعاده, طريق المدينة المنورة, عسفان, محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"shop": "مركز السعاده",
+"road": "طريق المدينة المنورة",
+"village": "عسفان",
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210327,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.7750184,
+"lon": 39.2112055,
+"display_name": "مركز خدمة شل, M-UN, الصالحية, محافظة جدة, منطقة مكة المكرمة, 21414, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "M-UN",
+"neighbourhood": "الصالحية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21414",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 10:00-16:00,21:00-03:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11005615437,
+"name": "مركز طبيب بلس الطبي",
+"namedetails": {
+"name": "مركز طبيب بلس الطبي"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.7894377,
+"lon": 39.2015117,
+"display_name": "مركز طبيب بلس الطبي, ممشى الطيبة, الرحمانية, محافظة جدة, منطقة مكة المكرمة, 21414, السعودية",
+"address": {
+"amenity": "مركز طبيب بلس الطبي",
+"road": "ممشى الطيبة",
+"neighbourhood": "الرحمانية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21414",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"operator": "رعايه عاجله",
+"healthcare": "hospital",
+"operator:type": "private_for_profit"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1144482912,
+"name": "مركز الخير التجاري",
+"namedetails": {
+"name": "مركز الخير التجاري"
+},
+"category": "amenity",
+"type": "marketplace",
+"lat": 21.5527952,
+"lon": 39.1860659,
+"display_name": "مركز الخير التجاري, شارع البلدية, العزيزية, جدة, محافظة جدة, منطقة مكة المكرمة, 23334, السعودية",
+"address": {
+"amenity": "مركز الخير التجاري",
+"road": "شارع البلدية",
+"neighbourhood": "العزيزية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23334",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11993705530,
+"name": "مركز السلامة",
+"namedetails": {
+"name": "مركز السلامة"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.5922429,
+"lon": 39.1565474,
+"display_name": "مركز السلامة, شارع عبد الرحمن بن أحمد السديري, السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, 23437, السعودية",
+"address": {
+"shop": "مركز السلامة",
+"road": "شارع عبد الرحمن بن أحمد السديري",
+"neighbourhood": "السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23437",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"service:vehicle:oil": "yes",
+"service:vehicle:wheels": "yes",
+"service:vehicle:batteries": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11644791776,
+"name": "مركز زمزم",
+"namedetails": {
+"name": "مركز زمزم",
+"name:ar": "مركز زمزم",
+"name:en": "Zamzam Center"
+},
+"category": "shop",
+"type": "convenience",
+"lat": 21.591958,
+"lon": 39.1347697,
+"display_name": "مركز زمزم, شارع سليك بن عمرو, الزهراء, جدة, محافظة جدة, منطقة مكة المكرمة, 23521, السعودية",
+"address": {
+"shop": "مركز زمزم",
+"road": "شارع سليك بن عمرو",
+"neighbourhood": "الزهراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23521",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13361113101,
+"name": "ناجز مركز الخدمات العدلية",
+"namedetails": {
+"name": "ناجز مركز الخدمات العدلية",
+"name:ar": "ناجز مركز الخدمات العدلية",
+"name:en": "Najiz"
+},
+"category": "office",
+"type": "government",
+"lat": 21.5739934,
+"lon": 39.1429509,
+"display_name": "ناجز مركز الخدمات العدلية, طريق الأمير سلطان, الخالدية, جدة, محافظة جدة, منطقة مكة المكرمة, 23423, السعودية",
+"address": {
+"office": "ناجز مركز الخدمات العدلية",
+"road": "طريق الأمير سلطان",
+"neighbourhood": "الخالدية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23423",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://merath.moj.gov.sa/",
+"opening_hours": "Su-Th 09:00-21:00; Fr-Sa 00:00-24:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1159257407,
+"name": "مركز الراقون الطبي",
+"namedetails": {
+"name": "مركز الراقون الطبي",
+"name:ar": "مركز الراقون الطبي",
+"name:en": "Al Raqoun Medical Center"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.5179404,
+"lon": 39.2047092,
+"display_name": "مركز الراقون الطبي, شارع عبدالله سليمان, الورود, جدة, محافظة جدة, منطقة مكة المكرمة, 22245, السعودية",
+"address": {
+"amenity": "مركز الراقون الطبي",
+"road": "شارع عبدالله سليمان",
+"neighbourhood": "الورود",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22245",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 11005547786,
+"name": "مركز الوفاء لخدمة السيارات",
+"namedetails": {
+"name": "مركز الوفاء لخدمة السيارات",
+"name:ar": "مركز الوفاء لخدمة السيارات"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.5998163,
+"lon": 39.2255867,
+"display_name": "مركز الوفاء لخدمة السيارات, Muawya al sulami st. شارع معاوية السلمي, المنار, جدة, محافظة جدة, منطقة مكة المكرمة, 23465, السعودية",
+"address": {
+"shop": "مركز الوفاء لخدمة السيارات",
+"road": "Muawya al sulami st. شارع معاوية السلمي",
+"neighbourhood": "المنار",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23465",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5387102011,
+"name": "مركز النسيم لصيانة السيارات",
+"namedetails": {
+"name": "مركز النسيم لصيانة السيارات",
+"name:ar": "مركز النسيم لصيانة السيارات",
+"name:en": "Naseem Centre for Car Services"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.5169747,
+"lon": 39.2314741,
+"display_name": "مركز النسيم لصيانة السيارات, أم المومنين أم حبيبة, النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23233, السعودية",
+"address": {
+"shop": "مركز النسيم لصيانة السيارات",
+"road": "أم المومنين أم حبيبة",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"payment:cash": "yes",
+"opening_hours": "Mo-Su 07:00-23:00",
+"payment:debit_cards": "yes"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5247077123,
+"name": "مركز الرحاب للتسويق",
+"namedetails": {
+"name": "مركز الرحاب للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.5571171,
+"lon": 39.2240273,
+"display_name": "مركز الرحاب للتسويق, شارع المؤلفين, الرحاب, جدة, محافظة جدة, منطقة مكة المكرمة, 23345, السعودية",
+"address": {
+"shop": "مركز الرحاب للتسويق",
+"road": "شارع المؤلفين",
+"neighbourhood": "الرحاب",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23345",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5486805246,
+"name": "مركز الفارس للحوم الطازجة",
+"namedetails": {
+"name": "مركز الفارس للحوم الطازجة"
+},
+"category": "shop",
+"type": "butcher",
+"lat": 21.5164853,
+"lon": 39.2394891,
+"display_name": "مركز الفارس للحوم الطازجة, Ali Al-Murtada St., النسيم, جدة, محافظة جدة, منطقة مكة المكرمة, 23234, السعودية",
+"address": {
+"shop": "مركز الفارس للحوم الطازجة",
+"road": "Ali Al-Murtada St.",
+"neighbourhood": "النسيم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "relation",
+"osm_id": 20609820,
+"name": "مركز طب وجراحة الأعصاب والإصابات",
+"namedetails": {
+"name": "مركز طب وجراحة الأعصاب والإصابات",
+"name:ar": "مركز طب وجراحة الأعصاب والإصابات",
+"name:en": "Neuroscience & Trauma Care Center"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.4283051,
+"lon": 39.3629027,
+"display_name": "مركز طب وجراحة الأعصاب والإصابات, طريق مكة القديم, العليا, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"amenity": "مركز طب وجراحة الأعصاب والإصابات",
+"road": "طريق مكة القديم",
+"neighbourhood": "العليا",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "hospital",
+"operator": "الشؤون الصحية بوزارة الحرس الوطني",
+"healthcare": "hospital",
+"operator:en": "Ministry of National Guard Health Affairs",
+"healthcare:speciality": "neurology;neurosurgery;trauma"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1507435798,
+"name": "مركز الملك فيصل لأمراض وجراحة القلب",
+"namedetails": {
+"name": "مركز الملك فيصل لأمراض وجراحة القلب",
+"name:ar": "مركز الملك فيصل لأمراض وجراحة القلب",
+"name:en": "King Faisal Cardiac Center"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.4261821,
+"lon": 39.3637457,
+"display_name": "مركز الملك فيصل لأمراض وجراحة القلب, طريق مكة القديم, العليا, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"amenity": "مركز الملك فيصل لأمراض وجراحة القلب",
+"road": "طريق مكة القديم",
+"neighbourhood": "العليا",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "hospital",
+"operator": "الشؤون الصحية بوزارة الحرس الوطني",
+"healthcare": "hospital",
+"operator:en": "Ministry of National Guard Health Affairs",
+"healthcare:speciality": "cardiology;cardiac_surgery"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1507435776,
+"name": "مركز العيادات الخارجية",
+"namedetails": {
+"name": "مركز العيادات الخارجية",
+"name:ar": "مركز العيادات الخارجية",
+"name:en": "Ambulatory Care Center"
+},
+"category": "amenity",
+"type": "clinic",
+"lat": 21.4251182,
+"lon": 39.3603352,
+"display_name": "مركز العيادات الخارجية, طريق مكة القديم, العليا, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"amenity": "مركز العيادات الخارجية",
+"road": "طريق مكة القديم",
+"neighbourhood": "العليا",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "clinic",
+"operator": "الشؤون الصحية بوزارة الحرس الوطني",
+"healthcare": "clinic",
+"operator:en": "Ministry of National Guard Health Affairs"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1507435774,
+"name": "مركز الأورام",
+"namedetails": {
+"name": "مركز الأورام",
+"name:ar": "مركز الأورام",
+"name:en": "Oncology Center"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 21.4248543,
+"lon": 39.3618617,
+"display_name": "مركز الأورام, طريق مكة القديم, العليا, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"amenity": "مركز الأورام",
+"road": "طريق مكة القديم",
+"neighbourhood": "العليا",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "hospital",
+"operator": "الشؤون الصحية بوزارة الحرس الوطني",
+"healthcare": "hospital",
+"operator:en": "Ministry of National Guard Health Affairs",
+"healthcare:speciality": "oncology"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13460165440,
+"name": "مركز صيانة نجيب أوتوي",
+"namedetails": {
+"name": "Najeeb Auto Service Center",
+"brand": "Suzuki",
+"name:ar": "مركز صيانة نجيب أوتوي"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.478185,
+"lon": 39.3028432,
+"display_name": "مركز صيانة نجيب أوتوي, 55M, المنتزهات, جدة, محافظة جدة, منطقة مكة المكرمة, 22345, السعودية",
+"address": {
+"shop": "مركز صيانة نجيب أوتوي",
+"road": "55M",
+"neighbourhood": "المنتزهات",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22345",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 244 4441",
+"website": "https://suzukinajeebauto.com",
+"instagram": "https://www.instagram.com/najeebauto",
+"opening_hours": "Mo-Th,Sa-Su 10:00-16:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 13437456501,
+"name": "Mazda - Service Center مازدا – مركز صيانة",
+"namedetails": {
+"name": "Mazda - Service Center مازدا – مركز صيانة"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.4513497,
+"lon": 39.2846132,
+"display_name": "Mazda - Service Center مازدا – مركز صيانة, 3142, طريق مكة القديم, المنتزهات, جدة, محافظة جدة, منطقة مكة المكرمة, 22353, السعودية",
+"address": {
+"shop": "Mazda - Service Center مازدا – مركز صيانة",
+"house_number": "3142",
+"road": "طريق مكة القديم",
+"neighbourhood": "المنتزهات",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22353",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "800 244 0140",
+"website": "http://mazda.com.sa",
+"opening_hours": "Sa-Th 07:30-17:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5241136021,
+"name": "مركز النهدي للتسوق",
+"namedetails": {
+"name": "مركز النهدي للتسوق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.4389867,
+"lon": 39.2745717,
+"display_name": "مركز النهدي للتسوق, طريق جدة - مكة السريع, الامير فواز الجنوبى, جدة, محافظة جدة, منطقة مكة المكرمة, 22361, السعودية",
+"address": {
+"shop": "مركز النهدي للتسوق",
+"road": "طريق جدة - مكة السريع",
+"neighbourhood": "الامير فواز الجنوبى",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22361",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 12927633611,
+"name": "مركز براعم العلوم الصغار لضيافة الاطفال",
+"namedetails": {
+"name": "مركز براعم العلوم الصغار لضيافة الاطفال"
+},
+"category": "amenity",
+"type": "childcare",
+"lat": 21.4259524,
+"lon": 39.3020654,
+"display_name": "مركز براعم العلوم الصغار لضيافة الاطفال, 3175, طريق جدة - مكة السريع, الامير فواز الجنوبى, جدة, محافظة جدة, منطقة مكة المكرمة, 22441, السعودية",
+"address": {
+"amenity": "مركز براعم العلوم الصغار لضيافة الاطفال",
+"house_number": "3175",
+"road": "طريق جدة - مكة السريع",
+"neighbourhood": "الامير فواز الجنوبى",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22441",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"mobile": "+966556200101",
+"opening_hours": "08:00-22:00"
+},
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14270344402,
+"name": "مركز صدى المراكب لصيانة السيارات",
+"namedetails": {
+"name": "مركز صدى المراكب لصيانة السيارات"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 21.4494084,
+"lon": 39.3136109,
+"display_name": "مركز صدى المراكب لصيانة السيارات, طريق مكة القديم, أم السلم, جدة, محافظة جدة, منطقة مكة المكرمة, 22441, السعودية",
+"address": {
+"shop": "مركز صدى المراكب لصيانة السيارات",
+"road": "طريق مكة القديم",
+"neighbourhood": "أم السلم",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22441",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5235977521,
+"name": "مركز الرحيلي ط.مكه",
+"namedetails": {
+"name": "مركز الرحيلي ط.مكه"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 21.422965,
+"lon": 39.312755,
+"display_name": "مركز الرحيلي ط.مكه, طريق جدة - مكة السريع, الأجاويد, جدة, محافظة جدة, منطقة مكة المكرمة, 22441, السعودية",
+"address": {
+"shop": "مركز الرحيلي ط.مكه",
+"road": "طريق جدة - مكة السريع",
+"neighbourhood": "الأجاويد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22441",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "jeddah"
+},
+{
+"osm_type": "relation",
+"osm_id": 14279323,
+"name": "جدة سوبر دوم",
+"namedetails": {
+"name": "جدة سوبر دوم",
+"name:ar": "جدة سوبر دوم",
+"name:de": "Jeddah Super Dome"
+},
+"category": "building",
+"type": "yes",
+"lat": 21.7492364,
+"lon": 39.1517291,
+"display_name": "جدة سوبر دوم, طريق المدينة المنورة, مطار الملك عبد العزيز, محافظة جدة, منطقة مكة المكرمة, 23732, السعودية",
+"address": {
+"building": "جدة سوبر دوم",
+"road": "طريق المدينة المنورة",
+"neighbourhood": "مطار الملك عبد العزيز",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23732",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"shape": "circular",
+"height": "46",
+"wikidata": "Q107170389",
+"wikipedia": "en:Jeddah Super Dome"
+},
+"kw": "دوم",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 14185598420,
+"name": "دوم لتأجير السيارات",
+"namedetails": {
+"name": "دوم لتأجير السيارات",
+"name:ar": "دوم لتأجير السيارات",
+"name:en": "Doom Car Rent"
+},
+"category": "amenity",
+"type": "car_rental",
+"lat": 21.5618122,
+"lon": 39.1721605,
+"display_name": "دوم لتأجير السيارات, طريق المدينة, الفيصلية, جدة, محافظة جدة, منطقة مكة المكرمة, 21553, السعودية",
+"address": {
+"amenity": "دوم لتأجير السيارات",
+"road": "طريق المدينة",
+"neighbourhood": "الفيصلية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21553",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "دوم",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 404674650,
+"name": "Stadium",
+"namedetails": {
+"name": "Stadium"
+},
+"category": "landuse",
+"type": "allotments",
+"lat": 21.7059965,
+"lon": 39.1139749,
+"display_name": "Stadium, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"allotments": "Stadium",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 134069531,
+"name": "الاستاد الرياضي",
+"namedetails": {
+"name": "الاستاد الرياضي",
+"name:ar": "الاستاد الرياضي",
+"name:en": "Stadium"
+},
+"category": "highway",
+"type": "secondary",
+"lat": 21.4343296,
+"lon": 39.23841,
+"display_name": "الاستاد الرياضي, الوزيرية, جدة, محافظة جدة, منطقة مكة المكرمة, 21465, السعودية",
+"address": {
+"road": "الاستاد الرياضي",
+"neighbourhood": "الوزيرية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21465",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"oneway": "yes"
+},
+"kw": "stadium",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 43190121,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "stadium",
+"lat": 21.5433968,
+"lon": 39.2131107,
+"display_name": "شارع التضامن العربي, مشرفة, جدة, محافظة جدة, منطقة مكة المكرمة, 23341, السعودية",
+"address": {
+"road": "شارع التضامن العربي",
+"neighbourhood": "مشرفة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23341",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5320521641,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "stadium",
+"lat": 21.4058446,
+"lon": 39.1971634,
+"display_name": "طريق الملك فيصل, قاعدة الملك فيصل البحرية, محافظة جدة, منطقة مكة المكرمة, 21465, السعودية",
+"address": {
+"road": "طريق الملك فيصل",
+"neighbourhood": "قاعدة الملك فيصل البحرية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21465",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 292395768,
+"name": "مدينة الملك عبدالله الرياضية",
+"namedetails": {
+"name": "مدينة الملك عبدالله الرياضية",
+"name:ar": "مدينة الملك عبدالله الرياضية",
+"name:en": "King Abdullah Sports City Stadium"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 21.7632965,
+"lon": 39.1642714,
+"display_name": "مدينة الملك عبدالله الرياضية, Prince Khalid Bin Abdullah Road, محافظة جدة, منطقة مكة المكرمة, 23733, السعودية",
+"address": {
+"leisure": "مدينة الملك عبدالله الرياضية",
+"road": "Prince Khalid Bin Abdullah Road",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23733",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1575113021,
+"name": "ملعب وسط جدة",
+"namedetails": {
+"name": "ملعب وسط جدة",
+"name:ar": "ملعب وسط جدة",
+"name:en": "Jeddah Central Stadium"
+},
+"category": "building",
+"type": "stadium",
+"lat": 21.5349139,
+"lon": 39.1291649,
+"display_name": "ملعب وسط جدة, طريق الأندلس, الأندلس, جدة, محافظة جدة, منطقة مكة المكرمة, 23322, السعودية",
+"address": {
+"building": "ملعب وسط جدة",
+"road": "طريق الأندلس",
+"neighbourhood": "الأندلس",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23322",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"landuse": "construction",
+"building": "stadium",
+"capacity": "45000",
+"construction": "stadium"
+},
+"kw": "stadium",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 504162355,
+"name": "مدينة الملك عبدالله الرياضية",
+"namedetails": {
+"name": "مدينة الملك عبدالله الرياضية",
+"name:ar": "مدينة الملك عبدالله الرياضية",
+"name:en": "King Abdullah Sports City"
+},
+"category": "leisure",
+"type": "sports_centre",
+"lat": 21.7632215,
+"lon": 39.1643374,
+"display_name": "مدينة الملك عبدالله الرياضية, Prince Khalid Bin Abdullah Road, محافظة جدة, منطقة مكة المكرمة, 23733, السعودية",
+"address": {
+"leisure": "مدينة الملك عبدالله الرياضية",
+"road": "Prince Khalid Bin Abdullah Road",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23733",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "http://www.kasc.com/",
+"wikidata": "Q6411211",
+"wikipedia": "en:King Abdullah Sports City"
+},
+"kw": "sports city",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 628514686,
+"name": "Middle Corniche Park",
+"namedetails": {
+"name": "Middle Corniche Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5236435,
+"lon": 39.1506357,
+"display_name": "Middle Corniche Park, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Middle Corniche Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 627260103,
+"name": "Attahlia Park",
+"namedetails": {
+"name": "Attahlia Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5485339,
+"lon": 39.1260851,
+"display_name": "Attahlia Park, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Attahlia Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1265765000,
+"name": "Lake Al-Arbaeen Park",
+"namedetails": {
+"name": "Lake Al-Arbaeen Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.4906094,
+"lon": 39.1850735,
+"display_name": "Lake Al-Arbaeen Park, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Lake Al-Arbaeen Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 431836042,
+"name": "Abdul Rahman Al Mufti Park",
+"namedetails": {
+"name": "Abdul Rahman Al Mufti Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5675923,
+"lon": 39.1539285,
+"display_name": "Abdul Rahman Al Mufti Park, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Abdul Rahman Al Mufti Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1265798970,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.522692,
+"lon": 39.1422701,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1494606458,
+"name": "حديقة الفهد",
+"namedetails": {
+"name": "حديقة الفهد",
+"name:ar": "حديقة الفهد",
+"name:en": "Al Fahd Garden"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5362301,
+"lon": 39.2089715,
+"display_name": "حديقة الفهد, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة الفهد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1442584784,
+"name": "حديقة مسجد المروة",
+"namedetails": {
+"name": "حديقة مسجد المروة"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.6123885,
+"lon": 39.1902737,
+"display_name": "حديقة مسجد المروة, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة مسجد المروة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 701459165,
+"name": "حديقة الريحان",
+"namedetails": {
+"name": "حديقة الريحان"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5959013,
+"lon": 39.1362863,
+"display_name": "حديقة الريحان, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة الريحان",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"check_date": "2026-09-16"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 406318731,
+"name": "213",
+"namedetails": {
+"name": "213"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.4738186,
+"lon": 39.2646454,
+"display_name": "213, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "213",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 753091056,
+"name": "حديقة المنتزهات جده",
+"namedetails": {
+"name": "حديقة المنتزهات جده"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.465378,
+"lon": 39.2761578,
+"display_name": "حديقة المنتزهات جده, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة المنتزهات جده",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 7083728717,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.4539289,
+"lon": 39.2822078,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, 22353, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22353",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+}
+]

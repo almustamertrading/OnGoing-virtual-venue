@@ -1,0 +1,1063 @@
+{
+  "head" : {
+    "vars" : [ "item", "ar", "en", "coord", "cityEn", "cityAr", "capacity", "website" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3273652"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Faisal bin Fahd Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير فيصل بن فهد الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.739745 24.662599)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "22250"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5514361"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "GPYW Indoor Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب الرئاسة العامة لرعاية الشباب الداخلي"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.726111 24.660278)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "5000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "عنيزة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Unaizah"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4703016"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Najma Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي النجمة"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.048056 26.095278)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "3000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الدمام"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dammam"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2650633"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Mohamed bin Fahd Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب الأمير محمد بن فهد"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(50.1141 26.4272)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "35000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "نجران"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Najran"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4703465"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Hathloul Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي الأخدود"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.244722 17.590278)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "12000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الطائف"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ta'if"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6411564"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "King Fahd Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الملك فهد الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(40.480371 21.435972)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "17000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة نجران"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Najran Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q122226943"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Hathloul bin Abdul Aziz Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير هذلول بن عبد العزيز الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.477534 17.657177)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "12000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة نجران"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Najran Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q122226943"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Hathloul bin Abdul Aziz Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير هذلول بن عبد العزيز الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.476613888 17.657444444)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "12000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "أبها"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Abha"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4116876"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Sultan bin Abdulaziz Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير سلطان بن عبد العزيز الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(42.598333 18.310556)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "20000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "واحة الأحساء"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Ahsa Oasis"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4116944"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Abdullah bin Jalawi Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير عبد الله بن جلوي الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(49.612778 25.305833)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "27550"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "بريدة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Burayda"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4119060"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "King Abdullah Sport City Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب مدينة الملك عبد الله الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(43.9478 26.3789)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "25000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "واحة الأحساء"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Ahsa Oasis"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4116944"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Abdullah bin Jalawi Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير عبد الله بن جلوي الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(49.612777777 25.305833333)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "27550"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الخبر"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Khobar"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4116127"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Saud bin Jalawi Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير سعود بن جلوي الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(50.2052 26.3699)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "15000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "المدينة المنورة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Medina"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4120210"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Mohammed bin Abdul Aziz Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير محمد بن عبد العزيز الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(42.490069 18.223043)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "25000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "المجمعة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al Majma'ah"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q7244241"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Salman Bin Abdulaziz Sport City Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة المجمعة الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(45.368021 25.886929)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "7000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "محافظة القطيف"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Qatif governorate"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q123631778"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Nayef bin Abdulaziz Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير نايف بن عبد العزيز الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(49.979722222 26.506388888)"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "حائل"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ha'il"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4120100"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Abdulaziz bin Musa'ed Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير عبد العزيز بن مساعد الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(41.697589 27.50398)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "12250"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "جدة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jeddah"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3245092"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Abdullah Al Faisal Sports City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الأمير عبد الله الفيصل الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(39.251693 21.446608)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "27000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "جدة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jeddah"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q3292058"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Sultan bin Fahd Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب الأمير محمد بن عبد الله الفيصل"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(39.1737 21.5672)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "21000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "المنطقة الشرقية"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Eastern Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q126391645"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Ettifaq Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي الاتفاق"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(50.181142777 26.350571111)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "15000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "محافظة الباحة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al Bahah governorate"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q99228374"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "King Saud Sport City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة الملك سعود الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(41.5243977 20.0809491)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "10000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "مدينة بريدة"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Buraidah Governorate"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q109095081"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al Taawon Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي التعاون"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.0968817 26.4200235)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "6000"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q26884122"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Batin Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي الباطن"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.075233333 28.449402777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q87106592"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Qaisumah Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي القيصومة"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.142842 28.309642)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q138299146"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Okadh Sport Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "نادي عكاظ الرياضي"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(40.461677 21.34543)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "1500"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q83949052"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Department of Education Stadium (Hafar Al-Batin)"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب إدارة التعليم (حفر الباطن)"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.057206 28.440247)"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q109298370"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Prince Mohammed bin Salman Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب الأمير محمد بن سلمان"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.528 24.59)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "46979"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q110647460"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Zulfi Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي الزلفي"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.8359433 26.3066327)"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q80168938"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al Shabab Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "استاد نادي الشباب"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.6287872 24.8031056)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "10000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة القصيم"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Qassim"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q5260270"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Department of Education Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب إدارة التعليم"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(44.051667 26.088333)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "15"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q127690284"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Murabba Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب المربَّع"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.547 24.811)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "46010"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الرس"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ar Rass"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4704017"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Hazem Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي الحزم"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(43.502222 25.860278)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "3000"
+      }
+    } ]
+  }
+}

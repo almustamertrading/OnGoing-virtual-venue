@@ -1,0 +1,23 @@
+{
+  "head" : {
+    "vars" : [ "item", "ar", "en", "coord", "cityEn", "cityAr", "capacity", "website" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q81278342"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الصالة الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.65025 24.6455)"
+      }
+    } ]
+  }
+}

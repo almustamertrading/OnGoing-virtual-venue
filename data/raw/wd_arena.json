@@ -1,0 +1,57 @@
+{
+  "head" : {
+    "vars" : [ "item", "ar", "en", "coord", "cityEn", "cityAr", "capacity", "website" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q81278342"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الصالة الرياضية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.65025 24.6455)"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q123412407"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Kingdom Arena"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب المملكة أرينا"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.605305555 24.778166666)"
+      },
+      "website" : {
+        "type" : "uri",
+        "value" : "https://riyadhseason.com/ar-SA/zone/kingdom-arena"
+      }
+    } ]
+  }
+}

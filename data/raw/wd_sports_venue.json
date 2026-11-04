@@ -1,0 +1,138 @@
+{
+  "head" : {
+    "vars" : [ "item", "ar", "en", "coord", "cityEn", "cityAr", "capacity", "website" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q124387936"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "The Green Halls"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.650104142 24.644227824)"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الجوف"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Jowf Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q16826738"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Oruba Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي العروبة"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(40.1043057 29.8780031)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "7000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "محافظة الخرج"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Kharj"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4116850"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Shoalah Club Stadium"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ملعب نادي الشعلة"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(47.205 24.0957)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "8000"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "محافظة الدمام"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dammam governorate"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q112692519"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "The Green Hall, Dammam"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الصالة الخضراء بالدمام"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(50.183412 26.361108)"
+      },
+      "capacity" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "5189"
+      }
+    } ]
+  }
+}

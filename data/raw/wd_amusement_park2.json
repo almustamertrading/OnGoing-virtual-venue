@@ -1,0 +1,179 @@
+{
+  "head" : {
+    "vars" : [ "item", "ar", "en", "coord", "cityEn", "cityAr", "capacity", "website" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q131531215"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Six Flags Qiddiya City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ستة أعلام مدينة القدية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.337734904 24.587990838)"
+      },
+      "website" : {
+        "type" : "uri",
+        "value" : "https://sixflagsqiddiyacity.com/ar"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q131531215"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Six Flags Qiddiya City"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "ستة أعلام مدينة القدية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.337734904 24.587990838)"
+      },
+      "website" : {
+        "type" : "uri",
+        "value" : "https://sixflagsqiddiyacity.com/en"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q4703222"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al-Shallal Theme Park"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "حديقة الشلال الترفيهية"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(39.1114354 21.5676572)"
+      },
+      "website" : {
+        "type" : "uri",
+        "value" : "http://www.alshallal.com.sa/"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q107174775"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Al Hokair Land"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "الحكير لاند"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.73725 24.765166666)"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q54872003"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Qiddiya"
+      },
+      "ar" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "القِدِّيَّة"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.28327 24.570208)"
+      },
+      "website" : {
+        "type" : "uri",
+        "value" : "https://www.qiddiya.com"
+      }
+    }, {
+      "cityAr" : {
+        "xml:lang" : "ar",
+        "type" : "literal",
+        "value" : "منطقة الرياض"
+      },
+      "cityEn" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Riyadh Province"
+      },
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q136842116"
+      },
+      "en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Beast Land"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(46.6093588 24.7783152)"
+      }
+    } ]
+  }
+}
