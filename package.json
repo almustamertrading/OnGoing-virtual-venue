@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "1.4.0",
     "@photo-sphere-viewer/core": "5.15.1",
     "@supabase/ssr": "0.12.7",
     "@supabase/supabase-js": "2.118.0",

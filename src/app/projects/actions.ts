@@ -4,8 +4,10 @@ import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { MemberRole, ProjectStatus, ProjectType } from "@/lib/types";
+import { extractRfpFromPdf, RfpConfigError, type ExtractedRfp } from "@/lib/rfp";
 
 export type ActionState = { error?: string; ok?: boolean };
+export type RfpState = { data?: ExtractedRfp; error?: string };
 
 const DEFAULT_LAYERS = [
   { name: "Perimeter & security", color: "#ef4444" },
@@ -91,7 +93,52 @@ export async function createProject(_prev: ActionState, formData: FormData): Pro
     .single();
   if (error) return { error: error.message };
 
+  // Scope and deliverables carried over from an RFP import.
+  const itemsRaw = String(formData.get("items_json") ?? "");
+  if (itemsRaw) {
+    try {
+      const items = JSON.parse(itemsRaw) as { kind: "scope" | "deliverable"; title: string }[];
+      const rows = items
+        .filter((i) => i && typeof i.title === "string" && i.title.trim())
+        .slice(0, 40)
+        .map((i, idx) => ({
+          project_id: data.id,
+          kind: i.kind === "deliverable" ? "deliverable" : "scope",
+          title: i.title.trim().slice(0, 300),
+          sort_order: idx,
+        }));
+      if (rows.length) await supabase.from("scope_items").insert(rows);
+    } catch {
+      // ignore malformed import payload; the project is already created
+    }
+  }
+
   redirect(`/projects/${data.id}`);
+}
+
+const MAX_PDF_BYTES = 15 * 1024 * 1024;
+
+/** Reads an uploaded RFP PDF and returns extracted project fields for review. */
+export async function extractRfp(_prev: RfpState, formData: FormData): Promise<RfpState> {
+  const file = formData.get("file");
+  if (!(file instanceof File) || file.size === 0) return { error: "أرفق ملف RFP بصيغة PDF." };
+  if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+    return { error: "الملف يجب أن يكون PDF." };
+  }
+  if (file.size > MAX_PDF_BYTES) return { error: "حجم الملف كبير. الحد الأقصى 15 ميجابايت." };
+
+  const supabase = await createClient();
+  const { data: claims } = await supabase.auth.getClaims();
+  if (!claims?.claims?.sub) return { error: "انتهت الجلسة. سجّل الدخول من جديد." };
+
+  try {
+    const base64 = Buffer.from(await file.arrayBuffer()).toString("base64");
+    const data = await extractRfpFromPdf(base64);
+    return { data };
+  } catch (e) {
+    if (e instanceof RfpConfigError) return { error: e.message };
+    return { error: (e as Error).message || "تعذّرت قراءة الملف." };
+  }
 }
 
 export async function updateProject(

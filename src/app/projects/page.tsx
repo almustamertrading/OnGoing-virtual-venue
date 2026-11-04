@@ -7,6 +7,7 @@ import { getMyOrganization } from "@/lib/project";
 import { PROJECT_STATUS, PROJECT_TYPE, formatRange } from "@/lib/format";
 import type { ClientRow, ProjectRow, ProjectStatus } from "@/lib/types";
 import { CreateProject } from "./create-project";
+import { RfpImport } from "./rfp-import";
 
 const ACTIVE: ProjectStatus[] = ["lead", "proposal", "confirmed", "in_progress", "on_hold"];
 
@@ -60,7 +61,12 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
             <h1 className="text-2xl font-semibold text-white">Projects</h1>
             <p className="text-sm text-slate-400">{org ? org.name : "Projects you have been invited to"}</p>
           </div>
-          {org && <CreateProject organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />}
+          {org && (
+            <div className="flex flex-wrap gap-2">
+              <RfpImport organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />
+              <CreateProject organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />
+            </div>
+          )}
         </div>
 
         {!org && (
