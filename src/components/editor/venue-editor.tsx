@@ -13,6 +13,8 @@ import {
   Pentagon,
   RectangleHorizontal,
   Spline,
+  PanelLeftClose,
+  PanelLeftOpen,
   Wifi,
   WifiOff,
 } from "lucide-react";
@@ -76,6 +78,11 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
   const [panoDraft, setPanoDraft] = useState<{ lng: number; lat: number } | null>(null);
   const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const [flyTo, setFlyTo] = useState<{ lng: number; lat: number; key: number } | null>(null);
+  // The side panel starts open on tablets and desktops, closed on phones.
+  const [panelOpen, setPanelOpen] = useState(() => window.matchMedia("(min-width: 768px)").matches);
+  const closePanelOnPhone = useCallback(() => {
+    if (!window.matchMedia("(min-width: 768px)").matches) setPanelOpen(false);
+  }, []);
 
   const layerById = useMemo(() => new Map(data.layers.map((l) => [l.id, l])), [data.layers]);
   // The active drawing layer falls back to the first layer.
@@ -138,6 +145,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
     (c: CommentRow) => {
       setTab("comments");
       setActiveCommentId(c.id);
+      setPanelOpen(true);
       if (c.lng != null && c.lat != null) setFlyTo({ lng: c.lng, lat: c.lat, key: Date.now() });
     },
     [],
@@ -158,6 +166,15 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
         <Link href={`/projects/${projectId}/venues`} className="flex items-center gap-1 text-sm text-slate-400 hover:text-white">
           <ChevronLeft size={16} /> <span className="hidden max-w-40 truncate sm:inline">{projectName}</span>
         </Link>
+        <button
+          type="button"
+          onClick={() => setPanelOpen((v) => !v)}
+          aria-label={panelOpen ? "Hide side panel" : "Show side panel"}
+          aria-expanded={panelOpen}
+          className="rounded-md p-1.5 text-slate-300 hover:bg-slate-800"
+        >
+          {panelOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
+        </button>
         <h1 className="min-w-0 truncate text-sm font-semibold text-white">{venue.name}</h1>
         <span className="rounded bg-slate-800 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-slate-300">{role}</span>
         <div className="flex-1" />
@@ -184,7 +201,10 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
 
       <div className="relative flex min-h-0 flex-1">
         {/* Sidebar */}
-        <aside className="z-10 flex w-72 shrink-0 flex-col border-r border-slate-800 bg-slate-950">
+        <aside
+          className={`${panelOpen ? "flex" : "hidden"} absolute inset-y-0 left-0 z-30 w-72 max-w-[85vw] shrink-0 flex-col border-r border-slate-800 bg-slate-950 shadow-2xl md:static md:z-10 md:shadow-none`}
+          data-testid="side-panel"
+        >
           <nav className="grid grid-cols-3 border-b border-slate-800 text-xs">
             {(
               [
@@ -231,6 +251,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
                     return next;
                   });
                   setSelectedId(f.id);
+                  closePanelOnPhone();
                   const c = f.geometry.type === "Point" ? f.geometry.coordinates : null;
                   if (c) setFlyTo({ lng: c[0], lat: c[1], key: Date.now() });
                 }}
@@ -285,7 +306,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
           />
 
           {/* Toolbar */}
-          <div className="absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-0.5 rounded-xl border border-slate-700 bg-slate-950/95 p-1 shadow-xl" role="toolbar" aria-label="Map tools">
+          <div className="absolute left-1/2 top-3 z-10 flex max-w-[calc(100%-1rem)] -translate-x-1/2 items-center gap-0.5 overflow-x-auto rounded-xl border border-slate-700 bg-slate-950/95 p-1 shadow-xl" role="toolbar" aria-label="Map tools">
             {TOOLS.filter((t) => canEdit || !t.edit).map((t, i, arr) => (
               <span key={t.id} className="flex items-center">
                 {i > 0 && arr[i - 1].edit !== t.edit && t.id === "comment" && <span className="mx-1 h-6 w-px bg-slate-700" />}
@@ -305,7 +326,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
 
           {/* Drawing hint */}
           {HINTS[tool] && (
-            <div className="pointer-events-none absolute left-1/2 top-16 z-10 -translate-x-1/2 rounded-lg bg-slate-950/90 px-3 py-1.5 text-xs text-slate-200 shadow" data-testid="tool-hint">
+            <div className="pointer-events-none absolute left-1/2 top-16 z-10 w-max max-w-[90%] -translate-x-1/2 rounded-lg bg-slate-950/90 px-3 py-1.5 text-center text-xs text-slate-200 shadow" data-testid="tool-hint">
               {HINTS[tool]}
               {canEdit && ["polygon", "rectangle", "circle", "linestring", "point"].includes(tool) && activeLayer && (
                 <span className="ml-2 inline-flex items-center gap-1 text-slate-400">
@@ -331,7 +352,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
 
           {/* Selected shape */}
           {selected && (
-            <div className="absolute right-3 top-3 z-10">
+            <div className="absolute inset-x-2 bottom-2 z-20 max-h-[55dvh] overflow-y-auto rounded-xl md:inset-x-auto md:bottom-auto md:right-3 md:top-3 md:max-h-[calc(100%-1.5rem)]">
               <FeaturePanel
                 feature={selected}
                 data={data}

@@ -93,12 +93,16 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
             <li key={p.id}>
               <Link
                 href={`/projects/${p.id}`}
-                className="card flex flex-wrap items-center gap-x-4 gap-y-1 p-4 transition hover:border-emerald-700"
+                className="card flex items-center gap-3 p-4 transition hover:border-emerald-700"
               >
-                <span className="w-20 shrink-0 font-mono text-xs text-slate-500">{p.code}</span>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-medium text-white">{p.name}</p>
-                  <p className="mt-0.5 flex flex-wrap items-center gap-x-3 text-xs text-slate-400">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs text-slate-500">{p.code}</span>
+                    <StatusBadge status={p.status} />
+                    <span className="ml-auto text-xs text-slate-400 sm:hidden">{openByProject.get(p.id) ?? 0} open</span>
+                  </div>
+                  <p className="mt-1 font-medium text-white sm:truncate">{p.name}</p>
+                  <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-slate-400">
                     <span>{p.client_id ? clientName.get(p.client_id) ?? "Client" : "No client"}</span>
                     <span>{PROJECT_TYPE[p.project_type]}</span>
                     {(p.start_date || p.end_date) && (
@@ -107,9 +111,8 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
                     {p.location && <span className="flex items-center gap-1"><MapPin size={12} />{p.location}</span>}
                   </p>
                 </div>
-                <span className="text-xs text-slate-400">{openByProject.get(p.id) ?? 0} open tasks</span>
-                <StatusBadge status={p.status} />
-                <ChevronRight size={18} className="text-slate-500" />
+                <span className="hidden shrink-0 text-xs text-slate-400 sm:inline">{openByProject.get(p.id) ?? 0} open tasks</span>
+                <ChevronRight size={18} className="shrink-0 text-slate-500" />
               </Link>
             </li>
           ))}

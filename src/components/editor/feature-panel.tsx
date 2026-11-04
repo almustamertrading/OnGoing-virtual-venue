@@ -23,7 +23,7 @@ export function FeaturePanel({
   const editor = data.profiles[feature.updated_by ?? feature.created_by]?.email;
 
   return (
-    <div className="card w-72 space-y-3 bg-slate-900 p-4 shadow-2xl" data-testid="feature-panel">
+    <div className="w-full space-y-3 rounded-xl border border-slate-700 bg-slate-900 p-4 md:w-72 md:shadow-2xl" data-testid="feature-panel">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold text-white">{kind}</h3>
         <button type="button" onClick={onClose} className="text-slate-400 hover:text-white" aria-label="Close">
