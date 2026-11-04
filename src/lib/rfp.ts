@@ -146,7 +146,25 @@ function coerce(raw: Record<string, unknown>): ExtractedRfp {
 
 export class RfpConfigError extends Error {}
 
-/** Sends the PDF to Claude and returns the extracted project blueprint. */
+// Keep the request well under per-tier input limits. Tender text is front-loaded,
+// so clipping the tail still captures the scope, pricing and criteria.
+const MAX_TEXT_CHARS = 160_000;
+
+/** Pulls the text layer out of a PDF, server-side, without rendering page images. */
+async function extractPdfText(base64: string): Promise<string> {
+  try {
+    const { extractText, getDocumentProxy } = await import("unpdf");
+    const bytes = new Uint8Array(Buffer.from(base64, "base64"));
+    const pdf = await getDocumentProxy(bytes);
+    const { text } = await extractText(pdf, { mergePages: true });
+    const joined = Array.isArray(text) ? text.join("\n") : text;
+    return (joined ?? "").replace(/\u0000/g, "").trim();
+  } catch {
+    return "";
+  }
+}
+
+/** Sends the RFP to Claude and returns the extracted project blueprint. */
 export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
@@ -154,21 +172,42 @@ export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
   }
   const client = new Anthropic({ apiKey });
 
-  const response = await client.messages.create({
-    model: "claude-sonnet-5-5",
-    max_tokens: 8000,
-    output_config: { effort: "medium" },
-    system: SYSTEM,
-    messages: [
-      {
-        role: "user",
-        content: [
-          { type: "document", source: { type: "base64", media_type: "application/pdf", data: base64 } },
-          { type: "text", text: prompt(TYPES.join(", ")) },
-        ],
-      },
-    ],
-  });
+  // Prefer the PDF's text layer: it is a fraction of the tokens that rendering
+  // every page as an image costs, which is what overruns the account's tier.
+  const pdfText = await extractPdfText(base64);
+  const useText = pdfText.length >= 200;
+  const clipped = pdfText.length > MAX_TEXT_CHARS ? pdfText.slice(0, MAX_TEXT_CHARS) : pdfText;
+
+  const userContent: Anthropic.MessageParam["content"] = useText
+    ? [
+        { type: "text", text: `محتوى كراسة الشروط (RFP):\n\n${clipped}` },
+        { type: "text", text: prompt(TYPES.join(", ")) },
+      ]
+    : [
+        { type: "document", source: { type: "base64", media_type: "application/pdf", data: base64 } },
+        { type: "text", text: prompt(TYPES.join(", ")) },
+      ];
+
+  let response: Anthropic.Message;
+  try {
+    response = await client.messages.create({
+      model: "claude-sonnet-5-5",
+      max_tokens: 8000,
+      output_config: { effort: "medium" },
+      system: SYSTEM,
+      messages: [{ role: "user", content: userContent }],
+    });
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : "";
+    if (e instanceof Anthropic.BadRequestError && /input_tokens_exceeded|exceeds the allowed|too many|prompt is too long/i.test(msg)) {
+      throw new Error(
+        useText
+          ? "حجم الكراسة كبير على باقة الحساب الحالية. جرّب تقسيم الملف أو رفع باقة Anthropic."
+          : "الملف ممسوح ضوئيًا وكبير على باقة الحساب الحالية. جرّب نسخة نصية من الكراسة أو ملفًا أصغر.",
+      );
+    }
+    throw e;
+  }
 
   const text = response.content
     .filter((b): b is Anthropic.TextBlock => b.type === "text")
