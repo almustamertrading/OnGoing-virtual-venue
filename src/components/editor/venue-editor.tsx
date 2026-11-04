@@ -29,8 +29,8 @@ import { PanoramaViewer } from "./panorama-viewer";
 import { colorForUser, initials } from "./utils";
 
 type Props = {
-  eventId: string;
-  eventName: string;
+  projectId: string;
+  projectName: string;
   venue: VenueRow;
   role: MemberRole;
   userId: string;
@@ -60,9 +60,9 @@ const HINTS: Partial<Record<Tool, string>> = {
 
 type Tab = "layers" | "comments" | "photos";
 
-export function VenueEditor({ eventId, eventName, venue, role, userId, email }: Props) {
+export function VenueEditor({ projectId, projectName, venue, role, userId, email }: Props) {
   const canEdit = role === "owner" || role === "editor";
-  const data = useVenueData({ eventId, venueId: venue.id, userId, email });
+  const data = useVenueData({ projectId, venueId: venue.id, userId, email });
 
   const [tool, setTool] = useState<Tool>("select");
   const [tab, setTab] = useState<Tab>("layers");
@@ -155,8 +155,8 @@ export function VenueEditor({ eventId, eventName, venue, role, userId, email }: 
     <div className="flex h-dvh flex-col">
       {/* Top bar */}
       <header className="flex h-12 shrink-0 items-center gap-3 border-b border-slate-800 bg-slate-950 px-3">
-        <Link href={`/events/${eventId}`} className="flex items-center gap-1 text-sm text-slate-400 hover:text-white">
-          <ChevronLeft size={16} /> <span className="hidden max-w-40 truncate sm:inline">{eventName}</span>
+        <Link href={`/projects/${projectId}/venues`} className="flex items-center gap-1 text-sm text-slate-400 hover:text-white">
+          <ChevronLeft size={16} /> <span className="hidden max-w-40 truncate sm:inline">{projectName}</span>
         </Link>
         <h1 className="min-w-0 truncate text-sm font-semibold text-white">{venue.name}</h1>
         <span className="rounded bg-slate-800 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-slate-300">{role}</span>

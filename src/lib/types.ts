@@ -1,20 +1,113 @@
 import type { Geometry, LineString, Point, Polygon } from "geojson";
 
 export type MemberRole = "owner" | "editor" | "viewer";
+export type OrgRole = "admin" | "manager" | "staff";
 
-export type EventRow = {
+export type ProjectStatus =
+  | "lead"
+  | "proposal"
+  | "confirmed"
+  | "in_progress"
+  | "completed"
+  | "on_hold"
+  | "cancelled";
+
+export type ProjectType =
+  | "sports_event"
+  | "conference"
+  | "exhibition"
+  | "festival"
+  | "corporate_event"
+  | "production"
+  | "other";
+
+export type ProjectRow = {
   id: string;
+  organization_id: string;
+  client_id: string | null;
+  code: string;
   name: string;
   description: string | null;
+  status: ProjectStatus;
+  project_type: ProjectType;
+  location: string | null;
+  budget: number | null;
   start_date: string | null;
   end_date: string | null;
   created_by: string;
   created_at: string;
+  updated_at: string;
+};
+
+export type ClientRow = {
+  id: string;
+  organization_id: string;
+  name: string;
+  contact_name: string | null;
+  email: string | null;
+  phone: string | null;
+};
+
+export type ScopeItemRow = {
+  id: string;
+  project_id: string;
+  kind: "scope" | "deliverable";
+  title: string;
+  description: string;
+  status: "planned" | "in_progress" | "done";
+  due_date: string | null;
+  sort_order: number;
+  created_at: string;
+};
+
+export type MilestoneRow = {
+  id: string;
+  project_id: string;
+  title: string;
+  due_date: string | null;
+  done: boolean;
+  sort_order: number;
+};
+
+export type TaskStatus = "todo" | "in_progress" | "blocked" | "done";
+export type TaskPriority = "low" | "normal" | "high" | "urgent";
+
+export type TaskRow = {
+  id: string;
+  project_id: string;
+  title: string;
+  description: string;
+  status: TaskStatus;
+  priority: TaskPriority;
+  assignee_id: string | null;
+  due_date: string | null;
+  milestone_id: string | null;
+  scope_item_id: string | null;
+  completed_at: string | null;
+  created_at: string;
+};
+
+export type ActivityRow = {
+  id: number;
+  project_id: string;
+  actor_id: string | null;
+  action: "created" | "updated" | "deleted";
+  entity_type: string;
+  entity_id: string | null;
+  details: { label?: string; changed?: string[]; from?: string; to?: string; member?: string; role?: string };
+  created_at: string;
+};
+
+export type MemberRow = {
+  user_id: string;
+  role: MemberRole;
+  responsibility: string;
+  email: string;
 };
 
 export type VenueRow = {
   id: string;
-  event_id: string;
+  project_id: string;
   name: string;
   address: string | null;
   center_lng: number;
@@ -25,7 +118,7 @@ export type VenueRow = {
 
 export type LayerRow = {
   id: string;
-  event_id: string;
+  project_id: string;
   venue_id: string;
   name: string;
   color: string;
@@ -37,7 +130,7 @@ export type FeatureGeometry = Point | LineString | Polygon;
 
 export type FeatureRow = {
   id: string;
-  event_id: string;
+  project_id: string;
   venue_id: string;
   layer_id: string;
   name: string;
@@ -52,7 +145,7 @@ export type FeatureRow = {
 
 export type CommentRow = {
   id: string;
-  event_id: string;
+  project_id: string;
   venue_id: string;
   parent_id: string | null;
   body: string;
@@ -65,7 +158,7 @@ export type CommentRow = {
 
 export type PanoramaRow = {
   id: string;
-  event_id: string;
+  project_id: string;
   venue_id: string;
   title: string;
   lng: number;

@@ -8,7 +8,7 @@ export type AuthState = { error?: string; message?: string };
 
 function safeNext(value: FormDataEntryValue | null) {
   const next = typeof value === "string" ? value : "";
-  return next.startsWith("/") && !next.startsWith("//") ? next : "/events";
+  return next.startsWith("/") && !next.startsWith("//") ? next : "/projects";
 }
 
 export async function signIn(_prev: AuthState, formData: FormData): Promise<AuthState> {
@@ -40,6 +40,6 @@ export async function signUp(_prev: AuthState, formData: FormData): Promise<Auth
   });
   if (error) return { error: error.message };
 
-  if (data.session) redirect("/events");
+  if (data.session) redirect("/projects");
   return { message: "Check your inbox and click the confirmation link to finish signing up." };
 }

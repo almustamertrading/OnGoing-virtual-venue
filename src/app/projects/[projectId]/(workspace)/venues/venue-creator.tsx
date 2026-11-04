@@ -4,7 +4,7 @@ import { useActionState, useEffect, useRef, useState } from "react";
 import { maplibregl } from "@/lib/maplibre";
 import { Search } from "lucide-react";
 import { baseStyle } from "@/lib/map-style";
-import { createVenue, type ActionState } from "../actions";
+import { createVenue, type ActionState } from "../../../actions";
 
 type Place = { name: string; lng: number; lat: number };
 
@@ -19,9 +19,9 @@ async function geocode(q: string): Promise<Place[]> {
   });
 }
 
-export function VenueCreator({ eventId }: { eventId: string }) {
+export function VenueCreator({ projectId }: { projectId: string }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(
-    createVenue.bind(null, eventId),
+    createVenue.bind(null, projectId),
     {},
   );
   const mapEl = useRef<HTMLDivElement>(null);

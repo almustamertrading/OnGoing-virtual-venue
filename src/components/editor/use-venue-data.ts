@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { RealtimeChannel } from "@supabase/supabase-js";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, withRealtimeAuth } from "@/lib/supabase/client";
 import type {
   CommentRow,
   FeatureGeometry,
@@ -14,7 +14,7 @@ import type {
 
 export type PresenceUser = { user_id: string; email: string; selected: string | null };
 
-type Ids = { eventId: string; venueId: string; userId: string; email: string };
+type Ids = { projectId: string; venueId: string; userId: string; email: string };
 
 type Versioned = { id: string; updated_at?: string; _local?: boolean };
 
@@ -34,7 +34,7 @@ function upsert<T extends Versioned>(list: T[], row: T) {
   return next;
 }
 
-export function useVenueData({ eventId, venueId, userId, email }: Ids) {
+export function useVenueData({ projectId, venueId, userId, email }: Ids) {
   const supabase = useMemo(() => createClient(), []);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -65,12 +65,12 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       supabase
         .from("features")
         .select(
-          "id, event_id, venue_id, layer_id, name, notes, geometry, properties, created_by, updated_by, created_at, updated_at",
+          "id, project_id, venue_id, layer_id, name, notes, geometry, properties, created_by, updated_by, created_at, updated_at",
         )
         .eq("venue_id", venueId),
       supabase.from("comments").select("*").eq("venue_id", venueId).order("created_at"),
       supabase.from("panoramas").select("*").eq("venue_id", venueId).order("created_at"),
-      supabase.from("event_members").select("user_id").eq("event_id", eventId),
+      supabase.from("project_members").select("user_id").eq("project_id", projectId),
     ]);
     const firstError = [l, f, c, p, m].find((r) => r.error)?.error;
     if (firstError) report(firstError.message);
@@ -84,7 +84,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       setProfiles(Object.fromEntries((data ?? []).map((row) => [row.id, row as Profile])));
     }
     setLoading(false);
-  }, [supabase, venueId, eventId, report]);
+  }, [supabase, venueId, projectId, report]);
 
   // Realtime database changes. Reconnects with backoff if the channel drops.
   useEffect(() => {
@@ -156,7 +156,9 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
         });
     };
 
-    connect();
+    withRealtimeAuth(supabase).then(() => {
+      if (!stopped) connect();
+    });
     // Show data even if the live connection is slow to come up.
     const fallback = window.setTimeout(() => {
       if (firstLoad) loadAll();
@@ -226,7 +228,9 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
           }
         });
     };
-    connect();
+    withRealtimeAuth(supabase).then(() => {
+      if (!stopped) connect();
+    });
     return () => {
       stopped = true;
       window.clearTimeout(retry);
@@ -255,7 +259,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       const now = new Date().toISOString();
       const row: FeatureRow & { _local?: boolean } = {
         id: input.id,
-        event_id: eventId,
+        project_id: projectId,
         venue_id: venueId,
         layer_id: input.layerId,
         name: "",
@@ -273,7 +277,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
         .from("features")
         .insert({
           id: row.id,
-          event_id: eventId,
+          project_id: projectId,
           venue_id: venueId,
           layer_id: row.layer_id,
           geometry: row.geometry,
@@ -289,7 +293,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
         report(`Could not save the shape: ${error.message}`);
       }
     },
-    [supabase, eventId, venueId, userId, report],
+    [supabase, projectId, venueId, userId, report],
   );
 
   const updateFeature = useCallback(
@@ -334,14 +338,14 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       const sort_order = (layers.at(-1)?.sort_order ?? -1) + 1;
       const { data, error } = await supabase
         .from("layers")
-        .insert({ event_id: eventId, venue_id: venueId, name, color, sort_order })
+        .insert({ project_id: projectId, venue_id: venueId, name, color, sort_order })
         .select("*")
         .single();
       if (error) return report(`Could not add the layer: ${error.message}`);
       setLayers((list) => upsert(list, data as LayerRow));
       return data as LayerRow;
     },
-    [supabase, eventId, venueId, layers, report],
+    [supabase, projectId, venueId, layers, report],
   );
 
   const updateLayer = useCallback(
@@ -368,7 +372,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       const { data, error } = await supabase
         .from("comments")
         .insert({
-          event_id: eventId,
+          project_id: projectId,
           venue_id: venueId,
           body: input.body,
           lng: input.parentId ? null : input.lng,
@@ -382,7 +386,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       setComments((list) => upsert(list, data as CommentRow));
       return data as CommentRow;
     },
-    [supabase, eventId, venueId, userId, report],
+    [supabase, projectId, venueId, userId, report],
   );
 
   const setCommentResolved = useCallback(
@@ -406,7 +410,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
   const uploadPanorama = useCallback(
     async (input: { file: File; title: string; lng: number; lat: number }) => {
       const ext = (input.file.name.split(".").pop() ?? "jpg").toLowerCase();
-      const path = `${eventId}/${venueId}/${crypto.randomUUID()}.${ext}`;
+      const path = `${projectId}/${venueId}/${crypto.randomUUID()}.${ext}`;
       const upload = await supabase.storage
         .from("panoramas")
         .upload(path, input.file, { contentType: input.file.type, upsert: false });
@@ -414,7 +418,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       const { data, error } = await supabase
         .from("panoramas")
         .insert({
-          event_id: eventId,
+          project_id: projectId,
           venue_id: venueId,
           title: input.title,
           lng: input.lng,
@@ -431,7 +435,7 @@ export function useVenueData({ eventId, venueId, userId, email }: Ids) {
       setPanoramas((list) => upsert(list, data as PanoramaRow));
       return data as PanoramaRow;
     },
-    [supabase, eventId, venueId, userId, report],
+    [supabase, projectId, venueId, userId, report],
   );
 
   const deletePanorama = useCallback(

@@ -7,7 +7,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: "OnGoing Virtual Venue",
-  description: "Plan, map and inspect event venues together in real time.",
+  description: "Run projects, venues and client deliverables in one place.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

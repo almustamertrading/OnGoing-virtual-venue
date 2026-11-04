@@ -26,5 +26,5 @@ export async function GET(request: NextRequest) {
   if (error) {
     return NextResponse.redirect(`${origin}/login?error=${encodeURIComponent(error)}`);
   }
-  return NextResponse.redirect(`${origin}/events`);
+  return NextResponse.redirect(`${origin}/projects`);
 }

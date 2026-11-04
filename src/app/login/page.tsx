@@ -5,7 +5,7 @@ import { Logo } from "@/components/logo";
 
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
   const params = await searchParams;
-  const next = typeof params.next === "string" ? params.next : "/events";
+  const next = typeof params.next === "string" ? params.next : "/projects";
   const error = typeof params.error === "string" ? params.error : null;
   if (await getUserId()) redirect(next);
 
