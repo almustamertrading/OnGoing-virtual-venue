@@ -1,0 +1,7565 @@
+[
+{
+"osm_type": "node",
+"osm_id": 4301110289,
+"name": "قاعة سمو للإحتفالات",
+"namedetails": {
+"name": "قاعة سمو للإحتفالات"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 26.3865139,
+"lon": 50.0360417,
+"display_name": "قاعة سمو للإحتفالات, طريق الملك فهد, الأنوار, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"amenity": "قاعة سمو للإحتفالات",
+"road": "طريق الملك فهد",
+"neighbourhood": "الأنوار",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قاعة",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8707995776,
+"name": "قاعة الكريستال",
+"namedetails": {
+"name": "قاعة الكريستال",
+"name:ar": "قاعة الكريستال",
+"name:en": "Crystal Hall"
+},
+"category": "amenity",
+"type": "events_venue",
+"lat": 26.2558027,
+"lon": 50.220656,
+"display_name": "قاعة الكريستال, طريق الكورنيش, الساحل, الخبر, محافظة الخبر, المنطقة الشرقية, 34612, السعودية",
+"address": {
+"amenity": "قاعة الكريستال",
+"road": "طريق الكورنيش",
+"neighbourhood": "الساحل",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34612",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قاعة",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4548108589,
+"name": "صالة ماهر الهلال للسيارات",
+"namedetails": {
+"name": "صالة ماهر الهلال للسيارات",
+"name:ar": "صالة ماهر الهلال للسيارات",
+"name:en": "Maher alhelal for cars"
+},
+"category": "shop",
+"type": "car",
+"lat": 26.4562128,
+"lon": 50.1279269,
+"display_name": "صالة ماهر الهلال للسيارات, 00966138313333, شارع الأشرعة, الشاطئ الشرقي, الدمام, محافظة الدمام, المنطقة الشرقية, 31641, السعودية",
+"address": {
+"shop": "صالة ماهر الهلال للسيارات",
+"house_number": "00966138313333",
+"road": "شارع الأشرعة",
+"neighbourhood": "الشاطئ الشرقي",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"email": "mahercar1413@gamil.com",
+"phone": "+966555851413",
+"website": "http://maher1413@yahoo.com",
+"opening_hours": "24/7"
+},
+"kw": "صالة",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4692076996,
+"name": "صالة الأبطال",
+"namedetails": {
+"name": "صالة الأبطال",
+"name:ar": "صالة الأبطال",
+"name:en": "Al-Abtal Gym"
+},
+"category": "leisure",
+"type": "fitness_centre",
+"lat": 26.5611336,
+"lon": 50.0812154,
+"display_name": "صالة الأبطال, شارع الرياض, الصدفة, دارين, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"leisure": "صالة الأبطال",
+"road": "شارع الرياض",
+"neighbourhood": "الصدفة",
+"village": "دارين",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "صالة",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5372465326,
+"name": "صالة وقت اللياقة",
+"namedetails": {
+"name": "صالة وقت اللياقة"
+},
+"category": "shop",
+"type": "sports",
+"lat": 26.4199681,
+"lon": 50.0215512,
+"display_name": "صالة وقت اللياقة, شارع الملك سعود, النور, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31483, السعودية",
+"address": {
+"shop": "صالة وقت اللياقة",
+"road": "شارع الملك سعود",
+"neighbourhood": "النور",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31483",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "صالة",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1016378064,
+"name": "Salt Al Bahar",
+"namedetails": {
+"name": "Salt Al Bahar"
+},
+"category": "amenity",
+"type": "restaurant",
+"lat": 26.3347169,
+"lon": 50.2260643,
+"display_name": "Salt Al Bahar, شارع الحافظ الاموي, الكورنيش, الخبر, محافظة الخبر, المنطقة الشرقية, 34412, السعودية",
+"address": {
+"amenity": "Salt Al Bahar",
+"road": "شارع الحافظ الاموي",
+"neighbourhood": "الكورنيش",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966920024788",
+"building": "yes"
+},
+"kw": "صالة",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 9374160248,
+"name": "Salt Al Bahar",
+"namedetails": {
+"name": "Salt Al Bahar"
+},
+"category": "amenity",
+"type": "restaurant",
+"lat": 26.3351453,
+"lon": 50.2258945,
+"display_name": "Salt Al Bahar, شارع الحافظ الاموي, الكورنيش, الخبر, محافظة الخبر, المنطقة الشرقية, 34411, السعودية",
+"address": {
+"amenity": "Salt Al Bahar",
+"road": "شارع الحافظ الاموي",
+"neighbourhood": "الكورنيش",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34411",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966920024788",
+"cuisine": "american",
+"website": "https://indpt.com/",
+"diet:halal": "yes"
+},
+"kw": "صالة",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 19394403,
+"name": "قصر الخليج",
+"namedetails": {
+"name": "قصر الخليج",
+"name:ar": "قصر الخليج",
+"name:en": "Qasr Al Khalij"
+},
+"category": "boundary",
+"type": "administrative",
+"lat": 26.3645165,
+"lon": 50.1336941,
+"display_name": "قصر الخليج, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"neighbourhood": "قصر الخليج",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"linked_place": "neighbourhood",
+"admin_level": "10"
+},
+"kw": "قصر",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14030458992,
+"name": "قصر دبي التجارية 5.75",
+"namedetails": {
+"name": "Dubai palace 5.75",
+"name:ar": "قصر دبي التجارية 5.75"
+},
+"category": "shop",
+"type": "variety_store",
+"lat": 26.3930671,
+"lon": 50.0473385,
+"display_name": "قصر دبي التجارية 5.75, Abu Baker Al Siddiq Street, الفيصلية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32272, السعودية",
+"address": {
+"shop": "قصر دبي التجارية 5.75",
+"road": "Abu Baker Al Siddiq Street",
+"neighbourhood": "الفيصلية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32272",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"check_date": "2026-07-21",
+"opening_hours": "Su-Th 06:00-01:00; Fr 13:00-01:00"
+},
+"kw": "قصر",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4692077389,
+"name": "مطعم قصر تاروت",
+"namedetails": {
+"name": "مطعم قصر تاروت",
+"name:ar": "مطعم قصر تاروت"
+},
+"category": "amenity",
+"type": "restaurant",
+"lat": 26.5703867,
+"lon": 50.0663359,
+"display_name": "مطعم قصر تاروت, شارع أحد, الزمرد, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"amenity": "مطعم قصر تاروت",
+"road": "شارع أحد",
+"neighbourhood": "الزمرد",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "Su-Th 06:00-00:00"
+},
+"kw": "قصر",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4317397812,
+"name": "قصر الهزاز",
+"namedetails": {
+"name": "قصر الهزاز",
+"name:ar": "قصر الهزاز"
+},
+"category": "shop",
+"type": "convenience",
+"lat": 26.2930017,
+"lon": 50.1775314,
+"display_name": "قصر الهزاز, طريق خادم الحرمين الشريفين, العليا, الخبر, محافظة الخبر, المنطقة الشرقية, 34448, السعودية",
+"address": {
+"shop": "قصر الهزاز",
+"road": "طريق خادم الحرمين الشريفين",
+"neighbourhood": "العليا",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34448",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قصر",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8713612842,
+"name": "مقهى قصر الصحراء",
+"namedetails": {
+"name": "مقهى قصر الصحراء"
+},
+"category": "amenity",
+"type": "cafe",
+"lat": 26.1854955,
+"lon": 50.1860418,
+"display_name": "مقهى قصر الصحراء, طريق الملك خالد, الجسر, الخبر, محافظة الخبر, المنطقة الشرقية, 34716, السعودية",
+"address": {
+"amenity": "مقهى قصر الصحراء",
+"road": "طريق الملك خالد",
+"neighbourhood": "الجسر",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34716",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "قصر",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 205095184,
+"name": "Tarout Charity Public Hall مجمع أفراح جمعية تاروت الخيرية",
+"namedetails": {
+"name": "Tarout Charity Public Hall مجمع أفراح جمعية تاروت الخيرية"
+},
+"category": "amenity",
+"type": "townhall",
+"lat": 26.5721135,
+"lon": 50.0693377,
+"display_name": "Tarout Charity Public Hall مجمع أفراح جمعية تاروت الخيرية, شارع أحد, اليمامة, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"amenity": "Tarout Charity Public Hall مجمع أفراح جمعية تاروت الخيرية",
+"road": "شارع أحد",
+"neighbourhood": "اليمامة",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "أفراح",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1024852824,
+"name": "أفراح الديرة",
+"namedetails": {
+"name": "أفراح الديرة",
+"name:ar": "أفراح الديرة",
+"name:en": "Afrah Aldeerah"
+},
+"category": "building",
+"type": "retail",
+"lat": 26.5137068,
+"lon": 49.9829249,
+"display_name": "أفراح الديرة, 613, الراية, البدراني, عنك, محافظة القطيف, المنطقة الشرقية, 32467, السعودية",
+"address": {
+"building": "أفراح الديرة",
+"road": "613",
+"neighbourhood": "الراية",
+"hamlet": "البدراني",
+"town": "عنك",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32467",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"image": "https://serving.photos.photobox.com/260964782c53aa9ac8268547226b64dfead1a1399373b7eda5a160399d3eadd82d955b8c.jpg",
+"smoking": "no",
+"operator": "Naji Al-Herz",
+"wheelchair": "yes",
+"description": "محامص وحلاويات أفراح الديرة للحلاويات والمكسرات\nAfrah Aldeerah Sweets and Roasters for Sweets & Nuts",
+"building:levels": "1"
+},
+"kw": "أفراح",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 945488272,
+"name": "استاد الأمير محمد بن فهد",
+"namedetails": {
+"name": "استاد الأمير محمد بن فهد",
+"name:ar": "استاد الأمير محمد بن فهد",
+"name:en": "Prince Mohammad bin Fahd Stadium"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 26.4273466,
+"lon": 50.1146429,
+"display_name": "استاد الأمير محمد بن فهد, طريق الملك فهد الفرعي, الامير محمد بن سعود, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32233, السعودية",
+"address": {
+"leisure": "استاد الأمير محمد بن فهد",
+"road": "طريق الملك فهد الفرعي",
+"neighbourhood": "الامير محمد بن سعود",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"lit": "yes",
+"sport": "soccer",
+"website": "https://www.mos.gov.sa/",
+"wikidata": "Q2650633"
+},
+"kw": "استاد",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37282294,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2862971,
+"lon": 50.1142826,
+"display_name": "Hofuf Drive, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Hofuf Drive",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 204684363,
+"name": "Alhada club in tarout نادي الهدى بتاروت",
+"namedetails": {
+"name": "Alhada club in tarout نادي الهدى بتاروت"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.5710799,
+"lon": 50.0668152,
+"display_name": "Alhada club in tarout نادي الهدى بتاروت, شارع أحد, الصدفة, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"leisure": "Alhada club in tarout نادي الهدى بتاروت",
+"road": "شارع أحد",
+"neighbourhood": "الصدفة",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 38066115,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2998633,
+"lon": 50.1066137,
+"display_name": "Riyal Road, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Riyal Road",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846838463,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.392791,
+"lon": 50.1843492,
+"display_name": "طريق الملك فيصل, الصفا, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31421, السعودية",
+"address": {
+"road": "طريق الملك فيصل",
+"neighbourhood": "الصفا",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31421",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846838452,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.405458,
+"lon": 50.1755267,
+"display_name": "طريق الملك فيصل, الحسام, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32224, السعودية",
+"address": {
+"road": "طريق الملك فيصل",
+"neighbourhood": "الحسام",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32224",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 587909928,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.330406,
+"lon": 50.1426619,
+"display_name": "طريق الأمير سلطان, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258-6471, السعودية",
+"address": {
+"road": "طريق الأمير سلطان",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258-6471",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 38065700,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2878745,
+"lon": 50.112455,
+"display_name": "Safaniyah Drive, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Safaniyah Drive",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37869453,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2865053,
+"lon": 50.1097217,
+"display_name": "Tarut Drive, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Tarut Drive",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1531409666,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3929924,
+"lon": 50.1798012,
+"display_name": "3 Street, الصفا, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31421, السعودية",
+"address": {
+"road": "3 Street",
+"neighbourhood": "الصفا",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31421",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 38065878,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2876859,
+"lon": 50.1132957,
+"display_name": "Shedgum Avenue, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Shedgum Avenue",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 657987630,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3375,
+"lon": 50.1359279,
+"display_name": "شارع ابن الهيثم, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258, السعودية",
+"address": {
+"road": "شارع ابن الهيثم",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 591549435,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3296883,
+"lon": 50.1609761,
+"display_name": "شارع أنس بن مالك, الدوحة الجنوبية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34453-8060, السعودية",
+"address": {
+"road": "شارع أنس بن مالك",
+"neighbourhood": "الدوحة الجنوبية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34453-8060",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 927716353,
+"name": "Najd Playground",
+"namedetails": {
+"name": "Najd Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.2988128,
+"lon": 50.1029482,
+"display_name": "Najd Playground, Najd Street, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"leisure": "Najd Playground",
+"road": "Najd Street",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 590870443,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3401635,
+"lon": 50.1385162,
+"display_name": "شارع عمر بن عبد العزيز, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258-6471, السعودية",
+"address": {
+"road": "شارع عمر بن عبد العزيز",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258-6471",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 590260294,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3375014,
+"lon": 50.1379848,
+"display_name": "شارع الياقوت, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258, السعودية",
+"address": {
+"road": "شارع الياقوت",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 683700636,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3589597,
+"lon": 50.2060681,
+"display_name": "طريق الملك فيصل, الراكة الجنوبية, الخبر, محافظة الخبر, المنطقة الشرقية, 34226, السعودية",
+"address": {
+"road": "طريق الملك فيصل",
+"neighbourhood": "الراكة الجنوبية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34226",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1537831491,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5302501,
+"lon": 50.0293902,
+"display_name": "طريق الخليج, المحار, سيهات, محافظة القطيف, المنطقة الشرقية, 32453, السعودية",
+"address": {
+"road": "طريق الخليج",
+"neighbourhood": "المحار",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32453",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1540041146,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4228598,
+"lon": 50.0825837,
+"display_name": "28th Street, غرناطة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32244, السعودية",
+"address": {
+"road": "28th Street",
+"neighbourhood": "غرناطة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32244",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1225148046,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5870527,
+"lon": 50.0805965,
+"display_name": "شارع أحد, الربيعية, سنابس, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"road": "شارع أحد",
+"neighbourhood": "الربيعية",
+"village": "سنابس",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14058330197,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3550883,
+"lon": 50.0394797,
+"display_name": "طريق الدمام الرياض السريع, طيبة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"road": "طريق الدمام الرياض السريع",
+"neighbourhood": "طيبة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312093814,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.363259,
+"lon": 50.0340022,
+"display_name": "طريق الإمام محمد بن سعود, المنار, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"road": "طريق الإمام محمد بن سعود",
+"neighbourhood": "المنار",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903710261,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4473014,
+"lon": 50.0801403,
+"display_name": "28th Street, العنود, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32244, السعودية",
+"address": {
+"road": "28th Street",
+"neighbourhood": "العنود",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32244",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4568595394,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.297818,
+"lon": 50.1076274,
+"display_name": "شارع رولينج هيلز, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "شارع رولينج هيلز",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903710791,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5177413,
+"lon": 49.9739337,
+"display_name": "613, البديع, البدراني, الأوجام, محافظة القطيف, المنطقة الشرقية, 32656, السعودية",
+"address": {
+"road": "613",
+"neighbourhood": "البديع",
+"hamlet": "البدراني",
+"town": "الأوجام",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32656",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7362772909,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4701324,
+"lon": 50.0399378,
+"display_name": "شارع عمر بن عبد العزيز, الزهور, سيهات, محافظة القطيف, المنطقة الشرقية, 32431, السعودية",
+"address": {
+"road": "شارع عمر بن عبد العزيز",
+"neighbourhood": "الزهور",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32431",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903650653,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4756575,
+"lon": 50.090688,
+"display_name": "Al Kaurnish Road, الحمراء, الدمام, محافظة الدمام, المنطقة الشرقية, 31146, السعودية",
+"address": {
+"road": "Al Kaurnish Road",
+"neighbourhood": "الحمراء",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31146",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 10991709701,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4863583,
+"lon": 50.1151736,
+"display_name": "طريق الملك عبدالله, الدمام, محافظة الدمام, المنطقة الشرقية, 32411, السعودية",
+"address": {
+"road": "طريق الملك عبدالله",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32411",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14124747749,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3142575,
+"lon": 50.2056917,
+"display_name": "Prince Humud Street, الحزام الذهبي, الخبر, محافظة الخبر, المنطقة الشرقية, 34422, السعودية",
+"address": {
+"road": "Prince Humud Street",
+"neighbourhood": "الحزام الذهبي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34422",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14058286693,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3568765,
+"lon": 50.042722,
+"display_name": "طريق الملك عبدالله, طيبة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32273, السعودية",
+"address": {
+"road": "طريق الملك عبدالله",
+"neighbourhood": "طيبة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32273",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4568595395,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.29845,
+"lon": 50.1065732,
+"display_name": "Rainbow Circle, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Rainbow Circle",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 2550260571,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4587031,
+"lon": 50.1104407,
+"display_name": "دوار الاشرعة, الشاطئ الغربي, الدمام, محافظة الدمام, المنطقة الشرقية, 32415, السعودية",
+"address": {
+"road": "دوار الاشرعة",
+"neighbourhood": "الشاطئ الغربي",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32415",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 950767302,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.1969603,
+"lon": 50.0252975,
+"display_name": "طريق الملك فهد, الظهران, محافظة الدمام, المنطقة الشرقية, 34325, السعودية",
+"address": {
+"road": "طريق الملك فهد",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34325",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 951016715,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.1638758,
+"lon": 50.0697574,
+"display_name": "طريق الملك فهد, الظهران, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"road": "طريق الملك فهد",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 931994915,
+"name": "Shaybah Playground",
+"namedetails": {
+"name": "Shaybah Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.2761269,
+"lon": 50.1140234,
+"display_name": "Shaybah Playground, Karan Road, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"leisure": "Shaybah Playground",
+"road": "Karan Road",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 938135494,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3011808,
+"lon": 50.2251618,
+"display_name": "شارع الحافظ الاموي, الخبر, محافظة الخبر, المنطقة الشرقية, 34413, السعودية",
+"address": {
+"road": "شارع الحافظ الاموي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34413",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "roof"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 938114997,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2917819,
+"lon": 50.2221248,
+"display_name": "Khobar Corniche Access Road, الخبر, محافظة الخبر, المنطقة الشرقية, 34414, السعودية",
+"address": {
+"road": "Khobar Corniche Access Road",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34414",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 957040446,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2824119,
+"lon": 50.2062415,
+"display_name": "طريق الملك فهد الفرعي, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34429, السعودية",
+"address": {
+"road": "طريق الملك فهد الفرعي",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34429",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"blind": "no",
+"access": "yes",
+"max_age": "12",
+"min_age": "2",
+"surface": "sand",
+"wheelchair": "no",
+"playground:theme": "play"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 828209844,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2526214,
+"lon": 50.2203535,
+"display_name": "طريق الكورنيش, الساحل, الخبر, محافظة الخبر, المنطقة الشرقية, 34612, السعودية",
+"address": {
+"road": "طريق الكورنيش",
+"neighbourhood": "الساحل",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34612",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "dirt",
+"playground:theme": "playground"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1038796763,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2862373,
+"lon": 50.2209597,
+"display_name": "شارع الأمير تركي, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34425, السعودية",
+"address": {
+"road": "شارع الأمير تركي",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34425",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "customers"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 6485430744,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2879877,
+"lon": 50.2208507,
+"display_name": "شارع الأمير تركي, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34425, السعودية",
+"address": {
+"road": "شارع الأمير تركي",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34425",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312166170,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2990679,
+"lon": 50.0280939,
+"display_name": "615, الجود, الظهران, محافظة الدمام, المنطقة الشرقية, 34325, السعودية",
+"address": {
+"road": "615",
+"neighbourhood": "الجود",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34325",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1573150128,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5895972,
+"lon": 50.0004009,
+"display_name": "الحباب بن المنذر الخزرجي, الزهراء, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"road": "الحباب بن المنذر الخزرجي",
+"neighbourhood": "الزهراء",
+"suburb": "الزهراء",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 244261342,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.1256768,
+"lon": 50.0821734,
+"display_name": "طريق الملك فهد, الظهران, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"road": "طريق الملك فهد",
+"city": "الظهران",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1255963160,
+"name": "ملعب نادي الاتفاق",
+"namedetails": {
+"name": "ملعب نادي الاتفاق",
+"name:ar": "ملعب نادي الاتفاق",
+"name:en": "EGO STADIUM"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 26.3507642,
+"lon": 50.1813115,
+"display_name": "ملعب نادي الاتفاق, AlQuds Street, قرطبة, الخبر, محافظة الخبر, المنطقة الشرقية, 34234, السعودية",
+"address": {
+"leisure": "ملعب نادي الاتفاق",
+"road": "AlQuds Street",
+"neighbourhood": "قرطبة",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"wikidata": "Q126391645"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 20078625,
+"name": "ملعب أرامكو",
+"namedetails": {
+"name": "ملعب أرامكو",
+"name:ar": "ملعب أرامكو",
+"name:en": "Aramco Stadium"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 26.3653181,
+"lon": 50.1815852,
+"display_name": "ملعب أرامكو, طريق الملك فهد الفرعي, المدينة الرياضية, الظهران, الدمام, محافظة الخبر, المنطقة الشرقية, 31421, السعودية",
+"address": {
+"leisure": "ملعب أرامكو",
+"road": "طريق الملك فهد الفرعي",
+"neighbourhood": "المدينة الرياضية",
+"city": "الظهران",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31421",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"sport": "soccer",
+"website": "https://www.aramcostadium.com",
+"building": "construction",
+"capacity": "47000",
+"operator": "Aramco",
+"wikidata": "Q109298369",
+"wikipedia": "en:Aramco Stadium",
+"check_date": "2026-01-12",
+"construction": "stadium"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1247580487,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5679282,
+"lon": 50.030947,
+"display_name": "طريق أحد, الرضا, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"road": "طريق أحد",
+"neighbourhood": "الرضا",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 205101746,
+"name": "ملعب الحوامي alhwami playground",
+"namedetails": {
+"name": "ملعب الحوامي alhwami playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.5685321,
+"lon": 50.071791,
+"display_name": "ملعب الحوامي alhwami playground, شارع أحد, الصدفة, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"leisure": "ملعب الحوامي alhwami playground",
+"road": "شارع أحد",
+"neighbourhood": "الصدفة",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1539069095,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5095884,
+"lon": 50.0309054,
+"display_name": "طريق الخليج, البدر, سيهات, محافظة القطيف, المنطقة الشرقية, 32453, السعودية",
+"address": {
+"road": "طريق الخليج",
+"neighbourhood": "البدر",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32453",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1540125151,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4332091,
+"lon": 50.0414507,
+"display_name": "شارع الملك سعود بن عبدالعزيز, الفيحاء, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31483, السعودية",
+"address": {
+"road": "شارع الملك سعود بن عبدالعزيز",
+"neighbourhood": "الفيحاء",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31483",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1225148047,
+"name": "حديقة الروضة",
+"namedetails": {
+"name": "حديقة الروضة"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.5774848,
+"lon": 50.0404796,
+"display_name": "حديقة الروضة, شارع عمار بن ياسر, الروضة, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"leisure": "حديقة الروضة",
+"road": "شارع عمار بن ياسر",
+"neighbourhood": "الروضة",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1539067138,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4953092,
+"lon": 50.0329645,
+"display_name": "شارع عمر بن عبد العزيز, الخصاب, سيهات, محافظة القطيف, المنطقة الشرقية, 32431, السعودية",
+"address": {
+"road": "شارع عمر بن عبد العزيز",
+"neighbourhood": "الخصاب",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32431",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1537980124,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.360218,
+"lon": 50.0633977,
+"display_name": "شارع الأمير متعب, الشعلة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32273, السعودية",
+"address": {
+"road": "شارع الأمير متعب",
+"neighbourhood": "الشعلة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32273",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903710762,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.521946,
+"lon": 49.9748683,
+"display_name": "613, البديع, البدراني, الأوجام, محافظة القطيف, المنطقة الشرقية, 32656, السعودية",
+"address": {
+"road": "613",
+"neighbourhood": "البديع",
+"hamlet": "البدراني",
+"town": "الأوجام",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32656",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903573298,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.521094,
+"lon": 50.0311933,
+"display_name": "طريق الخليج, المحار, سيهات, محافظة القطيف, المنطقة الشرقية, 32453, السعودية",
+"address": {
+"road": "طريق الخليج",
+"neighbourhood": "المحار",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32453",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312093812,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3617791,
+"lon": 50.0380063,
+"display_name": "طريق الملك عبدالله, المنار, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32273, السعودية",
+"address": {
+"road": "طريق الملك عبدالله",
+"neighbourhood": "المنار",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32273",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14058339002,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3550988,
+"lon": 50.0400005,
+"display_name": "طريق الدمام الرياض السريع, طيبة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"road": "طريق الدمام الرياض السريع",
+"neighbourhood": "طيبة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14047363471,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3777772,
+"lon": 50.0448731,
+"display_name": "ابو فرج الاصفهاني, المنار, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"road": "ابو فرج الاصفهاني",
+"neighbourhood": "المنار",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312093848,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3905428,
+"lon": 50.0225964,
+"display_name": "King Saud Street, بدر, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32445, السعودية",
+"address": {
+"road": "King Saud Street",
+"neighbourhood": "بدر",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32445",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312093813,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3604426,
+"lon": 50.0363747,
+"display_name": "طريق الدمام الرياض السريع, المنار, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"road": "طريق الدمام الرياض السريع",
+"neighbourhood": "المنار",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 229699686,
+"name": "ملاعب البراعم لنادي الترجي",
+"namedetails": {
+"name": "ملاعب البراعم لنادي الترجي"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.5652382,
+"lon": 50.0016794,
+"display_name": "ملاعب البراعم لنادي الترجي, طريق أحد, باب الساب, القديح, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"leisure": "ملاعب البراعم لنادي الترجي",
+"road": "طريق أحد",
+"neighbourhood": "باب الساب",
+"town": "القديح",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 647885245,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5789794,
+"lon": 50.0216934,
+"display_name": "جسر الرسول الأعظم, الناصرة, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"road": "جسر الرسول الأعظم",
+"neighbourhood": "الناصرة",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 737523240,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5732125,
+"lon": 50.0171066,
+"display_name": "طريق أحد, الناصرة, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"road": "طريق أحد",
+"neighbourhood": "الناصرة",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1537784331,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4800107,
+"lon": 50.0594136,
+"display_name": "طريق الخليج, الكوثر, سيهات, محافظة القطيف, المنطقة الشرقية, 32431, السعودية",
+"address": {
+"road": "طريق الخليج",
+"neighbourhood": "الكوثر",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32431",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1249057742,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.552582,
+"lon": 50.0749556,
+"display_name": "شارع الرياض, الاندلس, دارين, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"road": "شارع الرياض",
+"neighbourhood": "الاندلس",
+"village": "دارين",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1537829589,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5681082,
+"lon": 50.0310687,
+"display_name": "طريق أحد, الرضا, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"road": "طريق أحد",
+"neighbourhood": "الرضا",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 647885243,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5749218,
+"lon": 50.0222674,
+"display_name": "طريق الخليج, الناصرة, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"road": "طريق الخليج",
+"neighbourhood": "الناصرة",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 647887655,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5448424,
+"lon": 50.0607091,
+"display_name": "شارع الرياض, المرجان, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"road": "شارع الرياض",
+"neighbourhood": "المرجان",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1539075063,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5324491,
+"lon": 50.0257977,
+"display_name": "شارع القدس, المجيدية, القطيف, محافظة القطيف, المنطقة الشرقية, 31911, السعودية",
+"address": {
+"road": "شارع القدس",
+"neighbourhood": "المجيدية",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31911",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903573320,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.518429,
+"lon": 50.0332029,
+"display_name": "طريق الخليج, البستان 1, سيهات, محافظة القطيف, المنطقة الشرقية, 32453, السعودية",
+"address": {
+"road": "طريق الخليج",
+"neighbourhood": "البستان 1",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32453",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903573384,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5349351,
+"lon": 50.0321491,
+"display_name": "طريق الخليج, عنك, محافظة القطيف, المنطقة الشرقية, 31911, السعودية",
+"address": {
+"road": "طريق الخليج",
+"town": "عنك",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31911",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1225148048,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5748559,
+"lon": 50.0084212,
+"display_name": "طريق أحد, الناصرة, القديح, محافظة القطيف, المنطقة الشرقية, 32656, السعودية",
+"address": {
+"road": "طريق أحد",
+"neighbourhood": "الناصرة",
+"town": "القديح",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32656",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1473338027,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3785421,
+"lon": 50.1274917,
+"display_name": "طريق الأمير محمد بن فهد, المنتزه, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34253, السعودية",
+"address": {
+"road": "طريق الأمير محمد بن فهد",
+"neighbourhood": "المنتزه",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"covered": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1538419190,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4972014,
+"lon": 50.1216853,
+"display_name": "طريق الملك عبدالله, الدمام, محافظة الدمام, المنطقة الشرقية, 32411, السعودية",
+"address": {
+"road": "طريق الملك عبدالله",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32411",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1540042051,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4225874,
+"lon": 50.0860323,
+"display_name": "28th Street, غرناطة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32243, السعودية",
+"address": {
+"road": "28th Street",
+"neighbourhood": "غرناطة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32243",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1478470879,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4203979,
+"lon": 50.0842645,
+"display_name": "28th Street, غرناطة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32244, السعودية",
+"address": {
+"road": "28th Street",
+"neighbourhood": "غرناطة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32244",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1467703827,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3979085,
+"lon": 50.23037,
+"display_name": "1st Avenue, السيف, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34216, السعودية",
+"address": {
+"road": "1st Avenue",
+"neighbourhood": "السيف",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34216",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1540041147,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4217719,
+"lon": 50.08024,
+"display_name": "شارع مازن بن شيبان 4529, غرناطة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32243, السعودية",
+"address": {
+"road": "شارع مازن بن شيبان 4529",
+"neighbourhood": "غرناطة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32243",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 10991731780,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4916108,
+"lon": 50.1199244,
+"display_name": "طريق الملك عبدالله, الدمام, محافظة الدمام, المنطقة الشرقية, 32411, السعودية",
+"address": {
+"road": "طريق الملك عبدالله",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32411",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 7903710135,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4781906,
+"lon": 50.0929287,
+"display_name": "Al Kaurnish Road, الحمراء, الدمام, محافظة الدمام, المنطقة الشرقية, 31146, السعودية",
+"address": {
+"road": "Al Kaurnish Road",
+"neighbourhood": "الحمراء",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31146",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 2550260425,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.4568778,
+"lon": 50.1076268,
+"display_name": "طريق الخليج, الدمام, محافظة الدمام, المنطقة الشرقية, 32416, السعودية",
+"address": {
+"road": "طريق الخليج",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32416",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14050380570,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.365381,
+"lon": 50.1002647,
+"display_name": "Dhahran Jubail Branch Rd, هجر, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34261, السعودية",
+"address": {
+"road": "Dhahran Jubail Branch Rd",
+"neighbourhood": "هجر",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34261",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1225148045,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.5423733,
+"lon": 50.0773267,
+"display_name": "شارع الرياض, الاندلس, دارين, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"road": "شارع الرياض",
+"neighbourhood": "الاندلس",
+"village": "دارين",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312166162,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3014959,
+"lon": 50.0204088,
+"display_name": "615, الجود, الظهران, محافظة الدمام, المنطقة الشرقية, 34325, السعودية",
+"address": {
+"road": "615",
+"neighbourhood": "الجود",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34325",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37282302,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.286755,
+"lon": 50.116325,
+"display_name": "Ghawar Lane, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Ghawar Lane",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 932442204,
+"name": "Fadhili Playground",
+"namedetails": {
+"name": "Fadhili Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.281158,
+"lon": 50.1083845,
+"display_name": "Fadhili Playground, Fadhili, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"leisure": "Fadhili Playground",
+"road": "Fadhili",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37793634,
+"name": "Summan Circle Play Area",
+"namedetails": {
+"name": "Summan Circle Play Area"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.2963472,
+"lon": 50.1028988,
+"display_name": "Summan Circle Play Area, Summan Circle, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"leisure": "Summan Circle Play Area",
+"road": "Summan Circle",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37282413,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2885211,
+"lon": 50.1132338,
+"display_name": "Lemonwood Circle, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Lemonwood Circle",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37869429,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2868939,
+"lon": 50.1093867,
+"display_name": "Arabian Gulf Road, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Arabian Gulf Road",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37282387,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2842269,
+"lon": 50.1120941,
+"display_name": "Qatif Lane, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Qatif Lane",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 657987632,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3372584,
+"lon": 50.1358541,
+"display_name": "شارع ابن الهيثم, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258, السعودية",
+"address": {
+"road": "شارع ابن الهيثم",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 37282388,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2856392,
+"lon": 50.1106488,
+"display_name": "Najmah Drive, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Najmah Drive",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 590142265,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3305247,
+"lon": 50.1469212,
+"display_name": "شارع عمر بن عبد العزيز, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258-6471, السعودية",
+"address": {
+"road": "شارع عمر بن عبد العزيز",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258-6471",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 590260295,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3372295,
+"lon": 50.1379404,
+"display_name": "شارع الياقوت, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258, السعودية",
+"address": {
+"road": "شارع الياقوت",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 745236161,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.31499,
+"lon": 50.1739135,
+"display_name": "طريق الملك سعود, الدوحة الجنوبية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34439, السعودية",
+"address": {
+"road": "طريق الملك سعود",
+"neighbourhood": "الدوحة الجنوبية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34439",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 461349563,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2978509,
+"lon": 50.1347102,
+"display_name": "Ravine Court, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Ravine Court",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1043318149,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3070915,
+"lon": 50.1352582,
+"display_name": "5th Street, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "5th Street",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 591549432,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3290922,
+"lon": 50.1601234,
+"display_name": "شارع أنس بن مالك, الدوحة الجنوبية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34453-8060, السعودية",
+"address": {
+"road": "شارع أنس بن مالك",
+"neighbourhood": "الدوحة الجنوبية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34453-8060",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 660586512,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3438203,
+"lon": 50.1448922,
+"display_name": "شارع الباحة, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258-7559, السعودية",
+"address": {
+"road": "شارع الباحة",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258-7559",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1018176566,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2947583,
+"lon": 50.1291739,
+"display_name": "شارع رولينج هيلز, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "شارع رولينج هيلز",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 589687968,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3435684,
+"lon": 50.1534598,
+"display_name": "Qusour District Walking Trail, القصور, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258-7559, السعودية",
+"address": {
+"road": "Qusour District Walking Trail",
+"neighbourhood": "القصور",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258-7559",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14124747859,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3176173,
+"lon": 50.2004371,
+"display_name": "Prince Humud Street, الحزام الذهبي, الخبر, محافظة الخبر, المنطقة الشرقية, 34422, السعودية",
+"address": {
+"road": "Prince Humud Street",
+"neighbourhood": "الحزام الذهبي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34422",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14124747885,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3178819,
+"lon": 50.1943822,
+"display_name": "Al-Quds Street, الحزام الذهبي, الخبر, محافظة الخبر, المنطقة الشرقية, 34434, السعودية",
+"address": {
+"road": "Al-Quds Street",
+"neighbourhood": "الحزام الذهبي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34434",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13272452662,
+"name": "Ferdaws Playground",
+"namedetails": {
+"name": "Ferdaws Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.2975457,
+"lon": 50.152092,
+"display_name": "Ferdaws Playground, Ferdaws Road, جامعة الملك فهد للبترول والمعادن, الظهران, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"leisure": "Ferdaws Playground",
+"road": "Ferdaws Road",
+"neighbourhood": "جامعة الملك فهد للبترول والمعادن",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1016279890,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2781044,
+"lon": 50.1162961,
+"display_name": "Dammam Blvd., غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"road": "Dammam Blvd.",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1038796762,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2857823,
+"lon": 50.2213233,
+"display_name": "شارع الأمير تركي, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34425, السعودية",
+"address": {
+"road": "شارع الأمير تركي",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34425",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 957040450,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2829109,
+"lon": 50.2045685,
+"display_name": "طريق الملك فهد الفرعي, مدينة العمال, الخبر, محافظة الخبر, المنطقة الشرقية, 34428, السعودية",
+"address": {
+"road": "طريق الملك فهد الفرعي",
+"neighbourhood": "مدينة العمال",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34428",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes",
+"surface": "sand"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 828175348,
+"name": "Al Khobar Corniche Playground",
+"namedetails": {
+"name": "Al Khobar Corniche Playground"
+},
+"category": "leisure",
+"type": "playground",
+"lat": 26.2463326,
+"lon": 50.2208315,
+"display_name": "Al Khobar Corniche Playground, طريق الكورنيش, الساحل, الخبر, محافظة الخبر, المنطقة الشرقية, 34612, السعودية",
+"address": {
+"leisure": "Al Khobar Corniche Playground",
+"road": "طريق الكورنيش",
+"neighbourhood": "الساحل",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34612",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"surface": "paved",
+"playground:theme": "playground"
+},
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 938114993,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.2962095,
+"lon": 50.2230505,
+"display_name": "Khobar Corniche Access Road, الخبر, محافظة الخبر, المنطقة الشرقية, 34425, السعودية",
+"address": {
+"road": "Khobar Corniche Access Road",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34425",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8198240701,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.300939,
+"lon": 50.2274951,
+"display_name": "شارع الحافظ الاموي, الخبر, محافظة الخبر, المنطقة الشرقية, 34413, السعودية",
+"address": {
+"road": "شارع الحافظ الاموي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34413",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8198183661,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "playground",
+"lat": 26.3119847,
+"lon": 50.2290597,
+"display_name": "شارع الحافظ الاموي, الكورنيش, الخبر, محافظة الخبر, المنطقة الشرقية, 34412, السعودية",
+"address": {
+"road": "شارع الحافظ الاموي",
+"neighbourhood": "الكورنيش",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "ملعب",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1530082545,
+"name": "GOY Arena",
+"namedetails": {
+"name": "GOY Arena"
+},
+"category": "amenity",
+"type": "theatre",
+"lat": 26.4655311,
+"lon": 50.0673475,
+"display_name": "GOY Arena, طريق الخليج, البحيرة, الدمام, محافظة القطيف, المنطقة الشرقية, 32424, السعودية",
+"address": {
+"amenity": "GOY Arena",
+"road": "طريق الخليج",
+"neighbourhood": "البحيرة",
+"city": "الدمام",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32424",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"theatre:type": "open_air"
+},
+"kw": "مسرح",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1183713065,
+"name": "",
+"namedetails": null,
+"category": "amenity",
+"type": "theatre",
+"lat": 26.3960989,
+"lon": 50.1264515,
+"display_name": "طريق الملك عبدالله, عبدالله فؤاد, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32235, السعودية",
+"address": {
+"road": "طريق الملك عبدالله",
+"neighbourhood": "عبدالله فؤاد",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32235",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"theatre:type": "open_air"
+},
+"kw": "مسرح",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846997845,
+"name": "مركز الأمير سلطان الحضاري",
+"namedetails": {
+"name": "مركز الأمير سلطان الحضاري"
+},
+"category": "landuse",
+"type": "construction",
+"lat": 26.5345916,
+"lon": 50.0356129,
+"display_name": "مركز الأمير سلطان الحضاري, عنك, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"construction": "مركز الأمير سلطان الحضاري",
+"town": "عنك",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1448479228,
+"name": "مبنى 29 - مركز المجتمع",
+"namedetails": {
+"name": "مبنى 29 - مركز المجتمع"
+},
+"category": "amenity",
+"type": "community_centre",
+"lat": 26.3008801,
+"lon": 50.143034,
+"display_name": "مبنى 29 - مركز المجتمع, 8763, Dr Bakr Bin Bakr Road, غرب الظهران, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"amenity": "مبنى 29 - مركز المجتمع",
+"house_number": "8763",
+"road": "Dr Bakr Bin Bakr Road",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes",
+"opening_hours": "07:00-21:00",
+"community_centre": "community_hall"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 204717659,
+"name": "مركز الرعاية الأولية بالدخل المحدود",
+"namedetails": {
+"name": "مركز الرعاية الأولية بالدخل المحدود",
+"name:ar": "مركز الرعاية الأولية بالدخل المحدود",
+"name:en": "Almahdoud Primary Healthcare"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 26.5711854,
+"lon": 50.0490275,
+"display_name": "مركز الرعاية الأولية بالدخل المحدود, 5A st. شارع 5أ, الشاطئ, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"amenity": "مركز الرعاية الأولية بالدخل المحدود",
+"road": "5A st. شارع 5أ",
+"neighbourhood": "الشاطئ",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"emergency": "yes",
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 229636306,
+"name": "Aldakhl almahdood firestation مركز الدفاع المدني بالدخل المحدود",
+"namedetails": {
+"name": "Aldakhl almahdood firestation مركز الدفاع المدني بالدخل المحدود"
+},
+"category": "amenity",
+"type": "fire_station",
+"lat": 26.5703012,
+"lon": 50.0425208,
+"display_name": "Aldakhl almahdood firestation مركز الدفاع المدني بالدخل المحدود, حمزة بن عبدالمطلب, الشاطئ, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"amenity": "Aldakhl almahdood firestation مركز الدفاع المدني بالدخل المحدود",
+"road": "حمزة بن عبدالمطلب",
+"neighbourhood": "الشاطئ",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 584773952,
+"name": "مركز الدانة الحديث للولائم والحفلات",
+"namedetails": {
+"name": "مركز الدانة الحديث للولائم والحفلات",
+"name:ar": "مركز الدانة الحديث للولائم والحفلات",
+"name:en": "Dana Modern Banquet Services"
+},
+"category": "amenity",
+"type": "restaurant",
+"lat": 26.3373099,
+"lon": 50.1463649,
+"display_name": "مركز الدانة الحديث للولائم والحفلات, شارع عمر بن عبد العزيز, الدانة الشمالية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34258-6471, السعودية",
+"address": {
+"amenity": "مركز الدانة الحديث للولائم والحفلات",
+"road": "شارع عمر بن عبد العزيز",
+"neighbourhood": "الدانة الشمالية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34258-6471",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 850758656,
+"name": "مركز السمو التخصصي للتوحد",
+"namedetails": {
+"name": "مركز السمو التخصصي للتوحد",
+"name:ar": "مركز السمو التخصصي للتوحد",
+"name:en": "HH Specialized Autism Center"
+},
+"category": "amenity",
+"type": "clinic",
+"lat": 26.364681,
+"lon": 50.101264,
+"display_name": "مركز السمو التخصصي للتوحد, Dhahran Jubail Branch Rd, هجر, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34261, السعودية",
+"address": {
+"amenity": "مركز السمو التخصصي للتوحد",
+"road": "Dhahran Jubail Branch Rd",
+"neighbourhood": "هجر",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34261",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 961230499,
+"name": "مركز عادل للتسوق",
+"namedetails": {
+"name": "مركز عادل للتسوق"
+},
+"category": "shop",
+"type": "general",
+"lat": 26.4500499,
+"lon": 50.1125157,
+"display_name": "مركز عادل للتسوق, 7905, شارع أبان بن سعيد بن العاص, البديع, الدمام, محافظة الدمام, المنطقة الشرقية, 32415, السعودية",
+"address": {
+"shop": "مركز عادل للتسوق",
+"house_number": "7905",
+"road": "شارع أبان بن سعيد بن العاص",
+"neighbourhood": "البديع",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32415",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes",
+"payment:cash": "yes",
+"payment:credit_cards": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 317103762,
+"name": "مركز العياشي للتسوق",
+"namedetails": {
+"name": "مركز العياشي للتسوق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.5416895,
+"lon": 49.9883104,
+"display_name": "مركز العياشي للتسوق, طريق الإمام علي بن أبي طالب, باب الشمال, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"shop": "مركز العياشي للتسوق",
+"road": "طريق الإمام علي بن أبي طالب",
+"neighbourhood": "باب الشمال",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14030458991,
+"name": "مركز طابا",
+"namedetails": {
+"name": "Taba Center",
+"name:ar": "مركز طابا"
+},
+"category": "shop",
+"type": "variety_store",
+"lat": 26.3924144,
+"lon": 50.0478653,
+"display_name": "مركز طابا, Abu Baker Al Siddiq Street, الفيصلية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32272, السعودية",
+"address": {
+"shop": "مركز طابا",
+"road": "Abu Baker Al Siddiq Street",
+"neighbourhood": "الفيصلية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32272",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"check_date": "2026-07-21",
+"wheelchair": "yes",
+"opening_hours": "Mo-Su 15:45-23:30, Sa-Th 08:30-11:30"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4422017989,
+"name": "مركز الفيحاء للتسويق",
+"namedetails": {
+"name": "مركز الفيحاء للتسويق",
+"name:ar": "مركز الفيحاء للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.4329478,
+"lon": 50.0443422,
+"display_name": "مركز الفيحاء للتسويق, شارع الملك سعود بن عبدالعزيز, الفيحاء, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31483, السعودية",
+"address": {
+"shop": "مركز الفيحاء للتسويق",
+"road": "شارع الملك سعود بن عبدالعزيز",
+"neighbourhood": "الفيحاء",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31483",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4213144910,
+"name": "مركز سلطان الراكة (عذيبة)",
+"namedetails": {
+"name": "مركز سلطان الراكة (عذيبة)"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.3570637,
+"lon": 50.2028051,
+"display_name": "مركز سلطان الراكة (عذيبة), طريق الملك فيصل, الراكة الجنوبية, الخبر, محافظة الخبر, المنطقة الشرقية, 34226, السعودية",
+"address": {
+"shop": "مركز سلطان الراكة (عذيبة)",
+"road": "طريق الملك فيصل",
+"neighbourhood": "الراكة الجنوبية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34226",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4404214392,
+"name": "مركز دلتا للتسويق",
+"namedetails": {
+"name": "مركز دلتا للتسويق",
+"name:ar": "مركز دلتا للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.4329011,
+"lon": 50.0872559,
+"display_name": "مركز دلتا للتسويق, شارع 28, القزاز, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32244, السعودية",
+"address": {
+"shop": "مركز دلتا للتسويق",
+"road": "شارع 28",
+"neighbourhood": "القزاز",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32244",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4385753390,
+"name": "مركز النهدي للتسوق",
+"namedetails": {
+"name": "مركز النهدي للتسوق",
+"name:ar": "مركز النهدي للتسوق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.4131463,
+"lon": 50.1213135,
+"display_name": "مركز النهدي للتسوق, fatma alzahra street, عبدالله فؤاد, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31441, السعودية",
+"address": {
+"shop": "مركز النهدي للتسوق",
+"road": "fatma alzahra street",
+"neighbourhood": "عبدالله فؤاد",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31441",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13335254391,
+"name": "مركز التنمية الاجتماعية بالدمام",
+"namedetails": {
+"name": "مركز التنمية الاجتماعية بالدمام",
+"name:ar": "مركز التنمية الاجتماعية بالدمام",
+"name:en": "Social Development Center"
+},
+"category": "office",
+"type": "government",
+"lat": 26.4473938,
+"lon": 50.1087195,
+"display_name": "مركز التنمية الاجتماعية بالدمام, شارع 9, البديع, الدمام, محافظة الدمام, المنطقة الشرقية, 32416, السعودية",
+"address": {
+"office": "مركز التنمية الاجتماعية بالدمام",
+"road": "شارع 9",
+"neighbourhood": "البديع",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32416",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"amenity": "social_facility",
+"website": "https://www.hrsd.gov.sa",
+"operator": "وزارة الموارد البشرية والتنمية الاجتماعية",
+"government": "ministry",
+"wheelchair": "yes",
+"operator:en": "Ministry of Human Resources and Social Development",
+"social_facility": "outreach"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4411031989,
+"name": "مركز صيانه الشامل",
+"namedetails": {
+"name": "مركز صيانه الشامل"
+},
+"category": "shop",
+"type": "convenience",
+"lat": 26.4444367,
+"lon": 50.103563,
+"display_name": "مركز صيانه الشامل, 11th, السوق, الدمام, محافظة الدمام, المنطقة الشرقية, 32242, السعودية",
+"address": {
+"shop": "مركز صيانه الشامل",
+"road": "11th",
+"neighbourhood": "السوق",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32242",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "966500292350",
+"opening_hours": "Sa-Th 08:00-21:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14239839731,
+"name": "مركز دار الصحة الطبي",
+"namedetails": {
+"name": "Dar As Sihha Medical Center",
+"name:ar": "مركز دار الصحة الطبي"
+},
+"category": "healthcare",
+"type": "hospital",
+"lat": 26.4501639,
+"lon": 50.0873995,
+"display_name": "مركز دار الصحة الطبي, شارع الملك عبدالعزيز, الزهور, الدمام, محافظة الدمام, المنطقة الشرقية, 32416, السعودية",
+"address": {
+"healthcare": "مركز دار الصحة الطبي",
+"road": "شارع الملك عبدالعزيز",
+"neighbourhood": "الزهور",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32416",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 13 830 1953",
+"check_date": "2026-10-01",
+"healthcare": "hospital",
+"opening_hours": "24/7"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210323,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.3969368,
+"lon": 50.0186815,
+"display_name": "مركز خدمة شل, King Saud Street, بدر, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32445, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "King Saud Street",
+"neighbourhood": "بدر",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32445",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 6448136985,
+"name": "مركز شرطة تاروت",
+"namedetails": {
+"name": "مركز شرطة تاروت"
+},
+"category": "amenity",
+"type": "police",
+"lat": 26.5597472,
+"lon": 50.0592159,
+"display_name": "مركز شرطة تاروت, شارع الرياض, المناخ, دارين, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"amenity": "مركز شرطة تاروت",
+"road": "شارع الرياض",
+"neighbourhood": "المناخ",
+"village": "دارين",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 2383781436,
+"name": "مركز الرعاية الصحية الأولية بالشويكة",
+"namedetails": {
+"name": "مركز الرعاية الصحية الأولية بالشويكة"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 26.5477543,
+"lon": 50.0049402,
+"display_name": "مركز الرعاية الصحية الأولية بالشويكة, طريق الإمام علي بن أبي طالب, مياس, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"amenity": "مركز الرعاية الصحية الأولية بالشويكة",
+"road": "طريق الإمام علي بن أبي طالب",
+"neighbourhood": "مياس",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4221670394,
+"name": "مركز الدعيجي",
+"namedetails": {
+"name": "مركز الدعيجي"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.4319083,
+"lon": 50.1069392,
+"display_name": "مركز الدعيجي, شارع 9, العدامة, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32242, السعودية",
+"address": {
+"shop": "مركز الدعيجي",
+"road": "شارع 9",
+"neighbourhood": "العدامة",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32242",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210321,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.41908,
+"lon": 50.0861898,
+"display_name": "مركز خدمة شل, طريق الملك فهد الفرعي, الاتصالات, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32243, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "طريق الملك فهد الفرعي",
+"neighbourhood": "الاتصالات",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32243",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4225126793,
+"name": "مركز لينا",
+"namedetails": {
+"name": "مركز لينا"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.4108287,
+"lon": 50.0523304,
+"display_name": "مركز لينا, 8c Street, احد, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31411, السعودية",
+"address": {
+"shop": "مركز لينا",
+"road": "8c Street",
+"neighbourhood": "احد",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31411",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4248057395,
+"name": "مركز طابا",
+"namedetails": {
+"name": "مركز طابا"
+},
+"category": "shop",
+"type": "clothes",
+"lat": 26.463354,
+"lon": 50.0607079,
+"display_name": "مركز طابا, Prince Naif Road, المحمدية, سيهات, محافظة القطيف, المنطقة الشرقية, 32424, السعودية",
+"address": {
+"shop": "مركز طابا",
+"road": "Prince Naif Road",
+"neighbourhood": "المحمدية",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32424",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 10795361788,
+"name": "مركز برونز النسائي",
+"namedetails": {
+"name": "مركز برونز النسائي"
+},
+"category": "shop",
+"type": "beauty",
+"lat": 26.5662777,
+"lon": 50.0266947,
+"display_name": "مركز برونز النسائي, طريق أحد, الرضا, تاروت, محافظة القطيف, المنطقة الشرقية, 32617, السعودية",
+"address": {
+"shop": "مركز برونز النسائي",
+"road": "طريق أحد",
+"neighbourhood": "الرضا",
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32617",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4692320397,
+"name": "مركز سيف",
+"namedetails": {
+"name": "مركز سيف",
+"name:ar": "مركز سيف"
+},
+"category": "shop",
+"type": "convenience",
+"lat": 26.5681139,
+"lon": 50.0671826,
+"display_name": "مركز سيف, شارع أحد, الزمرد, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"shop": "مركز سيف",
+"road": "شارع أحد",
+"neighbourhood": "الزمرد",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "Mo-Th, Su 08:00-01:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 2000732534,
+"name": "مركز الرعاية الأولية بالربيعية",
+"namedetails": {
+"name": "مركز الرعاية الأولية بالربيعية",
+"name:ar": "مركز الرعاية الأولية بالربيعية",
+"name:en": "Rabiyiah Primary Healthcare"
+},
+"category": "amenity",
+"type": "hospital",
+"lat": 26.5662975,
+"lon": 50.0838614,
+"display_name": "مركز الرعاية الأولية بالربيعية, شارع أحد, الصواري, سنابس, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"amenity": "مركز الرعاية الأولية بالربيعية",
+"road": "شارع أحد",
+"neighbourhood": "الصواري",
+"village": "سنابس",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"emergency": "no",
+"healthcare": "hospital"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4692076993,
+"name": "مركز المعتر",
+"namedetails": {
+"name": "مركز المعتر",
+"name:ar": "مركز المعتر"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.5707117,
+"lon": 50.0672238,
+"display_name": "مركز المعتر, شارع أحد, اليمامة, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"shop": "مركز المعتر",
+"road": "شارع أحد",
+"neighbourhood": "اليمامة",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "Su-Th 08:00-23:30"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4213143784,
+"name": "مركز العملاق الراكة",
+"namedetails": {
+"name": "مركز العملاق الراكة"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.3640063,
+"lon": 50.2024456,
+"display_name": "مركز العملاق الراكة, شارع خالد بن الوليد, الراكة الجنوبية, الخبر, محافظة الخبر, المنطقة الشرقية, 34226, السعودية",
+"address": {
+"shop": "مركز العملاق الراكة",
+"road": "شارع خالد بن الوليد",
+"neighbourhood": "الراكة الجنوبية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34226",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"check_date": "2023-09-27"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210317,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.5049648,
+"lon": 50.037151,
+"display_name": "مركز خدمة شل, طريق الخليج, قرطبة, سيهات, محافظة القطيف, المنطقة الشرقية, 32453, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "طريق الخليج",
+"neighbourhood": "قرطبة",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32453",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Fr 15:00-23:00; Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1544665782,
+"name": "مركز سلطان بن عبدالعزيز للعلوم والتقنية",
+"namedetails": {
+"name": "مركز سلطان بن عبدالعزيز للعلوم والتقنية",
+"name:ar": "مركز سلطان بن عبدالعزيز للعلوم والتقنية",
+"name:en": "Sultan Bin Abdulaziz Science and Technology Center",
+"short_name": "سايتك",
+"short_name:en": "SciTech"
+},
+"category": "tourism",
+"type": "museum",
+"lat": 26.3191662,
+"lon": 50.227991,
+"display_name": "مركز سلطان بن عبدالعزيز للعلوم والتقنية, شارع الحافظ الاموي, الكورنيش, الخبر, محافظة الخبر, المنطقة الشرقية, 34412, السعودية",
+"address": {
+"tourism": "مركز سلطان بن عبدالعزيز للعلوم والتقنية",
+"road": "شارع الحافظ الاموي",
+"neighbourhood": "الكورنيش",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"fee": "yes",
+"museum": "science",
+"website": "https://scitech.sa",
+"building": "museum",
+"operator": "Sharqia Development Authority",
+"wikidata": "Q6856107",
+"wheelchair": "yes",
+"operator:ar": "هيئة تطوير المنطقة الشرقية",
+"operator:type": "government",
+"operator:website": "https://sda.gov.sa",
+"operator:wikidata": "Q68464600"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 828165083,
+"name": "مركز الدفاع المدني بحي الجسر",
+"namedetails": {
+"name": "مركز الدفاع المدني بحي الجسر",
+"name:ar": "مركز الدفاع المدني بحي الجسر",
+"name:en": "Al Jisr Civil Defense Station"
+},
+"category": "amenity",
+"type": "fire_station",
+"lat": 26.209517,
+"lon": 50.2056417,
+"display_name": "مركز الدفاع المدني بحي الجسر, طريق الملك فهد, الجسر, الخبر, محافظة الخبر, المنطقة الشرقية, 34714, السعودية",
+"address": {
+"amenity": "مركز الدفاع المدني بحي الجسر",
+"road": "طريق الملك فهد",
+"neighbourhood": "الجسر",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34714",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://www.998.gov.sa/English/",
+"building": "yes",
+"operator": "General Directorate of Civil Defense"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1238858441,
+"name": "مركز خالد",
+"namedetails": {
+"name": "مركز خالد"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2980038,
+"lon": 50.2109407,
+"display_name": "مركز خالد, 22nd Street, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34426, السعودية",
+"address": {
+"shop": "مركز خالد",
+"road": "22nd Street",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34426",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"building": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8713602133,
+"name": "Fitness First | مركز اللياقة الأولى",
+"namedetails": {
+"name": "Fitness First | مركز اللياقة الأولى"
+},
+"category": "leisure",
+"type": "fitness_centre",
+"lat": 26.2047666,
+"lon": 50.1962814,
+"display_name": "Fitness First | مركز اللياقة الأولى, طريق الملك خالد, الخزامى, الخبر, محافظة الخبر, المنطقة الشرقية, 34719, السعودية",
+"address": {
+"leisure": "Fitness First | مركز اللياقة الأولى",
+"road": "طريق الملك خالد",
+"neighbourhood": "الخزامى",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34719",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"website": "https://ksa.fitnessfirstme.com/"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4427307089,
+"name": "مركز ابو زايد للتسويق",
+"namedetails": {
+"name": "مركز ابو زايد للتسويق",
+"name:ar": "مركز ابو زايد للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2955094,
+"lon": 50.2091409,
+"display_name": "مركز ابو زايد للتسويق, Prince Thamer Street, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34426, السعودية",
+"address": {
+"shop": "مركز ابو زايد للتسويق",
+"road": "Prince Thamer Street",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34426",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210318,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.314454,
+"lon": 50.22402,
+"display_name": "مركز خدمة شل, شارع الأمير تركي, اليرموك, الخبر, محافظة الخبر, المنطقة الشرقية, 34413, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "شارع الأمير تركي",
+"neighbourhood": "اليرموك",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34413",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13421210319,
+"name": "مركز خدمة شل",
+"namedetails": {
+"name": "مركز خدمة شل"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.2500483,
+"lon": 50.1980381,
+"display_name": "مركز خدمة شل, طريق الملك خالد الفرعي, صناعية الثقبة, الخبر, محافظة الخبر, المنطقة الشرقية, 34626, السعودية",
+"address": {
+"shop": "مركز خدمة شل",
+"road": "طريق الملك خالد الفرعي",
+"neighbourhood": "صناعية الثقبة",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34626",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 752 5252",
+"website": "https://aljomaihauto.com/shell-service-center",
+"opening_hours": "Mo-Th,Sa-Su 08:00-23:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14320697157,
+"name": "مركز الإطار المميز لصيانة السيارات",
+"namedetails": {
+"name": "Excellent Tire Center For Car Maintenance",
+"name:ar": "مركز الإطار المميز لصيانة السيارات"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.2353039,
+"lon": 50.2132156,
+"display_name": "مركز الإطار المميز لصيانة السيارات, طريق الملك فهد, الحمراء, الخبر, محافظة الخبر, المنطقة الشرقية, 34717, السعودية",
+"address": {
+"shop": "مركز الإطار المميز لصيانة السيارات",
+"road": "طريق الملك فهد",
+"neighbourhood": "الحمراء",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"check_date": "2026-10-26"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8202992423,
+"name": "مركز سماء الأناقة للتخفيضات",
+"namedetails": {
+"name": "مركز سماء الأناقة للتخفيضات",
+"name:ar": "مركز سماء الأناقة للتخفيضات"
+},
+"category": "shop",
+"type": "department_store",
+"lat": 26.2897858,
+"lon": 50.2150469,
+"display_name": "مركز سماء الأناقة للتخفيضات, شارع الملك خالد, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 30449, السعودية",
+"address": {
+"shop": "مركز سماء الأناقة للتخفيضات",
+"road": "شارع الملك خالد",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "30449",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"payment:cash": "yes",
+"payment:debit_cards": "yes",
+"payment:credit_cards": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4209112060,
+"name": "مركز الأفق",
+"namedetails": {
+"name": "مركز الأفق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.297809,
+"lon": 50.2167323,
+"display_name": "مركز الأفق, King Khalid Street, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34426, السعودية",
+"address": {
+"shop": "مركز الأفق",
+"road": "King Khalid Street",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34426",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13460165439,
+"name": "مركز صيانة نجيب أوتوي",
+"namedetails": {
+"name": "Najeeb Auto Service Center",
+"brand": "Suzuki",
+"name:ar": "مركز صيانة نجيب أوتوي"
+},
+"category": "shop",
+"type": "car_repair",
+"lat": 26.25031,
+"lon": 50.1979575,
+"display_name": "مركز صيانة نجيب أوتوي, طريق الملك خالد الفرعي, صناعية الثقبة, الخبر, محافظة الخبر, المنطقة الشرقية, 34626, السعودية",
+"address": {
+"shop": "مركز صيانة نجيب أوتوي",
+"road": "طريق الملك خالد الفرعي",
+"neighbourhood": "صناعية الثقبة",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34626",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966 800 244 4441",
+"website": "https://suzukinajeebauto.com",
+"instagram": "https://www.instagram.com/najeebauto",
+"opening_hours": "Mo-Th,Sa-Su 10:00-16:00"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4212438989,
+"name": "مركز جواد للتسوق",
+"namedetails": {
+"name": "مركز جواد للتسوق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2842538,
+"lon": 50.2028532,
+"display_name": "مركز جواد للتسوق, طريق الملك فهد الفرعي, مدينة العمال, الخبر, محافظة الخبر, المنطقة الشرقية, 34428, السعودية",
+"address": {
+"shop": "مركز جواد للتسوق",
+"road": "طريق الملك فهد الفرعي",
+"neighbourhood": "مدينة العمال",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34428",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4212423390,
+"name": "مركز انوار 4",
+"namedetails": {
+"name": "مركز انوار 4"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2875134,
+"lon": 50.1997237,
+"display_name": "مركز انوار 4, Prince Humud Street, مدينة العمال, الخبر, محافظة الخبر, المنطقة الشرقية, 34433, السعودية",
+"address": {
+"shop": "مركز انوار 4",
+"road": "Prince Humud Street",
+"neighbourhood": "مدينة العمال",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34433",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4111370391,
+"name": "adhwaq ladies fashion center مركز أذواق النسائي",
+"namedetails": {
+"name": "adhwaq ladies fashion center مركز أذواق النسائي"
+},
+"category": "shop",
+"type": "chemist",
+"lat": 26.3003405,
+"lon": 50.1938097,
+"display_name": "adhwaq ladies fashion center مركز أذواق النسائي, 22 Street, العقربية, الخبر, محافظة الخبر, المنطقة الشرقية, 34436, السعودية",
+"address": {
+"shop": "adhwaq ladies fashion center مركز أذواق النسائي",
+"road": "22 Street",
+"neighbourhood": "العقربية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34436",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4213089894,
+"name": "مركز الانوار 1 البيونية",
+"namedetails": {
+"name": "مركز الانوار 1 البيونية"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2661321,
+"lon": 50.2066037,
+"display_name": "مركز الانوار 1 البيونية, Iskan Park, الخبر الجنوبية, الخبر, محافظة الخبر, المنطقة الشرقية, 34621, السعودية",
+"address": {
+"shop": "مركز الانوار 1 البيونية",
+"road": "Iskan Park",
+"neighbourhood": "الخبر الجنوبية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34621",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4404233090,
+"name": "مركز هيله مشبب لجهر التجارى",
+"namedetails": {
+"name": "مركز هيله مشبب لجهر التجارى",
+"name:ar": "مركز هيله مشبب لجهر التجارى"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2674884,
+"lon": 50.1998628,
+"display_name": "مركز هيله مشبب لجهر التجارى, 25th Street, الثقبة, الخبر, محافظة الخبر, المنطقة الشرقية, 34621, السعودية",
+"address": {
+"shop": "مركز هيله مشبب لجهر التجارى",
+"road": "25th Street",
+"neighbourhood": "الثقبة",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34621",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4404169795,
+"name": "مركز النعيمي للتسويق",
+"namedetails": {
+"name": "مركز النعيمي للتسويق",
+"name:ar": "مركز النعيمي للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.2774657,
+"lon": 50.1932582,
+"display_name": "مركز النعيمي للتسويق, شارع مكة المكرمة, الثقبة, الخبر, محافظة الخبر, المنطقة الشرقية, 23126, السعودية",
+"address": {
+"shop": "مركز النعيمي للتسويق",
+"road": "شارع مكة المكرمة",
+"neighbourhood": "الثقبة",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "23126",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13335312613,
+"name": "مركز التنمية الاجتماعية بالقطيف",
+"namedetails": {
+"name": "مركز التنمية الاجتماعية بالقطيف",
+"name:ar": "مركز التنمية الاجتماعية بالقطيف",
+"name:en": "Social Development Center"
+},
+"category": "office",
+"type": "government",
+"lat": 26.5604721,
+"lon": 50.0082856,
+"display_name": "مركز التنمية الاجتماعية بالقطيف, شارع هاجر, القلعة, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"office": "مركز التنمية الاجتماعية بالقطيف",
+"road": "شارع هاجر",
+"neighbourhood": "القلعة",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"amenity": "social_facility",
+"website": "https://www.hrsd.gov.sa",
+"operator": "وزارة الموارد البشرية والتنمية الاجتماعية",
+"government": "ministry",
+"wheelchair": "yes",
+"operator:en": "Ministry of Human Resources and Social Development",
+"social_facility": "outreach"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 1237807040,
+"name": "مركز الرامس",
+"namedetails": {
+"name": "مركز الرامس",
+"name:ar": "مركز الرامس",
+"name:de": "Markaz ar Ramis",
+"name:en": "Markaz ar Ramis",
+"name:fr": "Markaz ar Ramis",
+"int_name": "Markaz ar Rāmis"
+},
+"category": "amenity",
+"type": "police",
+"lat": 26.588611,
+"lon": 50.009722,
+"display_name": "مركز الرامس, الحباب بن المنذر الخزرجي, الزهراء, القطيف, محافظة القطيف, المنطقة الشرقية, 32641, السعودية",
+"address": {
+"amenity": "مركز الرامس",
+"road": "الحباب بن المنذر الخزرجي",
+"neighbourhood": "الزهراء",
+"suburb": "الزهراء",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32641",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"GNS:id": "420031",
+"GNS:dsg_code": "PP",
+"GNS:dsg_name": "police post"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8723192786,
+"name": "مركز وفاء السعيد النسائي",
+"namedetails": {
+"name": "مركز وفاء السعيد النسائي",
+"name:ar": "مركز وفاء السعيد النسائي"
+},
+"category": "shop",
+"type": "beauty",
+"lat": 26.6424436,
+"lon": 49.9624698,
+"display_name": "مركز وفاء السعيد النسائي, طريق الإمام علي بن أبي طالب, المروة, صفوى, محافظة القطيف, المنطقة الشرقية, 32827, السعودية",
+"address": {
+"shop": "مركز وفاء السعيد النسائي",
+"road": "طريق الإمام علي بن أبي طالب",
+"neighbourhood": "المروة",
+"town": "صفوى",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32827",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966552249571",
+"beauty": "nails;spa;hair;skin_care;hair_removal;pedicure;eyelash;eyebrow;massage;skin;foot",
+"website": "https://instagram.com/wafabeautycenter",
+"operator": "وفاء السعيد",
+"payment:cash": "yes",
+"opening_hours": "Mo-Su 10:00-22:00",
+"payment:debit_cards": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8722545343,
+"name": "مركز مدد للتسويق",
+"namedetails": {
+"name": "مركز مدد للتسويق",
+"name:ar": "مركز مدد للتسويق"
+},
+"category": "shop",
+"type": "supermarket",
+"lat": 26.6475898,
+"lon": 49.9588824,
+"display_name": "مركز مدد للتسويق, طريق الإمام علي بن أبي طالب, المروة, صفوى, محافظة القطيف, المنطقة الشرقية, 32827, السعودية",
+"address": {
+"shop": "مركز مدد للتسويق",
+"road": "طريق الإمام علي بن أبي طالب",
+"neighbourhood": "المروة",
+"town": "صفوى",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32827",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966136644488",
+"payment:cash": "yes",
+"payment:visa": "yes",
+"opening_hours": "Mo-Su 06:00-23:59",
+"payment:mastercard": "yes",
+"payment:debit_cards": "yes",
+"payment:credit_cards": "yes"
+},
+"kw": "مركز",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 204679210,
+"name": "Alsada Wedding Hall",
+"namedetails": {
+"name": "Alsada Wedding Hall"
+},
+"category": "building",
+"type": "yes",
+"lat": 26.5759549,
+"lon": 50.0729162,
+"display_name": "Alsada Wedding Hall, شارع أحد, اليمامة, الربيعية, محافظة القطيف, المنطقة الشرقية, 32611, السعودية",
+"address": {
+"building": "Alsada Wedding Hall",
+"road": "شارع أحد",
+"neighbourhood": "اليمامة",
+"village": "الربيعية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32611",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "wedding",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 12097197940,
+"name": "Nadeen Events",
+"namedetails": {
+"name": "Nadeen Events"
+},
+"category": "office",
+"type": "event_planning_service",
+"lat": 26.2878837,
+"lon": 50.2108282,
+"display_name": "Nadeen Events, Prince Misha'al Street, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34428, السعودية",
+"address": {
+"office": "Nadeen Events",
+"road": "Prince Misha'al Street",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34428",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"phone": "+966500033887",
+"description": "We are Event Planners and we mostly Plan Weeding Events",
+"opening_hours": "Su-Fr 04:00-10:00",
+"contact:instagram": "https://www.instagram.com/nadeen_events"
+},
+"kw": "events",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 12098782476,
+"name": "كوشات نادين",
+"namedetails": {
+"name": "كوشات نادين",
+"name:ar": "كوشات نادين",
+"name:en": "Nadeen Events"
+},
+"category": "office",
+"type": "event_planning_services",
+"lat": 26.2900034,
+"lon": 50.2088227,
+"display_name": "كوشات نادين, 10th Street, الخبر الشمالية, الخبر, محافظة الخبر, المنطقة الشرقية, 34428, السعودية",
+"address": {
+"office": "كوشات نادين",
+"road": "10th Street",
+"neighbourhood": "الخبر الشمالية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34428",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"email": "nadynevents@gmail.com",
+"phone": "+966537181840",
+"opening_hours": "Mo-Su 04:00-10:00",
+"air_conditioning": "yes"
+},
+"kw": "events",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1243237914,
+"name": "Sheraton Dammam Hotel & Convention Centre",
+"namedetails": {
+"name": "Sheraton Dammam Hotel & Convention Centre"
+},
+"category": "building",
+"type": "hotel",
+"lat": 26.4526808,
+"lon": 50.1203705,
+"display_name": "Sheraton Dammam Hotel & Convention Centre, شارع الأشرعة, المزروعية, الدمام, محافظة الدمام, المنطقة الشرقية, 32412, السعودية",
+"address": {
+"building": "Sheraton Dammam Hotel & Convention Centre",
+"road": "شارع الأشرعة",
+"neighbourhood": "المزروعية",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"height": "70",
+"building:levels": "20"
+},
+"kw": "convention",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 710062684,
+"name": "A16 Conference Hall",
+"namedetails": {
+"ref": "A16",
+"name": "A16 Conference Hall",
+"name:ar": "A16 Conference Hall"
+},
+"category": "building",
+"type": "university",
+"lat": 26.3942274,
+"lon": 50.1885986,
+"display_name": "A16 Conference Hall, East 2nd Street, مدينة الملك فيصل الجامعية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31421, السعودية",
+"address": {
+"building": "A16 Conference Hall",
+"road": "East 2nd Street",
+"neighbourhood": "مدينة الملك فيصل الجامعية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31421",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "conference",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846933741,
+"name": "S1 The Stadium",
+"namedetails": {
+"name": "S1 The Stadium"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 26.3998672,
+"lon": 50.1967409,
+"display_name": "S1 The Stadium, 4th Avenue, مدينة الملك فيصل الجامعية, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 31421, السعودية",
+"address": {
+"leisure": "S1 The Stadium",
+"road": "4th Avenue",
+"neighbourhood": "مدينة الملك فيصل الجامعية",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "31421",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13272452653,
+"name": "الاستاد الرياضي",
+"namedetails": {
+"name": "الاستاد الرياضي"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 26.3081683,
+"lon": 50.1514066,
+"display_name": "الاستاد الرياضي, 36, بوليفار الجامعة, جامعة الملك فهد للبترول والمعادن, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"leisure": "الاستاد الرياضي",
+"house_number": "36",
+"road": "بوليفار الجامعة",
+"neighbourhood": "جامعة الملك فهد للبترول والمعادن",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 70187334,
+"name": "ملعب نادي القادسية الرياضي",
+"namedetails": {
+"name": "ملعب نادي القادسية الرياضي",
+"name:ar": "ملعب نادي القادسية الرياضي",
+"name:en": "Al Qadsiah Club Stadium"
+},
+"category": "leisure",
+"type": "stadium",
+"lat": 26.293974,
+"lon": 50.2032556,
+"display_name": "ملعب نادي القادسية الرياضي, 10th Street, مدينة العمال, الخبر, محافظة الخبر, المنطقة الشرقية, 34446, السعودية",
+"address": {
+"leisure": "ملعب نادي القادسية الرياضي",
+"road": "10th Street",
+"neighbourhood": "مدينة العمال",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34446",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"operator": "وزارة الرياضة",
+"description": "أحد الملاعب الرسمية المستضيفة لبطولة كأس آسيا 2027"
+},
+"kw": "stadium",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312165965,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "stadium",
+"lat": 26.2980721,
+"lon": 50.0233766,
+"display_name": "615, الجود, الظهران, محافظة الدمام, المنطقة الشرقية, 34325, السعودية",
+"address": {
+"road": "615",
+"neighbourhood": "الجود",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34325",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 708092830,
+"name": "Khaleej Club Stadium",
+"namedetails": {
+"name": "Khaleej Club Stadium"
+},
+"category": "leisure",
+"type": "pitch",
+"lat": 26.4743301,
+"lon": 50.0331993,
+"display_name": "Khaleej Club Stadium, شارع عمر بن عبد العزيز, الدانة, سيهات, محافظة القطيف, المنطقة الشرقية, 32431, السعودية",
+"address": {
+"leisure": "Khaleej Club Stadium",
+"road": "شارع عمر بن عبد العزيز",
+"neighbourhood": "الدانة",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32431",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"sport": "soccer"
+},
+"kw": "stadium",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312166356,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "stadium",
+"lat": 26.2939056,
+"lon": 50.0279194,
+"display_name": "615, الجود, الظهران, محافظة الدمام, المنطقة الشرقية, 34325, السعودية",
+"address": {
+"road": "615",
+"neighbourhood": "الجود",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34325",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "stadium",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 440632232,
+"name": "Recreation Theater",
+"namedetails": {
+"name": "Recreation Theater"
+},
+"category": "amenity",
+"type": "cinema",
+"lat": 26.3037769,
+"lon": 50.1294599,
+"display_name": "Recreation Theater, Karl Avenue, غرب الظهران, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"amenity": "Recreation Theater",
+"road": "Karl Avenue",
+"neighbourhood": "غرب الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "theater",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 702443663,
+"name": "Auditorium and Gymnasium",
+"namedetails": {
+"name": "Auditorium and Gymnasium"
+},
+"category": "building",
+"type": "yes",
+"lat": 26.3263312,
+"lon": 50.1092949,
+"display_name": "Auditorium and Gymnasium, بولفار الظهران, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34257, السعودية",
+"address": {
+"building": "Auditorium and Gymnasium",
+"road": "بولفار الظهران",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34257",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "auditorium",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4533885493,
+"name": "الصالة الخضراء",
+"namedetails": {
+"name": "الصالة الخضراء",
+"name:ar": "الصالة الخضراء",
+"name:en": "Green dome"
+},
+"category": "amenity",
+"type": "community_centre",
+"lat": 26.3591626,
+"lon": 50.1866461,
+"display_name": "الصالة الخضراء, شارع خالد بن الوليد, المدينة الرياضية, الخبر, محافظة الخبر, المنطقة الشرقية, 34234, السعودية",
+"address": {
+"amenity": "الصالة الخضراء",
+"road": "شارع خالد بن الوليد",
+"neighbourhood": "المدينة الرياضية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34234",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "dome",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 14049914060,
+"name": "القبّة العلمية",
+"namedetails": {
+"name": "القبّة العلمية",
+"name:ar": "القبّة العلمية",
+"name:en": "Scientific Dome"
+},
+"category": "amenity",
+"type": "planetarium",
+"lat": 26.3187578,
+"lon": 50.2280331,
+"display_name": "القبّة العلمية, شارع الحافظ الاموي, الكورنيش, الخبر, محافظة الخبر, المنطقة الشرقية, 34412, السعودية",
+"address": {
+"amenity": "القبّة العلمية",
+"road": "شارع الحافظ الاموي",
+"neighbourhood": "الكورنيش",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34412",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"cinema:3D": "yes",
+"cinema:IMAX": "yes"
+},
+"kw": "dome",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1249064962,
+"name": "Pavilion AlKhobar",
+"namedetails": {
+"name": "Pavilion AlKhobar"
+},
+"category": "shop",
+"type": "mall",
+"lat": 26.3302611,
+"lon": 50.2127984,
+"display_name": "Pavilion AlKhobar, 8422, طريق الملك فيصل, الروابي, الخبر, محافظة الخبر, المنطقة الشرقية, 34422, السعودية",
+"address": {
+"shop": "Pavilion AlKhobar",
+"house_number": "8422",
+"road": "طريق الملك فيصل",
+"neighbourhood": "الروابي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34422",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"email": "pavilion@alruwadre.com",
+"phone": "+966558833871",
+"website": "https://reach.link/pavilionalkhobar",
+"building": "yes",
+"operator": "Pavilion AlKhobar",
+"opening_hours": "24/7",
+"contact:instagram": "https://www.instagram.com/pavilion.alkhobar/?hl=ar"
+},
+"kw": "pavilion",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 11610220334,
+"name": "Pavilion Alkhobar",
+"namedetails": {
+"name": "Pavilion Alkhobar"
+},
+"category": "shop",
+"type": "mall",
+"lat": 26.3303339,
+"lon": 50.2128086,
+"display_name": "Pavilion Alkhobar, 8422, طريق الملك فيصل, الروابي, الخبر, محافظة الخبر, المنطقة الشرقية, 34422, السعودية",
+"address": {
+"shop": "Pavilion Alkhobar",
+"house_number": "8422",
+"road": "طريق الملك فيصل",
+"neighbourhood": "الروابي",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34422",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"email": "pavilion@alruwadre.com",
+"phone": "+966530040058",
+"mobile": "+966558833871",
+"website": "https://reach.link/pavilionalkhobar",
+"operator": "Pavilion Alkhobar",
+"opening_hours": "24/7",
+"internet_access": "yes",
+"internet_access:fee": "customers"
+},
+"kw": "pavilion",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 19120283,
+"name": "المدينة الرياضية",
+"namedetails": {
+"name": "المدينة الرياضية",
+"name:ar": "المدينة الرياضية",
+"name:en": "Sports City"
+},
+"category": "boundary",
+"type": "administrative",
+"lat": 26.3578047,
+"lon": 50.1831435,
+"display_name": "المدينة الرياضية, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"neighbourhood": "المدينة الرياضية",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"linked_place": "neighbourhood",
+"admin_level": "10"
+},
+"kw": "sports city",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 793004533,
+"name": "مدينة الأمير نايف بن عبد العزيز الرياضية",
+"namedetails": {
+"name": "مدينة الأمير نايف بن عبد العزيز الرياضية",
+"name:ar": "مدينة الأمير نايف بن عبد العزيز الرياضية",
+"name:en": "Prince Nayef Sports City"
+},
+"category": "leisure",
+"type": "sports_centre",
+"lat": 26.5053431,
+"lon": 49.9799045,
+"display_name": "مدينة الأمير نايف بن عبد العزيز الرياضية, 613 to 95 link, الجش, محافظة القطيف, المنطقة الشرقية, 32467, السعودية",
+"address": {
+"leisure": "مدينة الأمير نايف بن عبد العزيز الرياضية",
+"road": "613 to 95 link",
+"town": "الجش",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32467",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"wikidata": "Q123631778"
+},
+"kw": "sports city",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13272452645,
+"name": "Park",
+"namedetails": {
+"name": "Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3142268,
+"lon": 50.1395722,
+"display_name": "Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"park": "Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13272452659,
+"name": "park",
+"namedetails": {
+"name": "park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2988589,
+"lon": 50.1488655,
+"display_name": "park, الظهران, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"park": "park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 4085371434,
+"name": "Khair Park",
+"namedetails": {
+"name": "Khair Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2918625,
+"lon": 50.1782604,
+"display_name": "Khair Park, 144, الخبر, محافظة الخبر, المنطقة الشرقية, 34448, السعودية",
+"address": {
+"park": "Khair Park",
+"house_number": "144",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34448",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"description": "Neighborhood Park"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1337810583,
+"name": "REHAB",
+"namedetails": {
+"name": "REHAB"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.523289,
+"lon": 49.9655768,
+"display_name": "REHAB, البدراني, الجارودية, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "REHAB",
+"hamlet": "البدراني",
+"town": "الجارودية",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"access": "yes"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 248191657,
+"name": "Corniche",
+"namedetails": {
+"name": "Corniche"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4628388,
+"lon": 50.1130664,
+"display_name": "Corniche, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Corniche",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 15999678,
+"name": "منتزه الملك فهد",
+"namedetails": {
+"name": "منتزه الملك فهد",
+"name:ar": "منتزه الملك فهد",
+"name:en": "King Fahd Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3935845,
+"lon": 50.1252057,
+"display_name": "منتزه الملك فهد, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "منتزه الملك فهد",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 728908858,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.4940695,
+"lon": 50.0526227,
+"display_name": "سيهات, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 699518175,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3611974,
+"lon": 50.1302722,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 10028538,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.4876722,
+"lon": 50.1188644,
+"display_name": "الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 718364765,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.4485881,
+"lon": 50.0798018,
+"display_name": "الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 462848793,
+"name": "منتزة سيهات",
+"namedetails": {
+"name": "منتزة سيهات",
+"name:ar": "منتزة سيهات",
+"name:en": "Saihat Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4839211,
+"lon": 50.0448942,
+"display_name": "منتزة سيهات, سيهات, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "منتزة سيهات",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 708341594,
+"name": "ساحة الحزم",
+"namedetails": {
+"name": "ساحة الحزم"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3961737,
+"lon": 50.1108755,
+"display_name": "ساحة الحزم, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "ساحة الحزم",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1177261973,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.587562,
+"lon": 50.0803519,
+"display_name": "سنابس, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"suburb": "سنابس",
+"village": "سنابس",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 71223743,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5439404,
+"lon": 50.0737542,
+"display_name": "دارين, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"village": "دارين",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1552499384,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3178694,
+"lon": 50.1944653,
+"display_name": "الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 645961149,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5708245,
+"lon": 50.0339842,
+"display_name": "تاروت, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846997830,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5159739,
+"lon": 50.0337124,
+"display_name": "عنك, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "عنك",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13883584203,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3371423,
+"lon": 50.0038024,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32323, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32323",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 8711234401,
+"name": "منتزه ارامكو البيئي 2",
+"namedetails": {
+"name": "منتزه ارامكو البيئي 2",
+"name:ar": "منتزه ارامكو البيئي 2",
+"name:en": "Aramco Environmental Park 2"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3740635,
+"lon": 50.1281252,
+"display_name": "منتزه ارامكو البيئي 2, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34242, السعودية",
+"address": {
+"park": "منتزه ارامكو البيئي 2",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34242",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"operator": "Saudi Aramco"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 12019999383,
+"name": "حديقة الأماني",
+"namedetails": {
+"name": "حديقة الأماني"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4475644,
+"lon": 50.1162963,
+"display_name": "حديقة الأماني, 3971, الدمام, محافظة الدمام, المنطقة الشرقية, 32415, السعودية",
+"address": {
+"park": "حديقة الأماني",
+"house_number": "3971",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32415",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1552122663,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.594971,
+"lon": 49.9966042,
+"display_name": "القديح, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "القديح",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 648584651,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5749966,
+"lon": 50.0085433,
+"display_name": "القطيف, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 727130417,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.0897925,
+"lon": 50.1203071,
+"display_name": "محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 691036804,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.1417448,
+"lon": 50.0023041,
+"display_name": "محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 601166006,
+"name": "كورنيش القطيف",
+"namedetails": {
+"name": "كورنيش القطيف",
+"name:ar": "كورنيش القطيف",
+"name:en": "Cornich Al Qatif"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.5443104,
+"lon": 50.0271776,
+"display_name": "كورنيش القطيف, القطيف, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "كورنيش القطيف",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"landuse": "grass"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 726001628,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.4196726,
+"lon": 50.0719878,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846997824,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5209829,
+"lon": 50.0306996,
+"display_name": "عنك, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "عنك",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 549248455,
+"name": "منتزة غرناطة",
+"namedetails": {
+"name": "منتزة غرناطة",
+"name:ar": "منتزة غرناطة",
+"name:en": "Ghirnatah Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4765921,
+"lon": 50.0519748,
+"display_name": "منتزة غرناطة, سيهات, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "منتزة غرناطة",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 229703380,
+"name": "حديقة شارع القدس",
+"namedetails": {
+"name": "حديقة شارع القدس"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.5650247,
+"lon": 50.0117268,
+"display_name": "حديقة شارع القدس, القطيف, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "حديقة شارع القدس",
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846997746,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5065405,
+"lon": 50.0032001,
+"display_name": "الجش, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "الجش",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 645958384,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5705024,
+"lon": 50.0438088,
+"display_name": "تاروت, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 462852826,
+"name": "منتزة الزهور",
+"namedetails": {
+"name": "منتزة الزهور",
+"name:ar": "منتزة الزهور",
+"name:en": "Al-Zuhour Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4699891,
+"lon": 50.0400653,
+"display_name": "منتزة الزهور, سيهات, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "منتزة الزهور",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 846944837,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.433262,
+"lon": 50.0414425,
+"display_name": "الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 501841658,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5447201,
+"lon": 50.0234829,
+"display_name": "القطيف, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "القطيف",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 546833750,
+"name": "منتزه السلام",
+"namedetails": {
+"name": "منتزه السلام",
+"name:ar": "منتزه السلام",
+"name:en": "Assalam Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4753273,
+"lon": 50.0398744,
+"display_name": "منتزه السلام, سيهات, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"park": "منتزه السلام",
+"town": "سيهات",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312093811,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3603709,
+"lon": 50.0360844,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32274, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32274",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 875154204,
+"name": "Assafa community park",
+"namedetails": {
+"name": "Assafa community park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3811677,
+"lon": 50.1827851,
+"display_name": "Assafa community park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Assafa community park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 633110622,
+"name": "Al Raka Hidden Park",
+"namedetails": {
+"name": "Al Raka Hidden Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3626454,
+"lon": 50.1948714,
+"display_name": "Al Raka Hidden Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Al Raka Hidden Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 850775693,
+"name": "Hada Park",
+"namedetails": {
+"name": "Hada Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3623097,
+"lon": 50.0937377,
+"display_name": "Hada Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Hada Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 69323553,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3606428,
+"lon": 50.1371676,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1119576587,
+"name": "منتزة أرامكو البيئي 3",
+"namedetails": {
+"name": "منتزة أرامكو البيئي 3"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.396008,
+"lon": 50.1290475,
+"display_name": "منتزة أرامكو البيئي 3, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "منتزة أرامكو البيئي 3",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1183637756,
+"name": "الواجهة البحرية الشمالية",
+"namedetails": {
+"name": "الواجهة البحرية الشمالية"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.4978865,
+"lon": 50.1300192,
+"display_name": "الواجهة البحرية الشمالية, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "الواجهة البحرية الشمالية",
+"city": "الدمام",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 69142108,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3914087,
+"lon": 50.1206011,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32235, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32235",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1380295931,
+"name": "ساحة الجامعيين",
+"namedetails": {
+"name": "ساحة الجامعيين"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3944477,
+"lon": 50.097838,
+"display_name": "ساحة الجامعيين, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "ساحة الجامعيين",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 633112046,
+"name": "حديقة غرناطة",
+"namedetails": {
+"name": "حديقة غرناطة",
+"name:ar": "حديقة غرناطة",
+"name:en": "Granada Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3588594,
+"lon": 50.2059234,
+"display_name": "حديقة غرناطة, 4783, الخبر, محافظة الخبر, المنطقة الشرقية, 34226, السعودية",
+"address": {
+"park": "حديقة غرناطة",
+"house_number": "4783",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34226",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 692890144,
+"name": "حديقة المعيبد",
+"namedetails": {
+"name": "حديقة المعيبد"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3520646,
+"lon": 50.1888685,
+"display_name": "حديقة المعيبد, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"park": "حديقة المعيبد",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1177261597,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.5959443,
+"lon": 50.0757184,
+"display_name": "تاروت, محافظة القطيف, المنطقة الشرقية, السعودية",
+"address": {
+"town": "تاروت",
+"province": "محافظة القطيف",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1215627080,
+"name": "2B Park",
+"namedetails": {
+"name": "2B Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2634116,
+"lon": 50.0720864,
+"display_name": "2B Park, الظهران, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "2B Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 5312821144,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3459998,
+"lon": 50.037764,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 32273, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "32273",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 18947507,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.2250221,
+"lon": 49.9780681,
+"display_name": "الظهران, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 549932029,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.2981877,
+"lon": 50.0285337,
+"display_name": "الظهران, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 549932005,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3006178,
+"lon": 50.0197437,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 589672394,
+"name": "Qusour District Park",
+"namedetails": {
+"name": "Qusour District Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3477185,
+"lon": 50.1508734,
+"display_name": "Qusour District Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Qusour District Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "relation",
+"osm_id": 12587763,
+"name": "Hills Park",
+"namedetails": {
+"name": "Hills Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2980735,
+"lon": 50.1072567,
+"display_name": "Hills Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Hills Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 591763474,
+"name": "Zuhoor Park",
+"namedetails": {
+"name": "Zuhoor Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3360902,
+"lon": 50.1647211,
+"display_name": "Zuhoor Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Zuhoor Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1043081430,
+"name": "Dammam Blvd. Park",
+"namedetails": {
+"name": "Dammam Blvd. Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2794677,
+"lon": 50.1147966,
+"display_name": "Dammam Blvd. Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Dammam Blvd. Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 692391324,
+"name": "Najd Park",
+"namedetails": {
+"name": "Najd Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2990876,
+"lon": 50.1031476,
+"display_name": "Najd Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Najd Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 931314818,
+"name": "Tehama Park",
+"namedetails": {
+"name": "Tehama Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2932021,
+"lon": 50.0958466,
+"display_name": "Tehama Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Tehama Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 228234746,
+"name": "King's Road Park",
+"namedetails": {
+"name": "King's Road Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3046422,
+"lon": 50.129248,
+"display_name": "King's Road Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "King's Road Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1071211415,
+"name": "shatha park",
+"namedetails": {
+"name": "shatha park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3440485,
+"lon": 50.1368714,
+"display_name": "shatha park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "shatha park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 604655514,
+"name": "Triangle Park",
+"namedetails": {
+"name": "Triangle Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3309189,
+"lon": 50.1688404,
+"display_name": "Triangle Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Triangle Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 927713165,
+"name": "Hawta Park",
+"namedetails": {
+"name": "Hawta Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.300365,
+"lon": 50.1037203,
+"display_name": "Hawta Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Hawta Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 576069792,
+"name": "Kawthar Street Park",
+"namedetails": {
+"name": "Kawthar Street Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3425376,
+"lon": 50.1448859,
+"display_name": "Kawthar Street Park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Kawthar Street Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 692391325,
+"name": "Area of Lights Park",
+"namedetails": {
+"name": "Area of Lights Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3068275,
+"lon": 50.1286149,
+"display_name": "Area of Lights Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Area of Lights Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1068932828,
+"name": "Raihan park",
+"namedetails": {
+"name": "Raihan park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3455343,
+"lon": 50.1313749,
+"display_name": "Raihan park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Raihan park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1068932826,
+"name": "Reef park",
+"namedetails": {
+"name": "Reef park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.346788,
+"lon": 50.1286488,
+"display_name": "Reef park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Reef park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1068932825,
+"name": "sawsan park",
+"namedetails": {
+"name": "sawsan park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3451011,
+"lon": 50.1290803,
+"display_name": "sawsan park, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "sawsan park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 583976297,
+"name": "Ulaya Mousqe Park",
+"namedetails": {
+"name": "Ulaya Mousqe Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2993086,
+"lon": 50.1776759,
+"display_name": "Ulaya Mousqe Park, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Ulaya Mousqe Park",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 440334678,
+"name": "Nariya Lane Park",
+"namedetails": {
+"name": "Nariya Lane Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.290552,
+"lon": 50.1106705,
+"display_name": "Nariya Lane Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Nariya Lane Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "node",
+"osm_id": 13272452655,
+"name": "Rawdha Park, KFUPM",
+"namedetails": {
+"name": "Rawdha Park, KFUPM"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3021933,
+"lon": 50.1455783,
+"display_name": "Rawdha Park, KFUPM, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, 34464, السعودية",
+"address": {
+"park": "Rawdha Park, KFUPM",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"postcode": "34464",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 559864512,
+"name": "Khobar Park",
+"namedetails": {
+"name": "Khobar Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2831401,
+"lon": 50.2054219,
+"display_name": "Khobar Park, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Khobar Park",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1112657723,
+"name": "PMU Faculty Community Park",
+"namedetails": {
+"name": "PMU Faculty Community Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.174344,
+"lon": 50.1225366,
+"display_name": "PMU Faculty Community Park, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"park": "PMU Faculty Community Park",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"operator": "PMU"
+},
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 583976296,
+"name": "Rashid Front Entrance Park",
+"namedetails": {
+"name": "Rashid Front Entrance Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2897446,
+"lon": 50.180524,
+"display_name": "Rashid Front Entrance Park, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Rashid Front Entrance Park",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1043081429,
+"name": "Karan Rd. Park",
+"namedetails": {
+"name": "Karan Rd. Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2773149,
+"lon": 50.1147471,
+"display_name": "Karan Rd. Park, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Karan Rd. Park",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 427227612,
+"name": "Dhahran Hills Snack Bar",
+"namedetails": {
+"name": "Dhahran Hills Snack Bar"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.291166,
+"lon": 50.1055033,
+"display_name": "Dhahran Hills Snack Bar, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Dhahran Hills Snack Bar",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 563692365,
+"name": "Khobar Corniche Seawalk",
+"namedetails": {
+"name": "Khobar Corniche Seawalk"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.2942461,
+"lon": 50.2250079,
+"display_name": "Khobar Corniche Seawalk, الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Khobar Corniche Seawalk",
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 952639282,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.2982536,
+"lon": 50.163366,
+"display_name": "الظهران, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 461348619,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.2992745,
+"lon": 50.1374157,
+"display_name": "الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1068932830,
+"name": "Al Jam",
+"namedetails": {
+"name": "Al Jam"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3427851,
+"lon": 50.1293278,
+"display_name": "Al Jam, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Al Jam",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 702250563,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3495253,
+"lon": 50.1081403,
+"display_name": "الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 576069754,
+"name": "حديقة الياقوت",
+"namedetails": {
+"name": "حديقة الياقوت",
+"name:ar": "حديقة الياقوت"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3373315,
+"lon": 50.1376733,
+"display_name": "حديقة الياقوت, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "حديقة الياقوت",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 461347200,
+"name": "soccer field",
+"namedetails": {
+"name": "soccer field"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3011951,
+"lon": 50.1383316,
+"display_name": "soccer field, الظهران, مجمع الظهران السكني, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "soccer field",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 1552499373,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 26.3144649,
+"lon": 50.1992418,
+"display_name": "الخبر, محافظة الخبر, المنطقة الشرقية, السعودية",
+"address": {
+"city": "الخبر",
+"county": "محافظة الخبر",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+},
+{
+"osm_type": "way",
+"osm_id": 586711210,
+"name": "Green Zone",
+"namedetails": {
+"name": "Green Zone"
+},
+"category": "leisure",
+"type": "park",
+"lat": 26.3315264,
+"lon": 50.142782,
+"display_name": "Green Zone, الظهران, الدمام, محافظة الدمام, المنطقة الشرقية, السعودية",
+"address": {
+"park": "Green Zone",
+"city": "الظهران",
+"province": "محافظة الدمام",
+"state": "المنطقة الشرقية",
+"ISO3166-2-lvl4": "SA-04",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "eastern"
+}
+]

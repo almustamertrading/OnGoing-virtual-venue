@@ -44,8 +44,8 @@ KW_ARENA=re.compile(r"(^|[\s\-])(أرينا|ارينا|الأرينا|الاري
 KW_THEATRE=re.compile(r"مسرح|theat|auditorium|opera|أوبرا|ثقافي|cultural|arts cent|فنون",re.I)
 KW_STAD=re.compile(r"استاد|إستاد|\bstadium|مدينة .* الرياضية|sports city|ملعب (نادي|الأمير|الملك|جامعة|مدينة|الشيخ)|الصالة الخضراء|green hall",re.I)
 KW_EVENT=re.compile(r"فعاليات|events?\b|مهرجان|festival|season|موسم|بوليفارد|boulevard",re.I)
-CAR=re.compile(r"سيارات|سياره|cars?\b|motor|auto|مركبات|شاحنات|أثاث|اثاث|furniture|مفروشات|عقار|real estate|محل|متجر|showroom",re.I)
-HARD={"station","stop","platform","bus_stop","parking","transportation","playground","pitch","garden","school","kindergarten","college","university","hospital","clinic","hospice","car_repair","supermarket","convenience","bakery","houseware","department_store","clothes","bookmaker","fuel","bank","artwork","tower","ruins","quarry","construction","bay","beach","water","residential","apartments","house","dormitory","restaurant","cafe","fast_food","mosque","place_of_worship","motorway","primary","secondary","tertiary","trunk","service","footway","living_street","unclassified","village","hamlet","locality","suburb","neighbourhood","quarter","city","town","island","company","diplomatic","association","government","educational_institution"}
+CAR=re.compile(r"سيارات|سياره|cars?\b|motor|auto|مركبات|شاحنات|أثاث|اثاث|furniture|مفروشات|عقار|real estate|محل|متجر|showroom|أدوات|ادوات|سيراميك|الذهب|ذهب|مجوهرات|جواهر|إلكترونيات|الكترونيات|عطور|ملابس|رخام|بلاط",re.I)
+HARD={"station","stop","platform","bus_stop","parking","transportation","playground","pitch","garden","school","kindergarten","college","university","hospital","clinic","hospice","car_repair","supermarket","convenience","bakery","houseware","department_store","clothes","bookmaker","fuel","bank","artwork","tower","ruins","quarry","construction","bay","beach","water","residential","apartments","house","dormitory","restaurant","cafe","fast_food","mosque","place_of_worship","motorway","primary","secondary","tertiary","trunk","service","footway","living_street","unclassified","village","hamlet","locality","suburb","neighbourhood","quarter","city","town","island","company","diplomatic","association","government","educational_institution","terminal","fitness_centre","sports","gym","jewelry","event_planning_service","post_box","townhall_x"}
 OUTDOOR_OK=re.compile(r"منتزه|متنزه|كورنيش|corniche|واجهة|front|الملك|الأمير|king|prince|national|وطني|بوليفارد|boulevard|season|موسم|مهرجان|فعاليات|زوو|zoo|حيوان",re.I)
 def classify(name,key,val):
     n=name or ""
@@ -58,13 +58,15 @@ def classify(name,key,val):
     if KW_ARENA.search(n): return "arena"
     if KW_EXPO.search(n) and not CAR.search(n): return "exhibition"
     if KW_CONF.search(n): return "conference"
+    if val in ("sports_centre","sports_hall") and re.search(r"صالة|hall|arena",n,re.I): return "arena"
+    if val in ("sport",) and key=="club": return "stadium" if KW_STAD.search(n) else None
     if KW_HALL.search(n) and not CAR.search(n): return "hall"
     if val in ("theme_park","attraction","mall","zoo","water_park","amusement_arcade","resort") : return "entertainment"
     if val in ("park","garden","nature_reserve") and n: return "outdoor"
     if val in ("hotel",) and (KW_CONF.search(n) or KW_HALL.search(n)): return "hotel"
     if val in ("sports_centre","sports_hall") and re.search(r"صالة|hall|arena",n,re.I): return "arena"
     if val in ("community_centre","club","social_centre","community_center") and (KW_HALL.search(n) or KW_EVENT.search(n)): return "hall"
-    if KW_EVENT.search(n) and val not in EXCL_TYPES: return "entertainment"
+    if KW_EVENT.search(n) and key in ("tourism","leisure") and val not in EXCL_TYPES: return "entertainment"
     return None
 osm=[]
 for f in glob.glob(os.path.join(RAW,"*_osm.json"))+glob.glob(os.path.join(RAW,"*_photon.json")):

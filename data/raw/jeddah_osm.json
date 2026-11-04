@@ -4871,5 +4871,1045 @@
 "extratags": null,
 "kw": "park",
 "city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 625495367,
+"name": "Alnozha Park",
+"namedetails": {
+"name": "Alnozha Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.6288933,
+"lon": 39.1716426,
+"display_name": "Alnozha Park, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Alnozha Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1471571165,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.6443065,
+"lon": 39.1021436,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 140335743,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.7028672,
+"lon": 39.0899636,
+"display_name": "محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1561241545,
+"name": "حديقة الإدريسي",
+"namedetails": {
+"name": "حديقة الإدريسي",
+"name:ar": "حديقة الإدريسي"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.7014356,
+"lon": 39.1032744,
+"display_name": "حديقة الإدريسي, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة الإدريسي",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1249799146,
+"name": "حديقة ابن بطوطة",
+"namedetails": {
+"name": "حديقة ابن بطوطة",
+"name:ar": "حديقة ابن بطوطة",
+"name:en": "Ibn Batoota Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.628674,
+"lon": 39.1858466,
+"display_name": "حديقة ابن بطوطة, جدة, محافظة جدة, منطقة مكة المكرمة, 23542, السعودية",
+"address": {
+"park": "حديقة ابن بطوطة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23542",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1445801028,
+"name": "حديقة التقوى",
+"namedetails": {
+"name": "حديقة التقوى"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.6141615,
+"lon": 39.1348301,
+"display_name": "حديقة التقوى, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة التقوى",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1442584783,
+"name": "حديقة المروة",
+"namedetails": {
+"name": "حديقة المروة"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.6114478,
+"lon": 39.1905799,
+"display_name": "حديقة المروة, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة المروة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8043892102,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.6705537,
+"lon": 39.1229418,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, 23717, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23717",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1503273092,
+"name": "ممشى الياقوت",
+"namedetails": {
+"name": "ممشى الياقوت",
+"name:ar": "ممشى الياقوت",
+"name:en": "Al Yaqoot Walkway"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.7942736,
+"lon": 39.0763517,
+"display_name": "ممشى الياقوت, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "ممشى الياقوت",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1301790902,
+"name": "منتزه ذهبان",
+"namedetails": {
+"name": "منتزه ذهبان"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.8488934,
+"lon": 38.996795,
+"display_name": "منتزه ذهبان, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "منتزه ذهبان",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1562241905,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.6047767,
+"lon": 39.2198651,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1560585541,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.7022011,
+"lon": 39.2068966,
+"display_name": "محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 9659340940,
+"name": "معرض السقاف للأدوات الصحية والسيراميك",
+"namedetails": {
+"name": "معرض السقاف للأدوات الصحية والسيراميك"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.6319147,
+"lon": 39.2161516,
+"display_name": "معرض السقاف للأدوات الصحية والسيراميك, حي النخيل, جدة, محافظة جدة, منطقة مكة المكرمة, 23242, السعودية",
+"address": {
+"park": "معرض السقاف للأدوات الصحية والسيراميك",
+"house_number": "حي النخيل",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23242",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"operator": "معرض السقاف للأدوات الصحية والسيراميك",
+"opening_hours": "Mo-Su 09:00-21:00"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 907004561,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.8447461,
+"lon": 39.4465689,
+"display_name": "محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 369675957,
+"name": "Eastern Forest",
+"namedetails": {
+"name:en": "Eastern Forest"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.6384338,
+"lon": 39.391333,
+"display_name": "Eastern Forest, محافظة الجموم, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Eastern Forest",
+"province": "محافظة الجموم",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"jpoi_id": "100444"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5937880108,
+"name": "Attahlia Park",
+"namedetails": {
+"name": "Attahlia Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5484274,
+"lon": 39.1260996,
+"display_name": "Attahlia Park, جدة, محافظة جدة, منطقة مكة المكرمة, 23433, السعودية",
+"address": {
+"park": "Attahlia Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23433",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 5885492415,
+"name": "Alkazemi Park",
+"namedetails": {
+"name": "Alkazemi Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5698844,
+"lon": 39.1516763,
+"display_name": "Alkazemi Park, جدة, محافظة جدة, منطقة مكة المكرمة, 23435, السعودية",
+"address": {
+"park": "Alkazemi Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23435",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1074269189,
+"name": "حديقة الأمير ماجد",
+"namedetails": {
+"name": "حديقة الأمير ماجد",
+"name:ar": "حديقة الأمير ماجد",
+"name:en": "Prince Majid Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5914252,
+"lon": 39.1837848,
+"display_name": "حديقة الأمير ماجد, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة الأمير ماجد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"wheelchair": "yes"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 165769855,
+"name": "حدائق السجى",
+"namedetails": {
+"name": "حدائق السجى",
+"name:ar": "حدائق السجى",
+"name:en": "Al Saja Gardens",
+"alt_name": "حديقة السجى",
+"alt_name:en": "Al Saja Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5260699,
+"lon": 39.1874487,
+"display_name": "حدائق السجى, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حدائق السجى",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"wheelchair": "yes"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 958937880,
+"name": "حديقة ابن سينا",
+"namedetails": {
+"name": "حديقة ابن سينا"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5866039,
+"lon": 39.1712867,
+"display_name": "حديقة ابن سينا, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة ابن سينا",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"opening_hours": "24/7"
+},
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 201392299,
+"name": "ممشى إبراهيم مسعود",
+"namedetails": {
+"name": "ممشى إبراهيم مسعود"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.597657,
+"lon": 39.1462753,
+"display_name": "ممشى إبراهيم مسعود, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "ممشى إبراهيم مسعود",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1204186190,
+"name": "حديقة السلامة",
+"namedetails": {
+"name": "حديقة السلامة"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5914177,
+"lon": 39.1489955,
+"display_name": "حديقة السلامة, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة السلامة",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1242846097,
+"name": "حديقة الزهراء",
+"namedetails": {
+"name": "حديقة الزهراء",
+"name:ar": "حديقة الزهراء",
+"name:en": "Al-Zahra'a Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5925605,
+"lon": 39.1364641,
+"display_name": "حديقة الزهراء, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة الزهراء",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 220382139,
+"name": "دوار رامي",
+"namedetails": {
+"name": "دوار رامي",
+"name:ar": "دوار رامي",
+"name:en": "rami circle"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5881257,
+"lon": 39.1525548,
+"display_name": "دوار رامي, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "دوار رامي",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 7720838724,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.5434744,
+"lon": 39.1964164,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, 23336, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23336",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 12050622474,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.590848,
+"lon": 39.1175211,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, 23417, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23417",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 628578775,
+"name": "Tihamah Park",
+"namedetails": {
+"name": "Tihamah Park"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.5492905,
+"lon": 39.209036,
+"display_name": "Tihamah Park, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "Tihamah Park",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 703364907,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.5020622,
+"lon": 39.2247233,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 658220970,
+"name": "حديقة الرشيد",
+"namedetails": {
+"name": "حديقة الرشيد"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.4863111,
+"lon": 39.2308107,
+"display_name": "حديقة الرشيد, جدة, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"park": "حديقة الرشيد",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 405783097,
+"name": "112",
+"namedetails": {
+"name": "112"
+},
+"category": "leisure",
+"type": "park",
+"lat": 21.4776086,
+"lon": 39.2645316,
+"display_name": "112, جدة, محافظة جدة, منطقة مكة المكرمة, 22345, السعودية",
+"address": {
+"park": "112",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22345",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 407502888,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.5038678,
+"lon": 39.2482264,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, 22253, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "22253",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 409083987,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.5148225,
+"lon": 39.2312975,
+"display_name": "جدة, محافظة جدة, منطقة مكة المكرمة, 23233, السعودية",
+"address": {
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23233",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 320398750,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.3919346,
+"lon": 39.4356223,
+"display_name": "بحرة, محافظة بحرة, منطقة مكة المكرمة, السعودية",
+"address": {
+"town": "بحرة",
+"province": "محافظة بحرة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 789303682,
+"name": "",
+"namedetails": null,
+"category": "leisure",
+"type": "park",
+"lat": 21.4103324,
+"lon": 39.2935625,
+"display_name": "محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "park",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 358380039,
+"name": "La Plage Resort",
+"namedetails": {
+"name": "La Plage Resort"
+},
+"category": "natural",
+"type": "beach",
+"lat": 21.7100765,
+"lon": 39.0849842,
+"display_name": "La Plage Resort, محافظة جدة, منطقة مكة المكرمة, السعودية",
+"address": {
+"beach": "La Plage Resort",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"jpoi_id": "100112",
+"surface": "sand"
+},
+"kw": "resort",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 623158558,
+"name": "La Plage Resort",
+"namedetails": {
+"name": "La Plage Resort"
+},
+"category": "leisure",
+"type": "beach_resort",
+"lat": 21.7101633,
+"lon": 39.0851991,
+"display_name": "La Plage Resort, شارع الأمير عبدالله الفيصل, أبحر الشمالية, جدة, محافظة جدة, منطقة مكة المكرمة, 23719, السعودية",
+"address": {
+"leisure": "La Plage Resort",
+"road": "شارع الأمير عبدالله الفيصل",
+"neighbourhood": "أبحر الشمالية",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23719",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"fee": "yes"
+},
+"kw": "resort",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 8060717847,
+"name": "Movenpick Resort Al Nawras",
+"namedetails": {
+"name": "Movenpick Resort Al Nawras"
+},
+"category": "leisure",
+"type": "resort",
+"lat": 21.5875127,
+"lon": 39.1057742,
+"display_name": "Movenpick Resort Al Nawras, طريق الكورنيش الشمالي, الشاطئ, جدة, محافظة جدة, منطقة مكة المكرمة, 21432, السعودية",
+"address": {
+"leisure": "Movenpick Resort Al Nawras",
+"road": "طريق الكورنيش الشمالي",
+"neighbourhood": "الشاطئ",
+"city": "جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21432",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"resort": "resort",
+"operator": "Movenpick"
+},
+"kw": "resort",
+"city": "jeddah"
+},
+{
+"osm_type": "way",
+"osm_id": 1013757880,
+"name": "SOL Beach Resort",
+"namedetails": {
+"name": "SOL Beach Resort"
+},
+"category": "leisure",
+"type": "beach_resort",
+"lat": 21.7346394,
+"lon": 39.069847,
+"display_name": "SOL Beach Resort, شارع الأمير عبدالله الفيصل, أبحر الشمالية, محافظة جدة, منطقة مكة المكرمة, 23719, السعودية",
+"address": {
+"leisure": "SOL Beach Resort",
+"road": "شارع الأمير عبدالله الفيصل",
+"neighbourhood": "أبحر الشمالية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23719",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"fee": "no",
+"opening_hours": "24/7"
+},
+"kw": "resort",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 2201165472,
+"name": "Sheraton Red Sea Resort",
+"namedetails": {
+"name": "Sheraton Red Sea Resort"
+},
+"category": "tourism",
+"type": "hotel",
+"lat": 21.7332681,
+"lon": 39.0700358,
+"display_name": "Sheraton Red Sea Resort, شارع الأمير عبدالله الفيصل, أبحر الشمالية, محافظة جدة, منطقة مكة المكرمة, 23719, السعودية",
+"address": {
+"tourism": "Sheraton Red Sea Resort",
+"road": "شارع الأمير عبدالله الفيصل",
+"neighbourhood": "أبحر الشمالية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23719",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": {
+"jpoi_id": "100119"
+},
+"kw": "resort",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 4208426089,
+"name": "Annakheel Resort",
+"namedetails": {
+"name": "Annakheel Resort"
+},
+"category": "tourism",
+"type": "hotel",
+"lat": 21.7600841,
+"lon": 39.1310068,
+"display_name": "Annakheel Resort, شارع الأمير عبدالله الفيصل, أبحر الشمالية, محافظة جدة, منطقة مكة المكرمة, 23734, السعودية",
+"address": {
+"tourism": "Annakheel Resort",
+"road": "شارع الأمير عبدالله الفيصل",
+"neighbourhood": "أبحر الشمالية",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "23734",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "resort",
+"city": "jeddah"
+},
+{
+"osm_type": "node",
+"osm_id": 3065619365,
+"name": "Durrah beach Resort Jeddah",
+"namedetails": {
+"name": "Durrah beach Resort Jeddah"
+},
+"category": "amenity",
+"type": "restaurant",
+"lat": 21.9394226,
+"lon": 38.9546377,
+"display_name": "Durrah beach Resort Jeddah, محافظة جدة, منطقة مكة المكرمة, 21991, السعودية",
+"address": {
+"amenity": "Durrah beach Resort Jeddah",
+"administrative": "محافظة جدة",
+"county": "محافظة جدة",
+"state": "منطقة مكة المكرمة",
+"ISO3166-2-lvl4": "SA-02",
+"postcode": "21991",
+"country": "السعودية",
+"country_code": "sa"
+},
+"extratags": null,
+"kw": "resort",
+"city": "jeddah"
 }
 ]
