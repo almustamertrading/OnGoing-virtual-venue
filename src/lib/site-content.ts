@@ -1,19 +1,19 @@
-// Public marketing content for Future Scene, taken from the company projects brief.
+// Public marketing content for OnGoing, taken from the company projects brief.
 // Guards from the brief: no client logos, proposals are not shown as delivered work,
 // and items flagged for confirmation (⚠️) are left out until approved.
 
 export const company = {
-  nameAr: "مشهد المستقبل",
-  nameEn: "Future Scene",
-  legalAr: "مؤسسة مشهد المستقبل لتنظيم المعارض",
-  tagline: "نصنع المستقبل، مشهدًا تلو الآخر.",
-  taglineEn: "Capturing your future, scene by scene.",
+  nameAr: "OnGoing",
+  nameEn: "OnGoing",
+  legalAr: "OnGoing لإدارة وتنظيم الفعاليات",
+  tagline: "من الفكرة إلى التشغيل، ندير فعالياتك باحتراف.",
+  taglineEn: "Events, delivered end to end.",
   founded: "2022",
   city: "الرياض، المملكة العربية السعودية",
   founder: "ناصر الشايب",
   phone: "+966 54 490 7788",
   phoneLink: "+966544907788",
-  email: "info@futuresceneksa.com",
+  email: "info@ongoingevent.com",
   address: "مبنى 3764، طريق الإمام سعود بن فيصل، حي الملقا، الرياض",
   vision:
     "الريادة في التنمية المستدامة بجعل الفعاليات الإبداعية والثقافية عنصرًا أساسيًا في صناعة التجارب وإحداث التغيير الإيجابي.",
