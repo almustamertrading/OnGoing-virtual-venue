@@ -27,12 +27,25 @@ function money(f: FormData, k: string) {
   return Number.isFinite(n) && n >= 0 ? n : NaN;
 }
 
+type ClientContact = {
+  contact_name: string | null;
+  email: string | null;
+  phone: string | null;
+  address: string | null;
+};
+
+const validDate = (v: unknown) => {
+  const s = typeof v === "string" ? v.trim() : "";
+  return /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null;
+};
+
 /** Finds or creates a client by name inside the organisation. */
 async function resolveClient(
   supabase: Awaited<ReturnType<typeof createClient>>,
   organizationId: string,
   clientId: string | null,
   newClientName: string | null,
+  contact?: ClientContact,
 ) {
   if (newClientName) {
     const { data: existing } = await supabase
@@ -44,13 +57,82 @@ async function resolveClient(
     if (existing) return { id: existing.id as string };
     const { data, error } = await supabase
       .from("clients")
-      .insert({ organization_id: organizationId, name: newClientName })
+      .insert({ organization_id: organizationId, name: newClientName, ...(contact ?? {}) })
       .select("id")
       .single();
     if (error) return { error: error.message };
     return { id: data.id as string };
   }
   return { id: clientId };
+}
+
+/** Inserts the AI-drafted blueprint (BOQ, KPIs, plan phases, team roles) for a new project. */
+async function saveBlueprint(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  projectId: string,
+  raw: string,
+) {
+  if (!raw) return;
+  let bp: {
+    boq?: { description?: string; unit?: string; quantity?: number | null }[];
+    evaluation?: { criterion?: string; weight?: number | null }[];
+    plan?: { title?: string; objective?: string; start_date?: string | null; end_date?: string | null }[];
+    team?: { title?: string; responsibility?: string; headcount?: number }[];
+  };
+  try {
+    bp = JSON.parse(raw);
+  } catch {
+    return; // ignore malformed import payload; the project is already created
+  }
+  const num = (v: unknown) => (typeof v === "number" && Number.isFinite(v) && v > 0 ? v : null);
+
+  const boq = (bp.boq ?? [])
+    .filter((x) => x?.description?.trim())
+    .slice(0, 150)
+    .map((x, i) => ({
+      project_id: projectId,
+      description: x.description!.trim().slice(0, 500),
+      unit: (x.unit ?? "").trim().slice(0, 60),
+      quantity: num(x.quantity),
+      sort_order: i,
+    }));
+  if (boq.length) await supabase.from("boq_items").insert(boq);
+
+  const kpi = (bp.evaluation ?? [])
+    .filter((x) => x?.criterion?.trim())
+    .slice(0, 80)
+    .map((x, i) => ({
+      project_id: projectId,
+      criterion: x.criterion!.trim().slice(0, 500),
+      weight: num(x.weight),
+      sort_order: i,
+    }));
+  if (kpi.length) await supabase.from("evaluation_criteria").insert(kpi);
+
+  const plan = (bp.plan ?? [])
+    .filter((x) => x?.title?.trim())
+    .slice(0, 20)
+    .map((x, i) => ({
+      project_id: projectId,
+      title: x.title!.trim().slice(0, 300),
+      objective: (x.objective ?? "").trim().slice(0, 1000),
+      start_date: validDate(x.start_date),
+      end_date: validDate(x.end_date),
+      sort_order: i,
+    }));
+  if (plan.length) await supabase.from("plan_phases").insert(plan);
+
+  const team = (bp.team ?? [])
+    .filter((x) => x?.title?.trim())
+    .slice(0, 50)
+    .map((x, i) => ({
+      project_id: projectId,
+      title: x.title!.trim().slice(0, 200),
+      responsibility: (x.responsibility ?? "").trim().slice(0, 1000),
+      headcount: Math.max(0, Math.round(Number(x.headcount) || 1)),
+      sort_order: i,
+    }));
+  if (team.length) await supabase.from("team_roles").insert(team);
 }
 
 export async function createProject(_prev: ActionState, formData: FormData): Promise<ActionState> {
@@ -71,6 +153,12 @@ export async function createProject(_prev: ActionState, formData: FormData): Pro
     organizationId,
     optional(formData, "client_id"),
     optional(formData, "new_client"),
+    {
+      contact_name: optional(formData, "client_contact_name"),
+      email: optional(formData, "client_email"),
+      phone: optional(formData, "client_phone"),
+      address: optional(formData, "client_address"),
+    },
   );
   if ("error" in client) return { error: client.error };
 
@@ -87,6 +175,10 @@ export async function createProject(_prev: ActionState, formData: FormData): Pro
       budget,
       start_date: optional(formData, "start_date"),
       end_date: optional(formData, "end_date"),
+      rfp_reference: optional(formData, "rfp_reference"),
+      submission_method: optional(formData, "submission_method"),
+      submission_location: optional(formData, "submission_location"),
+      submission_deadline: optional(formData, "submission_deadline"),
       created_by: userId,
     })
     .select("id")
@@ -112,6 +204,9 @@ export async function createProject(_prev: ActionState, formData: FormData): Pro
       // ignore malformed import payload; the project is already created
     }
   }
+
+  // Pricing, KPIs, plan phases and team roles drafted from the RFP.
+  await saveBlueprint(supabase, data.id, String(formData.get("blueprint_json") ?? ""));
 
   redirect(`/projects/${data.id}`);
 }

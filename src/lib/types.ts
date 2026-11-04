@@ -34,6 +34,10 @@ export type ProjectRow = {
   budget: number | null;
   start_date: string | null;
   end_date: string | null;
+  rfp_reference: string | null;
+  submission_method: string | null;
+  submission_location: string | null;
+  submission_deadline: string | null;
   created_by: string;
   created_at: string;
   updated_at: string;
@@ -46,6 +50,49 @@ export type ClientRow = {
   contact_name: string | null;
   email: string | null;
   phone: string | null;
+  address: string | null;
+};
+
+export type BoqItemRow = {
+  id: string;
+  project_id: string;
+  description: string;
+  unit: string;
+  quantity: number | null;
+  unit_price: number | null;
+  notes: string;
+  sort_order: number;
+};
+
+export type EvaluationCriterionRow = {
+  id: string;
+  project_id: string;
+  criterion: string;
+  weight: number | null;
+  met: boolean;
+  evidence: string;
+  sort_order: number;
+};
+
+export type PlanPhaseRow = {
+  id: string;
+  project_id: string;
+  title: string;
+  objective: string;
+  start_date: string | null;
+  end_date: string | null;
+  sort_order: number;
+};
+
+export type TeamRoleRow = {
+  id: string;
+  project_id: string;
+  title: string;
+  responsibility: string;
+  headcount: number;
+  reports_to: string;
+  assignee_id: string | null;
+  sort_order: number;
 };
 
 export type ScopeItemRow = {

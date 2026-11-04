@@ -2,6 +2,12 @@ import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import type { ProjectStatus, ProjectType } from "./types";
 
+export type RfpContact = { name: string; role: string; phone: string; email: string; address: string };
+export type RfpBoqItem = { description: string; unit: string; quantity: number | null };
+export type RfpPhase = { title: string; objective: string; start_date: string | null; end_date: string | null };
+export type RfpRole = { title: string; responsibility: string; headcount: number };
+export type RfpCriterion = { criterion: string; weight: number | null };
+
 export type ExtractedRfp = {
   name: string;
   client_name: string;
@@ -14,8 +20,15 @@ export type ExtractedRfp = {
   summary: string;
   reference: string;
   deadline: string;
+  submission_method: string;
+  submission_location: string;
+  contact: RfpContact;
   scope: string[];
   deliverables: string[];
+  boq: RfpBoqItem[];
+  plan: RfpPhase[];
+  team: RfpRole[];
+  evaluation: RfpCriterion[];
 };
 
 const TYPES: ProjectType[] = [
@@ -28,43 +41,62 @@ const TYPES: ProjectType[] = [
   "other",
 ];
 
-const SYSTEM = `You read a client's RFP (Request for Proposal / كراسة شروط ومواصفات) for an events and experiences company in Saudi Arabia, and extract the key facts so a project record can be created.
-Rules:
-- The RFP may be in Arabic or English. Keep extracted text in its original language (usually Arabic).
-- Only use facts stated in the document. Never invent dates, budgets, or numbers. If a field is not stated, leave it empty ("" or null).
-- "client_name" is the issuing body / owner (الجهة المالكة / صاحب المنافسة), not the vendor.
-- "reference" is the RFP/tender number if any (رقم الكراسة / REF).
-- "deadline" is the submission deadline text if any (آخر موعد للتقديم), as written.
-- "scope" is the scope of work items; "deliverables" is what the vendor must deliver. 3-8 short items each, in the document's language.
-- Dates must be ISO YYYY-MM-DD or null. Convert only clearly-Gregorian dates; if a date is Hijri or unclear, use null.
-- Respond with ONLY one JSON object, no prose, no code fences.`;
+const SYSTEM = `You are a bid manager at an events and experiences company in Saudi Arabia. You read a client's RFP (Request for Proposal / كراسة شروط ومواصفات) and turn it into a structured project blueprint the delivery team can act on.
 
-function prompt(statuses: string, types: string) {
-  return `Extract this RFP into a JSON object with exactly these keys:
-{"name": string (the project/competition title),
- "client_name": string,
- "project_type": one of [${types}],
- "status": "lead",
- "location": string,
- "start_date": string|null, "end_date": string|null,
- "budget": number|null,
- "summary": string (2-3 sentences, in the document's language),
+Two kinds of fields:
+1) FACTS — copy only what the document states. Never invent a date, budget, number, contact, quantity or criterion. If a fact is absent, leave it empty ("", null, or []). Facts: name, client_name, contact, location, dates, budget, reference, deadline, submission, scope, deliverables, boq, evaluation.
+2) PROPOSAL — you design these professionally from the scope of work, as the vendor's own proposed approach. Facts do not exist for these in the RFP, so build them yourself, grounded in the stated scope and deliverables. Proposal fields: plan (project-management phases) and team (the team structure needed to deliver).
+
+Rules:
+- The RFP is usually Arabic. Keep all text in the document's language (Arabic). Write proposed plan/team text in Arabic too.
+- "client_name" is the issuing body / owner (الجهة المالكة / صاحب المنافسة), not the vendor.
+- "contact" is the client's contact person/desk for this tender (اسم، جهة/منصب، هاتف، بريد، عنوان) if stated.
+- "reference" = tender number (رقم الكراسة / REF). "deadline" = submission deadline text (آخر موعد لتقديم العروض), as written.
+- "submission_method" = how the offer is submitted (e.g. البوابة الإلكترونية / منصة اعتماد / تسليم يدوي). "submission_location" = where/to whom (الجهة أو العنوان أو رابط المنصة).
+- "boq" = bill-of-quantities line items (جدول الكميات): each item's description, unit (وحدة), and quantity if stated. Quantity is a number or null; never guess it.
+- "evaluation" = the client's award/evaluation criteria (معايير التقييم / التقييم الفني والمالي): each criterion and its weight percentage if stated (number or null).
+- "plan" (PROPOSAL): 3-7 project phases from mobilisation to handover, each with a short title, a one-line objective, and start/end dates ONLY if they can be grounded in the RFP timeline (else null).
+- "team" (PROPOSAL): 5-12 roles needed to deliver this scope (e.g. مدير المشروع، مدير العمليات، مسؤول السلامة، فريق AVL، ...), each with a one-line responsibility and a realistic headcount.
+- Dates must be ISO YYYY-MM-DD or null. Convert only clearly-Gregorian dates; Hijri or unclear → null.
+- Respond with ONLY one JSON object. No prose, no code fences.`;
+
+function prompt(types: string) {
+  return `Extract and build this RFP into one JSON object with exactly these keys:
+{"name": string, "client_name": string,
+ "project_type": one of [${types}], "status": "lead",
+ "location": string, "start_date": string|null, "end_date": string|null, "budget": number|null,
+ "summary": string (2-3 sentences, document's language),
  "reference": string, "deadline": string,
- "scope": string[], "deliverables": string[]}
-Choose project_type as the closest fit. Status is always "lead". Return only the JSON.
-Statuses available (for reference): ${statuses}.`;
+ "submission_method": string, "submission_location": string,
+ "contact": {"name": string, "role": string, "phone": string, "email": string, "address": string},
+ "scope": string[], "deliverables": string[],
+ "boq": [{"description": string, "unit": string, "quantity": number|null}],
+ "evaluation": [{"criterion": string, "weight": number|null}],
+ "plan": [{"title": string, "objective": string, "start_date": string|null, "end_date": string|null}],
+ "team": [{"title": string, "responsibility": string, "headcount": number}]}
+Remember: scope, deliverables, boq, evaluation, contact, dates and budget are FACTS from the document (empty if absent). plan and team are YOUR professional proposal built from the scope. Return only the JSON.`;
 }
 
 function coerce(raw: Record<string, unknown>): ExtractedRfp {
   const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");
-  const arr = (v: unknown) =>
-    Array.isArray(v) ? v.map((x) => String(x).trim()).filter(Boolean).slice(0, 10) : [];
+  const strArr = (v: unknown) =>
+    Array.isArray(v) ? v.map((x) => String(x).trim()).filter(Boolean).slice(0, 12) : [];
   const date = (v: unknown) => {
     const s = str(v);
     return /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null;
   };
+  const posNum = (v: unknown) => {
+    const n = Number(v);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  };
+  const obj = (v: unknown): Record<string, unknown> =>
+    v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
+  const list = (v: unknown): Record<string, unknown>[] =>
+    Array.isArray(v) ? v.map(obj).slice(0, 30) : [];
+
+  const c = obj(raw.contact);
   const type = str(raw.project_type) as ProjectType;
-  const num = Number(raw.budget);
+
   return {
     name: str(raw.name) || "مشروع من RFP",
     client_name: str(raw.client_name),
@@ -73,18 +105,48 @@ function coerce(raw: Record<string, unknown>): ExtractedRfp {
     location: str(raw.location),
     start_date: date(raw.start_date),
     end_date: date(raw.end_date),
-    budget: Number.isFinite(num) && num > 0 ? num : null,
+    budget: posNum(raw.budget),
     summary: str(raw.summary),
     reference: str(raw.reference),
     deadline: str(raw.deadline),
-    scope: arr(raw.scope),
-    deliverables: arr(raw.deliverables),
+    submission_method: str(raw.submission_method),
+    submission_location: str(raw.submission_location),
+    contact: {
+      name: str(c.name),
+      role: str(c.role),
+      phone: str(c.phone),
+      email: str(c.email),
+      address: str(c.address),
+    },
+    scope: strArr(raw.scope),
+    deliverables: strArr(raw.deliverables),
+    boq: list(raw.boq)
+      .map((b) => ({ description: str(b.description), unit: str(b.unit), quantity: posNum(b.quantity) }))
+      .filter((b) => b.description),
+    evaluation: list(raw.evaluation)
+      .map((e) => ({ criterion: str(e.criterion), weight: posNum(e.weight) }))
+      .filter((e) => e.criterion),
+    plan: list(raw.plan)
+      .map((p) => ({
+        title: str(p.title),
+        objective: str(p.objective),
+        start_date: date(p.start_date),
+        end_date: date(p.end_date),
+      }))
+      .filter((p) => p.title),
+    team: list(raw.team)
+      .map((t) => ({
+        title: str(t.title),
+        responsibility: str(t.responsibility),
+        headcount: Math.max(1, Math.round(Number(t.headcount) || 1)),
+      }))
+      .filter((t) => t.title),
   };
 }
 
 export class RfpConfigError extends Error {}
 
-/** Sends the PDF to Claude and returns the extracted project fields. */
+/** Sends the PDF to Claude and returns the extracted project blueprint. */
 export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
@@ -94,15 +156,15 @@ export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
 
   const response = await client.messages.create({
     model: "claude-sonnet-5-5",
-    max_tokens: 4096,
-    output_config: { effort: "low" },
+    max_tokens: 8000,
+    output_config: { effort: "medium" },
     system: SYSTEM,
     messages: [
       {
         role: "user",
         content: [
           { type: "document", source: { type: "base64", media_type: "application/pdf", data: base64 } },
-          { type: "text", text: prompt("lead, proposal, confirmed, in_progress, completed, on_hold, cancelled", TYPES.join(", ")) },
+          { type: "text", text: prompt(TYPES.join(", ")) },
         ],
       },
     ],

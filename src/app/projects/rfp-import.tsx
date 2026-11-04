@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FileText, Sparkles, X } from "lucide-react";
-import { ProjectForm, type ProjectDefaults, type ScopeDraft } from "@/components/project-form";
+import { ProjectForm, type ProjectDefaults, type RfpBlueprintDraft, type ScopeDraft } from "@/components/project-form";
 import { createClient } from "@/lib/supabase/client";
 import type { ClientRow } from "@/lib/types";
 import { createProject, extractRfp, type RfpState } from "./actions";
@@ -79,14 +79,23 @@ export function RfpImport({ organizationId, clients }: { organizationId: string;
     budget: data.budget,
     start_date: data.start_date,
     end_date: data.end_date,
-    description: [data.summary, data.reference && `مرجع: ${data.reference}`, data.deadline && `آخر موعد للتقديم: ${data.deadline}`]
-      .filter(Boolean)
-      .join("\n"),
+    description: data.summary,
+    reference: data.reference || undefined,
+    submission_method: data.submission_method || undefined,
+    submission_location: data.submission_location || undefined,
+    submission_deadline: data.deadline || undefined,
+    contact: data.contact,
   };
   const items: ScopeDraft[] | undefined = data && [
     ...data.scope.map((t) => ({ kind: "scope" as const, title: t })),
     ...data.deliverables.map((t) => ({ kind: "deliverable" as const, title: t })),
   ];
+  const blueprint: RfpBlueprintDraft | undefined = data && {
+    boq: data.boq,
+    plan: data.plan,
+    team: data.team,
+    evaluation: data.evaluation,
+  };
 
   return (
     <div dir="rtl" className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 p-4 sm:items-center">
@@ -128,6 +137,7 @@ export function RfpImport({ organizationId, clients }: { organizationId: string;
                 action={createProject}
                 defaults={defaults}
                 items={items}
+                blueprint={blueprint}
                 submitLabel="إنشاء المشروع"
                 onDone={close}
               />

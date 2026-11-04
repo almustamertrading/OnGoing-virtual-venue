@@ -9,6 +9,10 @@ export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts
   const tabs = [
     { href: base, label: "Overview", key: "overview" },
     { href: `${base}/scope`, label: "Scope", key: "scope" },
+    { href: `${base}/plan`, label: "Plan", key: "plan" },
+    { href: `${base}/pricing`, label: "Pricing", key: "pricing" },
+    { href: `${base}/structure`, label: "Structure", key: "structure" },
+    { href: `${base}/evaluation`, label: "Evaluation", key: "evaluation" },
     { href: `${base}/tasks`, label: "Tasks", key: "tasks" },
     { href: `${base}/team`, label: "Team", key: "team" },
     { href: `${base}/venues`, label: "Venues", key: "venues" },

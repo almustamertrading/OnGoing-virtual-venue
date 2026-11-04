@@ -49,6 +49,13 @@ export function ProjectDetails({
     ["Location", project.location || "Not set"],
     ["Budget", project.budget != null ? formatMoney(project.budget, currency) : "Not set"],
   ];
+  const contactParts = [client?.phone, client?.email, client?.address].filter(Boolean);
+  const extra: [string, string][] = [];
+  if (contactParts.length) extra.push(["جهة التواصل", contactParts.join(" · ")]);
+  if (project.rfp_reference) extra.push(["رقم الكراسة", project.rfp_reference]);
+  if (project.submission_deadline) extra.push(["آخر موعد للتقديم", project.submission_deadline]);
+  if (project.submission_method) extra.push(["طريقة التقديم", project.submission_method]);
+  if (project.submission_location) extra.push(["جهة/موقع التسليم", project.submission_location]);
 
   return (
     <section className="card p-5" data-testid="project-details">
@@ -83,6 +90,16 @@ export function ProjectDetails({
           </div>
         ))}
       </dl>
+      {extra.length > 0 && (
+        <dl dir="rtl" className="mt-4 grid gap-x-6 gap-y-3 border-t border-slate-800 pt-4 text-sm sm:grid-cols-2">
+          {extra.map(([k, v]) => (
+            <div key={k}>
+              <dt className="text-xs text-slate-500">{k}</dt>
+              <dd className="mt-0.5 text-slate-200">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
       {project.description && <p className="mt-4 whitespace-pre-wrap text-sm text-slate-300">{project.description}</p>}
     </section>
   );

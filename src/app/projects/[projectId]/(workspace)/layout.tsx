@@ -11,10 +11,22 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
   const { projectId } = await params;
   const { project, client, email, members, supabase } = await getProjectContext(projectId);
 
-  const [{ count: openTasks }, { count: venues }, { count: scope }] = await Promise.all([
+  const [
+    { count: openTasks },
+    { count: venues },
+    { count: scope },
+    { count: plan },
+    { count: pricing },
+    { count: structure },
+    { count: evaluation },
+  ] = await Promise.all([
     supabase.from("tasks").select("id", { count: "exact", head: true }).eq("project_id", projectId).neq("status", "done"),
     supabase.from("venues").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("scope_items").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    supabase.from("plan_phases").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    supabase.from("boq_items").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    supabase.from("team_roles").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    supabase.from("evaluation_criteria").select("id", { count: "exact", head: true }).eq("project_id", projectId),
   ]);
 
   return (
@@ -44,7 +56,16 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
           <div className="mt-4">
             <WorkspaceTabs
               projectId={projectId}
-              counts={{ tasks: openTasks ?? 0, venues: venues ?? 0, scope: scope ?? 0, team: members.length }}
+              counts={{
+                tasks: openTasks ?? 0,
+                venues: venues ?? 0,
+                scope: scope ?? 0,
+                plan: plan ?? 0,
+                pricing: pricing ?? 0,
+                structure: structure ?? 0,
+                evaluation: evaluation ?? 0,
+                team: members.length,
+              }}
             />
           </div>
         </div>
