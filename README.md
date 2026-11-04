@@ -1,5 +1,7 @@
 # OnGoing Virtual Venue
 
+Two sites in one app: a public Arabic marketing site for Future Scene at `/`, `/work`, `/contact`, and the team platform (login required) at `/projects`.
+
 OnGoingEvent's project platform. Each project has one workspace for its client, scope, deliverables, tasks, milestones, team, venues and activity history. Teams plan venues on satellite maps, discuss them with map-pinned comments, and inspect sites through 360° photos. Changes sync live to everyone viewing the same project.
 
 ## What it does
