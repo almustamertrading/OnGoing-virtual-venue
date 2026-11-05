@@ -215,6 +215,48 @@ export type PanoramaRow = {
   created_at: string;
 };
 
+export type LayoutRow = {
+  id: string;
+  project_id: string;
+  venue_id: string | null;
+  name: string;
+  background_path: string | null;
+  bg_width: number | null;
+  bg_height: number | null;
+  scale_m_per_px: number | null;
+  is_template: boolean;
+  created_at: string;
+};
+
+export type LayoutItemKind =
+  | "table_round"
+  | "table_rect"
+  | "chair"
+  | "stage"
+  | "bar"
+  | "av"
+  | "entrance"
+  | "exit"
+  | "vip"
+  | "booth"
+  | "text";
+
+export type LayoutItemRow = {
+  id: string;
+  layout_id: string;
+  project_id: string;
+  kind: LayoutItemKind;
+  label: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  rotation: number;
+  color: string;
+  props: Record<string, unknown>;
+  sort_order: number;
+};
+
 export type Profile = {
   id: string;
   email: string;

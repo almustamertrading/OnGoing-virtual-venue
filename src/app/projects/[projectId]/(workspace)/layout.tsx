@@ -19,6 +19,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     { count: pricing },
     { count: structure },
     { count: evaluation },
+    { count: layoutsCount },
   ] = await Promise.all([
     supabase.from("tasks").select("id", { count: "exact", head: true }).eq("project_id", projectId).neq("status", "done"),
     supabase.from("venues").select("id", { count: "exact", head: true }).eq("project_id", projectId),
@@ -27,6 +28,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     supabase.from("boq_items").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("team_roles").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("evaluation_criteria").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    supabase.from("layouts").select("id", { count: "exact", head: true }).eq("project_id", projectId),
   ]);
 
   return (
@@ -64,6 +66,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
                 pricing: pricing ?? 0,
                 structure: structure ?? 0,
                 evaluation: evaluation ?? 0,
+                layouts: layoutsCount ?? 0,
                 team: members.length,
               }}
             />

@@ -16,6 +16,7 @@ export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts
     { href: `${base}/tasks`, label: "Tasks", key: "tasks" },
     { href: `${base}/team`, label: "Team", key: "team" },
     { href: `${base}/venues`, label: "Venues", key: "venues" },
+    { href: `${base}/layouts`, label: "Layouts", key: "layouts" },
     { href: `${base}/activity`, label: "Activity", key: "activity" },
   ];
   return (
