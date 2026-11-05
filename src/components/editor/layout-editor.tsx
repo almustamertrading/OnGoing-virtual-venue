@@ -18,6 +18,7 @@ import {
   type LayoutItemKind,
 } from "@/lib/layout-assets";
 import type { LayoutItemRow, LayoutRow } from "@/lib/types";
+import { LayoutBlock } from "./layout-block";
 
 type View = { zoom: number; tx: number; ty: number };
 
@@ -348,22 +349,20 @@ export function LayoutEditor({
             <g transform={`translate(${view.tx} ${view.ty}) scale(${view.zoom})`}>
               {bgUrl && bg.w && bg.h && <image href={bgUrl} x={0} y={0} width={bg.w} height={bg.h} />}
               {items.map((it) => {
-                const def = assetOf(it.kind);
                 const cx = it.x + it.w / 2;
                 const cy = it.y + it.h / 2;
                 const isSel = it.id === selected;
-                const sw = (isSel ? 2 : 1) / view.zoom;
                 return (
                   <g key={it.id} transform={`translate(${cx} ${cy}) rotate(${it.rotation})`} onPointerDown={(e) => onItemPointerDown(e, it)} style={{ cursor: canEdit ? "move" : "pointer" }}>
-                    {def.shape === "circle" ? (
-                      <ellipse rx={it.w / 2} ry={it.h / 2} fill={it.color} fillOpacity={0.85} stroke={isSel ? "#fff" : "rgba(255,255,255,.4)"} strokeWidth={sw} />
-                    ) : (
-                      <rect x={-it.w / 2} y={-it.h / 2} width={it.w} height={it.h} rx={4} fill={it.color} fillOpacity={it.kind === "zone" ? 0.25 : 0.85} stroke={isSel ? "#fff" : "rgba(255,255,255,.4)"} strokeWidth={sw} />
-                    )}
-                    {it.label && (
-                      <text textAnchor="middle" dominantBaseline="central" fontSize={Math.max(9, Math.min(it.w, it.h) * 0.32)} fill="#0b1120" fontWeight="700" style={{ pointerEvents: "none" }}>
-                        {it.label.length > 14 ? it.label.slice(0, 13) + "…" : it.label}
+                    <rect x={-it.w / 2} y={-it.h / 2} width={it.w} height={it.h} fill="transparent" />
+                    <LayoutBlock kind={it.kind} w={it.w} h={it.h} color={it.color} />
+                    {it.label && it.kind !== "restroom" && (
+                      <text textAnchor="middle" dominantBaseline="central" fontSize={Math.max(9, Math.min(it.w, it.h) * 0.32)} fill="#1f2937" fontWeight="700" style={{ pointerEvents: "none" }}>
+                        {it.label.length > 16 ? it.label.slice(0, 15) + "…" : it.label}
                       </text>
+                    )}
+                    {isSel && (
+                      <rect x={-it.w / 2} y={-it.h / 2} width={it.w} height={it.h} fill="none" stroke="#10b981" strokeWidth={1.8} strokeDasharray="5 3" vectorEffect="non-scaling-stroke" />
                     )}
                   </g>
                 );
