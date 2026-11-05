@@ -245,7 +245,7 @@ export type LayoutItemRow = {
   id: string;
   layout_id: string;
   project_id: string;
-  kind: LayoutItemKind;
+  kind: string;
   label: string;
   x: number;
   y: number;
