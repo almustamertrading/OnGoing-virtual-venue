@@ -11,6 +11,7 @@ export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts
     { href: `${base}/scope`, label: "Scope", key: "scope" },
     { href: `${base}/plan`, label: "Plan", key: "plan" },
     { href: `${base}/pricing`, label: "Pricing", key: "pricing" },
+    { href: `${base}/procurement`, label: "Procurement", key: "procurement" },
     { href: `${base}/structure`, label: "Structure", key: "structure" },
     { href: `${base}/evaluation`, label: "Evaluation", key: "evaluation" },
     { href: `${base}/tasks`, label: "Tasks", key: "tasks" },

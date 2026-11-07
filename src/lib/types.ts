@@ -257,6 +257,44 @@ export type LayoutItemRow = {
   sort_order: number;
 };
 
+export type SupplierRow = {
+  id: string;
+  organization_id: string;
+  name: string;
+  category: string;
+  contact_name: string | null;
+  email: string | null;
+  phone: string | null;
+  rating: number;
+  notes: string;
+};
+
+export type RfqStatus = "draft" | "sent" | "awarded" | "closed";
+export type QuoteStatus = "pending" | "received" | "accepted" | "rejected";
+
+export type RfqRow = {
+  id: string;
+  project_id: string;
+  title: string;
+  description: string;
+  category: string;
+  status: RfqStatus;
+  due_date: string | null;
+  sort_order: number;
+};
+
+export type QuoteRow = {
+  id: string;
+  rfq_id: string;
+  project_id: string;
+  supplier_id: string | null;
+  supplier_name: string;
+  amount: number | null;
+  notes: string;
+  status: QuoteStatus;
+  sort_order: number;
+};
+
 export type Profile = {
   id: string;
   email: string;
