@@ -12,12 +12,14 @@ export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts
     { href: `${base}/plan`, label: "Plan", key: "plan" },
     { href: `${base}/pricing`, label: "Pricing", key: "pricing" },
     { href: `${base}/procurement`, label: "Procurement", key: "procurement" },
+    { href: `${base}/finance`, label: "Finance", key: "finance" },
     { href: `${base}/structure`, label: "Structure", key: "structure" },
     { href: `${base}/evaluation`, label: "Evaluation", key: "evaluation" },
     { href: `${base}/tasks`, label: "Tasks", key: "tasks" },
     { href: `${base}/team`, label: "Team", key: "team" },
     { href: `${base}/venues`, label: "Venues", key: "venues" },
     { href: `${base}/layouts`, label: "Layouts", key: "layouts" },
+    { href: `${base}/inventory`, label: "Inventory", key: "inventory" },
     { href: `${base}/activity`, label: "Activity", key: "activity" },
   ];
   return (

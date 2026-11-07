@@ -9,7 +9,7 @@ import { WorkspaceTabs } from "./workspace-tabs";
 
 export default async function WorkspaceLayout({ children, params }: LayoutProps<"/projects/[projectId]">) {
   const { projectId } = await params;
-  const { project, client, email, members, supabase } = await getProjectContext(projectId);
+  const { project, client, email, members, supabase, organization } = await getProjectContext(projectId);
 
   const [
     { count: openTasks },
@@ -21,6 +21,8 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     { count: evaluation },
     { count: layoutsCount },
     { count: rfqsCount },
+    { count: invoicesCount },
+    { count: inventoryCount },
   ] = await Promise.all([
     supabase.from("tasks").select("id", { count: "exact", head: true }).eq("project_id", projectId).neq("status", "done"),
     supabase.from("venues").select("id", { count: "exact", head: true }).eq("project_id", projectId),
@@ -31,6 +33,10 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     supabase.from("evaluation_criteria").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("layouts").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("rfqs").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    supabase.from("invoices").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    organization
+      ? supabase.from("inventory_items").select("id", { count: "exact", head: true }).eq("organization_id", organization.id)
+      : Promise.resolve({ count: 0 }),
   ]);
 
   return (
@@ -70,6 +76,8 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
                 evaluation: evaluation ?? 0,
                 layouts: layoutsCount ?? 0,
                 procurement: rfqsCount ?? 0,
+                finance: invoicesCount ?? 0,
+                inventory: inventoryCount ?? 0,
                 team: members.length,
               }}
             />

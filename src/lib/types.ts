@@ -295,6 +295,42 @@ export type QuoteRow = {
   sort_order: number;
 };
 
+export type InventoryItemRow = {
+  id: string;
+  organization_id: string;
+  name: string;
+  category: string;
+  unit: string;
+  quantity: number;
+  unit_rate: number | null;
+  notes: string;
+};
+
+export type InvoiceStatus = "draft" | "sent" | "paid";
+
+export type InvoiceRow = {
+  id: string;
+  project_id: string;
+  number: string;
+  title: string;
+  amount: number;
+  status: InvoiceStatus;
+  issue_date: string | null;
+  due_date: string | null;
+  sort_order: number;
+};
+
+export type ExpenseRow = {
+  id: string;
+  project_id: string;
+  label: string;
+  category: string;
+  vendor: string;
+  amount: number;
+  incurred_on: string | null;
+  sort_order: number;
+};
+
 export type Profile = {
   id: string;
   email: string;
