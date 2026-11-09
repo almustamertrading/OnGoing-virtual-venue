@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Third-party bundle copied from node_modules at install time (scripts/copy-maplibre-worker.mjs).
     // Only this generated file is ignored; all of our own source stays linted.
     "public/vendor/**",
+    // Release evidence and one-off verification scripts, not application source.
+    "docs/**",
   ]),
 ]);
 
