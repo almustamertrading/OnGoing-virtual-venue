@@ -16,8 +16,8 @@
 --     from public.proposal_item_costs c where c.item_id = i.id;
 --   update public.inventory_items i set unit_rate = c.unit_rate
 --     from public.inventory_item_costs c where c.item_id = i.id;
---   then restore the previous policies from migrations 20261107090000,
---   20261107110000, 20261109090000 and 20261109120000.
+--   then restore the previous policies from migrations 20261107181016,
+--   20261107195449, 20261109154918 and 20261109160000.
 
 -- ---------------------------------------------------------------------------
 -- 1. Capabilities

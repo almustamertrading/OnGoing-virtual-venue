@@ -1,5 +1,5 @@
 -- Synthetic rows for the RBAC data-move check (scripts/db/check-rbac-backfill.sh).
--- Loaded into the LOCAL database at migration 20261109120000, before the RBAC
+-- Loaded into the LOCAL database at migration 20261109160000, before the RBAC
 -- migration runs. Reserved .test domains only; no production data.
 
 insert into public.organizations (id, name, email_domain)

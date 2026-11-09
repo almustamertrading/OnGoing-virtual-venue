@@ -12,9 +12,9 @@ The execution backlog for the Phase 2 directive.
 | S1-1 | Production data inventory, private report, snapshot, reversible cleanup plan | P0 | — | IMPLEMENTED | [cleanup plan](cleanup/CLEANUP_PLAN.md); snapshot verified 31/31 tables; dry run passed. Remaining: owner approval (B-01), then execution |
 | S1-1b | Interim risk mitigation: ban QA accounts | P0 | — | IMPLEMENTED | 3 accounts banned, 0 sessions (SECURITY_REPORT) |
 | S1-2 | Local dev environment, all migrations verified locally | P0 | — | IMPLEMENTED | `supabase db reset` passes. Remaining: seed fixtures + env script (S2) |
-| S1-3 | DB hygiene: 6 unindexed FKs, split `FOR ALL` policies, tenant-safe composite FKs, immutable project organisation | P0 | S1-2 | VERIFIED (local) | Migration `20261109120000`; no unindexed FKs or `FOR ALL` policies remain locally; pgTAP tenant tests pass. Remaining: production (S1-5) |
-| S1-4 | Capability RBAC + DB-enforced financial confidentiality, role-permission matrix, unauthorized-access tests | P0 | S1-3 | VERIFIED (local) | Migration `20261109130000`; [matrix](ROLE_PERMISSION_MATRIX.md); 53 pgTAP + smoke 9a/9b pass; Members & Permissions page. Remaining: production (S1-5), contract migration after release |
-| S1-5 | Apply S1-3/S1-4 to production after local tests pass; deploy matching app | P0 | S1-4, S2 smoke | NOT STARTED | — |
+| S1-3 | DB hygiene: 6 unindexed FKs, split `FOR ALL` policies, tenant-safe composite FKs, immutable project organisation | P0 | S1-2 | VERIFIED (local) | Migration `20261109160000`; no unindexed FKs or `FOR ALL` policies remain locally; pgTAP tenant tests pass. Remaining: production (S1-5) |
+| S1-4 | Capability RBAC + DB-enforced financial confidentiality, role-permission matrix, unauthorized-access tests | P0 | S1-3 | VERIFIED (local) | Migration `20261109170000`; [matrix](ROLE_PERMISSION_MATRIX.md); 53 pgTAP + smoke 9a/9b pass; Members & Permissions page. Remaining: production (S1-5), contract migration after release |
+| S1-5 | Apply S1-3/S1-4 to production after local tests pass; deploy matching app | P0 | S1-4, S2 smoke | BLOCKED (owner approval) | Ready: [readiness report](releases/2026-11-S1-5/READINESS.md); mirror-verified migration and rollback; runbook; approval list |
 
 ## Stage 2: Quality engine
 

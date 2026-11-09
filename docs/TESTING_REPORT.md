@@ -61,10 +61,10 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
   - `organization_admin` is never stored;
   - the last admin cannot step down;
   - five cross-tenant attacks are rejected: proposal item injection, cross-project comment reply, quote/RFQ project mismatch, foreign supplier on a quote, project moved to another organisation.
-- **Negative control:** the same attack run against the old schema (migration 20261109090000) succeeded. Another organisation attached an item to a proposal, and plain staff read the internal cost (100.00). So the tests detect the real weaknesses.
+- **Negative control:** the same attack run against the old schema (migration 20261109154918) succeeded. Another organisation attached an item to a proposal, and plain staff read the internal cost (100.00). So the tests detect the real weaknesses.
 
 ### 2026-11-09 · RBAC data move (expand phase)
-- **Command:** `./scripts/db/check-rbac-backfill.sh` (reset to 20261109120000, load synthetic rows, migrate, assert).
+- **Command:** `./scripts/db/check-rbac-backfill.sh` (reset to 20261109160000, load synthetic rows, migrate, assert).
 - **Result:** PASS.
   - Proposal costs: 2 rows / 350.50 copied.
   - Inventory rates: 2 rows / 40.00 copied, including a zero rate; a null rate stays absent.
@@ -94,3 +94,20 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
   - **Dev-mode tests never hydrated.** The tests opened `127.0.0.1`, and the Next.js dev server only serves its scripts to `localhost`. Fixed by using a `localhost` base URL.
   - **Project Overview page (real app bug).** It read the current date during prerender, which Next.js 16 Cache Components forbids. An outsider's project URL then hung on "Loading…" instead of showing "not found". Fixed with `await connection()`.
   - **Server Supabase client (real app bug).** Supabase Auth checks token expiry against the clock during partial prefetch, which logged "unstable value Date.now()" errors on 6 routes. Fixed with `await connection()` in the server client. The production-mode run now has 0 such errors.
+
+### 2026-11-09 · Release S1-5 verification on an isolated production-shaped mirror
+- **Setup:** a second local Supabase stack (ports 553xx) at production's schema version, loaded with production's structure: same IDs, relationships, roles, statuses and amounts, with placeholder text. Tools: `docs/releases/2026-11-S1-5/mirror-tools/`.
+- **Constraint pre-flight on production (20 read-only checks):** PASS, 0 violations.
+- **Migrations in one transaction:** PASS. 153 statements, about 110 ms; concurrent reads never waited more than 129 ms.
+- **Data move:** PASS. 6 costs (1,233,500) and 5 rates (10,555) moved exactly; row counts unchanged.
+- **Compatibility:**
+
+  | App | Database | Result |
+  |---|---|---|
+  | live (`19e66fc`) | migrated | 11/11 pages OK; temporary display limits for the owner |
+  | release candidate | migrated | 11/11 OK, smoke 20/20, pgTAP 53/53 |
+  | release candidate | old | owner loses finance views, which proves "database first" |
+  | live | old | baseline OK |
+
+- **Rollback:** PASS. After migrate and then roll back, the schema dump and the full data fingerprint (31 tables) are identical to before (0 diff lines). Migrating again afterwards also passes.
+- **Bug found and fixed:** the first rollback run stopped. Part A did not recreate the hygiene-level proposal policies that Part B drops. The single transaction kept the database unchanged.
