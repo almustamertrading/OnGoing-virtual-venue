@@ -3,7 +3,7 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(46);
+select plan(48);
 
 -- ---------------------------------------------------------------------------
 -- Fixture
@@ -56,6 +56,10 @@ insert into public.documents (organization_id, project_id, title, storage_path, 
    'a1000000-0000-4000-8000-00000000000a/a1000000-0000-4000-8000-0000000000e1/d1/drawing.pdf', 'drawing.pdf', 10, false, 'a1000000-0000-4000-8000-0000000000a1'),
   ('a1000000-0000-4000-8000-00000000000a', 'a1000000-0000-4000-8000-0000000000e1', 'S3 priced contract',
    'a1000000-0000-4000-8000-00000000000a/a1000000-0000-4000-8000-0000000000e1/d2/contract.pdf', 'contract.pdf', 10, true, 'a1000000-0000-4000-8000-0000000000a1');
+
+-- An uploaded file whose document row was never created (the insert failed), owned by a3.
+insert into storage.objects (bucket_id, name, owner_id) values
+  ('documents', 'a1000000-0000-4000-8000-00000000000a/a1000000-0000-4000-8000-0000000000e1/d9/orphan.pdf', 'a1000000-0000-4000-8000-0000000000a3');
 
 set constraints all immediate;
 set local role authenticated;
@@ -217,6 +221,13 @@ select lives_ok($$ insert into public.tasks (project_id, title, status, due_date
   'two tasks: due yesterday and today in the organisation''s time zone');
 select is((select tasks_overdue from public.report_delivery('a1000000-0000-4000-8000-00000000000a') where project_id = 'a1000000-0000-4000-8000-0000000000e1'), 1::bigint,
   'the delivery report counts overdue tasks by the organisation''s local date');
+
+set local "request.jwt.claims" to '{"sub":"a1000000-0000-4000-8000-0000000000a3","role":"authenticated"}';
+select is((select count(*) from storage.objects where bucket_id = 'documents' and name like '%/d9/orphan.pdf'), 1::bigint,
+  'an uploader sees their own unclaimed object, so cleanup after a failed insert can remove it');
+set local "request.jwt.claims" to '{"sub":"a1000000-0000-4000-8000-0000000000a2","role":"authenticated"}';
+select is((select count(*) from storage.objects where bucket_id = 'documents' and name like '%/d9/orphan.pdf'), 0::bigint,
+  'another member does not see someone else''s unclaimed upload');
 
 reset role;
 select * from finish();
