@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     "public/vendor/**",
     // Local agent worktrees (parallel workstreams) are linted inside their own checkout.
     ".claude/**",
+    // Release evidence and one-off verification scripts, not application source.
+    "docs/**",
   ]),
 ]);
 
