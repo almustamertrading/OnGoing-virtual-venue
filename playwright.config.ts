@@ -37,8 +37,12 @@ export default defineConfig({
     env: {
       NEXT_PUBLIC_SUPABASE_URL: supabase.url,
       NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: supabase.publishableKey,
-      // AI features are not exercised by the smoke suite.
+      // Never the real AI service in tests: the deterministic mock provider, with limits high
+      // enough that repeated local runs never hit them (limit logic has its own unit tests).
       ANTHROPIC_API_KEY: "",
+      AI_PROVIDER: "mock",
+      AI_LIMIT_PROPOSAL_DRAFT_PER_HOUR: "500",
+      AI_LIMIT_PROPOSAL_DRAFT_PER_DAY: "2000",
     },
   },
 });

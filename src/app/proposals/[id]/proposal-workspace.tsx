@@ -112,7 +112,7 @@ export function ProposalWorkspace({
           <section className="card mb-5 p-5">
             <h2 className="mb-2 text-sm font-semibold text-emerald-300">الملخص التنفيذي</h2>
             {editable ? (
-              <textarea defaultValue={proposal.summary} rows={3} placeholder="ملخص تنفيذي…" onBlur={(e) => e.target.value !== proposal.summary && start(() => updateProposal(proposal.id, { summary: e.target.value }))} className="field" />
+              <textarea key={`summary-${proposal.summary}`} aria-label="الملخص التنفيذي" defaultValue={proposal.summary} rows={3} placeholder="ملخص تنفيذي…" onBlur={(e) => e.target.value !== proposal.summary && start(() => updateProposal(proposal.id, { summary: e.target.value }))} className="field" />
             ) : (
               <p className="whitespace-pre-wrap text-sm text-slate-200">{proposal.summary}</p>
             )}

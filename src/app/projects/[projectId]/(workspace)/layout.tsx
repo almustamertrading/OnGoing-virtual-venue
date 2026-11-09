@@ -7,6 +7,11 @@ import { getProjectContext } from "@/lib/project";
 import { PROJECT_TYPE, formatRange } from "@/lib/format";
 import { WorkspaceTabs } from "./workspace-tabs";
 
+// The workspace header shows RLS-filtered project data, so it is read on every request and the
+// layout blocks on the server (Next.js "Allow blocking route"). Streaming it behind Suspense is
+// a later performance step; this keeps today's behaviour and silences the dev-only validation.
+export const instant = false;
+
 export default async function WorkspaceLayout({ children, params }: LayoutProps<"/projects/[projectId]">) {
   const { projectId } = await params;
   const { project, client, email, members, supabase, organization, canSeeFinance } = await getProjectContext(projectId);
