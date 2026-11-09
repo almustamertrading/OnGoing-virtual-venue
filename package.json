@@ -9,7 +9,7 @@
     "lint": "eslint",
     "postinstall": "node scripts/copy-maplibre-worker.mjs",
     "prebuild": "node scripts/copy-maplibre-worker.mjs",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:db": "supabase test db",
     "test:e2e": "playwright test",
