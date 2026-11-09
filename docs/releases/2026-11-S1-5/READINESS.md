@@ -12,7 +12,7 @@
 
 | Check | Result |
 |---|---|
-| CI on the release candidate | PASS: typecheck, lint, unit, 53 pgTAP, data-move check, production build + 20 smoke tests (run id in the status table below) |
+| CI on the release candidate | PASS on `d5d9727` (GitHub Actions run 42695122497): typecheck, lint, unit, 53 pgTAP, data-move check, production build + 20 smoke tests |
 | Production data vs. every new constraint (20 read-only checks on production) | **0 violations**: no cross-tenant links, no duplicates, no negative amounts, all dropped policies exist, organisation has an admin |
 | Isolated, representative database | Separate local Supabase stack at production's exact schema version, holding production's structure: same IDs, relationships, roles, statuses and amounts (placeholder text, no personal data) |
 | Migration on the mirror (one transaction, like production) | 153 statements, about 110 ms in total, slowest statement 3.9 ms. A second connection reading the affected tables throughout never waited more than 129 ms |
@@ -54,7 +54,7 @@ Mitigation: release at a quiet time (the owner is the only active user), verify 
    - RLS on every table;
    - Supabase advisors show no new security issues;
    - owner access check.
-5. **Deploy:** fast-forward `phase-1-foundation` to the release commit. Netlify builds and publishes in about 3–5 min.
+5. **Deploy:** fast-forward `phase-1-foundation` to `d5d9727`. Netlify builds and publishes in about 3–5 min.
 6. **Post-deploy checks** (owner account): projects, Finance tab, Procurement quotes, inventory value, proposal margin and PDF, Members & Permissions.
 7. Align the repository's migration file names with the recorded versions; update the docs.
 8. **Later, separate approval:** a contract migration that drops the now-empty old cost columns, after some days of stable use.
@@ -70,7 +70,7 @@ Mitigation: release at a quiet time (the owner is the only active user), verify 
 |---|---|---|
 | 1 | Create a fresh pre-release snapshot schema in production | Production write (non-destructive) |
 | 2 | Apply the two migrations to production | Production schema change |
-| 3 | Fast-forward `phase-1-foundation` to the release commit (Netlify publishes) | Production deploy |
+| 3 | Fast-forward `phase-1-foundation` to `d5d9727` (Netlify publishes) | Production deploy |
 
 **Your own actions** (I cannot do these):
 - off-site database dump (step 2b);
@@ -81,5 +81,5 @@ Mitigation: release at a quiet time (the owner is the only active user), verify 
 ## Status
 | Item | Value |
 |---|---|
-| Release candidate commit | see the commit that adds this file on `public-site` |
-| CI run on that commit | recorded in docs/TESTING_REPORT.md once finished |
+| Release candidate commit | `d5d9727` on `public-site` (later commits on `public-site` touch `docs/` only) |
+| CI run on that commit | 42695122497: success, every step (2026-11-09 20:39 UTC) |

@@ -95,6 +95,10 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
   - **Project Overview page (real app bug).** It read the current date during prerender, which Next.js 16 Cache Components forbids. An outsider's project URL then hung on "Loading…" instead of showing "not found". Fixed with `await connection()`.
   - **Server Supabase client (real app bug).** Supabase Auth checks token expiry against the clock during partial prefetch, which logged "unstable value Date.now()" errors on 6 routes. Fixed with `await connection()` in the server client. The production-mode run now has 0 such errors.
 
+### 2026-11-09 · CI on release candidate `d5d9727`
+- GitHub Actions run 42695122497: **success**. Steps: typecheck, lint, Vitest, local Supabase, pgTAP (RLS, capabilities, tenant integrity), migration data-move check, production build + Playwright smoke tests.
+- The previous run (c87f97f) failed lint on a release-evidence script under `docs/`; `docs/` is now excluded from lint, application source is still fully linted.
+
 ### 2026-11-09 · Release S1-5 verification on an isolated production-shaped mirror
 - **Setup:** a second local Supabase stack (ports 553xx) at production's schema version, loaded with production's structure: same IDs, relationships, roles, statuses and amounts, with placeholder text. Tools: `docs/releases/2026-11-S1-5/mirror-tools/`.
 - **Constraint pre-flight on production (20 read-only checks):** PASS, 0 violations.
