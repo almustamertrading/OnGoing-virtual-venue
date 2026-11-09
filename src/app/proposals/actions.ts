@@ -4,13 +4,19 @@ import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { SECTION_TEMPLATES } from "@/lib/proposal-meta";
-import { generateProposalDraft, ProposalConfigError } from "@/lib/proposals";
+import { aiErrorMessage } from "@/lib/ai/config";
+import { AiError, type AiErrorCode } from "@/lib/ai/types";
+import { generateProposalDraft } from "@/lib/proposals";
+import { draftOutline, MIN_BRIEF_CHARS, type OutlineSection } from "@/lib/proposal-draft";
+import { getMyOrganization } from "@/lib/project";
 import type { ProposalStatus, ProposalType } from "@/lib/types";
 import { permissionMessage } from "@/lib/permissions";
-import { proposalTotals } from "@/lib/money";
 
-export type ActionState = { error?: string; ok?: boolean };
-export type GenState = { error?: string; ok?: boolean };
+export type ActionState = { error?: string; ok?: boolean; message?: string };
+export type GenState = { error?: string; ok?: boolean; code?: AiErrorCode };
+
+/** Statuses in which content (sections, items, header) can be edited; the database agrees. */
+const EDITABLE: readonly ProposalStatus[] = ["draft", "ai_generated", "changes_requested"];
 
 const text = (f: FormData, k: string) => String(f.get(k) ?? "").trim();
 const optional = (f: FormData, k: string) => text(f, k) || null;
@@ -181,77 +187,131 @@ export async function generateDraft(
   formData: FormData,
 ): Promise<GenState> {
   const brief = text(formData, "brief");
+  const force = formData.get("force") === "on";
+  if (brief.length < MIN_BRIEF_CHARS) return { error: "الموجز قصير جدًا. ألصق موجز العميل أو متطلباته (30 حرفًا على الأقل)." };
+
   const supabase = await createClient();
   const { data: proposal } = await supabase
-    .from("proposals").select("proposal_type, client_id").eq("id", proposalId).maybeSingle();
+    .from("proposals").select("organization_id, status, proposal_type, client_id, template_id").eq("id", proposalId).maybeSingle();
   if (!proposal) return { error: "العرض غير موجود." };
+  if (!EDITABLE.includes(proposal.status as ProposalStatus)) {
+    return { error: "العرض قيد المراجعة أو معتمد، لذا محتواه مقفل. أعده إلى «مسودة» لتوليد محتوى جديد." };
+  }
+  const org = await getMyOrganization();
+  if (!org || org.id !== proposal.organization_id || !org.access.sales) return { error: permissionMessage({ code: "42501" }) };
 
   let clientName = "";
   if (proposal.client_id) {
     const { data: c } = await supabase.from("clients").select("name").eq("id", proposal.client_id).maybeSingle();
     clientName = c?.name ?? "";
   }
-
-  try {
-    const draft = await generateProposalDraft(brief, proposal.proposal_type as ProposalType, companyName, clientName);
-    // Replace existing sections with the generated ones.
-    await supabase.from("proposal_sections").delete().eq("proposal_id", proposalId);
-    const rows = draft.sections.map((s, i) => ({
-      proposal_id: proposalId, organization_id: orgId, heading: s.heading, body: s.body, ai_generated: true, sort_order: i,
-    }));
-    if (rows.length) await supabase.from("proposal_sections").insert(rows);
-    await supabase.from("proposals").update({ summary: draft.summary, brief, status: "ai_generated" }).eq("id", proposalId);
-  } catch (e) {
-    if (e instanceof ProposalConfigError) return { error: e.message };
-    return { error: (e as Error).message || "تعذّر توليد المسودة." };
+  let templateSections: OutlineSection[] | null = null;
+  if (proposal.template_id) {
+    const { data: t } = await supabase.from("proposal_templates").select("sections").eq("id", proposal.template_id).maybeSingle();
+    templateSections = Array.isArray(t?.sections) ? (t.sections as OutlineSection[]) : null;
   }
+  const outline = draftOutline(proposal.proposal_type as ProposalType, templateSections);
+
+  let draft;
+  try {
+    draft = await generateProposalDraft(supabase, {
+      proposalId, organizationId: proposal.organization_id, brief, type: proposal.proposal_type as ProposalType,
+      company: org.name || companyName, client: clientName, outline, force,
+    });
+  } catch (e) {
+    if (e instanceof AiError) return { error: e.message, code: e.code };
+    console.error("generateDraft failed:", e);
+    return { error: aiErrorMessage("failed"), code: "failed" };
+  }
+
+  // Written content is kept as a version before AI content replaces it.
+  const { data: existing } = await supabase.from("proposal_sections").select("id, body").eq("proposal_id", proposalId);
+  const old = (existing ?? []) as { id: string; body: string }[];
+  if (old.some((s) => s.body.trim())) {
+    const { error: vErr } = await supabase.rpc("save_proposal_version", { pid: proposalId, note: "قبل إعادة التوليد بالذكاء الاصطناعي" });
+    if (vErr) return { error: permissionMessage(vErr) ?? "تعذّر حفظ نسخة من المحتوى الحالي، فلم يُستبدل." };
+  }
+  // New sections first, then the old ones go: a failed insert never leaves the proposal empty.
+  const rows = draft.sections.map((s, i) => ({
+    proposal_id: proposalId, organization_id: orgId, heading: s.heading, body: s.body, ai_generated: true, sort_order: i,
+  }));
+  if (rows.length) {
+    const { error: insErr } = await supabase.from("proposal_sections").insert(rows);
+    if (insErr) return { error: permissionMessage(insErr) ?? "تعذّر حفظ المسودة." };
+  }
+  if (old.length) await supabase.from("proposal_sections").delete().in("id", old.map((s) => s.id));
+  const { error: upErr } = await supabase
+    .from("proposals")
+    .update({ summary: draft.summary, brief, ...(proposal.status === "draft" ? { status: "ai_generated" as const } : {}) })
+    .eq("id", proposalId);
+  if (upErr) return { error: permissionMessage(upErr) };
   refresh();
   return { ok: true };
 }
 
+// ---------------- Review workflow ----------------
+
+function workflowMessage(error: { code?: string; message?: string }): string {
+  const msg = error.message ?? "";
+  if (/approved internally before/i.test(msg)) return "يلزم اعتماد العرض داخليًا قبل إرساله للعميل أو تحويله.";
+  if (/can approve a proposal/i.test(msg)) return "الاعتماد لمدير المنظمة أو المدير فقط، عبر المراجعة.";
+  if (/under review can be approved|can only be requested/i.test(msg)) return "العرض لم يعد قيد المراجعة. حدّث الصفحة.";
+  if (/rejected or expired/i.test(msg)) return "لا يُحوَّل عرض مرفوض أو منتهٍ إلى مشروع.";
+  if (error.code === "23514") return "اكتب سبب طلب التعديلات حتى يعرف الفريق ما المطلوب.";
+  return permissionMessage(error) ?? "تعذّر تنفيذ الإجراء.";
+}
+
+/** Moves a proposal along the workflow. The database decides who may make each move. */
+export async function changeStatus(proposalId: string, to: ProposalStatus): Promise<ActionState> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("proposals").update({ status: to }).eq("id", proposalId).select("id");
+  if (error) return { error: workflowMessage(error) };
+  if (!data?.length) return { error: permissionMessage({ code: "42501" }) };
+  refresh();
+  return { ok: true };
+}
+
+/** Records a review: a comment, a change request (needs a reason) or an approval. */
+export async function reviewProposal(
+  proposalId: string,
+  orgId: string,
+  version: number,
+  _prev: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const decision = text(formData, "decision");
+  if (!["comment", "changes_requested", "approved"].includes(decision)) return { error: "اختر نوع المراجعة." };
+  const comment = text(formData, "comment").slice(0, 4000);
+  if (decision === "comment" && !comment) return { error: "اكتب التعليق أولًا." };
+  if (decision === "changes_requested" && !comment) return { error: "اكتب سبب طلب التعديلات حتى يعرف الفريق ما المطلوب." };
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("proposal_reviews")
+    .insert({ proposal_id: proposalId, organization_id: orgId, version, decision, comment });
+  if (error) return { error: workflowMessage(error) };
+  refresh();
+  return {
+    ok: true,
+    message: decision === "approved" ? "اعتُمد العرض داخليًا." : decision === "changes_requested" ? "أُعيد العرض للتعديل." : "أُضيف التعليق.",
+  };
+}
+
+/** Saves the current content as a named version (sales). */
+export async function saveVersion(proposalId: string, _prev: ActionState, formData: FormData): Promise<ActionState> {
+  const note = text(formData, "note").slice(0, 500);
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("save_proposal_version", { pid: proposalId, note });
+  if (error) return { error: permissionMessage(error) };
+  refresh();
+  return { ok: true, message: `حُفظت النسخة ${data}.` };
+}
+
 // ---------------- Convert to project ----------------
 
-export async function convertToProject(proposalId: string) {
+/** Creates the project and its BOQ in one database transaction (see convert_proposal_to_project). */
+export async function convertToProject(proposalId: string): Promise<ActionState> {
   const supabase = await createClient();
-  const { data: claims } = await supabase.auth.getClaims();
-  const userId = claims?.claims?.sub as string | undefined;
-  if (!userId) throw new Error("انتهت الجلسة.");
-
-  const { data: p } = await supabase.from("proposals").select("*").eq("id", proposalId).maybeSingle();
-  if (!p) throw new Error("العرض غير موجود.");
-  if (p.project_id) redirect(`/projects/${p.project_id}`);
-
-  const { data: items } = await supabase.from("proposal_items").select("*").eq("proposal_id", proposalId).order("sort_order");
-  const list = items ?? [];
-  const budget = proposalTotals(list, 0).subtotal;
-
-  const { data: project, error } = await supabase
-    .from("projects")
-    .insert({
-      organization_id: p.organization_id,
-      name: p.title,
-      client_id: p.client_id,
-      description: p.summary,
-      status: "confirmed",
-      budget: budget || null,
-      created_by: userId,
-    })
-    .select("id")
-    .single();
-  if (error) throw new Error(permissionMessage(error));
-
-  if (list.length) {
-    await supabase.from("boq_items").insert(
-      list.map((i, idx) => ({
-        project_id: project.id,
-        description: i.description,
-        unit: i.unit,
-        quantity: Number(i.quantity),
-        unit_price: Number(i.unit_price),
-        sort_order: idx,
-      })),
-    );
-  }
-  await supabase.from("proposals").update({ status: "converted", project_id: project.id }).eq("id", proposalId);
-  redirect(`/projects/${project.id}`);
+  const { data, error } = await supabase.rpc("convert_proposal_to_project", { pid: proposalId });
+  if (error || !data) return { error: error ? workflowMessage(error) : "تعذّر تحويل العرض." };
+  redirect(`/projects/${data as string}`);
 }

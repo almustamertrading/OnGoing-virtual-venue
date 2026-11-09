@@ -42,6 +42,19 @@ export function formatDate(iso: string | null | undefined) {
   return `${d} ${month} ${y}`;
 }
 
+const RIYADH_PARTS = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Riyadh", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+});
+
+/** A timestamp in Riyadh time: "9 Nov 2026, 14:05". Numeric parts only, so server and browser agree. */
+export function formatDateTime(iso: string | null | undefined) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  const p = Object.fromEntries(RIYADH_PARTS.formatToParts(d).map((x) => [x.type, x.value]));
+  return `${formatDate(`${p.year}-${p.month}-${p.day}`)}, ${p.hour}:${p.minute}`;
+}
+
 export function formatRange(start: string | null, end: string | null) {
   if (start && end && start !== end) return `${formatDate(start)} to ${formatDate(end)}`;
   return formatDate(start ?? end);

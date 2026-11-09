@@ -3,38 +3,81 @@ import { getMyOrganization } from "@/lib/project";
 import { createClient, getUserId } from "@/lib/supabase/server";
 import { formatDate, formatMoney } from "@/lib/format";
 import { PROPOSAL_TYPE } from "@/lib/proposal-meta";
-import type { ClientRow, ProposalItemRow, ProposalRow, ProposalSectionRow } from "@/lib/types";
+import type { ClientRow, ProposalItemRow, ProposalRow, ProposalSectionRow, ProposalSnapshot, ProposalType } from "@/lib/types";
 import { PrintButton } from "./print-button";
 import { proposalTotals } from "@/lib/money";
 
-export default async function ProposalPrintPage({ params }: PageProps<"/proposals/[id]/print">) {
+/** What the client document shows: client-facing fields only, never internal costs. */
+type Printable = {
+  title: string;
+  reference: string;
+  proposal_type: ProposalType;
+  summary: string;
+  vat_rate: number;
+  issue_date: string | null;
+  valid_until: string | null;
+  client_id: string | null;
+  versionLabel: string;
+  sections: { heading: string; body: string }[];
+  items: { description: string; category: string | null; quantity: number; unit: string; unit_price: number; is_optional: boolean }[];
+};
+
+export default async function ProposalPrintPage({ params, searchParams }: PageProps<"/proposals/[id]/print">) {
   const { id } = await params;
-  if (!(await getUserId())) redirect(`/login?next=/proposals/${id}/print`);
+  const requested = (await searchParams).version;
+  const versionNo = typeof requested === "string" && /^\d{1,6}$/.test(requested) ? Number(requested) : null;
+  if (!(await getUserId())) redirect(`/login?next=/proposals/${id}/print${versionNo ? `?version=${versionNo}` : ""}`);
   const org = await getMyOrganization();
   const supabase = await createClient();
 
   const { data: proposal } = await supabase.from("proposals").select("*").eq("id", id).maybeSingle();
   if (!proposal) notFound();
-  const p = proposal as ProposalRow;
+  const live = proposal as ProposalRow;
 
-  const [{ data: sections }, { data: items }, { data: client }] = await Promise.all([
-    supabase.from("proposal_sections").select("*").eq("proposal_id", id).order("sort_order"),
-    supabase.from("proposal_items").select("*").eq("proposal_id", id).order("sort_order"),
-    p.client_id ? supabase.from("clients").select("*").eq("id", p.client_id).maybeSingle() : Promise.resolve({ data: null }),
-  ]);
+  let doc: Printable;
+  if (versionNo) {
+    // A frozen version (e.g. the approved one): exactly what was reviewed, never edited since.
+    const { data: version } = await supabase
+      .from("proposal_versions").select("version, status, snapshot").eq("proposal_id", id).eq("version", versionNo).maybeSingle();
+    if (!version) notFound();
+    const snap = version.snapshot as ProposalSnapshot;
+    if (!snap.proposal) notFound();
+    doc = {
+      ...snap.proposal,
+      vat_rate: Number(snap.proposal.vat_rate),
+      versionLabel: `نسخة ${version.version}${version.status === "approved_internally" ? " (معتمدة)" : ""}`,
+      sections: snap.sections ?? [],
+      items: (snap.items ?? []).map((i) => ({ ...i, quantity: Number(i.quantity), unit_price: Number(i.unit_price) })),
+    };
+  } else {
+    const [{ data: sections }, { data: items }] = await Promise.all([
+      supabase.from("proposal_sections").select("*").eq("proposal_id", id).order("sort_order"),
+      supabase.from("proposal_items").select("*").eq("proposal_id", id).order("sort_order"),
+    ]);
+    doc = {
+      title: live.title, reference: live.reference, proposal_type: live.proposal_type, summary: live.summary,
+      vat_rate: live.vat_rate, issue_date: live.issue_date, valid_until: live.valid_until, client_id: live.client_id,
+      versionLabel: `نسخة ${live.version}`,
+      sections: ((sections as ProposalSectionRow[]) ?? []).map((s) => ({ heading: s.heading, body: s.body })),
+      items: ((items as ProposalItemRow[]) ?? []).map((i) => ({
+        description: i.description, category: i.category, quantity: Number(i.quantity), unit: i.unit,
+        unit_price: Number(i.unit_price), is_optional: i.is_optional,
+      })),
+    };
+  }
+
+  const { data: client } = doc.client_id
+    ? await supabase.from("clients").select("*").eq("id", doc.client_id).maybeSingle()
+    : { data: null };
 
   const cur = org?.currency ?? "SAR";
   const m = (v: number) => formatMoney(v, cur);
-  const all = (items as ProposalItemRow[]) ?? [];
-  const billable = all.filter((i) => !i.is_optional);
-  const optional = all.filter((i) => i.is_optional);
-  // Client-facing: prices only, never internal costs.
-  const { subtotal, vat, grand } = proposalTotals(
-    all.map((i) => ({ quantity: i.quantity, unit_price: i.unit_price, is_optional: i.is_optional })),
-    p.vat_rate,
-  );
+  const billable = doc.items.filter((i) => !i.is_optional);
+  const optional = doc.items.filter((i) => i.is_optional);
+  const { subtotal, vat, grand } = proposalTotals(doc.items, doc.vat_rate);
   const cl = (client as ClientRow | null) ?? null;
   const company = org?.name ?? "OnGoing";
+  const p = doc;
 
   return (
     <div dir="rtl" className="min-h-screen bg-white text-slate-900" style={{ fontFamily: "var(--font-ar, sans-serif)" }}>
@@ -51,7 +94,7 @@ export default async function ProposalPrintPage({ params }: PageProps<"/proposal
           </div>
           <div className="text-left">
             <p className="font-mono text-sm font-bold text-emerald-700">{p.reference}</p>
-            <p className="text-xs text-slate-500">نسخة {p.version}</p>
+            <p className="text-xs text-slate-500">{p.versionLabel}</p>
           </div>
         </header>
 
@@ -73,8 +116,8 @@ export default async function ProposalPrintPage({ params }: PageProps<"/proposal
           </section>
         )}
 
-        {((sections as ProposalSectionRow[]) ?? []).filter((s) => s.body || s.heading).map((s) => (
-          <section key={s.id} className="mb-7 break-inside-avoid">
+        {p.sections.filter((s) => s.body || s.heading).map((s, idx) => (
+          <section key={idx} className="mb-7 break-inside-avoid">
             <h2 className="mb-2 border-r-4 border-emerald-600 pr-3 text-lg font-bold text-slate-900">{s.heading}</h2>
             <p className="whitespace-pre-wrap text-sm leading-7 text-slate-700">{s.body}</p>
           </section>
@@ -95,8 +138,8 @@ export default async function ProposalPrintPage({ params }: PageProps<"/proposal
                 </tr>
               </thead>
               <tbody>
-                {billable.map((i) => (
-                  <tr key={i.id}>
+                {billable.map((i, idx) => (
+                  <tr key={idx}>
                     <td className="border border-slate-200 px-2 py-1.5 text-slate-800">{i.description}{i.category && <span className="text-xs text-slate-400"> · {i.category}</span>}</td>
                     <td className="border border-slate-200 px-2 py-1.5 text-slate-700">{i.quantity}</td>
                     <td className="border border-slate-200 px-2 py-1.5 text-slate-700">{i.unit || "—"}</td>
@@ -115,7 +158,7 @@ export default async function ProposalPrintPage({ params }: PageProps<"/proposal
               <div className="mt-3 text-sm">
                 <p className="mb-1 font-semibold text-slate-700">بنود اختيارية (غير محتسبة في الإجمالي):</p>
                 <ul className="list-disc space-y-0.5 pr-5 text-slate-600">
-                  {optional.map((i) => <li key={i.id}>{i.description} — {m(i.quantity * i.unit_price)}</li>)}
+                  {optional.map((i, idx) => <li key={idx}>{i.description} — {m(i.quantity * i.unit_price)}</li>)}
                 </ul>
               </div>
             )}

@@ -358,6 +358,73 @@ export type ProposalRow = {
   valid_until: string | null;
   version: number;
   created_at: string;
+  template_id: string | null;
+  submitted_at: string | null;
+  approved_by: string | null;
+  approved_at: string | null;
+};
+
+export type ProposalTemplateSection = { heading: string; guidance: string };
+
+export type ProposalTemplateRow = {
+  id: string;
+  organization_id: string;
+  name: string;
+  proposal_type: ProposalType;
+  description: string;
+  sections: ProposalTemplateSection[];
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+};
+
+/** A frozen copy of a proposal's client-facing content (never internal costs). */
+export type ProposalSnapshot = {
+  proposal: {
+    title: string;
+    reference: string;
+    proposal_type: ProposalType;
+    summary: string;
+    client_id: string | null;
+    vat_rate: number;
+    issue_date: string | null;
+    due_date: string | null;
+    valid_until: string | null;
+  } | null;
+  sections: { heading: string; body: string; ai_generated: boolean }[];
+  items: {
+    category: string | null;
+    description: string;
+    specification: string | null;
+    quantity: number;
+    unit: string;
+    unit_price: number;
+    is_optional: boolean;
+  }[];
+};
+
+export type ProposalVersionRow = {
+  id: string;
+  proposal_id: string;
+  organization_id: string;
+  version: number;
+  status: ProposalStatus;
+  note: string;
+  created_by: string | null;
+  created_at: string;
+};
+
+export type ProposalReviewDecision = "comment" | "changes_requested" | "approved";
+
+export type ProposalReviewRow = {
+  id: string;
+  proposal_id: string;
+  organization_id: string;
+  version: number;
+  reviewer_id: string;
+  decision: ProposalReviewDecision;
+  comment: string;
+  created_at: string;
 };
 
 export type ProposalSectionRow = {

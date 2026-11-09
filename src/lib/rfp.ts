@@ -1,5 +1,10 @@
 import "server-only";
-import Anthropic from "@anthropic-ai/sdk";
+import { createHash } from "node:crypto";
+import type Anthropic from "@anthropic-ai/sdk";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { aiErrorMessage } from "./ai/config";
+import { runAi } from "./ai/run";
+import { AiError } from "./ai/types";
 import type { ProjectStatus, ProjectType } from "./types";
 
 export type RfpContact = { name: string; role: string; phone: string; email: string; address: string };
@@ -144,8 +149,6 @@ function coerce(raw: Record<string, unknown>): ExtractedRfp {
   };
 }
 
-export class RfpConfigError extends Error {}
-
 // Keep the request well under per-tier input limits. Tender text is front-loaded,
 // so clipping the tail still captures the scope, pricing and criteria.
 const MAX_TEXT_CHARS = 160_000;
@@ -164,21 +167,48 @@ async function extractPdfText(base64: string): Promise<string> {
   }
 }
 
-/** Sends the RFP to Claude and returns the extracted project blueprint. */
-export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new RfpConfigError("ميزة قراءة الـRFP غير مفعّلة بعد: يلزم إضافة مفتاح Claude في إعدادات الموقع.");
-  }
-  const client = new Anthropic({ apiKey });
+/** Placeholder blueprint for the mock provider (tests, local development): clearly marked. */
+function mockBlueprint(): Record<string, unknown> {
+  return {
+    name: "[اختبار] مشروع من كراسة تجريبية",
+    client_name: "[اختبار] الجهة المالكة",
+    project_type: "conference",
+    status: "lead",
+    location: "الرياض",
+    start_date: null,
+    end_date: null,
+    budget: null,
+    summary: "[مسودة اختبار] ملخص مولّد محليًا دون ذكاء اصطناعي.",
+    reference: "TEST-RFP-001",
+    deadline: "",
+    submission_method: "",
+    submission_location: "",
+    contact: { name: "", role: "", phone: "", email: "", address: "" },
+    scope: ["[اختبار] بند من نطاق العمل"],
+    deliverables: [],
+    boq: [{ description: "[اختبار] منصة رئيسية", unit: "مقطوعية", quantity: 1 }],
+    evaluation: [],
+    plan: [{ title: "التجهيز", objective: "[اختبار] مرحلة تجريبية", start_date: null, end_date: null }],
+    team: [{ title: "مدير المشروع", responsibility: "[اختبار] دور تجريبي", headcount: 1 }],
+  };
+}
 
+/**
+ * Reads an RFP and returns the extracted project blueprint, through the cost-controlled AI
+ * runner (usage log, rate limits, duplicate guard, organisation budget).
+ */
+export async function extractRfpFromPdf(
+  supabase: SupabaseClient,
+  base64: string,
+  organizationId: string | null,
+): Promise<ExtractedRfp> {
   // Prefer the PDF's text layer: it is a fraction of the tokens that rendering
   // every page as an image costs, which is what overruns the account's tier.
   const pdfText = await extractPdfText(base64);
   const useText = pdfText.length >= 200;
   const clipped = pdfText.length > MAX_TEXT_CHARS ? pdfText.slice(0, MAX_TEXT_CHARS) : pdfText;
 
-  const userContent: Anthropic.MessageParam["content"] = useText
+  const content: Anthropic.Beta.BetaUserMessageParam["content"] = useText
     ? [
         { type: "text", text: `محتوى كراسة الشروط (RFP):\n\n${clipped}` },
         { type: "text", text: prompt(TYPES.join(", ")) },
@@ -188,19 +218,23 @@ export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
         { type: "text", text: prompt(TYPES.join(", ")) },
       ];
 
-  let response: Anthropic.Message;
+  let text: string;
   try {
-    response = await client.messages.create({
-      model: "claude-sonnet-5-5",
-      max_tokens: 8000,
-      output_config: { effort: "medium" },
-      system: SYSTEM,
-      messages: [{ role: "user", content: userContent }],
-    });
+    const result = await runAi(
+      supabase,
+      {
+        organizationId,
+        feature: "rfp_extract",
+        // The same file read twice within minutes is a repeat; its bytes identify it.
+        hashParts: [createHash("sha256").update(base64).digest("hex")],
+      },
+      { feature: "rfp_extract", system: SYSTEM, content, maxTokens: 8000, effort: "medium", mock: mockBlueprint },
+    );
+    text = result.text;
   } catch (e) {
-    const msg = e instanceof Error ? e.message : "";
-    if (e instanceof Anthropic.BadRequestError && /input_tokens_exceeded|exceeds the allowed|too many|prompt is too long/i.test(msg)) {
-      throw new Error(
+    if (e instanceof AiError && e.code === "too_large") {
+      throw new AiError(
+        "too_large",
         useText
           ? "حجم الكراسة كبير على باقة الحساب الحالية. جرّب تقسيم الملف أو رفع باقة Anthropic."
           : "الملف ممسوح ضوئيًا وكبير على باقة الحساب الحالية. جرّب نسخة نصية من الكراسة أو ملفًا أصغر.",
@@ -209,21 +243,16 @@ export async function extractRfpFromPdf(base64: string): Promise<ExtractedRfp> {
     throw e;
   }
 
-  const text = response.content
-    .filter((b): b is Anthropic.TextBlock => b.type === "text")
-    .map((b) => b.text)
-    .join("");
-
   const start = text.indexOf("{");
   const end = text.lastIndexOf("}");
   if (start === -1 || end === -1) {
-    throw new Error("تعذّر استخراج البيانات من الملف. جرّب ملفًا أوضح.");
+    throw new AiError("invalid_output", "تعذّر استخراج البيانات من الملف. جرّب ملفًا أوضح.");
   }
   let parsed: Record<string, unknown>;
   try {
     parsed = JSON.parse(text.slice(start, end + 1));
   } catch {
-    throw new Error("تعذّر قراءة البيانات المستخرجة. حاول مرة أخرى.");
+    throw new AiError("invalid_output", aiErrorMessage("invalid_output"));
   }
   return coerce(parsed);
 }

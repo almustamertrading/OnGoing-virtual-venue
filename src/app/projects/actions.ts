@@ -4,7 +4,9 @@ import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { MemberRole, ProjectStatus, ProjectType } from "@/lib/types";
-import { extractRfpFromPdf, RfpConfigError, type ExtractedRfp } from "@/lib/rfp";
+import { AiError } from "@/lib/ai/types";
+import { getMyOrganization } from "@/lib/project";
+import { extractRfpFromPdf, type ExtractedRfp } from "@/lib/rfp";
 import { permissionMessage } from "@/lib/permissions";
 
 export type ActionState = { error?: string; ok?: boolean };
@@ -235,11 +237,13 @@ export async function extractRfp(_prev: RfpState, formData: FormData): Promise<R
     if (dlError || !blob) return { error: "تعذّر قراءة الملف المرفوع. حاول مجددًا." };
 
     const base64 = Buffer.from(await blob.arrayBuffer()).toString("base64");
-    const data = await extractRfpFromPdf(base64);
+    const org = await getMyOrganization();
+    const data = await extractRfpFromPdf(supabase, base64, org?.id ?? null);
     return { data };
   } catch (e) {
-    if (e instanceof RfpConfigError) return { error: e.message };
-    return { error: (e as Error).message || "تعذّرت قراءة الملف." };
+    if (e instanceof AiError) return { error: e.message };
+    console.error("extractRfp failed:", e);
+    return { error: "تعذّرت قراءة الملف. حاول مجددًا." };
   } finally {
     // Best-effort cleanup of the temporary upload.
     try {
