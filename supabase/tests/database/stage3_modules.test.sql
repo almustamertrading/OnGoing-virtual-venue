@@ -3,7 +3,7 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(38);
+select plan(46);
 
 -- ---------------------------------------------------------------------------
 -- Fixture
@@ -186,6 +186,37 @@ select results_eq($$ select invoiced, paid, expenses, margin from public.report_
   $$ values (400::numeric, 400::numeric, 150::numeric, 250::numeric) $$, 'finance gets correct project finance figures');
 select is((select awarded_value from public.report_procurement('a1000000-0000-4000-8000-00000000000a')), 90::numeric,
   'finance sees the awarded quote value');
+
+-- ---------------------------------------------------------------------------
+-- 5. Hardening: confidential activity, public mail domains, local "today" in reports
+-- ---------------------------------------------------------------------------
+set local "request.jwt.claims" to '{"sub":"a1000000-0000-4000-8000-0000000000a3","role":"authenticated"}';
+select is((select count(*) from public.activity where entity_type = 'documents' and details::text like '%priced contract%'), 0::bigint,
+  'a confidential document title never appears in the activity feed');
+select is((select count(*) from public.activity where entity_type = 'documents' and (details ->> 'confidential')::boolean), 0::bigint,
+  'a non-finance member does not see activity lines about confidential documents');
+select ok((select count(*) from public.activity where entity_type = 'documents' and details ->> 'label' = 'S3 drawing') = 1,
+  'ordinary document activity stays visible to project members');
+
+set local "request.jwt.claims" to '{"sub":"a1000000-0000-4000-8000-0000000000a2","role":"authenticated"}';
+select ok((select count(*) from public.activity
+           where entity_type = 'documents' and (details ->> 'confidential')::boolean and details ->> 'label' = 'مستند سري') = 1,
+  'finance sees the confidential document line, with the title masked');
+
+set local "request.jwt.claims" to '{"sub":"a1000000-0000-4000-8000-0000000000a1","role":"authenticated"}';
+select throws_ok($$ insert into public.organization_domains (domain, organization_id) values ('gmail.com', 'a1000000-0000-4000-8000-00000000000a') $$,
+  '23514', null, 'a public mailbox provider cannot become an auto-join domain');
+
+-- A zone whose date differs from UTC's right now, so a UTC-based "today" would give a wrong answer.
+select lives_ok($$ update public.organizations
+  set timezone = case when extract(hour from now() at time zone 'UTC') >= 11 then 'Pacific/Kiritimati' else 'Pacific/Pago_Pago' end
+  where id = 'a1000000-0000-4000-8000-00000000000a' $$, 'the admin sets a far-off organisation time zone');
+select lives_ok($$ insert into public.tasks (project_id, title, status, due_date) values
+  ('a1000000-0000-4000-8000-0000000000e1', 'S3 due yesterday (local)', 'todo', (now() at time zone (select timezone from public.organizations where id = 'a1000000-0000-4000-8000-00000000000a'))::date - 1),
+  ('a1000000-0000-4000-8000-0000000000e1', 'S3 due today (local)', 'todo', (now() at time zone (select timezone from public.organizations where id = 'a1000000-0000-4000-8000-00000000000a'))::date) $$,
+  'two tasks: due yesterday and today in the organisation''s time zone');
+select is((select tasks_overdue from public.report_delivery('a1000000-0000-4000-8000-00000000000a') where project_id = 'a1000000-0000-4000-8000-0000000000e1'), 1::bigint,
+  'the delivery report counts overdue tasks by the organisation''s local date');
 
 reset role;
 select * from finish();

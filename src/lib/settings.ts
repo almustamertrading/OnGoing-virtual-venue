@@ -326,10 +326,23 @@ export function isValidDomain(value: string): boolean {
   return value.split(".").every((label) => label.length <= 63 && !label.startsWith("-") && !label.endsWith("-"));
 }
 
+/**
+ * Public mailbox providers. Anyone can get an address there, so they must never grant automatic
+ * membership (the database refuses the same list: organization_domains_not_public_provider).
+ */
+export const PUBLIC_EMAIL_DOMAINS: ReadonlySet<string> = new Set([
+  "gmail.com", "googlemail.com", "outlook.com", "hotmail.com", "live.com", "msn.com", "yahoo.com", "ymail.com",
+  "icloud.com", "me.com", "mac.com", "aol.com", "proton.me", "protonmail.com", "gmx.com", "gmx.net", "mail.com",
+  "yandex.com", "zoho.com", "hotmail.co.uk", "outlook.sa", "hotmail.sa",
+]);
+const PUBLIC_DOMAIN_ERROR =
+  "هذا نطاق بريد عام يستطيع أي شخص التسجيل فيه، فلا يصلح للانضمام التلقائي. أضف نطاق شركتك، أو ادعُ الأشخاص مباشرة.";
+
 export function parseDomain(raw: string): Parsed<string> {
   const value = normalizeDomain(raw);
   if (!value) return { ok: false, error: "أدخل نطاق البريد، مثل example.com." };
   if (!isValidDomain(value)) return { ok: false, error: DOMAIN_FORMAT_ERROR };
+  if (PUBLIC_EMAIL_DOMAINS.has(value)) return { ok: false, error: PUBLIC_DOMAIN_ERROR };
   return { ok: true, value };
 }
 
@@ -338,7 +351,9 @@ export function domainErrorMessage(error: DbError): string | undefined {
   if (!error) return undefined;
   // organization_domains.domain is unique across all organisations.
   if (error.code === "23505") return "هذا النطاق مسجَّل مسبقًا ولا يمكن إضافته مرة أخرى.";
-  if (error.code === "23514") return DOMAIN_FORMAT_ERROR;
+  if (error.code === "23514") {
+    return /not_public_provider/.test(error.message ?? "") ? PUBLIC_DOMAIN_ERROR : DOMAIN_FORMAT_ERROR;
+  }
   return permissionMessage(error);
 }
 

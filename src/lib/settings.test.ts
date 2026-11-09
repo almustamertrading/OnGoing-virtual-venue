@@ -59,6 +59,11 @@ describe("email domains", () => {
 
   it("parses with Arabic messages", () => {
     expect(parseDomain(" Sales.Example.SA ")).toEqual({ ok: true, value: "sales.example.sa" });
+    // Public mailbox providers would let anyone join automatically.
+    const gmail = parseDomain("Gmail.com");
+    expect(gmail.ok).toBe(false);
+    if (!gmail.ok) expect(gmail.error).toContain("نطاق بريد عام");
+    expect(parseDomain("outlook.com").ok).toBe(false);
     const empty = parseDomain("   ");
     expect(empty.ok).toBe(false);
     if (!empty.ok) expect(empty.error).toMatch(/أدخل نطاق البريد/);

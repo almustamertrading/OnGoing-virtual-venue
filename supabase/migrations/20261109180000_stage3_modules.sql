@@ -532,20 +532,25 @@ stable
 security invoker
 set search_path = ''
 as $$
+  -- "Today" is the organisation's local date (not the server's UTC date), as on the task board.
+  with local_day as (
+    select (now() at time zone coalesce((select o.timezone from public.organizations o where o.id = org), 'Asia/Riyadh'))::date as today
+  )
   select p.id, p.code, p.name, p.status,
          coalesce(t.total, 0), coalesce(t.done, 0), coalesce(t.overdue, 0), coalesce(t.blocked, 0),
          coalesce(m.total, 0), coalesce(m.done, 0), m.next_due
   from public.projects p
+  cross join local_day d
   left join lateral (
     select count(*) as total,
            count(*) filter (where x.status = 'done') as done,
-           count(*) filter (where x.status <> 'done' and x.due_date < current_date) as overdue,
+           count(*) filter (where x.status <> 'done' and x.due_date < d.today) as overdue,
            count(*) filter (where x.status = 'blocked') as blocked
     from public.tasks x where x.project_id = p.id
   ) t on true
   left join lateral (
     select count(*) as total, count(*) filter (where y.done) as done,
-           min(y.due_date) filter (where not y.done and y.due_date >= current_date) as next_due
+           min(y.due_date) filter (where not y.done and y.due_date >= d.today) as next_due
     from public.milestones y where y.project_id = p.id
   ) m on true
   where p.organization_id = org
@@ -584,3 +589,121 @@ revoke execute on function public.report_pipeline(uuid), public.report_proposals
 grant execute on function public.report_pipeline(uuid), public.report_proposals(uuid),
   public.report_project_finance(uuid), public.report_delivery(uuid), public.report_procurement(uuid)
   to authenticated;
+
+-- ---------------------------------------------------------------------------
+-- 6. Hardening found during module integration
+-- ---------------------------------------------------------------------------
+
+-- 6a. Confidential documents must not leak through the project activity feed. Their title is
+--     masked when logged, and the line is readable only with finance access to the project.
+create or replace function private.log_activity()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  rec jsonb := to_jsonb(case when tg_op = 'DELETE' then old else new end);
+  prev jsonb := case when tg_op = 'UPDATE' then to_jsonb(old) else null end;
+  pid uuid;
+  changed text[];
+  label text;
+  confidential boolean;
+  ignored text[] := array['updated_at', 'updated_by', 'geom', 'completed_at', 'sort_order'];
+  info jsonb;
+begin
+  pid := case when tg_table_name = 'projects' then (rec ->> 'id')::uuid else (rec ->> 'project_id')::uuid end;
+  -- Skip rows whose project is being deleted in the same statement.
+  if pid is null or not exists (select 1 from public.projects p where p.id = pid) then
+    return null;
+  end if;
+
+  if tg_op = 'UPDATE' then
+    select array_agg(key order by key) into changed
+    from jsonb_each(rec) n
+    where not (n.key = any (ignored)) and n.value is distinct from prev -> n.key;
+    if changed is null then
+      return null;
+    end if;
+    -- Map shapes change on every drag; only renames and layer moves are worth a line.
+    if tg_table_name = 'features' and not (changed && array['name', 'layer_id']) then
+      return null;
+    end if;
+  end if;
+
+  confidential := tg_table_name = 'documents'
+    and (coalesce((rec ->> 'is_confidential')::boolean, false) or coalesce((prev ->> 'is_confidential')::boolean, false));
+  label := case when confidential then 'مستند سري' else coalesce(rec ->> 'title', rec ->> 'name', rec ->> 'body', '') end;
+  info := jsonb_build_object('label', left(label, 140));
+  if confidential then
+    info := info || jsonb_build_object('confidential', true);
+  end if;
+  if changed is not null then
+    info := info || jsonb_build_object('changed', to_jsonb(changed));
+    if 'status' = any (changed) then
+      info := info || jsonb_build_object('from', prev ->> 'status', 'to', rec ->> 'status');
+    end if;
+  end if;
+  if tg_table_name = 'project_members' then
+    info := info || jsonb_build_object(
+      'member', (select p.email from public.profiles p where p.id = (rec ->> 'user_id')::uuid),
+      'role', rec ->> 'role'
+    );
+  end if;
+
+  insert into public.activity (project_id, actor_id, action, entity_type, entity_id, details)
+  values (
+    pid,
+    (select auth.uid()),
+    case tg_op when 'INSERT' then 'created' when 'UPDATE' then 'updated' else 'deleted' end,
+    tg_table_name,
+    case when tg_table_name = 'project_members' then (rec ->> 'user_id')::uuid else (rec ->> 'id')::uuid end,
+    info
+  );
+  return null;
+end;
+$$;
+
+drop policy "activity: members read" on public.activity;
+create policy "activity: members read" on public.activity
+  for select to authenticated
+  using (
+    (select private.is_member(project_id))
+    and (
+      (entity_type <> all (array['invoices', 'expenses', 'quotes'])
+       and not (entity_type = 'documents' and coalesce((details ->> 'confidential')::boolean, false)))
+      or (select private.can_access_project_finance(project_id))
+    )
+  );
+
+-- 6b. Cleanup after a failed upload: storage's remove() needs read access, and the bucket's read
+--     policy follows the document row. Uploaders may therefore see (and so remove) their own
+--     objects that no document row points to. They uploaded these files, so nothing new is exposed.
+create or replace function private.document_path_claimed(object_name text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select exists (select 1 from public.documents d where d.storage_path = object_name);
+$$;
+revoke execute on function private.document_path_claimed(text) from public, anon;
+grant execute on function private.document_path_claimed(text) to authenticated;
+create policy "documents bucket: uploader sees own unclaimed objects" on storage.objects
+  for select to authenticated
+  using (
+    bucket_id = 'documents'
+    and owner_id = (select auth.uid())::text
+    and not private.document_path_claimed(name)
+  );
+
+-- 6c. Automatic membership by email domain must never use a public mailbox provider: anyone with
+--     a free address there could otherwise join the organisation.
+alter table public.organization_domains add constraint organization_domains_not_public_provider check (
+  domain not in (
+    'gmail.com', 'googlemail.com', 'outlook.com', 'hotmail.com', 'live.com', 'msn.com', 'yahoo.com', 'ymail.com',
+    'icloud.com', 'me.com', 'mac.com', 'aol.com', 'proton.me', 'protonmail.com', 'gmx.com', 'gmx.net', 'mail.com',
+    'yandex.com', 'zoho.com', 'hotmail.co.uk', 'outlook.sa', 'hotmail.sa'
+  )
+);
