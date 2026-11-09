@@ -386,7 +386,7 @@ export type ProposalItemRow = {
   sort_order: number;
 };
 
-// ---------------- Stage 3 (migration 20261109140000) ----------------
+// ---------------- Stage 3 (migration 20261109180000) ----------------
 
 export type OrganizationRow = {
   id: string;

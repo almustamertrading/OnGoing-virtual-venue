@@ -1,7 +1,7 @@
 # Stage 3 contracts (parallel workstreams)
 
 Four workstreams build Stage 3 in parallel, in isolated git worktrees branched from `stage3`.
-The main agent is the **single migration owner**: it wrote the schema (`supabase/migrations/20261109140000_stage3_modules.sql`)
+The main agent is the **single migration owner**: it wrote the schema (`supabase/migrations/20261109180000_stage3_modules.sql`)
 and its database tests (`supabase/tests/database/stage3_modules.test.sql`, 38 passing). It reviews and merges each workstream.
 
 ## Rules for every workstream
