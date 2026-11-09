@@ -1,0 +1,62 @@
+name: CI
+
+# Quality gate: a change is not VERIFIED unless every step below passes.
+# Runs entirely against a throw-away local Supabase stack; no production secrets.
+on:
+  push:
+    branches: [public-site, phase-1-foundation]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests (Vitest)
+        run: npm test
+
+      - name: Start local Supabase
+        run: npx supabase start -x studio,imgproxy,vector,logflare,edge-runtime,supavisor,mailpit
+
+      - name: Database tests (RLS, capabilities, tenant integrity)
+        run: npx supabase test db
+
+      - name: Migration data-move check
+        run: |
+          ./scripts/db/check-rbac-backfill.sh
+          npx supabase db reset --local
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      # Builds the app for production, starts it and runs the smoke suite.
+      - name: Production build + smoke tests (Playwright)
+        run: npx playwright test
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7

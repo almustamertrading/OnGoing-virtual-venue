@@ -3,6 +3,7 @@ import { getMyOrganization } from "@/lib/project";
 import { createClient, getUserId } from "@/lib/supabase/server";
 import type { ClientRow, ProposalItemRow, ProposalRow } from "@/lib/types";
 import { ProposalsDashboard } from "./proposals-dashboard";
+import { proposalTotals } from "@/lib/money";
 
 export const metadata = { title: "العروض | OnGoing" };
 
@@ -25,11 +26,12 @@ export default async function ProposalsPage() {
     supabase.from("clients").select("*").eq("organization_id", org.id).order("name"),
   ]);
 
-  const values: Record<string, number> = {};
+  const byProposal = new Map<string, Pick<ProposalItemRow, "quantity" | "unit_price" | "is_optional">[]>();
   for (const it of (items as Pick<ProposalItemRow, "proposal_id" | "quantity" | "unit_price" | "is_optional">[]) ?? []) {
-    if (it.is_optional) continue;
-    values[it.proposal_id] = (values[it.proposal_id] ?? 0) + Number(it.quantity) * Number(it.unit_price);
+    byProposal.set(it.proposal_id, [...(byProposal.get(it.proposal_id) ?? []), it]);
   }
+  const values: Record<string, number> = {};
+  for (const [id, list] of byProposal) values[id] = proposalTotals(list, 0).subtotal;
 
   return (
     <ProposalsDashboard

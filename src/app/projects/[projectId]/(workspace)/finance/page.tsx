@@ -2,6 +2,7 @@ import { Restricted } from "@/components/restricted";
 import { getProjectContext } from "@/lib/project";
 import type { BoqItemRow, ExpenseRow, InvoiceRow } from "@/lib/types";
 import { FinanceBoard } from "./finance-board";
+import { boqTotal } from "@/lib/money";
 
 export default async function FinancePage({ params }: PageProps<"/projects/[projectId]/finance">) {
   const { projectId } = await params;
@@ -14,10 +15,7 @@ export default async function FinancePage({ params }: PageProps<"/projects/[proj
     supabase.from("boq_items").select("quantity, unit_price").eq("project_id", projectId),
   ]);
 
-  const quoted = ((boq as Pick<BoqItemRow, "quantity" | "unit_price">[]) ?? []).reduce(
-    (s, b) => s + (b.quantity != null && b.unit_price != null ? b.quantity * b.unit_price : 0),
-    0,
-  );
+  const quoted = boqTotal((boq as Pick<BoqItemRow, "quantity" | "unit_price">[]) ?? []);
 
   return (
     <FinanceBoard

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import { ActivityList } from "@/components/activity-list";
 import { getProjectContext } from "@/lib/project";
 import { formatDate, isOverdue } from "@/lib/format";
@@ -8,6 +9,8 @@ import { DeleteProjectButton } from "./delete-project-button";
 
 export default async function OverviewPage({ params }: PageProps<"/projects/[projectId]">) {
   const { projectId } = await params;
+  // Overdue counts depend on today's date, so render at request time (Cache Components rule).
+  await connection();
   const ctx = await getProjectContext(projectId);
   const { supabase, project, client, members, canEdit, isOwner, organization } = ctx;
 

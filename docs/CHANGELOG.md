@@ -9,6 +9,23 @@ All notable changes. Dates are UTC.
 - Production cleanup toolkit in `docs/cleanup/`: plan, single-transaction cleanup script, ID-based restore script. Both scripts were dry-run tested on a local mirror.
 - Project tracking docs: `PROJECT_STATUS`, `DEVELOPMENT_TASKS`, `TECHNICAL_DECISIONS`, `BLOCKERS`, `TESTING_REPORT`, `SECURITY_REPORT`, `CHANGELOG`.
 
+- Database migrations (local, not yet in production):
+  - `20261109120000` hygiene: FK indexes, per-command policies, tenant-safe composite foreign keys.
+  - `20261109130000` capability RBAC with finance-only invoices, expenses, quotes, costs and inventory valuation.
+- Members & Permissions page (`/settings/members`) for organisation admins.
+- Test engine:
+  - Vitest unit tests (20);
+  - pgTAP database tests (53);
+  - migration data-move check;
+  - Playwright smoke suite (20) against a local stack with seeded QA users;
+  - GitHub Actions CI gate.
+- Shared money helpers (`src/lib/money.ts`) replace five copies of the BOQ and proposal total logic.
+
+### Fixed
+- The project Overview read the current date during prerender. Outsiders saw an endless "Loading…" instead of "not found".
+- The server Supabase client ran during partial prefetch, which logged "unstable Date.now()" errors on several routes.
+- ESLint reported 1,103 warnings from the vendored MapLibre worker; only that generated file is now ignored.
+
 ### Security (production, no data removed)
 - Full snapshot of all application data in schema `ops_backup_20261109`.
 - Banned the three QA accounts with known passwords and revoked their sessions.

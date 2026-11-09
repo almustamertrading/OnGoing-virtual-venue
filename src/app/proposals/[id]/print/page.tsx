@@ -5,6 +5,7 @@ import { formatDate, formatMoney } from "@/lib/format";
 import { PROPOSAL_TYPE } from "@/lib/proposal-meta";
 import type { ClientRow, ProposalItemRow, ProposalRow, ProposalSectionRow } from "@/lib/types";
 import { PrintButton } from "./print-button";
+import { proposalTotals } from "@/lib/money";
 
 export default async function ProposalPrintPage({ params }: PageProps<"/proposals/[id]/print">) {
   const { id } = await params;
@@ -27,9 +28,11 @@ export default async function ProposalPrintPage({ params }: PageProps<"/proposal
   const all = (items as ProposalItemRow[]) ?? [];
   const billable = all.filter((i) => !i.is_optional);
   const optional = all.filter((i) => i.is_optional);
-  const subtotal = billable.reduce((s, i) => s + i.quantity * i.unit_price, 0);
-  const vat = subtotal * (p.vat_rate / 100);
-  const grand = subtotal + vat;
+  // Client-facing: prices only, never internal costs.
+  const { subtotal, vat, grand } = proposalTotals(
+    all.map((i) => ({ quantity: i.quantity, unit_price: i.unit_price, is_optional: i.is_optional })),
+    p.vat_rate,
+  );
   const cl = (client as ClientRow | null) ?? null;
   const company = org?.name ?? "OnGoing";
 

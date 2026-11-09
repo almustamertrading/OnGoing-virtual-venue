@@ -8,8 +8,8 @@ Statuses: NOT STARTED · IN PROGRESS · BLOCKED · IMPLEMENTED · TESTED · VERI
 
 | Stage | Scope | Status |
 |---|---|---|
-| 1 | Security review, cleanup plan, dev environment, DB hygiene, RBAC | IN PROGRESS |
-| 2 | Test engine (Vitest, Playwright, fixtures, 12 smoke tests, CI) | NOT STARTED |
+| 1 | Security review, cleanup plan, dev environment, DB hygiene, RBAC | VERIFIED locally; production rollout pending (S1-5) |
+| 2 | Test engine (Vitest, Playwright, fixtures, 12 smoke tests, CI) | VERIFIED locally; first CI run pending |
 | 3 | Settings & Admin, Calendar, Documents, Reports (parallel workstreams) | NOT STARTED |
 | 4 | AI cost control, then Proposal Builder Phase 2 | NOT STARTED |
 | 5 | Measured performance, UI/UX consistency | NOT STARTED |
@@ -21,17 +21,19 @@ Detail: [DEVELOPMENT_TASKS.md](DEVELOPMENT_TASKS.md).
 
 | Module | Status | Notes |
 |---|---|---|
-| Auth (email + password, domain auto-join) | IMPLEMENTED | Email confirmation on in production |
-| Projects list, creation, RFP import → blueprint | IMPLEMENTED | AI extraction verified live in production only (B-05) |
-| Workspace: overview, scope, plan, pricing, structure, evaluation, tasks, team, activity | IMPLEMENTED | |
+| Auth (email + password, domain auto-join) | VERIFIED (smoke 1–4) | Email confirmation on in production |
+| Access control (capabilities, finance confidentiality, tenant integrity) | VERIFIED (53 pgTAP + smoke 9a/9b) | Local; production rollout pending |
+| Members & Permissions (admin) | IMPLEMENTED | New; covered by pgTAP at DB level, UI test to add |
+| Projects list and creation | VERIFIED (smoke 5) | |
+| RFP import → blueprint (AI) | IMPLEMENTED | AI verified live in production only (B-05) |
+| Workspace: tasks, pricing/BOQ | VERIFIED (smoke 6, 7) | |
+| Workspace: overview, scope, plan, structure, evaluation, team, activity | IMPLEMENTED | Overview prerender bug fixed |
 | Venues map editor, comments, 360° panoramas | IMPLEMENTED | |
 | Layout editor (CAD blocks) | IMPLEMENTED | |
-| Procurement (suppliers, RFQs, quotes) | IMPLEMENTED | Quotes become finance-restricted in S1-4 |
-| Finance (invoices, expenses), Inventory | IMPLEMENTED | Finance-restricted in S1-4 |
-| Proposal Builder Phase 1 | IMPLEMENTED | Costs and margins finance-restricted in S1-4 |
-| Public marketing site | IMPLEMENTED | |
-
-No module is TESTED or VERIFIED yet. The automated test engine is Stage 2.
+| Procurement: suppliers | VERIFIED (smoke 8) | RFQ/quote flow: unit-level only |
+| Finance (invoices, expenses), Inventory | VERIFIED for permissions (smoke 9) | |
+| Proposal Builder Phase 1: create, PDF, convert | VERIFIED (smoke 10–12) | AI draft: production only (B-05) |
+| Public marketing site | VERIFIED (smoke 1: loads) | |
 
 ## Environments
 

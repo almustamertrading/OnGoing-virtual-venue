@@ -6,6 +6,7 @@ import { formatMoney } from "@/lib/format";
 import type { BoqItemRow } from "@/lib/types";
 import type { ActionState } from "../../../actions";
 import { addBoqItem, deleteBoqItem, updateBoqItem } from "../work-actions";
+import { boqTotal, lineTotal } from "@/lib/money";
 
 const n = (v: string) => {
   const raw = v.replace(/[, ]/g, "").trim();
@@ -28,9 +29,7 @@ export function PricingTable({
   const [state, action, adding] = useActionState<ActionState, FormData>(addBoqItem.bind(null, projectId), {});
   const [busy, start] = useTransition();
 
-  const lineTotal = (it: BoqItemRow) =>
-    it.quantity != null && it.unit_price != null ? it.quantity * it.unit_price : null;
-  const grand = items.reduce((s, it) => s + (lineTotal(it) ?? 0), 0);
+  const grand = boqTotal(items);
   const priced = items.filter((it) => it.unit_price != null).length;
 
   return (
@@ -99,7 +98,7 @@ export function PricingTable({
                     )}
                   </td>
                   <td className="px-2 py-2 font-medium text-emerald-300">
-                    {lineTotal(it) != null ? formatMoney(lineTotal(it), currency) : "—"}
+                    {lineTotal(it.quantity, it.unit_price) != null ? formatMoney(lineTotal(it.quantity, it.unit_price), currency) : "—"}
                   </td>
                   {canEdit && (
                     <td className="px-2 py-2">

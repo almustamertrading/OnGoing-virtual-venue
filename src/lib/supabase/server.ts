@@ -1,7 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { connection } from "next/server";
 
 export async function createClient() {
+  // Supabase Auth compares the session token's expiry with the current time, and every
+  // query is filtered per user by RLS, so this data must come from a real request, never
+  // from a prerender or prefetch (Cache Components + partial prefetching).
+  await connection();
   const cookieStore = await cookies();
 
   return createServerClient(

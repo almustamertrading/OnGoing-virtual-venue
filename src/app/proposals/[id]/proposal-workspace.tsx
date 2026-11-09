@@ -7,6 +7,7 @@ import { AppHeader } from "@/components/app-header";
 import { formatMoney } from "@/lib/format";
 import { PROPOSAL_STATUS, PROPOSAL_TYPE } from "@/lib/proposal-meta";
 import type { ClientRow, ProposalItemRow, ProposalRow, ProposalSectionRow, ProposalStatus } from "@/lib/types";
+import { lineTotal, proposalTotals } from "@/lib/money";
 import {
   addItem, addSection, convertToProject, deleteItem, deleteProposal, deleteSection,
   generateDraft, setItemCost, updateItem, updateProposal, updateSection, type ActionState, type GenState,
@@ -34,13 +35,7 @@ export function ProposalWorkspace({
   const orgId = proposal.organization_id;
   const m = (v: number) => formatMoney(v, currency);
 
-  const billable = items.filter((i) => !i.is_optional);
-  const subtotal = billable.reduce((s, i) => s + i.quantity * i.unit_price, 0);
-  const cost = billable.reduce((s, i) => s + i.quantity * i.unit_cost, 0);
-  const vat = subtotal * (proposal.vat_rate / 100);
-  const grand = subtotal + vat;
-  const margin = subtotal - cost;
-  const marginPct = subtotal ? Math.round((margin / subtotal) * 100) : 0;
+  const { subtotal, vat, grand, margin, marginPct } = proposalTotals(items, proposal.vat_rate);
 
   const canConvert = ["approved_internally", "accepted"].includes(proposal.status) && !proposal.project_id;
 
@@ -231,7 +226,7 @@ const n = (v: string) => { const r = v.replace(/[, ]/g, "").trim(); if (!r) retu
 
 function ItemRow({ item, currency, canEdit, canSeeCost }: { item: ProposalItemRow; currency: string; canEdit: boolean; canSeeCost: boolean }) {
   const [busy, start] = useTransition();
-  const total = item.quantity * item.unit_price;
+  const total = lineTotal(item.quantity, item.unit_price) ?? 0;
   const cell = "w-20 rounded border border-slate-700 bg-slate-900 px-1.5 py-1 text-xs";
   return (
     <tr className={item.is_optional ? "text-slate-500" : "text-slate-200"}>

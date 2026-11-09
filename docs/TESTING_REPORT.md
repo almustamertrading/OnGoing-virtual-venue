@@ -5,15 +5,23 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 
 ## Current state
 
-| Area | Automated tests | Status |
-|---|---|---|
-| Unit tests (Vitest) | None yet (Stage 2) | — |
-| Database / RLS tests (pgTAP) | None yet (S1-4) | — |
-| End-to-end smoke tests (Playwright) | None yet (Stage 2) | — |
-| CI pipeline | None yet (Stage 2) | — |
+| Area | Command | Tests | Latest local result |
+|---|---|---|---|
+| Typecheck | `npm run typecheck` | — | PASS |
+| Lint (own source; vendored MapLibre worker ignored) | `npm run lint` | — | PASS, 0 problems |
+| Unit tests (Vitest) | `npm test` | 20 | PASS |
+| Database tests (pgTAP: RLS, capabilities, tenant integrity) | `npx supabase test db` | 53 | PASS |
+| Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
+| End-to-end smoke (Playwright, production build) | `E2E_PROD=1 npx playwright test` | 7 logins + 13 smoke | PASS (20/20) |
+| CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
 
-Before Phase 2, each module was checked during development with throw-away Playwright scripts run against
-production. Those scripts are not in the repository and are not repeatable, so no module is VERIFIED yet.
+**How to run locally:**
+1. `npx supabase start`
+2. `npm run check`
+3. `npx supabase test db`
+4. `npx playwright test` (uses the local stack only; refuses any other Supabase host).
+
+Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
 
@@ -42,3 +50,47 @@ production. Those scripts are not in the repository and are not repeatable, so n
 - **Result:** PASS. Both refused to run and changed nothing:
   - cleanup: `Refusing to run: snapshot schema ops_backup_20261109 is missing`
   - restore: `Snapshot schema ops_backup_20261109 is missing`
+
+### 2026-11-09 · Hygiene + RBAC migrations, database tests
+- **Command:** `npx supabase db reset --local && npx supabase test db`
+- **Result:** PASS, 53/53. Acting as admin, finance, sales, operations, project manager, viewer, external partner and another organisation's admin, the tests confirm:
+  - finance reads and writes;
+  - internal costs never readable without finance access;
+  - capability-gated creation;
+  - members cannot grant themselves capabilities;
+  - `organization_admin` is never stored;
+  - the last admin cannot step down;
+  - five cross-tenant attacks are rejected: proposal item injection, cross-project comment reply, quote/RFQ project mismatch, foreign supplier on a quote, project moved to another organisation.
+- **Negative control:** the same attack run against the old schema (migration 20261109090000) succeeded. Another organisation attached an item to a proposal, and plain staff read the internal cost (100.00). So the tests detect the real weaknesses.
+
+### 2026-11-09 · RBAC data move (expand phase)
+- **Command:** `./scripts/db/check-rbac-backfill.sh` (reset to 20261109120000, load synthetic rows, migrate, assert).
+- **Result:** PASS.
+  - Proposal costs: 2 rows / 350.50 copied.
+  - Inventory rates: 2 rows / 40.00 copied, including a zero rate; a null rate stays absent.
+  - Old columns blanked, `updated_at` preserved.
+  - Managers got `{project_manager, sales_access, operations_access}`.
+- **Bug found and fixed:** the first run failed with `cannot ALTER TABLE "proposal_item_costs" because it has pending trigger events`. The deferred foreign key checks were still queued. Fixed by enabling RLS when the tables are created and running `SET CONSTRAINTS … IMMEDIATE` after the copy.
+
+### 2026-11-09 · Smoke suite (Playwright)
+- **Command:** `E2E_PROD=1 npx playwright test` (production build of the app + local Supabase, seeded by `e2e/global-setup.ts`).
+- **Result:** PASS, 20/20 (7 role logins + 13 smoke tests covering the directive's 12, with finance split into hidden/visible).
+- **Covered:**
+  1. App loads.
+  2. Login.
+  3. Member opens project.
+  4. Signed-out user redirected to login; outsider gets "not found".
+  5. Project creation.
+  6. Task create and status update, persisted.
+  7. BOQ lines and total.
+  8. Supplier added.
+  9. Finance enforcement:
+     - for sales: no Finance tab, restricted page, no quotes, no stock value, no cost column, cost absent from the page payload, finance activity hidden;
+     - for finance: all of it visible.
+  10. Proposal created with an `ONG-PRO-` reference.
+  11. Client PDF generated (`%PDF`), totals 69,000, no internal cost.
+  12. Accepted proposal converted to a project with its BOQ.
+- **Bugs found and fixed:**
+  - **Dev-mode tests never hydrated.** The tests opened `127.0.0.1`, and the Next.js dev server only serves its scripts to `localhost`. Fixed by using a `localhost` base URL.
+  - **Project Overview page (real app bug).** It read the current date during prerender, which Next.js 16 Cache Components forbids. An outsider's project URL then hung on "Loading…" instead of showing "not found". Fixed with `await connection()`.
+  - **Server Supabase client (real app bug).** Supabase Auth checks token expiry against the clock during partial prefetch, which logged "unstable value Date.now()" errors on 6 routes. Fixed with `await connection()` in the server client. The production-mode run now has 0 such errors.

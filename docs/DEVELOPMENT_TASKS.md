@@ -12,20 +12,20 @@ The execution backlog for the Phase 2 directive.
 | S1-1 | Production data inventory, private report, snapshot, reversible cleanup plan | P0 | — | IMPLEMENTED | [cleanup plan](cleanup/CLEANUP_PLAN.md); snapshot verified 31/31 tables; dry run passed. Remaining: owner approval (B-01), then execution |
 | S1-1b | Interim risk mitigation: ban QA accounts | P0 | — | IMPLEMENTED | 3 accounts banned, 0 sessions (SECURITY_REPORT) |
 | S1-2 | Local dev environment, all migrations verified locally | P0 | — | IMPLEMENTED | `supabase db reset` passes. Remaining: seed fixtures + env script (S2) |
-| S1-3 | DB hygiene: 6 unindexed FKs, split `FOR ALL` policies, tenant-safe composite FKs, immutable project organisation | P0 | S1-2 | NOT STARTED | — |
-| S1-4 | Capability RBAC + DB-enforced financial confidentiality, role-permission matrix, unauthorized-access tests | P0 | S1-3 | NOT STARTED | — |
+| S1-3 | DB hygiene: 6 unindexed FKs, split `FOR ALL` policies, tenant-safe composite FKs, immutable project organisation | P0 | S1-2 | VERIFIED (local) | Migration `20261109120000`; no unindexed FKs or `FOR ALL` policies remain locally; pgTAP tenant tests pass. Remaining: production (S1-5) |
+| S1-4 | Capability RBAC + DB-enforced financial confidentiality, role-permission matrix, unauthorized-access tests | P0 | S1-3 | VERIFIED (local) | Migration `20261109130000`; [matrix](ROLE_PERMISSION_MATRIX.md); 53 pgTAP + smoke 9a/9b pass; Members & Permissions page. Remaining: production (S1-5), contract migration after release |
 | S1-5 | Apply S1-3/S1-4 to production after local tests pass; deploy matching app | P0 | S1-4, S2 smoke | NOT STARTED | — |
 
 ## Stage 2: Quality engine
 
 | ID | Task | Pri | Depends on | Status |
 |---|---|---|---|---|
-| S2-1 | Vitest unit setup + tests for money/margin, RFP parsing helpers, permissions helpers | P1 | — | NOT STARTED |
-| S2-2 | Playwright setup (pinned to the preinstalled browsers), auth helpers, local-only guard | P1 | S1-2 | NOT STARTED |
-| S2-3 | Seed fixtures: QA org and users per capability, synthetic projects | P1 | S1-4 | NOT STARTED |
-| S2-4 | 12 smoke tests (directive list) | P1 | S2-2, S2-3 | NOT STARTED |
-| S2-5 | GitHub Actions CI: typecheck, ESLint, unit, DB tests, Playwright smoke, build | P1 | S2-1..4 | NOT STARTED |
-| S2-6 | ESLint: ignore the vendored MapLibre worker only | P1 | — | NOT STARTED |
+| S2-1 | Vitest unit setup + tests for money/margin and permissions helpers (shared `src/lib/money.ts` now used by BOQ, proposals, PDF, conversion) | P1 | — | VERIFIED (local) |
+| S2-2 | Playwright 1.63.0 (matches preinstalled browsers), login helper, local-only guard | P1 | S1-2 | VERIFIED (local) |
+| S2-3 | Seed fixtures: QA org, 7 users by capability, project with finance data (`e2e/support/seed.ts`) | P1 | S1-4 | VERIFIED (local) |
+| S2-4 | 12 smoke tests (directive list) | P1 | S2-2, S2-3 | VERIFIED (local, production build) |
+| S2-5 | GitHub Actions CI: typecheck, ESLint, unit, DB tests, data-move check, Playwright smoke on a production build | P1 | S2-1..4 | IMPLEMENTED (first CI run pending) |
+| S2-6 | ESLint: ignore the vendored MapLibre worker only | P1 | — | VERIFIED (0 problems) |
 
 ## Stage 3: Parallel modules (main agent owns migrations and contracts)
 

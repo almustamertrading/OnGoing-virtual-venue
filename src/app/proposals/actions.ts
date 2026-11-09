@@ -7,6 +7,7 @@ import { SECTION_TEMPLATES } from "@/lib/proposal-meta";
 import { generateProposalDraft, ProposalConfigError } from "@/lib/proposals";
 import type { ProposalStatus, ProposalType } from "@/lib/types";
 import { permissionMessage } from "@/lib/permissions";
+import { proposalTotals } from "@/lib/money";
 
 export type ActionState = { error?: string; ok?: boolean };
 export type GenState = { error?: string; ok?: boolean };
@@ -222,9 +223,7 @@ export async function convertToProject(proposalId: string) {
 
   const { data: items } = await supabase.from("proposal_items").select("*").eq("proposal_id", proposalId).order("sort_order");
   const list = items ?? [];
-  const budget = list
-    .filter((i) => !i.is_optional)
-    .reduce((s, i) => s + Number(i.quantity) * Number(i.unit_price), 0);
+  const budget = proposalTotals(list, 0).subtotal;
 
   const { data: project, error } = await supabase
     .from("projects")
