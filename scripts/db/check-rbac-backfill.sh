@@ -12,7 +12,7 @@ case "$DB_URL" in
 esac
 
 cd "$(dirname "$0")/../.."
-npx supabase db reset --local --version 20261109120000
+npx supabase db reset --local --version 20261109160000
 psql "$DB_URL" -v ON_ERROR_STOP=1 -q -f scripts/db/rbac-backfill-fixture.sql
 npx supabase migration up --local
 psql "$DB_URL" -v ON_ERROR_STOP=1 -q -f scripts/db/rbac-backfill-assert.sql

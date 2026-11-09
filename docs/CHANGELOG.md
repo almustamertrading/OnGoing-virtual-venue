@@ -10,8 +10,8 @@ All notable changes. Dates are UTC.
 - Project tracking docs: `PROJECT_STATUS`, `DEVELOPMENT_TASKS`, `TECHNICAL_DECISIONS`, `BLOCKERS`, `TESTING_REPORT`, `SECURITY_REPORT`, `CHANGELOG`.
 
 - Database migrations (local, not yet in production):
-  - `20261109120000` hygiene: FK indexes, per-command policies, tenant-safe composite foreign keys.
-  - `20261109130000` capability RBAC with finance-only invoices, expenses, quotes, costs and inventory valuation.
+  - `20261109160000` hygiene: FK indexes, per-command policies, tenant-safe composite foreign keys.
+  - `20261109170000` capability RBAC with finance-only invoices, expenses, quotes, costs and inventory valuation.
 - Members & Permissions page (`/settings/members`) for organisation admins.
 - Test engine:
   - Vitest unit tests (20);
