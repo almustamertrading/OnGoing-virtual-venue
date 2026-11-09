@@ -386,6 +386,111 @@ export type ProposalItemRow = {
   sort_order: number;
 };
 
+// ---------------- Stage 3 (migration 20261109140000) ----------------
+
+export type OrganizationRow = {
+  id: string;
+  name: string;
+  email_domain: string | null;
+  currency: string;
+  timezone: string;
+  default_vat_rate: number;
+  tax_number: string | null;
+  address: string | null;
+  phone: string | null;
+  website: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+export type OrganizationAuditAction =
+  | "member_added" | "member_removed" | "role_changed" | "capabilities_changed"
+  | "domain_added" | "domain_removed" | "settings_changed";
+
+export type OrganizationAuditRow = {
+  id: number;
+  organization_id: string;
+  actor_id: string | null;
+  action: OrganizationAuditAction;
+  target_user_id: string | null;
+  details: Record<string, unknown>;
+  created_at: string;
+};
+
+export type CalendarEventKind = "meeting" | "site_visit" | "rehearsal" | "load_in" | "event_day" | "deadline" | "other";
+
+export type CalendarEventRow = {
+  id: string;
+  organization_id: string;
+  project_id: string | null;
+  title: string;
+  description: string;
+  location: string;
+  kind: CalendarEventKind;
+  starts_at: string;
+  ends_at: string;
+  all_day: boolean;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+};
+
+/** One row of public.calendar_feed(org, range_start, range_end). */
+export type CalendarFeedItem = {
+  source: "event" | "project" | "submission" | "milestone" | "task" | "phase" | "proposal" | "rfq" | "invoice";
+  source_id: string;
+  project_id: string | null;
+  /** Project code (or proposal reference) for display. */
+  label: string | null;
+  title: string;
+  all_day: boolean;
+  start_date: string;
+  end_date: string;
+  starts_at: string | null;
+  ends_at: string | null;
+  kind: string;
+  status: string | null;
+};
+
+export type DocumentCategory = "contract" | "rfp" | "proposal" | "drawing" | "permit" | "invoice" | "photo" | "report" | "other";
+
+export type DocumentRow = {
+  id: string;
+  organization_id: string;
+  project_id: string | null;
+  title: string;
+  description: string;
+  category: DocumentCategory;
+  /** <organization_id>/<project_id | 'org'>/<document_id>/<file name> in the private `documents` bucket. */
+  storage_path: string;
+  file_name: string;
+  mime_type: string;
+  size_bytes: number;
+  version: number;
+  supersedes_id: string | null;
+  is_confidential: boolean;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type ReportPipelineRow = { status: ProjectStatus; projects: number; budget_total: number };
+export type ReportProposalsRow = { status: ProposalStatus; proposals: number; value_total: number };
+export type ReportProjectFinanceRow = {
+  project_id: string; code: string; name: string; status: ProjectStatus; budget: number | null;
+  invoiced: number; paid: number; outstanding: number; expenses: number; margin: number;
+};
+export type ReportDeliveryRow = {
+  project_id: string; code: string; name: string; status: ProjectStatus;
+  tasks_total: number; tasks_done: number; tasks_overdue: number; tasks_blocked: number;
+  milestones_total: number; milestones_done: number; next_milestone: string | null;
+};
+export type ReportProcurementRow = {
+  project_id: string; code: string; name: string; rfqs: number; rfqs_awarded: number;
+  /** null when the caller has no finance access to the project. */
+  quotes: number | null; awarded_value: number | null;
+};
+
 export type Profile = {
   id: string;
   email: string;

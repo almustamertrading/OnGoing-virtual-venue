@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState, useState } from "react";
 import { signIn, signUp, type AuthState } from "./actions";
 
@@ -44,6 +45,11 @@ export function LoginForm({ next }: { next: string }) {
             autoComplete={mode === "signin" ? "current-password" : "new-password"}
             className="field"
           />
+          {mode === "signin" && (
+            <Link href="/login/reset" className="mt-1.5 inline-block text-xs text-emerald-400 hover:underline">
+              Forgot password?
+            </Link>
+          )}
         </div>
         {state.error && <p className="text-sm text-red-400">{state.error}</p>}
         {state.message && <p className="text-sm text-emerald-400">{state.message}</p>}

@@ -1,12 +1,14 @@
 import { redirect } from "next/navigation";
+import { safeNext } from "@/lib/safe-next";
 import { getUserId } from "@/lib/supabase/server";
 import { LoginForm } from "./login-form";
 import { Logo } from "@/components/logo";
 
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
   const params = await searchParams;
-  const next = typeof params.next === "string" ? params.next : "/projects";
+  const next = safeNext(params.next);
   const error = typeof params.error === "string" ? params.error : null;
+  const notice = typeof params.notice === "string" ? params.notice : null;
   if (await getUserId()) redirect(next);
 
   return (
@@ -18,6 +20,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
         </p>
       </div>
       {error && <p className="max-w-sm text-center text-sm text-red-400">{error}</p>}
+      {notice && <p className="max-w-sm text-center text-sm text-emerald-400">{notice}</p>}
       <LoginForm next={next} />
     </main>
   );

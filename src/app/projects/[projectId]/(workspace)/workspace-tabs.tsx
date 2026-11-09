@@ -28,6 +28,7 @@ export function WorkspaceTabs({
     { href: `${base}/team`, label: "Team", key: "team" },
     { href: `${base}/venues`, label: "Venues", key: "venues" },
     { href: `${base}/layouts`, label: "Layouts", key: "layouts" },
+    { href: `${base}/documents`, label: "Documents", key: "documents" },
     { href: `${base}/inventory`, label: "Inventory", key: "inventory" },
     { href: `${base}/activity`, label: "Activity", key: "activity" },
   ].filter((t) => !hidden.includes(t.key));

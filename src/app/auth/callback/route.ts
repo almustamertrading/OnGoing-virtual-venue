@@ -1,8 +1,9 @@
 import type { EmailOtpType } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
+import { safeNext } from "@/lib/safe-next";
 import { createClient } from "@/lib/supabase/server";
 
-// Handles the link in Supabase confirmation emails (PKCE code or token hash).
+// Handles the link in Supabase emails (sign-up confirmation, password reset): PKCE code or token hash.
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
   const code = searchParams.get("code");
@@ -26,5 +27,5 @@ export async function GET(request: NextRequest) {
   if (error) {
     return NextResponse.redirect(`${origin}/login?error=${encodeURIComponent(error)}`);
   }
-  return NextResponse.redirect(`${origin}/projects`);
+  return NextResponse.redirect(`${origin}${safeNext(searchParams.get("next"))}`);
 }

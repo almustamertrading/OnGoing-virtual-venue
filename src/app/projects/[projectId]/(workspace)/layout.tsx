@@ -23,6 +23,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     { count: rfqsCount },
     { count: invoicesCount },
     { count: inventoryCount },
+    { count: documentsCount },
   ] = await Promise.all([
     supabase.from("tasks").select("id", { count: "exact", head: true }).eq("project_id", projectId).neq("status", "done"),
     supabase.from("venues").select("id", { count: "exact", head: true }).eq("project_id", projectId),
@@ -39,6 +40,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     organization
       ? supabase.from("inventory_items").select("id", { count: "exact", head: true }).eq("organization_id", organization.id)
       : Promise.resolve({ count: 0 }),
+    supabase.from("documents").select("id", { count: "exact", head: true }).eq("project_id", projectId),
   ]);
 
   return (
@@ -81,6 +83,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
                 procurement: rfqsCount ?? 0,
                 finance: invoicesCount ?? 0,
                 inventory: inventoryCount ?? 0,
+                documents: documentsCount ?? 0,
                 team: members.length,
               }}
             />

@@ -2,14 +2,10 @@
 
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { safeNext } from "@/lib/safe-next";
 import { createClient } from "@/lib/supabase/server";
 
 export type AuthState = { error?: string; message?: string };
-
-function safeNext(value: FormDataEntryValue | null) {
-  const next = typeof value === "string" ? value : "";
-  return next.startsWith("/") && !next.startsWith("//") ? next : "/projects";
-}
 
 export async function signIn(_prev: AuthState, formData: FormData): Promise<AuthState> {
   const email = String(formData.get("email") ?? "").trim();
@@ -42,4 +38,17 @@ export async function signUp(_prev: AuthState, formData: FormData): Promise<Auth
 
   if (data.session) redirect("/projects");
   return { message: "Check your inbox and click the confirmation link to finish signing up." };
+}
+
+/** Sends a password-reset email. Always answers the same way, so it does not reveal which emails have accounts. */
+export async function requestPasswordReset(_prev: AuthState, formData: FormData): Promise<AuthState> {
+  const email = String(formData.get("email") ?? "").trim();
+  if (!email) return { error: "Enter your email address." };
+  const h = await headers();
+  const origin = h.get("origin") ?? `https://${h.get("host")}`;
+  const supabase = await createClient();
+  await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${origin}/auth/callback?next=${encodeURIComponent("/settings/account?reset=1")}`,
+  });
+  return { message: "If an account exists for this email, a reset link is on its way. Open it on this device." };
 }
