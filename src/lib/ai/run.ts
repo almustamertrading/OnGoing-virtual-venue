@@ -23,13 +23,14 @@ export type AiRunContext = {
 export async function runAi(supabase: SupabaseClient, ctx: AiRunContext, request: AiRequest): Promise<AiResult> {
   const choice = chooseProvider();
   if (!choice) throw new AiError("not_configured", aiErrorMessage("not_configured"));
-  const provider = choice === "mock" ? createMockProvider() : createAnthropicProvider(process.env.ANTHROPIC_API_KEY as string);
+  const limits = readAiLimits();
+  const provider =
+    choice === "mock" ? createMockProvider() : createAnthropicProvider(process.env.ANTHROPIC_API_KEY as string, limits.timeoutMs);
 
   const { data: claims } = await supabase.auth.getClaims();
   const userId = claims?.claims?.sub as string | undefined;
   if (!userId) throw new AiError("failed", "انتهت الجلسة. سجّل الدخول من جديد.");
 
-  const limits = readAiLimits();
   const now = Date.now();
   const hash = requestHash(ctx.feature, ctx.hashParts);
 

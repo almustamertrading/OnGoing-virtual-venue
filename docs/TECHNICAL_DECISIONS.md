@@ -59,3 +59,51 @@ invoices and inventory valuation are visible only to admins and to users explici
 **Decision.** Only the main agent creates files in `supabase/migrations/`. Parallel workstreams receive
 their tables as contracts from the migration owner. They may propose SQL but never add migration files,
 which keeps the sequence linear.
+
+## TD-07 · AI behind a provider interface, with cost controls in the database (2026-11-09)
+
+**Context.** AI calls went straight to the vendor SDK from two features, with no usage record, no limits and
+no protection against repeated or concurrent identical requests. There is no development API key (B-05).
+
+**Decision.** `src/lib/ai/` defines a small provider interface with two implementations: Anthropic and a
+deterministic mock. The mock runs only when `AI_PROVIDER=mock` is set (tests, local work); without a key the
+features report "not configured" instead of silently using the mock. Every call goes through `runAi`, which
+checks per-user hourly and daily limits, a duplicate window (an identical successful request within 10
+minutes needs an explicit "regenerate anyway"), and the organisation's monthly token budget, then records
+provider, model, feature, tokens, latency and outcome in `ai_usage_logs`. A unique partial index stops two
+identical requests from running at once. Limits are environment variables (`AI_LIMIT_*`,
+`AI_ORG_MONTHLY_TOKEN_LIMIT`, `AI_DUPLICATE_WINDOW_MINUTES`). The default model stays the one production
+already used (`claude-sonnet-5-5`), configurable with `AI_MODEL`. Proposal drafts use structured JSON
+output; RFP extraction keeps its proven parse-and-coerce path. Declined requests use the API's server-side
+fallback.
+
+**Consequences.** Usage is visible and bounded per user and per organisation. The log is written with the
+user's own session, so it is trustworthy for counting requests but not tamper-proof for token totals (S-16).
+Live verification with the real service waits for a development key (B-05); long generations may approach
+the hosting platform's function time limit and must be checked then.
+
+## TD-08 · The proposal workflow is enforced in the database (2026-11-09)
+
+**Context.** Internal review must gate what reaches clients, and approved content must not change silently.
+
+**Decision.** A trigger owns the workflow fields: approval (who and when), submission time and the version
+number cannot be written directly, and new proposals start as drafts. Content (header, sections, items) is
+editable only while drafting or revising; it is locked during review and after approval. Re-submitting or
+reopening clears the approval. Approval happens through `proposal_reviews` (managers only; a change request
+needs a reason). Submission, approval and sending each freeze an immutable snapshot in `proposal_versions`,
+which never includes internal costs; versions can be viewed and printed. Conversion to a project is one
+transaction (`convert_proposal_to_project`) that copies client prices only.
+
+**Consequences.** The UI only decides which buttons to show (`src/lib/proposal-workflow.ts`); every move is
+re-checked by the database. Managers keep an explicit status override.
+
+## TD-09 · Session-reading layouts block on the server for now (2026-11-09)
+
+**Context.** With Cache Components, a layout that reads the session cannot be part of a prerendered shell;
+Next.js reports this during development on every project tab.
+
+**Decision.** The project workspace layout sets `export const instant = false` (the documented opt-out),
+keeping today's behaviour. Streaming the header behind Suspense is a Stage 5 performance item.
+
+**Consequences.** No behaviour change; the development warning is gone, so new warnings stand out.
+

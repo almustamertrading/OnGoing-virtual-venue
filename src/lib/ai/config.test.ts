@@ -11,6 +11,17 @@ describe("readAiLimits", () => {
     expect(limits.perDay).toEqual({ proposal_draft: 40, rfp_extract: 30 });
     expect(limits.orgMonthlyTokens).toBe(3_000_000);
     expect(limits.duplicateWindowMinutes).toBe(10);
+    // Under the hosting platform's 60 s function limit; abandoned requests stop blocking soon after.
+    expect(limits.timeoutMs).toBe(55_000);
+    expect(limits.staleStartedMinutes).toBe(2);
+  });
+
+  it("bounds the deadline and keeps the abandoned window above it", () => {
+    expect(readAiLimits({ AI_TIMEOUT_MS: "1000" }).timeoutMs).toBe(10_000);
+    const long = readAiLimits({ AI_TIMEOUT_MS: "170000" });
+    expect(long.timeoutMs).toBe(170_000);
+    expect(long.staleStartedMinutes).toBe(4);
+    expect(readAiLimits({ AI_TIMEOUT_MS: "99999999" }).timeoutMs).toBe(900_000);
   });
 
   it("reads positive integers from the environment and ignores anything else", () => {
@@ -97,7 +108,7 @@ describe("checkAttempts", () => {
 describe("aiErrorMessage", () => {
   it("explains every failure in Arabic without provider details", () => {
     expect(aiErrorMessage("duplicate", { minutesAgo: 3 })).toContain("3");
-    for (const code of ["not_configured", "rate_limited", "budget_exceeded", "in_progress", "refused", "too_large", "overloaded", "network", "invalid_output", "failed"] as const) {
+    for (const code of ["not_configured", "rate_limited", "budget_exceeded", "in_progress", "refused", "too_large", "overloaded", "timeout", "network", "invalid_output", "failed"] as const) {
       const msg = aiErrorMessage(code);
       expect(msg.length).toBeGreaterThan(10);
       expect(msg).not.toMatch(/anthropic|api key|stack|error:/i);

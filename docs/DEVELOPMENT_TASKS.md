@@ -24,29 +24,31 @@ The execution backlog for the Phase 2 directive.
 | S2-2 | Playwright 1.63.0 (matches preinstalled browsers), login helper, local-only guard | P1 | S1-2 | VERIFIED (local) |
 | S2-3 | Seed fixtures: QA org, 7 users by capability, project with finance data (`e2e/support/seed.ts`) | P1 | S1-4 | VERIFIED (local) |
 | S2-4 | 12 smoke tests (directive list) | P1 | S2-2, S2-3 | VERIFIED (local, production build) |
-| S2-5 | GitHub Actions CI: typecheck, ESLint, unit, DB tests, data-move check, Playwright smoke on a production build | P1 | S2-1..4 | IMPLEMENTED (first CI run pending) |
+| S2-5 | GitHub Actions CI: typecheck, ESLint, unit, DB tests, data-move check, Playwright smoke on a production build | P1 | S2-1..4 | VERIFIED (green on the release candidate; now also runs on `stage3`) |
 | S2-6 | ESLint: ignore the vendored MapLibre worker only | P1 | — | VERIFIED (0 problems) |
 
 ## Stage 3: Parallel modules (main agent owns migrations and contracts)
 
 | ID | Workstream | Pri | Status |
 |---|---|---|---|
-| S3-A | Settings & Admin: organisation, members, capabilities, domains | P2 | NOT STARTED |
-| S3-B | Calendar & Scheduling | P2 | NOT STARTED |
-| S3-C | Document management | P2 | NOT STARTED |
-| S3-D | Reports & Analytics | P2 | NOT STARTED |
+| S3-A | Settings & Admin: organisation, members, capabilities, domains, audit log | P2 | VERIFIED (local, `stage3`) |
+| S3-B | Calendar & Scheduling | P2 | VERIFIED (local, `stage3`) |
+| S3-C | Document management | P2 | VERIFIED (local, `stage3`) |
+| S3-D | Reports & Analytics | P2 | VERIFIED (local, `stage3`) |
+| S3-E | Integration hardening: confidential activity, upload cleanup, public mail domains, local-date reports | P0 | VERIFIED (local, pgTAP) |
 
 ## Stage 4: AI
 
 | ID | Task | Pri | Depends on | Status |
 |---|---|---|---|---|
-| S4-1 | AI cost control: usage log, rate limits, duplicate guard, provider interface + mock | P0 | — | NOT STARTED |
-| S4-2 | Proposal Builder Phase 2 (briefs, templates, approvals, comments, revisions, versions, documents, conversion) | P2 | S4-1, S1-4 | NOT STARTED |
+| S4-1 | AI cost control: usage log, rate limits, duplicate guard, provider interface + mock | P0 | — | VERIFIED (local; live AI pending B-05) |
+| S4-2 | Proposal Builder Phase 2 (briefs, templates, approvals, comments, revisions, versions, conversion) | P2 | S4-1, S1-4 | VERIFIED (local, mock AI) |
+| S4-3 | Secure PDF storage: archive the approved version's PDF into Documents | P2 | S4-2, S3-C | NOT STARTED (needs a server-side PDF renderer decision; today: print view of any frozen version) |
 
 ## Stages 5–6
 
 | ID | Task | Pri | Status |
 |---|---|---|---|
-| S5-1 | Measure, then batch the project workspace count queries into one RPC | P2 | NOT STARTED |
+| S5-1 | Measure, then batch the project workspace count queries into one RPC; stream the workspace header (TD-09) | P2 | NOT STARTED |
 | S5-2 | Deduplicate utilities, UI/UX consistency pass | P3 | NOT STARTED |
 | S6-1 | Full regression, production build, deployment readiness checklist | P1 | NOT STARTED |

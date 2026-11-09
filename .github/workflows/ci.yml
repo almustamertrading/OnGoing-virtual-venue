@@ -4,7 +4,7 @@ name: CI
 # Runs entirely against a throw-away local Supabase stack; no production secrets.
 on:
   push:
-    branches: [public-site, phase-1-foundation]
+    branches: [public-site, phase-1-foundation, stage3]
   pull_request:
 
 concurrency:

@@ -77,7 +77,7 @@ export function HistoryPanel({
 function CommentForm({ proposalId, orgId, version }: { proposalId: string; orgId: string; version: number }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(reviewProposal.bind(null, proposalId, orgId, version), {});
   return (
-    <form action={action} className="space-y-2" key={state.ok ? state.message : "comment"}>
+    <form action={action} className="space-y-2" key={state.nonce ?? 0}>
       <label htmlFor="proposal-comment" className="text-xs text-slate-400">تعليق للفريق</label>
       <textarea id="proposal-comment" name="comment" rows={2} className="field" placeholder="ملاحظة أو سؤال حول العرض…" />
       <input type="hidden" name="decision" value="comment" />
@@ -90,7 +90,7 @@ function CommentForm({ proposalId, orgId, version }: { proposalId: string; orgId
 function SaveVersionForm({ proposalId }: { proposalId: string }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(saveVersion.bind(null, proposalId), {});
   return (
-    <form action={action} className="space-y-2" key={state.ok ? state.message : "version"}>
+    <form action={action} className="space-y-2" key={state.nonce ?? 0}>
       <label htmlFor="version-note" className="text-xs text-slate-400">حفظ نسخة من المحتوى الحالي</label>
       <input id="version-note" name="note" maxLength={500} className="field" placeholder="وصف قصير للنسخة (اختياري)" />
       <button className="btn-ghost" disabled={pending}><Save size={15} /> حفظ نسخة</button>

@@ -11,11 +11,24 @@ const MONTH = "/calendar?date=2027-03-01";
 const unique = (label: string) => `${label} ${Date.now().toString(36)}`;
 const named = (title: string) => new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
 
+/** Removes what this spec creates, so specs that run later (e.g. the reports) see only seeded data. */
+async function removeCalendarFixtures() {
+  const db = admin();
+  const { organizationId, projectId } = readSeed();
+  await db.from("milestones").delete().eq("project_id", projectId).like("title", "QA permits approved %");
+  for (const label of ["QA all-hands", "QA board review", "QA catering tasting", "QA site visit", "QA town hall"]) {
+    await db.from("calendar_events").delete().eq("organization_id", organizationId).like("title", `${label} %`);
+  }
+}
+
 /** Service-role client for extra test data in this namespace's organisation (local only). */
 function admin() {
   const env = localSupabase();
   return createClient(env.url, env.serviceRoleKey, { auth: { persistSession: false, autoRefreshToken: false } });
 }
+
+test.beforeAll(removeCalendarFixtures);
+test.afterAll(removeCalendarFixtures);
 
 async function open(page: Page, url: string) {
   await page.goto(url);

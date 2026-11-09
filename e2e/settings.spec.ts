@@ -3,6 +3,21 @@ import { createClient } from "@supabase/supabase-js";
 import { localSupabase } from "./support/local-supabase";
 import { QA, authFile, readSeed } from "./support/qa";
 
+/** Puts the organisation's settings back, so specs that run later see the seeded defaults. */
+async function restoreOrganization() {
+  const env = localSupabase();
+  const db = createClient(env.url, env.serviceRoleKey, { auth: { persistSession: false, autoRefreshToken: false } });
+  const { error } = await db
+    .from("organizations")
+    .update({ name: QA.orgName, currency: "SAR", timezone: "Asia/Riyadh", default_vat_rate: 15, tax_number: null, address: null, phone: null, website: null })
+    .eq("id", readSeed().organizationId);
+  if (error) throw new Error(`Restoring organisation settings failed: ${error.message}`);
+}
+
+test.beforeAll(restoreOrganization);
+test.afterAll(restoreOrganization);
+
+
 // Workstream A: Settings & Administration, in its own namespace and port:
 //   E2E_NAMESPACE=settings E2E_PORT=3201 npx playwright test e2e/settings.spec.ts
 // global-setup.ts seeds the namespace's organisation fresh on every run.

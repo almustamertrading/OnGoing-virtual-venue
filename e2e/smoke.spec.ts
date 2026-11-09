@@ -106,7 +106,11 @@ test.describe("as a sales editor on the project", () => {
 
     await page.goto(`/projects/${projectId}`);
     await expect(page.getByRole("navigation", { name: "Project sections" }).getByRole("link", { name: "Finance" })).toHaveCount(0);
-    // Activity lines about invoices are filtered by the database too.
+    // Activity lines about invoices are filtered by the database too (checked on the full log,
+    // since the overview lists only the most recent lines).
+    await expect(page.getByRole("heading", { name: QA.project })).toBeVisible();
+    await expectNoText(page, "QA deposit invoice");
+    await page.goto(`/projects/${projectId}/activity`);
     await expect(page.getByRole("heading", { name: QA.project })).toBeVisible();
     await expectNoText(page, "QA deposit invoice");
 
@@ -159,8 +163,8 @@ test.describe("as finance", () => {
 
   test("9b. finance data is visible to a finance user", async ({ page }) => {
     const { projectId, proposalId } = readSeed();
-    await page.goto(`/projects/${projectId}`);
-    // Finance users see finance activity lines on the overview…
+    // Finance users see finance activity lines in the project's activity log…
+    await page.goto(`/projects/${projectId}/activity`);
     await expect(page.getByText(/added invoices .QA deposit invoice/)).toBeVisible();
     await page.getByRole("navigation", { name: "Project sections" }).getByRole("link", { name: "Finance" }).click();
     await expect(page).toHaveURL(/\/finance$/);

@@ -2,6 +2,23 @@
 
 All notable changes. Dates are UTC.
 
+## Unreleased (development branch `stage3`): Phase 2, Stages 3–4
+
+### Added
+- Settings & Administration: organisation settings (time zone, VAT, contact details), email domains for
+  automatic membership, admin audit log, account security (password change, reset, sign out other devices).
+- Global calendar (month, week, agenda) across projects, milestones, tasks, proposals, RFQs and invoices.
+- Central documents with project and organisation scope, confidential files, versions and signed downloads.
+- Reports & analytics: pipeline, proposals, delivery, procurement and finance (finance-only), CSV export.
+- AI cost control: provider interface (Anthropic + mock), usage log, per-user limits, duplicate guard,
+  organisation monthly token budget (TD-07).
+- Proposal Builder Phase 2: templates, template-guided AI drafts, internal review with comments, change
+  requests and approval, locked approved content, version history with a view and PDF of every version,
+  atomic conversion to a project (TD-08).
+
+### Security
+- S-13 to S-15 found and fixed before release; S-16 accepted and documented.
+
 ## Unreleased: Phase 2, Stage 1 (security and data hygiene)
 
 ### Added

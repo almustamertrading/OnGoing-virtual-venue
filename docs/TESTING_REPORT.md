@@ -9,8 +9,8 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 |---|---|---|---|
 | Typecheck | `npm run typecheck` | — | PASS |
 | Lint (own source; vendored MapLibre worker ignored) | `npm run lint` | — | PASS, 0 problems |
-| Unit tests (Vitest) | `npm test` | 20 | PASS |
-| Database tests (pgTAP: RLS, capabilities, tenant integrity) | `npx supabase test db` | 53 | PASS |
+| Unit tests (Vitest) | `npm test` | 252 | PASS (`stage3`) |
+| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2) | `npx supabase test db` | 158 | PASS (`stage3`, fresh reset) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
 | End-to-end smoke (Playwright, production build) | `E2E_PROD=1 npx playwright test` | 7 logins + 13 smoke | PASS (20/20) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
@@ -24,6 +24,14 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-09 · Stage 3 + Proposal Phase 2 integration on `stage3` (local)
+- **Migrations from scratch:** `npx supabase db reset`. PASS: all 12 migrations applied in order, including `20261109180000_stage3_modules` and `20261109190000_proposals_phase2_ai`.
+- **Database tests:** `npx supabase test db`. PASS, 158 of 158 (access control 53, Stage 3 46, Proposal Phase 2 59), on the freshly reset database.
+- **Unit tests:** `npx vitest run`. PASS, 252 of 252 in 13 files (new: AI limits and duplicate guard, draft parsing, workflow moves, templates, date formatting, public mail domains; plus the Stage 3 modules' tests).
+- **Typecheck and lint:** PASS (after `next typegen`).
+- **End-to-end, production build, every spec in one organisation** (`E2E_PROD=1 npx playwright test`), first run: 57 passed, 4 failed. All four were specs interfering through shared data, not product defects: the settings spec left the currency as AED (smoke 7 and 11 expected SAR), the calendar spec left a milestone on the shared project (reports expected 1/2 milestones), and other specs' activity pushed the invoice line out of the overview's 8 most recent lines (smoke 9b). Fixed: the settings and calendar specs restore or remove what they change, and smoke 9a/9b check the full activity log (which also makes 9a's "hidden" check meaningful again).
+- **Proposal workflow e2e** (`e2e/proposals-workflow.spec.ts`, mock AI): 6 of 6 in its own namespace and in the full run.
 
 ### 2026-11-09 · Local migrations from scratch
 - **Command:** `npx supabase db reset` (local stack, Postgres 17.11)

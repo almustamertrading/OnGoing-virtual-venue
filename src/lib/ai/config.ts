@@ -8,7 +8,9 @@ export type AiLimits = {
   orgMonthlyTokens: number;
   /** An identical successful request within this window is refused unless forced. */
   duplicateWindowMinutes: number;
-  /** A request still "started" after this long is treated as abandoned. */
+  /** One overall deadline per AI call, kept under the hosting platform's function limit (60 s). */
+  timeoutMs: number;
+  /** A request still "started" after this long is treated as abandoned (just above the deadline). */
   staleStartedMinutes: number;
 };
 
@@ -17,7 +19,8 @@ const DEFAULTS: AiLimits = {
   perDay: { proposal_draft: 40, rfp_extract: 30 },
   orgMonthlyTokens: 3_000_000,
   duplicateWindowMinutes: 10,
-  staleStartedMinutes: 10,
+  timeoutMs: 55_000,
+  staleStartedMinutes: 2,
 };
 
 type Env = Record<string, string | undefined>;
@@ -30,6 +33,8 @@ function positiveInt(value: string | undefined, fallback: number): number {
 
 /** Rate limits and budgets, configurable through environment variables (server only). */
 export function readAiLimits(env: Env = process.env): AiLimits {
+  // At least 10 s; at most 15 min (a background job's limit, should one ever run AI calls).
+  const timeoutMs = Math.min(Math.max(positiveInt(env.AI_TIMEOUT_MS, DEFAULTS.timeoutMs), 10_000), 900_000);
   return {
     perHour: {
       proposal_draft: positiveInt(env.AI_LIMIT_PROPOSAL_DRAFT_PER_HOUR, DEFAULTS.perHour.proposal_draft),
@@ -41,7 +46,8 @@ export function readAiLimits(env: Env = process.env): AiLimits {
     },
     orgMonthlyTokens: positiveInt(env.AI_ORG_MONTHLY_TOKEN_LIMIT, DEFAULTS.orgMonthlyTokens),
     duplicateWindowMinutes: positiveInt(env.AI_DUPLICATE_WINDOW_MINUTES, DEFAULTS.duplicateWindowMinutes),
-    staleStartedMinutes: DEFAULTS.staleStartedMinutes,
+    timeoutMs,
+    staleStartedMinutes: Math.max(DEFAULTS.staleStartedMinutes, Math.ceil(timeoutMs / 60_000) + 1),
   };
 }
 
@@ -111,6 +117,8 @@ export function aiErrorMessage(code: AiErrorCode, extra?: { minutesAgo?: number 
       return "المحتوى أكبر من الحد المسموح لطلب واحد. قسّم الملف أو اختصر الموجز.";
     case "overloaded":
       return "خدمة الذكاء الاصطناعي مشغولة حاليًا. حاول بعد دقيقة.";
+    case "timeout":
+      return "استغرق الطلب وقتًا أطول من المسموح فأُوقف. جرّب موجزًا أقصر أو ملفًا أصغر، أو أعد المحاولة.";
     case "network":
       return "تعذّر الاتصال بخدمة الذكاء الاصطناعي. تحقّق من الاتصال وحاول مجددًا.";
     case "invalid_output":

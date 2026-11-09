@@ -8,6 +8,10 @@ export const DEFAULT_MODEL = "claude-sonnet-5-5";
 
 function mapError(e: unknown): AiError {
   if (e instanceof AiError) return e;
+  // Our own deadline (abort) or the SDK's per-attempt timeout: stopped before the platform kills it.
+  if (e instanceof Anthropic.APIUserAbortError || e instanceof Anthropic.APIConnectionTimeoutError) {
+    return new AiError("timeout", aiErrorMessage("timeout"));
+  }
   if (e instanceof Anthropic.BadRequestError) {
     const msg = e.message ?? "";
     if (/input_tokens_exceeded|exceeds the allowed|too many|prompt is too long|too large/i.test(msg)) {
@@ -27,13 +31,20 @@ function mapError(e: unknown): AiError {
   return new AiError("failed", aiErrorMessage("failed"));
 }
 
-export function createAnthropicProvider(apiKey: string, model: string = process.env.AI_MODEL || DEFAULT_MODEL): AiProvider {
-  const client = new Anthropic({ apiKey, maxRetries: 2, timeout: 180_000 });
+export function createAnthropicProvider(
+  apiKey: string,
+  timeoutMs: number,
+  model: string = process.env.AI_MODEL || DEFAULT_MODEL,
+): AiProvider {
+  // Retries (for brief overloads) happen inside one overall deadline, enforced with an abort signal.
+  const client = new Anthropic({ apiKey, maxRetries: 2, timeout: timeoutMs });
   return {
     name: "anthropic",
     model,
     async generate(request: AiRequest): Promise<AiResult> {
       let response: Anthropic.Beta.BetaMessage;
+      const deadline = new AbortController();
+      const timer = setTimeout(() => deadline.abort(), timeoutMs);
       try {
         response = await client.beta.messages.create({
           model,
@@ -48,9 +59,11 @@ export function createAnthropicProvider(apiKey: string, model: string = process.
           // within the same call instead of returning an empty refusal.
           betas: ["server-side-fallback-2026-07-01"],
           fallbacks: "default",
-        });
+        }, { signal: deadline.signal });
       } catch (e) {
         throw mapError(e);
+      } finally {
+        clearTimeout(timer);
       }
       if (response.stop_reason === "refusal") throw new AiError("refused", aiErrorMessage("refused"));
       if (response.stop_reason === "max_tokens") throw new AiError("invalid_output", aiErrorMessage("invalid_output"));

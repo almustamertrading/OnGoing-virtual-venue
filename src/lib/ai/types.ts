@@ -12,6 +12,7 @@ export type AiErrorCode =
   | "refused"
   | "too_large"
   | "overloaded"
+  | "timeout"
   | "network"
   | "invalid_output"
   | "failed";

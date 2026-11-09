@@ -13,7 +13,7 @@ import { getMyOrganization } from "@/lib/project";
 import type { ProposalStatus, ProposalType } from "@/lib/types";
 import { permissionMessage } from "@/lib/permissions";
 
-export type ActionState = { error?: string; ok?: boolean; message?: string };
+export type ActionState = { error?: string; ok?: boolean; message?: string; /** Changes on every success, to reset forms. */ nonce?: number };
 export type GenState = { error?: string; ok?: boolean; code?: AiErrorCode };
 
 /** Statuses in which content (sections, items, header) can be edited; the database agrees. */
@@ -247,7 +247,7 @@ export async function generateDraft(
   }
   // New sections first, then the old ones go: a failed insert never leaves the proposal empty.
   const rows = draft.sections.map((s, i) => ({
-    proposal_id: proposalId, organization_id: orgId, heading: s.heading, body: s.body, ai_generated: true, sort_order: i,
+    proposal_id: proposalId, organization_id: proposal.organization_id, heading: s.heading, body: s.body, ai_generated: true, sort_order: i,
   }));
   if (rows.length) {
     const { error: insErr } = await supabase.from("proposal_sections").insert(rows);
@@ -306,6 +306,7 @@ export async function reviewProposal(
   refresh();
   return {
     ok: true,
+    nonce: Date.now(),
     message: decision === "approved" ? "اعتُمد العرض داخليًا." : decision === "changes_requested" ? "أُعيد العرض للتعديل." : "أُضيف التعليق.",
   };
 }
@@ -317,7 +318,7 @@ export async function saveVersion(proposalId: string, _prev: ActionState, formDa
   const { data, error } = await supabase.rpc("save_proposal_version", { pid: proposalId, note });
   if (error) return { error: permissionMessage(error) };
   refresh();
-  return { ok: true, message: `حُفظت النسخة ${data}.` };
+  return { ok: true, nonce: Date.now(), message: `حُفظت النسخة ${data}.` };
 }
 
 // ---------------- Convert to project ----------------
