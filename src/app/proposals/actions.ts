@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { SECTION_TEMPLATES } from "@/lib/proposal-meta";
 import { generateProposalDraft, ProposalConfigError } from "@/lib/proposals";
 import type { ProposalStatus, ProposalType } from "@/lib/types";
+import { permissionMessage } from "@/lib/permissions";
 
 export type ActionState = { error?: string; ok?: boolean };
 export type GenState = { error?: string; ok?: boolean };
@@ -62,7 +63,7 @@ export async function createProposal(orgId: string, _prev: ActionState, formData
     })
     .select("id")
     .single();
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
 
   // Seed the type's suggested section headings (empty) for a quick start.
   const rows = SECTION_TEMPLATES[type].map((h, i) => ({
@@ -79,14 +80,16 @@ export async function updateProposal(
 ) {
   const supabase = await createClient();
   const { error } = await supabase.from("proposals").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteProposal(id: string) {
   const supabase = await createClient();
-  const { error } = await supabase.from("proposals").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  const { data, error } = await supabase.from("proposals").delete().eq("id", id).select("id");
+  if (error) throw new Error(permissionMessage(error));
+  // RLS hides rows the user may not delete, so "nothing deleted" means "not allowed".
+  if (!data?.length) throw new Error("ليست لديك صلاحية لحذف هذا العرض.");
   redirect("/proposals");
 }
 
@@ -99,7 +102,7 @@ export async function addSection(proposalId: string, orgId: string, _prev: Actio
   const { error } = await supabase.from("proposal_sections").insert({
     proposal_id: proposalId, organization_id: orgId, heading, body: text(formData, "body"), sort_order: Date.now(),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -107,14 +110,14 @@ export async function addSection(proposalId: string, orgId: string, _prev: Actio
 export async function updateSection(id: string, patch: { heading?: string; body?: string }) {
   const supabase = await createClient();
   const { error } = await supabase.from("proposal_sections").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteSection(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("proposal_sections").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
@@ -131,30 +134,39 @@ export async function addItem(proposalId: string, orgId: string, _prev: ActionSt
     description,
     unit: text(formData, "unit"),
     quantity: num(formData, "quantity") ?? 1,
-    unit_cost: num(formData, "unit_cost") ?? 0,
     unit_price: num(formData, "unit_price") ?? 0,
     is_optional: text(formData, "is_optional") === "on",
     sort_order: Date.now(),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
 
 export async function updateItem(
   id: string,
-  patch: { category?: string; description?: string; unit?: string; quantity?: number; unit_cost?: number; unit_price?: number; is_optional?: boolean },
+  patch: { category?: string; description?: string; unit?: string; quantity?: number; unit_price?: number; is_optional?: boolean },
 ) {
   const supabase = await createClient();
   const { error } = await supabase.from("proposal_items").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
+  refresh();
+}
+
+/** Internal unit cost of an item. Finance only; the database refuses anyone else. */
+export async function setItemCost(itemId: string, orgId: string, unitCost: number) {
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("proposal_item_costs")
+    .upsert({ item_id: itemId, organization_id: orgId, unit_cost: unitCost }, { onConflict: "item_id,organization_id" });
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteItem(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("proposal_items").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
@@ -227,7 +239,7 @@ export async function convertToProject(proposalId: string) {
     })
     .select("id")
     .single();
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
 
   if (list.length) {
     await supabase.from("boq_items").insert(

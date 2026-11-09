@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Only the team platform needs a login. The public marketing site is open.
-const PROTECTED_PATHS = ["/projects", "/proposals"];
+const PROTECTED_PATHS = ["/projects", "/proposals", "/settings"];
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });

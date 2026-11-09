@@ -6,14 +6,16 @@ import { FileText, Plus, Search, Sparkles, X } from "lucide-react";
 import { AppHeader } from "@/components/app-header";
 import { formatDate, formatMoney } from "@/lib/format";
 import { PROPOSAL_STATUS, PROPOSAL_TYPE } from "@/lib/proposal-meta";
-import type { ClientRow, ProposalRow, ProposalStatus, ProposalType } from "@/lib/types";
+import type { ClientRow, ProposalRow, ProposalStatus } from "@/lib/types";
 import { createProposal, type ActionState } from "./actions";
 
 export function ProposalsDashboard({
-  email, organizationId, currency, proposals, clients, values,
+  email, organizationId, canCreate, currency, proposals, clients, values,
 }: {
   email: string;
   organizationId: string;
+  /** sales_access (the database enforces the same rule). */
+  canCreate: boolean;
   currency: string;
   proposals: ProposalRow[];
   clients: ClientRow[];
@@ -70,7 +72,7 @@ export function ProposalsDashboard({
             <h1 className="text-2xl font-semibold text-white">العروض</h1>
             <p className="text-sm text-slate-400">أنشئ عروضًا احترافية بالذكاء الاصطناعي وحوّل المقبول منها إلى مشاريع.</p>
           </div>
-          {organizationId && (
+          {organizationId && canCreate && (
             <button className="btn-primary" onClick={() => setCreating(true)}><Plus size={16} /> عرض جديد</button>
           )}
         </div>
@@ -120,7 +122,7 @@ export function ProposalsDashboard({
         )}
       </main>
 
-      {creating && organizationId && (
+      {creating && organizationId && canCreate && (
         <CreateProposalDialog organizationId={organizationId} clients={clients} onClose={() => setCreating(false)} />
       )}
     </>

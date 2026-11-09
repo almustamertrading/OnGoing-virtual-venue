@@ -4,6 +4,7 @@ import { refresh } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import type { ActionState } from "../../../actions";
 import type { InvoiceStatus } from "@/lib/types";
+import { permissionMessage } from "@/lib/permissions";
 
 const text = (f: FormData, k: string) => String(f.get(k) ?? "").trim();
 const optional = (f: FormData, k: string) => text(f, k) || null;
@@ -29,7 +30,7 @@ export async function addInvoice(projectId: string, _prev: ActionState, formData
     due_date: optional(formData, "due_date"),
     sort_order: Date.now(),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -37,14 +38,14 @@ export async function addInvoice(projectId: string, _prev: ActionState, formData
 export async function updateInvoice(id: string, patch: { status?: InvoiceStatus; amount?: number; title?: string; number?: string; due_date?: string | null }) {
   const supabase = await createClient();
   const { error } = await supabase.from("invoices").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteInvoice(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("invoices").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
@@ -63,7 +64,7 @@ export async function addExpense(projectId: string, _prev: ActionState, formData
     incurred_on: optional(formData, "incurred_on"),
     sort_order: Date.now(),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -71,6 +72,6 @@ export async function addExpense(projectId: string, _prev: ActionState, formData
 export async function deleteExpense(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("expenses").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }

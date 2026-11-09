@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarDays, ChevronRight, FileText, MapPin } from "lucide-react";
+import { CalendarDays, ChevronRight, FileText, MapPin, Users } from "lucide-react";
 import { AppHeader } from "@/components/app-header";
 import { StatusBadge } from "@/components/status-badge";
 import { createClient } from "@/lib/supabase/server";
@@ -63,9 +63,16 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
           </div>
           {org && (
             <div className="flex flex-wrap gap-2">
+              {org.access.isAdmin && (
+                <Link href="/settings/members" className="btn-ghost"><Users size={16} /> الأعضاء والصلاحيات</Link>
+              )}
               <Link href="/proposals" className="btn-ghost"><FileText size={16} /> العروض</Link>
-              <RfpImport organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />
-              <CreateProject organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />
+              {org.access.canCreateProjects && (
+                <>
+                  <RfpImport organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />
+                  <CreateProject organizationId={org.id} clients={(clients as ClientRow[]) ?? []} />
+                </>
+              )}
             </div>
           )}
         </div>

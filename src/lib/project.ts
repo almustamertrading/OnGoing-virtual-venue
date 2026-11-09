@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { accessFor } from "@/lib/permissions";
 import type { ClientRow, MemberRole, MemberRow, OrgRole, ProjectRow } from "@/lib/types";
 
 /** Everything a workspace page needs about the project and the viewer. Loaded once per request. */
@@ -20,7 +21,7 @@ export const getProjectContext = cache(async (projectId: string) => {
     supabase.from("project_members").select("user_id, role, responsibility").eq("project_id", projectId),
     supabase
       .from("organization_members")
-      .select("role")
+      .select("role, capabilities")
       .eq("organization_id", project.organization_id)
       .eq("user_id", userId)
       .maybeSingle(),
@@ -44,6 +45,7 @@ export const getProjectContext = cache(async (projectId: string) => {
   const projectRole = members.find((m) => m.user_id === userId)?.role ?? null;
   const isOrgAdmin = orgRole === "admin";
   const role: MemberRole | null = isOrgAdmin ? "owner" : projectRole;
+  const access = accessFor(orgRole, orgMember?.capabilities as string[] | undefined);
 
   return {
     supabase,
@@ -55,8 +57,11 @@ export const getProjectContext = cache(async (projectId: string) => {
     members,
     orgRole,
     role,
+    access,
     canEdit: role === "owner" || role === "editor",
     isOwner: role === "owner",
+    /** Same rule as private.can_access_project_finance: a project member (or org admin) with finance_access. */
+    canSeeFinance: access.finance && role !== null,
   };
 });
 
@@ -67,11 +72,11 @@ export const getMyOrganization = cache(async () => {
   const userId = claims?.claims?.sub as string;
   const { data } = await supabase
     .from("organization_members")
-    .select("role, organizations(id, name, currency)")
+    .select("role, capabilities, organizations(id, name, currency)")
     .eq("user_id", userId)
     .limit(1)
     .maybeSingle();
   if (!data) return null;
   const org = data.organizations as unknown as { id: string; name: string; currency: string };
-  return { ...org, role: data.role as OrgRole };
+  return { ...org, role: data.role as OrgRole, access: accessFor(data.role as OrgRole, data.capabilities as string[]) };
 });

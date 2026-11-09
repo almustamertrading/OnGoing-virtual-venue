@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState, useTransition } from "react";
-import { Check, ChevronDown, Star, Trash2 } from "lucide-react";
+import { Check, ChevronDown, Lock, Star, Trash2 } from "lucide-react";
 import { formatDate, formatMoney } from "@/lib/format";
 import type { QuoteRow, RfqRow, RfqStatus, SupplierRow } from "@/lib/types";
 import type { ActionState } from "../../../actions";
@@ -28,12 +28,17 @@ function Stars({ n }: { n: number }) {
 }
 
 export function ProcurementBoard({
-  projectId, organizationId, currency, canEdit, suppliers, rfqs, quotes,
+  projectId, organizationId, currency, canEdit, canSeeQuotes, canManageSuppliers, canDeleteSuppliers, suppliers, rfqs, quotes,
 }: {
   projectId: string;
   organizationId: string;
   currency: string;
   canEdit: boolean;
+  /** Supplier quotes are internal costs (finance only). */
+  canSeeQuotes: boolean;
+  canManageSuppliers: boolean;
+  /** Matches the delete policy: organisation admins and managers. */
+  canDeleteSuppliers: boolean;
   suppliers: SupplierRow[];
   rfqs: RfqRow[];
   quotes: QuoteRow[];
@@ -62,6 +67,7 @@ export function ProcurementBoard({
                 projectId={projectId}
                 currency={currency}
                 canEdit={canEdit}
+                canSeeQuotes={canSeeQuotes}
                 suppliers={suppliers}
                 quotes={quotes.filter((q) => q.rfq_id === r.id)}
                 supplierName={supplierName}
@@ -80,7 +86,7 @@ export function ProcurementBoard({
 
         {showSuppliers && (
           <div className="mt-3 space-y-3">
-            {canEdit && <SupplierForm organizationId={organizationId} resetKey={suppliers.length} />}
+            {canManageSuppliers && <SupplierForm organizationId={organizationId} resetKey={suppliers.length} />}
             <ul className="divide-y divide-slate-800">
               {suppliers.map((s) => (
                 <li key={s.id} className="flex items-start gap-2 py-2">
@@ -89,7 +95,7 @@ export function ProcurementBoard({
                     <p className="text-xs text-slate-500">{[s.category, s.phone].filter(Boolean).join(" · ")}</p>
                     {s.rating > 0 && <Stars n={s.rating} />}
                   </div>
-                  {canEdit && <DeleteBtn onClick={() => deleteSupplier(s.id)} label={`حذف ${s.name}`} />}
+                  {canDeleteSuppliers && <DeleteBtn onClick={() => deleteSupplier(s.id)} label={`حذف ${s.name}`} />}
                 </li>
               ))}
               {suppliers.length === 0 && <li className="py-2 text-xs text-slate-500">لا يوجد موردون بعد.</li>}
@@ -124,12 +130,13 @@ function RfqForm({ projectId, resetKey }: { projectId: string; resetKey: number 
 }
 
 function RfqCard({
-  rfq, projectId, currency, canEdit, suppliers, quotes, supplierName,
+  rfq, projectId, currency, canEdit, canSeeQuotes, suppliers, quotes, supplierName,
 }: {
   rfq: RfqRow;
   projectId: string;
   currency: string;
   canEdit: boolean;
+  canSeeQuotes: boolean;
   suppliers: SupplierRow[];
   quotes: QuoteRow[];
   supplierName: (q: QuoteRow) => string;
@@ -138,6 +145,8 @@ function RfqCard({
   const priced = quotes.filter((q) => q.amount != null && q.status !== "rejected");
   const lowest = priced.length ? Math.min(...priced.map((q) => q.amount!)) : null;
   const st = RFQ_STATUS[rfq.status];
+  // Managing quotes also awards the RFQ, so it needs both finance and project edit rights.
+  const canManageQuotes = canSeeQuotes && canEdit;
 
   return (
     <div className="card p-4" data-testid="rfq">
@@ -162,14 +171,20 @@ function RfqCard({
         )}
       </div>
 
-      {quotes.length > 0 && (
+      {!canSeeQuotes && (
+        <p className="flex items-center gap-1.5 text-xs text-slate-500" data-testid="quotes-restricted">
+          <Lock size={12} aria-hidden /> عروض الموردين وأسعارها مقيدة بصلاحية المالية.
+        </p>
+      )}
+
+      {canSeeQuotes && quotes.length > 0 && (
         <table className="w-full text-right text-sm">
           <thead>
             <tr className="border-b border-slate-800 text-xs text-slate-500">
               <th className="px-1 py-1 font-medium">المورّد</th>
               <th className="px-1 py-1 font-medium">السعر</th>
               <th className="px-1 py-1 font-medium">الحالة</th>
-              {canEdit && <th className="px-1 py-1" />}
+              {canManageQuotes && <th className="px-1 py-1" />}
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60">
@@ -187,7 +202,7 @@ function RfqCard({
                   <td className="px-1 py-1.5 text-xs">
                     {q.status === "accepted" ? <span className="text-emerald-400">معتمد ✓</span> : q.status === "rejected" ? "مرفوض" : "مستلم"}
                   </td>
-                  {canEdit && (
+                  {canManageQuotes && (
                     <td className="px-1 py-1.5">
                       <div className="flex items-center justify-end gap-2">
                         {q.status !== "accepted" && (
@@ -204,7 +219,7 @@ function RfqCard({
         </table>
       )}
 
-      {canEdit && <QuoteForm projectId={projectId} rfqId={rfq.id} suppliers={suppliers} resetKey={quotes.length} />}
+      {canManageQuotes && <QuoteForm projectId={projectId} rfqId={rfq.id} suppliers={suppliers} resetKey={quotes.length} />}
     </div>
   );
 }

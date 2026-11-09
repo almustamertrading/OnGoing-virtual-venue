@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { MemberRole, ProjectStatus, ProjectType } from "@/lib/types";
 import { extractRfpFromPdf, RfpConfigError, type ExtractedRfp } from "@/lib/rfp";
+import { permissionMessage } from "@/lib/permissions";
 
 export type ActionState = { error?: string; ok?: boolean };
 export type RfpState = { data?: ExtractedRfp; error?: string };
@@ -60,7 +61,7 @@ async function resolveClient(
       .insert({ organization_id: organizationId, name: newClientName, ...(contact ?? {}) })
       .select("id")
       .single();
-    if (error) return { error: error.message };
+    if (error) return { error: permissionMessage(error) };
     return { id: data.id as string };
   }
   return { id: clientId };
@@ -183,7 +184,7 @@ export async function createProject(_prev: ActionState, formData: FormData): Pro
     })
     .select("id")
     .single();
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
 
   // Scope and deliverables carried over from an RFP import.
   const itemsRaw = String(formData.get("items_json") ?? "");
@@ -283,7 +284,7 @@ export async function updateProject(
       end_date: optional(formData, "end_date"),
     })
     .eq("id", projectId);
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -291,14 +292,14 @@ export async function updateProject(
 export async function setProjectStatus(projectId: string, status: ProjectStatus) {
   const supabase = await createClient();
   const { error } = await supabase.from("projects").update({ status }).eq("id", projectId);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteProject(projectId: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("projects").delete().eq("id", projectId);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   redirect("/projects");
 }
 
@@ -323,7 +324,7 @@ export async function createVenue(
     .insert({ project_id: projectId, name, address, center_lng: lng, center_lat: lat, zoom })
     .select("id")
     .single();
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
 
   const { error: layerError } = await supabase.from("layers").insert(
     DEFAULT_LAYERS.map((l, i) => ({ ...l, sort_order: i, project_id: projectId, venue_id: venue.id })),
@@ -348,7 +349,7 @@ export async function addMember(
     member_email: email,
     member_role: role,
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
 
   const responsibility = text(formData, "responsibility");
   if (responsibility && userId) {
@@ -373,7 +374,7 @@ export async function updateMember(
     .update(patch)
     .eq("project_id", projectId)
     .eq("user_id", userId);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
@@ -384,6 +385,6 @@ export async function removeMember(projectId: string, userId: string) {
     .delete()
     .eq("project_id", projectId)
     .eq("user_id", userId);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }

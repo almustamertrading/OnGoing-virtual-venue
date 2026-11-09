@@ -15,7 +15,7 @@ export default async function ProposalsPage() {
 
   if (!org) {
     return (
-      <ProposalsDashboard email={email} organizationId="" currency="SAR" proposals={[]} clients={[]} values={{}} />
+      <ProposalsDashboard email={email} organizationId="" canCreate={false} currency="SAR" proposals={[]} clients={[]} values={{}} />
     );
   }
 
@@ -35,6 +35,7 @@ export default async function ProposalsPage() {
     <ProposalsDashboard
       email={email}
       organizationId={org.id}
+      canCreate={org.access.sales}
       currency={org.currency ?? "SAR"}
       proposals={(proposals as ProposalRow[]) ?? []}
       clients={(clients as ClientRow[]) ?? []}

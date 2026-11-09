@@ -9,7 +9,7 @@ import { WorkspaceTabs } from "./workspace-tabs";
 
 export default async function WorkspaceLayout({ children, params }: LayoutProps<"/projects/[projectId]">) {
   const { projectId } = await params;
-  const { project, client, email, members, supabase, organization } = await getProjectContext(projectId);
+  const { project, client, email, members, supabase, organization, canSeeFinance } = await getProjectContext(projectId);
 
   const [
     { count: openTasks },
@@ -33,7 +33,9 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     supabase.from("evaluation_criteria").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("layouts").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     supabase.from("rfqs").select("id", { count: "exact", head: true }).eq("project_id", projectId),
-    supabase.from("invoices").select("id", { count: "exact", head: true }).eq("project_id", projectId),
+    canSeeFinance
+      ? supabase.from("invoices").select("id", { count: "exact", head: true }).eq("project_id", projectId)
+      : Promise.resolve({ count: 0 }),
     organization
       ? supabase.from("inventory_items").select("id", { count: "exact", head: true }).eq("organization_id", organization.id)
       : Promise.resolve({ count: 0 }),
@@ -66,6 +68,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
           <div className="mt-4">
             <WorkspaceTabs
               projectId={projectId}
+              hidden={canSeeFinance ? [] : ["finance"]}
               counts={{
                 tasks: openTasks ?? 0,
                 venues: venues ?? 0,

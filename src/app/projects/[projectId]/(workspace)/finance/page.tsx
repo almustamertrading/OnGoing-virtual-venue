@@ -1,10 +1,12 @@
+import { Restricted } from "@/components/restricted";
 import { getProjectContext } from "@/lib/project";
 import type { BoqItemRow, ExpenseRow, InvoiceRow } from "@/lib/types";
 import { FinanceBoard } from "./finance-board";
 
 export default async function FinancePage({ params }: PageProps<"/projects/[projectId]/finance">) {
   const { projectId } = await params;
-  const { supabase, canEdit, project, organization } = await getProjectContext(projectId);
+  const { supabase, project, organization, canSeeFinance } = await getProjectContext(projectId);
+  if (!canSeeFinance) return <Restricted title="المالية مقيدة" />;
 
   const [{ data: invoices }, { data: expenses }, { data: boq }] = await Promise.all([
     supabase.from("invoices").select("*").eq("project_id", projectId).order("sort_order", { ascending: false }),
@@ -21,7 +23,7 @@ export default async function FinancePage({ params }: PageProps<"/projects/[proj
     <FinanceBoard
       projectId={projectId}
       currency={organization?.currency ?? "SAR"}
-      canEdit={canEdit}
+      canEdit={canSeeFinance}
       budget={project.budget}
       quoted={quoted}
       invoices={(invoices as InvoiceRow[]) ?? []}

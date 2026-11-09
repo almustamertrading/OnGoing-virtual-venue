@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useState, useTransition } from "react";
+import { useActionState, useTransition } from "react";
 import { ChevronRight, Download, FileText, Plus, Sparkles, Trash2, Wand2 } from "lucide-react";
 import { AppHeader } from "@/components/app-header";
 import { formatMoney } from "@/lib/format";
@@ -9,16 +9,21 @@ import { PROPOSAL_STATUS, PROPOSAL_TYPE } from "@/lib/proposal-meta";
 import type { ClientRow, ProposalItemRow, ProposalRow, ProposalSectionRow, ProposalStatus } from "@/lib/types";
 import {
   addItem, addSection, convertToProject, deleteItem, deleteProposal, deleteSection,
-  generateDraft, updateItem, updateProposal, updateSection, type ActionState, type GenState,
+  generateDraft, setItemCost, updateItem, updateProposal, updateSection, type ActionState, type GenState,
 } from "../actions";
 
 export function ProposalWorkspace({
-  email, companyName, currency, canEdit, proposal, sections, items, client, clients,
+  email, companyName, currency, canEdit, canDelete, canSeeCost, proposal, sections, items, client,
 }: {
   email: string;
   companyName: string;
   currency: string;
+  /** sales_access: edit content, items and prices. */
   canEdit: boolean;
+  /** Organisation admins and managers (the delete policy). */
+  canDelete: boolean;
+  /** finance_access: internal costs and margin. Without it, costs are never sent to the browser. */
+  canSeeCost: boolean;
   proposal: ProposalRow;
   sections: ProposalSectionRow[];
   items: ProposalItemRow[];
@@ -79,7 +84,7 @@ export function ProposalWorkspace({
               </button>
             )}
             {proposal.project_id && <Link href={`/projects/${proposal.project_id}`} className="btn-ghost"><FileText size={15} /> المشروع المرتبط</Link>}
-            {canEdit && (
+            {canDelete && (
               <button className="btn-ghost ms-auto text-red-400 hover:text-red-300" disabled={busy} onClick={() => confirm("حذف العرض نهائيًا؟") && start(() => deleteProposal(proposal.id))}>
                 <Trash2 size={15} /> حذف
               </button>
@@ -123,20 +128,20 @@ export function ProposalWorkspace({
 
           {items.length > 0 && (
             <div className="-mx-2 overflow-x-auto">
-              <table className="w-full min-w-[760px] text-right text-sm">
+              <table className={`w-full text-right text-sm ${canSeeCost ? "min-w-[760px]" : "min-w-[640px]"}`}>
                 <thead>
                   <tr className="border-b border-slate-800 text-xs text-slate-500">
                     <th className="px-2 py-2 font-medium">البند</th>
                     <th className="px-2 py-2 font-medium">الكمية</th>
                     <th className="px-2 py-2 font-medium">الوحدة</th>
-                    <th className="px-2 py-2 font-medium" title="داخلي">التكلفة</th>
+                    {canSeeCost && <th className="px-2 py-2 font-medium" title="داخلي">التكلفة</th>}
                     <th className="px-2 py-2 font-medium">سعر البيع</th>
                     <th className="px-2 py-2 font-medium">الإجمالي</th>
                     {canEdit && <th className="px-2 py-2" />}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800">
-                  {items.map((it) => <ItemRow key={it.id} item={it} currency={currency} canEdit={canEdit} />)}
+                  {items.map((it) => <ItemRow key={it.id} item={it} currency={currency} canEdit={canEdit} canSeeCost={canSeeCost} />)}
                 </tbody>
               </table>
             </div>
@@ -145,13 +150,13 @@ export function ProposalWorkspace({
           {canEdit && <AddItemForm proposalId={proposal.id} orgId={orgId} resetKey={items.length} />}
 
           {/* Totals */}
-          <div className="mt-4 grid gap-2 border-t border-slate-800 pt-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className={`mt-4 grid gap-2 border-t border-slate-800 pt-4 sm:grid-cols-2 ${canSeeCost ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
             <Total k="الإجمالي قبل الضريبة" v={m(subtotal)} />
             <Total k={`ض.ق.م (${proposal.vat_rate}%)`} v={m(vat)} />
             <Total k="الإجمالي شامل الضريبة" v={m(grand)} tone="text-emerald-300" big />
-            <Total k="الهامش (داخلي)" v={`${m(margin)} · ${marginPct}%`} tone={margin >= 0 ? "text-emerald-300" : "text-red-300"} />
+            {canSeeCost && <Total k="الهامش (داخلي)" v={`${m(margin)} · ${marginPct}%`} tone={margin >= 0 ? "text-emerald-300" : "text-red-300"} />}
           </div>
-          <p className="mt-2 text-[11px] text-slate-500">التكلفة الداخلية والهامش لا يظهران في PDF العميل.</p>
+          {canSeeCost && <p className="mt-2 text-[11px] text-slate-500">التكلفة الداخلية والهامش لا يظهران في PDF العميل.</p>}
         </section>
       </main>
     </>
@@ -224,7 +229,7 @@ function AddSectionForm({ proposalId, orgId, resetKey }: { proposalId: string; o
 
 const n = (v: string) => { const r = v.replace(/[, ]/g, "").trim(); if (!r) return null; const x = Number(r); return Number.isFinite(x) && x >= 0 ? x : null; };
 
-function ItemRow({ item, currency, canEdit }: { item: ProposalItemRow; currency: string; canEdit: boolean }) {
+function ItemRow({ item, currency, canEdit, canSeeCost }: { item: ProposalItemRow; currency: string; canEdit: boolean; canSeeCost: boolean }) {
   const [busy, start] = useTransition();
   const total = item.quantity * item.unit_price;
   const cell = "w-20 rounded border border-slate-700 bg-slate-900 px-1.5 py-1 text-xs";
@@ -236,7 +241,11 @@ function ItemRow({ item, currency, canEdit }: { item: ProposalItemRow; currency:
       </td>
       <td className="px-2 py-2">{canEdit ? <input defaultValue={item.quantity} inputMode="decimal" aria-label="الكمية" onBlur={(e) => { const v = n(e.target.value); if (v !== null && v !== item.quantity) start(() => updateItem(item.id, { quantity: v })); }} className={cell} /> : item.quantity}</td>
       <td className="px-2 py-2 text-slate-400">{canEdit ? <input defaultValue={item.unit} aria-label="الوحدة" onBlur={(e) => e.target.value !== item.unit && start(() => updateItem(item.id, { unit: e.target.value }))} className="w-16 rounded border border-slate-700 bg-slate-900 px-1.5 py-1 text-xs" /> : item.unit || "—"}</td>
-      <td className="px-2 py-2 text-amber-300/80">{canEdit ? <input defaultValue={item.unit_cost} inputMode="decimal" aria-label="التكلفة" onBlur={(e) => { const v = n(e.target.value); if (v !== null && v !== item.unit_cost) start(() => updateItem(item.id, { unit_cost: v })); }} className={cell} /> : formatMoney(item.unit_cost, currency)}</td>
+      {canSeeCost && (
+        <td className="px-2 py-2 text-amber-300/80">
+          <input defaultValue={item.unit_cost} inputMode="decimal" aria-label="التكلفة" onBlur={(e) => { const v = n(e.target.value); if (v !== null && v !== item.unit_cost) start(() => setItemCost(item.id, item.organization_id, v)); }} className={cell} />
+        </td>
+      )}
       <td className="px-2 py-2">{canEdit ? <input defaultValue={item.unit_price} inputMode="decimal" aria-label="سعر البيع" onBlur={(e) => { const v = n(e.target.value); if (v !== null && v !== item.unit_price) start(() => updateItem(item.id, { unit_price: v })); }} className={cell} /> : formatMoney(item.unit_price, currency)}</td>
       <td className="px-2 py-2 font-medium text-emerald-300">{formatMoney(total, currency)}</td>
       {canEdit && (

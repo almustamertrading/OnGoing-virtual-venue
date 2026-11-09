@@ -3,7 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts: Record<string, number> }) {
+export function WorkspaceTabs({
+  projectId,
+  counts,
+  hidden = [],
+}: {
+  projectId: string;
+  counts: Record<string, number>;
+  /** Tabs the viewer has no permission for (the pages also refuse them). */
+  hidden?: string[];
+}) {
   const pathname = usePathname();
   const base = `/projects/${projectId}`;
   const tabs = [
@@ -21,7 +30,7 @@ export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts
     { href: `${base}/layouts`, label: "Layouts", key: "layouts" },
     { href: `${base}/inventory`, label: "Inventory", key: "inventory" },
     { href: `${base}/activity`, label: "Activity", key: "activity" },
-  ];
+  ].filter((t) => !hidden.includes(t.key));
   return (
     <nav className="-mb-px flex gap-1 overflow-x-auto" aria-label="Project sections">
       {tabs.map((t) => {

@@ -4,6 +4,7 @@ import { refresh } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import type { ActionState } from "../../../actions";
 import type { QuoteStatus, RfqStatus } from "@/lib/types";
+import { permissionMessage } from "@/lib/permissions";
 
 const text = (f: FormData, k: string) => String(f.get(k) ?? "").trim();
 const optional = (f: FormData, k: string) => text(f, k) || null;
@@ -30,7 +31,7 @@ export async function addSupplier(orgId: string, _prev: ActionState, formData: F
     rating: Math.max(0, Math.min(5, Math.round(num(formData, "rating") ?? 0))),
     notes: text(formData, "notes"),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -41,14 +42,14 @@ export async function updateSupplier(
 ) {
   const supabase = await createClient();
   const { error } = await supabase.from("suppliers").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteSupplier(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("suppliers").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
@@ -67,7 +68,7 @@ export async function addRfq(projectId: string, _prev: ActionState, formData: Fo
     status: "draft",
     sort_order: Date.now(),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -75,14 +76,14 @@ export async function addRfq(projectId: string, _prev: ActionState, formData: Fo
 export async function updateRfq(id: string, patch: { title?: string; category?: string; description?: string; status?: RfqStatus; due_date?: string | null }) {
   const supabase = await createClient();
   const { error } = await supabase.from("rfqs").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteRfq(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("rfqs").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
@@ -108,7 +109,7 @@ export async function addQuote(
     status: "received",
     sort_order: Date.now(),
   });
-  if (error) return { error: error.message };
+  if (error) return { error: permissionMessage(error) };
   refresh();
   return { ok: true };
 }
@@ -116,14 +117,14 @@ export async function addQuote(
 export async function updateQuote(id: string, patch: { amount?: number | null; notes?: string; status?: QuoteStatus }) {
   const supabase = await createClient();
   const { error } = await supabase.from("quotes").update(patch).eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
 export async function deleteQuote(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("quotes").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) throw new Error(permissionMessage(error));
   refresh();
 }
 
