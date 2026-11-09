@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import { useActionState, useMemo, useState } from "react";
-import { FileText, Plus, Search, Sparkles, X } from "lucide-react";
+import { FileText, LayoutTemplate, Plus, Search, Sparkles, X } from "lucide-react";
 import { AppHeader } from "@/components/app-header";
 import { formatDate, formatMoney } from "@/lib/format";
 import { PROPOSAL_STATUS, PROPOSAL_TYPE } from "@/lib/proposal-meta";
-import type { ClientRow, ProposalRow, ProposalStatus } from "@/lib/types";
+import type { ClientRow, ProposalRow, ProposalStatus, ProposalType } from "@/lib/types";
 import { createProposal, type ActionState } from "./actions";
 
+export type TemplateOption = { id: string; name: string; proposal_type: ProposalType };
+
 export function ProposalsDashboard({
-  email, organizationId, canCreate, currency, proposals, clients, values,
+  email, organizationId, canCreate, currency, proposals, clients, templates, values,
 }: {
   email: string;
   organizationId: string;
@@ -19,6 +21,7 @@ export function ProposalsDashboard({
   currency: string;
   proposals: ProposalRow[];
   clients: ClientRow[];
+  templates: TemplateOption[];
   values: Record<string, number>;
 }) {
   const [q, setQ] = useState("");
@@ -72,9 +75,14 @@ export function ProposalsDashboard({
             <h1 className="text-2xl font-semibold text-white">العروض</h1>
             <p className="text-sm text-slate-400">أنشئ عروضًا احترافية بالذكاء الاصطناعي وحوّل المقبول منها إلى مشاريع.</p>
           </div>
-          {organizationId && canCreate && (
-            <button className="btn-primary" onClick={() => setCreating(true)}><Plus size={16} /> عرض جديد</button>
-          )}
+          <div className="flex flex-wrap gap-2">
+            {organizationId && (
+              <Link href="/proposals/templates" className="btn-ghost"><LayoutTemplate size={16} /> القوالب</Link>
+            )}
+            {organizationId && canCreate && (
+              <button className="btn-primary" onClick={() => setCreating(true)}><Plus size={16} /> عرض جديد</button>
+            )}
+          </div>
         </div>
 
         <section className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
@@ -123,15 +131,25 @@ export function ProposalsDashboard({
       </main>
 
       {creating && organizationId && canCreate && (
-        <CreateProposalDialog organizationId={organizationId} clients={clients} onClose={() => setCreating(false)} />
+        <CreateProposalDialog organizationId={organizationId} clients={clients} templates={templates} onClose={() => setCreating(false)} />
       )}
     </>
   );
 }
 
-function CreateProposalDialog({ organizationId, clients, onClose }: { organizationId: string; clients: ClientRow[]; onClose: () => void }) {
+function CreateProposalDialog({
+  organizationId, clients, templates, onClose,
+}: {
+  organizationId: string;
+  clients: ClientRow[];
+  templates: TemplateOption[];
+  onClose: () => void;
+}) {
   const [state, action, pending] = useActionState<ActionState, FormData>(createProposal.bind(null, organizationId), {});
   const [newClient, setNewClient] = useState(clients.length === 0);
+  const [templateId, setTemplateId] = useState("");
+  const [type, setType] = useState<ProposalType>("technical_financial");
+  const template = templates.find((t) => t.id === templateId);
 
   return (
     <div dir="rtl" className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 p-4 sm:items-center">
@@ -145,11 +163,39 @@ function CreateProposalDialog({ organizationId, clients, onClose }: { organizati
             <label className="label" htmlFor="pr-title">عنوان العرض</label>
             <input id="pr-title" name="title" required placeholder="مثال: عرض تشغيل فعالية…" className="field" />
           </div>
+          {templates.length > 0 && (
+            <div>
+              <label className="label" htmlFor="pr-template">القالب (اختياري)</label>
+              <select
+                id="pr-template"
+                name="template_id"
+                className="field"
+                value={templateId}
+                onChange={(e) => {
+                  setTemplateId(e.target.value);
+                  const t = templates.find((x) => x.id === e.target.value);
+                  if (t) setType(t.proposal_type);
+                }}
+              >
+                <option value="">بدون قالب (الأقسام الافتراضية للنوع)</option>
+                {templates.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+              </select>
+            </div>
+          )}
           <div>
             <label className="label" htmlFor="pr-type">نوع العرض</label>
-            <select id="pr-type" name="proposal_type" className="field" defaultValue="technical_financial">
+            <select
+              id="pr-type"
+              name="proposal_type"
+              className="field"
+              value={type}
+              disabled={Boolean(template)}
+              onChange={(e) => setType(e.target.value as ProposalType)}
+            >
               {Object.entries(PROPOSAL_TYPE).map(([v, t]) => <option key={v} value={v}>{t.label}</option>)}
             </select>
+            {template && <input type="hidden" name="proposal_type" value={type} />}
+            {template && <p className="mt-1 text-xs text-slate-500">النوع يتبع القالب المختار.</p>}
           </div>
           <div>
             <div className="mb-1 flex items-center justify-between">

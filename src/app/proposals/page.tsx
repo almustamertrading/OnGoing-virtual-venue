@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { getMyOrganization } from "@/lib/project";
 import { createClient, getUserId } from "@/lib/supabase/server";
 import type { ClientRow, ProposalItemRow, ProposalRow } from "@/lib/types";
-import { ProposalsDashboard } from "./proposals-dashboard";
+import { ProposalsDashboard, type TemplateOption } from "./proposals-dashboard";
 import { proposalTotals } from "@/lib/money";
 
 export const metadata = { title: "العروض | OnGoing" };
@@ -16,14 +16,15 @@ export default async function ProposalsPage() {
 
   if (!org) {
     return (
-      <ProposalsDashboard email={email} organizationId="" canCreate={false} currency="SAR" proposals={[]} clients={[]} values={{}} />
+      <ProposalsDashboard email={email} organizationId="" canCreate={false} currency="SAR" proposals={[]} clients={[]} templates={[]} values={{}} />
     );
   }
 
-  const [{ data: proposals }, { data: items }, { data: clients }] = await Promise.all([
+  const [{ data: proposals }, { data: items }, { data: clients }, { data: templates }] = await Promise.all([
     supabase.from("proposals").select("*").eq("organization_id", org.id).order("created_at", { ascending: false }),
     supabase.from("proposal_items").select("proposal_id, quantity, unit_price, is_optional").eq("organization_id", org.id),
     supabase.from("clients").select("*").eq("organization_id", org.id).order("name"),
+    supabase.from("proposal_templates").select("id, name, proposal_type").eq("organization_id", org.id).order("name"),
   ]);
 
   const byProposal = new Map<string, Pick<ProposalItemRow, "quantity" | "unit_price" | "is_optional">[]>();
@@ -41,6 +42,7 @@ export default async function ProposalsPage() {
       currency={org.currency ?? "SAR"}
       proposals={(proposals as ProposalRow[]) ?? []}
       clients={(clients as ClientRow[]) ?? []}
+      templates={(templates as TemplateOption[]) ?? []}
       values={values}
     />
   );

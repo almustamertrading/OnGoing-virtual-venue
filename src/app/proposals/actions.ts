@@ -8,6 +8,7 @@ import { aiErrorMessage } from "@/lib/ai/config";
 import { AiError, type AiErrorCode } from "@/lib/ai/types";
 import { generateProposalDraft } from "@/lib/proposals";
 import { draftOutline, MIN_BRIEF_CHARS, type OutlineSection } from "@/lib/proposal-draft";
+import { templateSections } from "@/lib/proposal-templates";
 import { getMyOrganization } from "@/lib/project";
 import type { ProposalStatus, ProposalType } from "@/lib/types";
 import { permissionMessage } from "@/lib/permissions";
@@ -46,11 +47,23 @@ async function resolveClient(
 export async function createProposal(orgId: string, _prev: ActionState, formData: FormData): Promise<ActionState> {
   const title = text(formData, "title");
   if (!title) return { error: "اكتب عنوان العرض." };
-  const type = (optional(formData, "proposal_type") ?? "technical_financial") as ProposalType;
+  let type = (optional(formData, "proposal_type") ?? "technical_financial") as ProposalType;
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
   const userId = claims?.claims?.sub as string | undefined;
   if (!userId) return { error: "انتهت الجلسة. سجّل الدخول من جديد." };
+
+  // A template sets the type and the starting sections (headings only; bodies stay empty).
+  const templateId = optional(formData, "template_id");
+  let headings = SECTION_TEMPLATES[type];
+  if (templateId) {
+    const { data: template } = await supabase
+      .from("proposal_templates").select("proposal_type, sections").eq("id", templateId).eq("organization_id", orgId).maybeSingle();
+    if (!template) return { error: "القالب المختار غير موجود. حدّث الصفحة واختر من جديد." };
+    type = template.proposal_type as ProposalType;
+    const fromTemplate = templateSections(template.sections).map((s) => s.heading);
+    headings = fromTemplate.length ? fromTemplate : SECTION_TEMPLATES[type];
+  }
 
   const clientId = await resolveClient(supabase, orgId, optional(formData, "client_id"), optional(formData, "new_client"));
 
@@ -66,14 +79,15 @@ export async function createProposal(orgId: string, _prev: ActionState, formData
       due_date: optional(formData, "due_date"),
       valid_until: optional(formData, "valid_until"),
       brief: text(formData, "brief"),
+      template_id: templateId,
       created_by: userId,
     })
     .select("id")
     .single();
   if (error) return { error: permissionMessage(error) };
 
-  // Seed the type's suggested section headings (empty) for a quick start.
-  const rows = SECTION_TEMPLATES[type].map((h, i) => ({
+  // Seed the section headings (empty) for a quick start.
+  const rows = headings.map((h, i) => ({
     proposal_id: data.id, organization_id: orgId, heading: h, body: "", sort_order: i,
   }));
   if (rows.length) await supabase.from("proposal_sections").insert(rows);
@@ -205,12 +219,12 @@ export async function generateDraft(
     const { data: c } = await supabase.from("clients").select("name").eq("id", proposal.client_id).maybeSingle();
     clientName = c?.name ?? "";
   }
-  let templateSections: OutlineSection[] | null = null;
+  let templateOutline: OutlineSection[] | null = null;
   if (proposal.template_id) {
     const { data: t } = await supabase.from("proposal_templates").select("sections").eq("id", proposal.template_id).maybeSingle();
-    templateSections = Array.isArray(t?.sections) ? (t.sections as OutlineSection[]) : null;
+    templateOutline = templateSections(t?.sections);
   }
-  const outline = draftOutline(proposal.proposal_type as ProposalType, templateSections);
+  const outline = draftOutline(proposal.proposal_type as ProposalType, templateOutline);
 
   let draft;
   try {
