@@ -331,6 +331,61 @@ export type ExpenseRow = {
   sort_order: number;
 };
 
+export type ProposalType =
+  | "technical_financial" | "creative_concept" | "boq_quotation"
+  | "rfp_response" | "sponsorship" | "venue_operations";
+
+export type ProposalStatus =
+  | "draft" | "ai_generated" | "under_review" | "changes_requested"
+  | "approved_internally" | "sent_to_client" | "awaiting_response"
+  | "accepted" | "rejected" | "expired" | "converted";
+
+export type ProposalRow = {
+  id: string;
+  organization_id: string;
+  client_id: string | null;
+  project_id: string | null;
+  reference: string;
+  title: string;
+  proposal_type: ProposalType;
+  status: ProposalStatus;
+  summary: string;
+  brief: string;
+  vat_rate: number;
+  owner_id: string | null;
+  issue_date: string | null;
+  due_date: string | null;
+  valid_until: string | null;
+  version: number;
+  created_at: string;
+};
+
+export type ProposalSectionRow = {
+  id: string;
+  proposal_id: string;
+  organization_id: string;
+  heading: string;
+  body: string;
+  ai_generated: boolean;
+  sort_order: number;
+};
+
+export type ProposalItemRow = {
+  id: string;
+  proposal_id: string;
+  organization_id: string;
+  category: string;
+  description: string;
+  specification: string;
+  quantity: number;
+  unit: string;
+  unit_cost: number;
+  unit_price: number;
+  supplier_id: string | null;
+  is_optional: boolean;
+  sort_order: number;
+};
+
 export type Profile = {
   id: string;
   email: string;
