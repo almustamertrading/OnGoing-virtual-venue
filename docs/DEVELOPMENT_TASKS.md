@@ -53,3 +53,22 @@ The execution backlog for the Phase 2 directive.
 | S5-2 | Deduplicate utilities, UI/UX consistency pass | P3 | NOT STARTED |
 | S6-1 | Full regression, production build, deployment readiness checklist | P1 | VERIFIED for `stage3` (CI green; 61/61 e2e on a production build) |
 | S6-2 | Release S3-4 readiness: mirror verification on production + S1-5, exact rollback, compatibility, pre-flight | P0 | READY (awaiting approval after S1-5, B-11): [report](releases/2026-11-S3-4/READINESS.md) |
+
+## Stage 7: Product backlog (market review, 2026-11-10)
+
+From a review of AI tools sold to Gulf contractors (tender management, BOQ analysis, pricing,
+quote comparison, site reporting). Each item builds on a module OnGoing already has. AI items run
+through the cost-controlled AI runner (TD-07), and every AI output stays a draft until a person
+approves it. Order: after the Stage 5 performance items, build P-01, P-02 and P-03 first; they need
+no new infrastructure and serve bidding directly.
+
+| ID | Feature | Why it matters | Builds on | Pri | Status |
+|---|---|---|---|---|---|
+| P-01 | Tender requirements register: every requirement of an RFP (documents, certificates, forms, conditions) as a row with owner, due date, status (met / missing / in progress) and its supporting document. AI drafts the rows from the RFP; missing items and deadlines appear in the calendar | Fewer disqualified bids; one place to see what is still missing before submission | RFP import, Documents, Calendar, AI runner | P1 | NOT STARTED |
+| P-02 | Supplier quote comparison per RFQ: price, delivery time, validity, payment terms and notes side by side, with the lowest price marked and a recorded award decision (finance only) | Faster, documented award decisions | Procurement (RFQs, quotes) | P1 | NOT STARTED |
+| P-03 | BOQ checker: flags unpriced lines, missing or zero quantities, duplicate lines and unit inconsistencies; for finance users also lines priced below cost and margin outliers | Pricing mistakes caught before a proposal goes out | Project BOQ, proposal items, finance-only costs | P1 | NOT STARTED |
+| P-04 | Rate library: unit prices and costs from past proposals and supplier quotes, suggested while pricing, with a warning when a price is far from history (finance only) | Consistent, faster estimating | P-02, P-03 | P2 | NOT STARTED |
+| P-05 | Event-day and site reports: field updates (text and photos) turned into a structured daily report (progress, issues, crew, next steps) with an AI summary. A WhatsApp input channel would need the WhatsApp Business API (cost and approval) | Less reporting work for operations; regular client updates | Tasks, Documents, AI runner | P2 | NOT STARTED |
+| P-06 | Weekly owner digest: an email summary across projects (pipeline, approvals waiting, overdue work, receivables for finance users) | Owners stay informed without opening the app | Reports | P2 | NOT STARTED (needs an email-sending service decision) |
+| P-07 | Hijri dates: read Hijri dates in RFPs (today they are left empty) and show both calendars where useful | Saudi government tenders often state Hijri dates | RFP import | P3 | NOT STARTED |
+| P-08 | AI value report: requests, outcomes and estimated hours saved per feature, from the usage log | Shows the return on AI spend | AI usage log | P3 | NOT STARTED |
