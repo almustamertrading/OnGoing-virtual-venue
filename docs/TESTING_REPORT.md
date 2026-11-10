@@ -25,6 +25,9 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
 
 ## Test runs
 
+### 2026-11-10 · New proposals take the organisation default VAT
+- **End-to-end:** `E2E_NAMESPACE=proposals E2E_PORT=3205 npx playwright test e2e/proposals-workflow.spec.ts`. PASS, 8 logins + 6 of 6; test 1 now sets the organisation default VAT to 5% (service role), creates a proposal as sales and checks the VAT field and totals label show 5%; the default is restored to 15% after the spec.
+
 ### 2026-11-10 · Management summary (Workflow F)
 - **Database:** `npx supabase db reset` then `npx supabase test db`. PASS, 261 of 261 (new `management_summary.test.sql`: 31 — every section counted from live data as the caller; finance facts null without finance access; quote counts hidden without project finance access; a project manager outside a project sees none of its facts; only managers save briefs; a finance-based brief needs finance access; briefs readable by their author and organisation admins only; other organisation-level findings unchanged; author reviews own brief; other organisations refused).
 - **Bug caught by the existing suite before commit:** the first draft of the migration rewrote the findings insert policy and dropped its finance-only clause; `ai_findings_tender.test.sql` failed two assertions, the clause was restored and a new assertion pins it.

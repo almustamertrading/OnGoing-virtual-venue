@@ -30,8 +30,22 @@ async function cleanUp() {
   await db.from("proposal_templates").delete().eq("organization_id", organizationId).like("name", `${PREFIX}%`);
 }
 
-test.beforeAll(cleanUp);
-test.afterAll(cleanUp);
+/** The organisation's default VAT, which new proposals start with (15 is the seeded value). */
+async function setDefaultVat(rate: number) {
+  const env = localSupabase();
+  const db = createClient(env.url, env.serviceRoleKey, { auth: { persistSession: false, autoRefreshToken: false } });
+  const { error } = await db.from("organizations").update({ default_vat_rate: rate }).eq("id", readSeed().organizationId);
+  if (error) throw new Error(`default VAT update failed: ${error.message}`);
+}
+
+test.beforeAll(async () => {
+  await cleanUp();
+  await setDefaultVat(5);
+});
+test.afterAll(async () => {
+  await cleanUp();
+  await setDefaultVat(15);
+});
 
 test.describe("sales drafts and submits", () => {
   test.use({ storageState: authFile("sales") });
@@ -63,6 +77,9 @@ test.describe("sales drafts and submits", () => {
     await expect(page.getByText(`قالب: ${TEMPLATE}`)).toBeVisible();
     await expect(page.locator('input[value="المفهوم الإبداعي"]')).toBeVisible();
     await expect(page.locator('input[value="الميزانية التقديرية"]')).toBeVisible();
+    // It starts with the organisation's default VAT, not the built-in 15%.
+    await expect(page.getByLabel("نسبة ضريبة القيمة المضافة")).toHaveValue("5");
+    await expect(page.getByText("ض.ق.م (5%)")).toBeVisible();
   });
 
   test("2. drafts with AI, refuses an identical repeat, and keeps a version before replacing", async ({ page }) => {

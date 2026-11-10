@@ -66,6 +66,9 @@ export async function createProposal(orgId: string, _prev: ActionState, formData
   }
 
   const clientId = await resolveClient(supabase, orgId, optional(formData, "client_id"), optional(formData, "new_client"));
+  // New proposals start with the organisation's default VAT (Settings); it stays editable per proposal.
+  const { data: org } = await supabase.from("organizations").select("default_vat_rate").eq("id", orgId).maybeSingle();
+  const vatRate = Number(org?.default_vat_rate);
 
   const { data, error } = await supabase
     .from("proposals")
@@ -81,6 +84,7 @@ export async function createProposal(orgId: string, _prev: ActionState, formData
       brief: text(formData, "brief"),
       template_id: templateId,
       created_by: userId,
+      ...(Number.isFinite(vatRate) ? { vat_rate: vatRate } : {}),
     })
     .select("id")
     .single();
