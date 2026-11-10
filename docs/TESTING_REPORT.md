@@ -25,6 +25,10 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
 
 ## Test runs
 
+### 2026-11-10 · Workspace tabs: instant-navigation warnings (TD-09 correction)
+- **Check (development server, not a test suite):** a Playwright script signed in as the QA admin opened every workspace tab on `next dev` against the local stack, and the server log was searched for "uncached data". Before: tasks, pricing, finance and activity logged it (4 of 7 sampled tabs; the three with their own `loading.tsx` did not). After adding `loading.tsx` to the 13 tabs without one: 0 warnings across all 17 tabs and the summary, reports and projects pages. The venues tab never reaches network idle because its map requests external tiles the sandbox blocks; it was checked with a load-based wait.
+- **Regression:** full end-to-end suite rerun on a production build (see the Current state table).
+
 ### 2026-11-10 · New proposals take the organisation default VAT
 - **End-to-end:** `E2E_NAMESPACE=proposals E2E_PORT=3205 npx playwright test e2e/proposals-workflow.spec.ts`. PASS, 8 logins + 6 of 6; test 1 now sets the organisation default VAT to 5% (service role), creates a proposal as sales and checks the VAT field and totals label show 5%; the default is restored to 15% after the spec.
 

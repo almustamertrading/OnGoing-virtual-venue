@@ -105,7 +105,12 @@ Next.js reports this during development on every project tab.
 **Decision.** The project workspace layout sets `export const instant = false` (the documented opt-out),
 keeping today's behaviour. Streaming the header behind Suspense is a Stage 5 performance item.
 
-**Consequences.** No behaviour change; the development warning is gone, so new warnings stand out.
+**Consequences.** No behaviour change for the layout itself. Correction (2026-11-10): the warning was not gone.
+Development validates every page for instant navigation, and a tab page without its own Suspense boundary
+blocked on the shared, session-reading project context, so 4 of 7 sampled tabs still logged "uncached data during
+prerendering or a navigation". Every workspace tab now has its own `loading.tsx`, the documented streaming
+fix: switching tabs shows a placeholder at once, and a dev-server pass over all 17 tabs logs no such warning.
+Streaming the header itself remains part of S5-1.
 
 ## TD-10 · One shared AI findings layer for every workflow (2026-11-10)
 
