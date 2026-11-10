@@ -20,7 +20,10 @@ export type AiRunContext = {
  * (provider, model, tokens, latency, error) for every attempt. Uses the signed-in user's client,
  * so the log is written under RLS.
  */
-export async function runAi(supabase: SupabaseClient, ctx: AiRunContext, request: AiRequest): Promise<AiResult> {
+/** The AI result plus the usage-log row that records it (findings keep this id for traceability). */
+export type AiRunResult = AiResult & { logId: number };
+
+export async function runAi(supabase: SupabaseClient, ctx: AiRunContext, request: AiRequest): Promise<AiRunResult> {
   const choice = chooseProvider();
   if (!choice) throw new AiError("not_configured", aiErrorMessage("not_configured"));
   const limits = readAiLimits();
@@ -85,7 +88,7 @@ export async function runAi(supabase: SupabaseClient, ctx: AiRunContext, request
         cache_read_tokens: result.cacheReadTokens, latency_ms: Date.now() - started, finished_at: new Date().toISOString(),
       })
       .eq("id", row.id);
-    return result;
+    return { ...result, logId: row.id as number };
   } catch (e) {
     const err = e instanceof AiError ? e : new AiError("failed", aiErrorMessage("failed"));
     await supabase

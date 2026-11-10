@@ -107,3 +107,22 @@ keeping today's behaviour. Streaming the header behind Suspense is a Stage 5 per
 
 **Consequences.** No behaviour change; the development warning is gone, so new warnings stand out.
 
+## TD-10 · One shared AI findings layer for every workflow (2026-11-10)
+
+**Context.** Six AI workflows are planned (tender, BOQ, pricing, procurement, operations, management). Built
+separately, each would invent its own storage, review and audit, and AI output could slip into commercial
+data unreviewed.
+
+**Decision.** Every AI result is a row in `ai_findings`: workflow, kind, severity, the proposed content, its
+source (document, page, a short excerpt, and whether that excerpt was found on that page by
+`src/lib/doc-intel`), and the AI request that produced it (`ai_usage_log_id`). A trigger keeps provenance
+immutable, forces new rows to `proposed` and stamps the reviewer and time on accept/reject; reopening clears
+the decision. Finance-sensitive findings carry `finance_only` and are readable only with project finance
+access. A workflow turns an accepted finding into its own record in one transaction (first:
+`accept_finding_as_requirement`), and the finding keeps a pointer to what it became. One reusable panel shows
+findings, sources and decisions.
+
+**Consequences.** New workflows add a prompt, a schema, a parser and an accept function, not a new review
+system. The audit trail (what the AI said, where, which request, who decided) is uniform. Excerpt checking
+makes unverifiable claims visible instead of hiding them.
+

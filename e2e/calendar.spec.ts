@@ -308,7 +308,7 @@ test.describe("filters", () => {
 
     await project.selectOption("");
     await page.getByRole("checkbox", { name: "الأحداث", exact: true }).uncheck();
-    await expect(page).toHaveURL(/types=project,submission,milestone,task,phase,proposal,rfq,invoice$/);
+    await expect(page).toHaveURL(/types=project,submission,milestone,task,phase,proposal,rfq,invoice,requirement$/);
     await expect(event).toHaveCount(0);
     await expect(milestone).toBeVisible();
 

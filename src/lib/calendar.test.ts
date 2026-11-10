@@ -265,7 +265,7 @@ describe("URL state", () => {
     expect(calendarHref({ view: "week", date: "2027-03-10", project: P1, types: ["task", "event"] }))
       .toBe(`/calendar?view=week&date=2027-03-10&project=${P1}&types=event,task`);
     // Every source selected is the same as no filter; invalid values never reach the URL.
-    expect(calendarHref({ types: ["event", "project", "submission", "milestone", "task", "phase", "proposal", "rfq", "invoice"] })).toBe("/calendar");
+    expect(calendarHref({ types: ["event", "project", "submission", "milestone", "task", "phase", "proposal", "rfq", "invoice", "requirement"] })).toBe("/calendar");
     expect(calendarHref({ date: "2027-02-30", project: "javascript:alert(1)" })).toBe("/calendar");
   });
 });

@@ -18,6 +18,7 @@ export function WorkspaceTabs({
   const tabs = [
     { href: base, label: "Overview", key: "overview" },
     { href: `${base}/scope`, label: "Scope", key: "scope" },
+    { href: `${base}/requirements`, label: "Requirements", key: "requirements" },
     { href: `${base}/plan`, label: "Plan", key: "plan" },
     { href: `${base}/pricing`, label: "Pricing", key: "pricing" },
     { href: `${base}/procurement`, label: "Procurement", key: "procurement" },

@@ -20,7 +20,7 @@ export type CalendarView = (typeof CALENDAR_VIEWS)[number];
 
 export type FeedSource = CalendarFeedItem["source"];
 export const FEED_SOURCES: readonly FeedSource[] = [
-  "event", "project", "submission", "milestone", "task", "phase", "proposal", "rfq", "invoice",
+  "event", "project", "submission", "milestone", "task", "phase", "proposal", "rfq", "invoice", "requirement",
 ];
 
 export const EVENT_KINDS: readonly CalendarEventKind[] = [
@@ -495,6 +495,8 @@ export function feedItemHref(item: CalendarFeedItem): string | null {
       return project ? `/projects/${project}/procurement` : null;
     case "invoice":
       return project ? `/projects/${project}/finance` : null;
+    case "requirement":
+      return project ? `/projects/${project}/requirements` : null;
     default:
       return null;
   }
@@ -504,6 +506,7 @@ export function feedItemHref(item: CalendarFeedItem): string | null {
 export function isDone(item: CalendarFeedItem) {
   if (item.source === "task" || item.source === "milestone") return item.status === "done";
   if (item.source === "invoice") return item.status === "paid";
+  if (item.source === "requirement") return item.status === "met" || item.status === "not_applicable";
   return false;
 }
 

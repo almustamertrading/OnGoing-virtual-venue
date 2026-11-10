@@ -23,6 +23,7 @@ export const SOURCE_LABEL: Record<FeedSource, string> = {
   proposal: "آخر موعد للعرض",
   rfq: "آخر موعد لطلب التسعير",
   invoice: "استحقاق فاتورة",
+  requirement: "متطلب عطاء",
 };
 
 /** Plural labels for the source filter. */
@@ -36,6 +37,7 @@ export const SOURCE_FILTER_LABEL: Record<FeedSource, string> = {
   proposal: "العروض",
   rfq: "طلبات التسعير",
   invoice: "الفواتير",
+  requirement: "متطلبات العطاء",
 };
 
 export type Swatch = {
@@ -66,6 +68,7 @@ export const SOURCE_STYLE: Record<Exclude<FeedSource, "event">, Swatch> = {
   proposal: { chip: "border-s-4 border-fuchsia-500 bg-fuchsia-500/10 text-fuchsia-100 hover:bg-fuchsia-500/20", dot: "bg-fuchsia-500" },
   rfq: { chip: "border-s-4 border-cyan-400 bg-cyan-400/10 text-cyan-100 hover:bg-cyan-400/20", dot: "bg-cyan-400" },
   invoice: { chip: "border-s-4 border-lime-400 bg-lime-400/10 text-lime-100 hover:bg-lime-400/20", dot: "bg-lime-400" },
+  requirement: { chip: "border-s-4 border-rose-400 bg-rose-400/10 text-rose-100 hover:bg-rose-400/20", dot: "bg-rose-400" },
 };
 
 const isKind = (k: string): k is CalendarEventKind => k in EVENT_KIND_LABEL;

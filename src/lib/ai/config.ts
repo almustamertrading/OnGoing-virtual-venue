@@ -15,8 +15,8 @@ export type AiLimits = {
 };
 
 const DEFAULTS: AiLimits = {
-  perHour: { proposal_draft: 10, rfp_extract: 10 },
-  perDay: { proposal_draft: 40, rfp_extract: 30 },
+  perHour: { proposal_draft: 10, rfp_extract: 10, tender_analysis: 10 },
+  perDay: { proposal_draft: 40, rfp_extract: 30, tender_analysis: 30 },
   orgMonthlyTokens: 3_000_000,
   duplicateWindowMinutes: 10,
   timeoutMs: 55_000,
@@ -39,10 +39,12 @@ export function readAiLimits(env: Env = process.env): AiLimits {
     perHour: {
       proposal_draft: positiveInt(env.AI_LIMIT_PROPOSAL_DRAFT_PER_HOUR, DEFAULTS.perHour.proposal_draft),
       rfp_extract: positiveInt(env.AI_LIMIT_RFP_EXTRACT_PER_HOUR, DEFAULTS.perHour.rfp_extract),
+      tender_analysis: positiveInt(env.AI_LIMIT_TENDER_ANALYSIS_PER_HOUR, DEFAULTS.perHour.tender_analysis),
     },
     perDay: {
       proposal_draft: positiveInt(env.AI_LIMIT_PROPOSAL_DRAFT_PER_DAY, DEFAULTS.perDay.proposal_draft),
       rfp_extract: positiveInt(env.AI_LIMIT_RFP_EXTRACT_PER_DAY, DEFAULTS.perDay.rfp_extract),
+      tender_analysis: positiveInt(env.AI_LIMIT_TENDER_ANALYSIS_PER_DAY, DEFAULTS.perDay.tender_analysis),
     },
     orgMonthlyTokens: positiveInt(env.AI_ORG_MONTHLY_TOKEN_LIMIT, DEFAULTS.orgMonthlyTokens),
     duplicateWindowMinutes: positiveInt(env.AI_DUPLICATE_WINDOW_MINUTES, DEFAULTS.duplicateWindowMinutes),

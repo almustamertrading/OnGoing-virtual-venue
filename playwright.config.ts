@@ -43,6 +43,8 @@ export default defineConfig({
       AI_PROVIDER: "mock",
       AI_LIMIT_PROPOSAL_DRAFT_PER_HOUR: "500",
       AI_LIMIT_PROPOSAL_DRAFT_PER_DAY: "2000",
+      AI_LIMIT_TENDER_ANALYSIS_PER_HOUR: "500",
+      AI_LIMIT_TENDER_ANALYSIS_PER_DAY: "2000",
     },
   },
 });

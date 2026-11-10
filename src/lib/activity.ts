@@ -12,6 +12,7 @@ const NOUN: Record<string, string> = {
   features: "map shape",
   comments: "a map comment",
   panoramas: "360° photo",
+  project_requirements: "tender requirement",
 };
 
 const FIELD: Record<string, string> = {

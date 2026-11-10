@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   CalendarClock,
+  ClipboardCheck,
   FileText,
   Flag,
   FolderKanban,
@@ -28,6 +29,7 @@ export const SOURCE_ICON: Record<FeedSource, LucideIcon> = {
   proposal: FileText,
   rfq: PackageSearch,
   invoice: Receipt,
+  requirement: ClipboardCheck,
 };
 
 /** Accessible name of an item: title, type, when, then the project code or proposal reference. */

@@ -25,6 +25,11 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
 
 ## Test runs
 
+### 2026-11-10 · Shared AI findings + tender requirements register (Workflow A)
+- **Database:** `npx supabase test db`. PASS, 192 of 192 (new `ai_findings_tender.test.sql`: 32 — proposals only, provenance immutable, reviewer stamped by the database, decide once / reopen, finance-only gating, owner and evidence rules, calendar feed, activity log, document deletion not blocked).
+- **Unit:** `npx vitest run`. PASS, 270 of 270 (new: excerpt location and page correction with Arabic normalisation, page budgeting, tender output parsing and verification, mock output, compliance arithmetic).
+- **End-to-end:** `E2E_NAMESPACE=requirements E2E_PORT=3207 npx playwright test e2e/requirements.spec.ts`. PASS, 5 of 5 on a real three-page text PDF with the mock AI: analysis, verified page sources, accept to register, reject with note, owner/evidence/status and compliance, calendar entry linking back, viewer read-only.
+
 ### 2026-11-09 · Stage 3 + Proposal Phase 2 integration on `stage3` (local)
 - **Migrations from scratch:** `npx supabase db reset`. PASS: all 12 migrations applied in order, including `20261109180000_stage3_modules` and `20261109190000_proposals_phase2_ai`.
 - **Database tests:** `npx supabase test db`. PASS, 158 of 158 (access control 53, Stage 3 46, Proposal Phase 2 59), on the freshly reset database; then 160 of 160 after adding two storage-policy assertions (an uploader sees only their own unclaimed upload).

@@ -504,7 +504,7 @@ export type CalendarEventRow = {
 
 /** One row of public.calendar_feed(org, range_start, range_end). */
 export type CalendarFeedItem = {
-  source: "event" | "project" | "submission" | "milestone" | "task" | "phase" | "proposal" | "rfq" | "invoice";
+  source: "event" | "project" | "submission" | "milestone" | "task" | "phase" | "proposal" | "rfq" | "invoice" | "requirement";
   source_id: string;
   project_id: string | null;
   /** Project code (or proposal reference) for display. */
@@ -565,3 +565,60 @@ export type Profile = {
 };
 
 export type AnyGeometry = Geometry;
+
+// ---------------- Shared AI findings + tender register (migration 20261110100000) ----------------
+
+export type AiFindingWorkflow = "tender" | "boq" | "pricing" | "procurement" | "operations" | "management";
+export type AiFindingStatus = "proposed" | "accepted" | "rejected";
+
+/** An AI result awaiting or after human review, with its source in a document. */
+export type AiFindingRow = {
+  id: string;
+  organization_id: string;
+  project_id: string | null;
+  document_id: string | null;
+  workflow: AiFindingWorkflow;
+  kind: string;
+  title: string;
+  detail: string;
+  severity: "info" | "warning" | "critical";
+  finance_only: boolean;
+  status: AiFindingStatus;
+  source_page: number | null;
+  source_excerpt: string;
+  source_verified: boolean;
+  data: Record<string, unknown>;
+  ai_usage_log_id: number | null;
+  target_table: string | null;
+  target_id: string | null;
+  review_note: string;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  created_by: string | null;
+  created_at: string;
+};
+
+export type RequirementCategory =
+  | "document" | "certificate" | "bond" | "insurance" | "form" | "site_visit" | "deadline" | "eligibility" | "technical" | "other";
+export type RequirementStatus = "open" | "in_progress" | "met" | "not_applicable";
+
+export type ProjectRequirementRow = {
+  id: string;
+  project_id: string;
+  organization_id: string;
+  title: string;
+  category: RequirementCategory;
+  details: string;
+  mandatory: boolean;
+  status: RequirementStatus;
+  owner_id: string | null;
+  due_date: string | null;
+  document_id: string | null;
+  finding_id: string | null;
+  source_ref: string;
+  sort_order: number;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+};
+

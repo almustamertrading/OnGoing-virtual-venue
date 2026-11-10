@@ -6,6 +6,15 @@ Priority: P1 (next), P2 (soon), P3 (later). Complexity: S / M / L as defined in 
 
 Classification: **IMPLEMENTED** · **PARTIAL** · **MISSING** · **NOT RELEVANT** · **RESEARCH** (requires further research).
 
+## Status updates since the first comparison
+
+| Date | Capability | Was | Now | Evidence |
+|---|---|---|---|---|
+| 2026-11-10 | Source traceability, findings with human approval, document intelligence (shared) | MISSING / PARTIAL | IMPLEMENTED | `ai_findings` table and guard, `src/lib/doc-intel`, findings panel; pgTAP 32 |
+| 2026-11-10 | A: requirement and deadline extraction, mandatory document checklist, requirements register, missing-document detection, contradiction detection, clarification drafts, source references, human approval | MISSING / PARTIAL | IMPLEMENTED (increment 1) | Requirements tab; e2e `requirements.spec.ts` |
+| 2026-11-10 | A: compliance matrix; link to Proposal Builder | PARTIAL | PARTIAL (register compliance % done; proposal section next) | — |
+| 2026-11-10 | A: document classification, addendum comparison | MISSING | MISSING (next increments) | — |
+
 ## A. Tender and RFP intelligence
 
 | Capability | Reference | Existing OnGoing (evidence in code) | Gap | Class | Pri | Cx |
