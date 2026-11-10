@@ -2,11 +2,15 @@
 
 import { useActionState, useTransition } from "react";
 import { Trash2 } from "lucide-react";
+import { BoqCheckPanel } from "@/components/boq-check-panel";
 import { formatMoney } from "@/lib/format";
 import type { BoqItemRow } from "@/lib/types";
 import type { ActionState } from "../../../actions";
 import { addBoqItem, deleteBoqItem, updateBoqItem } from "../work-actions";
 import { boqTotal, lineTotal } from "@/lib/money";
+
+/** Row ids, so the BOQ checker's findings link to their rows. */
+const ROW_ANCHOR = "boq-item-";
 
 const n = (v: string) => {
   const raw = v.replace(/[, ]/g, "").trim();
@@ -40,6 +44,9 @@ export function PricingTable({
       </div>
       <p className="mb-4 text-xs text-slate-500">الكميات من الكراسة. أدخل سعر الوحدة ويُحسب الإجمالي تلقائيًا.</p>
 
+      {/* The project BOQ has no internal costs, so no finance checks. */}
+      <BoqCheckPanel lines={items} finance={false} anchorPrefix={ROW_ANCHOR} />
+
       {items.length === 0 ? (
         <p className="mb-4 text-sm text-slate-500">لا توجد بنود بعد.</p>
       ) : (
@@ -57,7 +64,7 @@ export function PricingTable({
             </thead>
             <tbody className="divide-y divide-slate-800">
               {items.map((it) => (
-                <tr key={it.id} className="align-top">
+                <tr key={it.id} id={`${ROW_ANCHOR}${it.id}`} className="align-top">
                   <td className="px-2 py-2 text-slate-100">{it.description}</td>
                   <td className="px-2 py-2 text-slate-400">{it.unit || "—"}</td>
                   <td className="px-2 py-2 text-slate-300">

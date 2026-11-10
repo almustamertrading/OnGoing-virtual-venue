@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useTransition } from "react";
+import { useActionState, useMemo, useTransition } from "react";
 import { ChevronRight, Download, FileText, Lock, Plus, Sparkles, Trash2, Wand2 } from "lucide-react";
 import { AppHeader } from "@/components/app-header";
+import { BoqCheckPanel } from "@/components/boq-check-panel";
 import type { AiStatus } from "@/lib/ai/status";
 import { formatMoney } from "@/lib/format";
 import { PROPOSAL_STATUS, PROPOSAL_TYPE } from "@/lib/proposal-meta";
@@ -18,6 +19,9 @@ import {
 } from "../actions";
 import { HistoryPanel } from "./history-panel";
 import { WorkflowPanel } from "./workflow-panel";
+
+/** Item row ids, so the BOQ checker's findings link to their rows. */
+const ITEM_ANCHOR = "proposal-item-";
 
 export function ProposalWorkspace({
   email, companyName, currency, canEdit, isManager, canDelete, canSeeCost, proposal, sections, items, client,
@@ -52,6 +56,20 @@ export function ProposalWorkspace({
   const editable = canEdit && isEditable(proposal.status);
 
   const { subtotal, vat, grand, margin, marginPct } = proposalTotals(items, proposal.vat_rate);
+  // The checker gets internal costs only when the viewer may see them (the page sends 0 otherwise).
+  const boqLines = useMemo(
+    () =>
+      items.map((it) => ({
+        id: it.id,
+        description: it.description,
+        unit: it.unit,
+        quantity: it.quantity,
+        unit_price: it.unit_price,
+        is_optional: it.is_optional,
+        unit_cost: canSeeCost ? it.unit_cost : undefined,
+      })),
+    [items, canSeeCost],
+  );
 
   return (
     <>
@@ -137,6 +155,8 @@ export function ProposalWorkspace({
               ) : proposal.vat_rate}%
             </div>
           </div>
+
+          <BoqCheckPanel lines={boqLines} finance={canSeeCost} anchorPrefix={ITEM_ANCHOR} />
 
           {items.length > 0 && (
             <div className="-mx-2 overflow-x-auto">
@@ -295,7 +315,7 @@ function ItemRow({ item, currency, canEdit, canSeeCost }: { item: ProposalItemRo
   const total = lineTotal(item.quantity, item.unit_price) ?? 0;
   const cell = "w-20 rounded border border-slate-700 bg-slate-900 px-1.5 py-1 text-xs";
   return (
-    <tr className={item.is_optional ? "text-slate-500" : "text-slate-200"}>
+    <tr id={`${ITEM_ANCHOR}${item.id}`} className={item.is_optional ? "text-slate-500" : "text-slate-200"}>
       <td className="px-2 py-2">
         {canEdit ? <input defaultValue={item.description} aria-label="البند" onBlur={(e) => e.target.value.trim() && e.target.value !== item.description && start(() => updateItem(item.id, { description: e.target.value.trim() }))} className="w-44 rounded border border-slate-700 bg-slate-900 px-1.5 py-1 text-xs" /> : item.description}
         {item.is_optional && <span className="ms-1 text-[10px] text-slate-500">(اختياري)</span>}
