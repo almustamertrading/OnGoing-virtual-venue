@@ -1,10 +1,11 @@
+import { todayIso } from "@/lib/format";
 import { getProjectContext } from "@/lib/project";
 import type { QuoteRow, RfqRow, SupplierRow } from "@/lib/types";
 import { ProcurementBoard } from "./procurement-board";
 
 export default async function ProcurementPage({ params }: PageProps<"/projects/[projectId]/procurement">) {
   const { projectId } = await params;
-  const { supabase, canEdit, organization, access, orgRole, canSeeFinance } = await getProjectContext(projectId);
+  const { supabase, canEdit, organization, access, orgRole, canSeeFinance, project, members } = await getProjectContext(projectId);
 
   const [{ data: suppliers }, { data: rfqs }, { data: quotes }] = await Promise.all([
     organization
@@ -29,6 +30,9 @@ export default async function ProcurementPage({ params }: PageProps<"/projects/[
       suppliers={(suppliers as SupplierRow[]) ?? []}
       rfqs={(rfqs as RfqRow[]) ?? []}
       quotes={(quotes as QuoteRow[]) ?? []}
+      eventStart={project.start_date}
+      today={todayIso()}
+      people={Object.fromEntries(members.map((m) => [m.user_id, m.email]))}
     />
   );
 }

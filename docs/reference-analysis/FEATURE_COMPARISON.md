@@ -14,6 +14,8 @@ Classification: **IMPLEMENTED** · **PARTIAL** · **MISSING** · **NOT RELEVANT*
 | 2026-11-10 | A: requirement and deadline extraction, mandatory document checklist, requirements register, missing-document detection, contradiction detection, clarification drafts, source references, human approval | MISSING / PARTIAL | IMPLEMENTED (increment 1) | Requirements tab; e2e `requirements.spec.ts` |
 | 2026-11-10 | A: compliance matrix; link to Proposal Builder | PARTIAL | PARTIAL (register compliance % done; proposal section next) | — |
 | 2026-11-10 | A: document classification, addendum comparison | MISSING | MISSING (next increments) | — |
+| 2026-11-10 | D: price comparison, specification/exclusions, lead time and validity, missing information, recommendation with reasons, approval (reasoned human award, never automatic) | PARTIAL / MISSING | IMPLEMENTED (increment 1) | Procurement comparison view; pgTAP 16; e2e `quote-comparison.spec.ts` |
+| 2026-11-10 | D: quote document ingestion (AI), item-to-quotation matching | MISSING | MISSING (next) | — |
 
 ## A. Tender and RFP intelligence
 

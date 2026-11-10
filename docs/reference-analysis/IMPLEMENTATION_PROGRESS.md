@@ -10,6 +10,10 @@ Updated as work lands. "Verified" means automated tests pass and the workflow wa
 | 2026-11-10 | M1 BOQ checker (Workflow B rules) | In progress (parallel worktree) | — |
 | 2026-11-10 | S-1 Document intelligence and source-traceable findings | **Verified** | Migration `20261110100000_ai_findings_tender`; `src/lib/doc-intel/*`; `src/components/ai-findings-panel.tsx`; pgTAP `ai_findings_tender.test.sql` (32); unit `doc-intel/text.test.ts` |
 | 2026-11-10 | M2 Tender intelligence and requirements register (Workflow A), increment 1 | **Verified** | Project tab "Requirements": AI analysis of a tender PDF page by page (requirements, mandatory documents, bonds, insurance, site visits, deadlines, eligibility, contradictions, clarification questions), every finding with page, excerpt and a verified-source flag; accept/reject with reviewer and note; accepted findings become register rows (owner, due date, status, evidence document, source); compliance %, missing evidence, overdue; due dates in the calendar. e2e `requirements.spec.ts` 5/5 with the mock AI on a real PDF; unit `tender.test.ts` |
+| 2026-11-10 | M3 Supplier quote comparison and award approval (Workflow D), increment 1 | **Verified** | Migration `20261110110000_quote_comparison` (scope basis, exclusions, validity, lead time, payment terms; award stamped by the database with a required reason; one award per RFQ; atomic `award_quote`); `src/lib/quote-compare.ts` (flags: lowest, expired / expiring validity, late delivery vs event start, missing price / validity / lead time / terms / scope, exclusions, mixed bases; labelled recommendation that never awards); procurement comparison view with details editor and reasoned award. pgTAP `quotes_award.test.sql` (16), unit `quote-compare.test.ts` (7), e2e `quote-comparison.spec.ts` 3/3 |
+
+## Release pre-flight notes (future releases)
+- Before applying `20261110110000_quote_comparison` in production: check that no RFQ has two accepted quotes (the one-award index would fail): `select rfq_id from quotes where status = 'accepted' group by rfq_id having count(*) > 1;`
 
 ## Blockers
 | Item | Blocker | Workaround |

@@ -1,13 +1,14 @@
 "use client";
 
 import { useActionState, useState, useTransition } from "react";
-import { Check, ChevronDown, Lock, Star, Trash2 } from "lucide-react";
-import { formatDate, formatMoney } from "@/lib/format";
+import { Award, ChevronDown, Lock, Pencil, Scale, Star, Trash2 } from "lucide-react";
+import { formatDate, formatDateTime, formatMoney } from "@/lib/format";
+import { compareQuotes, SCOPE_BASIS_LABEL, type ScopeBasis } from "@/lib/quote-compare";
 import type { QuoteRow, RfqRow, RfqStatus, SupplierRow } from "@/lib/types";
 import type { ActionState } from "../../../actions";
 import {
-  acceptQuote, addQuote, addRfq, addSupplier,
-  deleteQuote, deleteRfq, deleteSupplier, updateRfq,
+  addQuote, addRfq, addSupplier, awardQuote,
+  deleteQuote, deleteRfq, deleteSupplier, updateQuoteDetails, updateRfq,
 } from "./actions";
 
 const RFQ_STATUS: Record<RfqStatus, { label: string; tone: string }> = {
@@ -29,6 +30,7 @@ function Stars({ n }: { n: number }) {
 
 export function ProcurementBoard({
   projectId, organizationId, currency, canEdit, canSeeQuotes, canManageSuppliers, canDeleteSuppliers, suppliers, rfqs, quotes,
+  eventStart, today, people,
 }: {
   projectId: string;
   organizationId: string;
@@ -42,6 +44,11 @@ export function ProcurementBoard({
   suppliers: SupplierRow[];
   rfqs: RfqRow[];
   quotes: QuoteRow[];
+  /** Project start: deliveries arriving later are flagged. */
+  eventStart: string | null;
+  today: string;
+  /** User id → email, for award records. */
+  people: Record<string, string>;
 }) {
   const [showSuppliers, setShowSuppliers] = useState(false);
   const supplierName = (q: QuoteRow) =>
@@ -71,6 +78,9 @@ export function ProcurementBoard({
                 suppliers={suppliers}
                 quotes={quotes.filter((q) => q.rfq_id === r.id)}
                 supplierName={supplierName}
+                eventStart={eventStart}
+                today={today}
+                people={people}
               />
             ))}
           </div>
@@ -130,7 +140,7 @@ function RfqForm({ projectId, resetKey }: { projectId: string; resetKey: number 
 }
 
 function RfqCard({
-  rfq, projectId, currency, canEdit, canSeeQuotes, suppliers, quotes, supplierName,
+  rfq, projectId, currency, canEdit, canSeeQuotes, suppliers, quotes, supplierName, eventStart, today, people,
 }: {
   rfq: RfqRow;
   projectId: string;
@@ -140,13 +150,24 @@ function RfqCard({
   suppliers: SupplierRow[];
   quotes: QuoteRow[];
   supplierName: (q: QuoteRow) => string;
+  eventStart: string | null;
+  today: string;
+  people: Record<string, string>;
 }) {
   const [busy, start] = useTransition();
-  const priced = quotes.filter((q) => q.amount != null && q.status !== "rejected");
-  const lowest = priced.length ? Math.min(...priced.map((q) => q.amount!)) : null;
   const st = RFQ_STATUS[rfq.status];
   // Managing quotes also awards the RFQ, so it needs both finance and project edit rights.
   const canManageQuotes = canSeeQuotes && canEdit;
+  const comparison = compareQuotes(
+    quotes.map((q) => ({
+      id: q.id, supplier: supplierName(q), amount: q.amount === null ? null : Number(q.amount), status: q.status,
+      scope_basis: q.scope_basis, exclusions: q.exclusions, valid_until: q.valid_until, lead_time_days: q.lead_time_days,
+      payment_terms: q.payment_terms,
+    })),
+    { today, eventStart },
+  );
+  const awarded = quotes.find((q) => q.status === "accepted");
+  const recommended = comparison.recommendation.quoteId ? quotes.find((q) => q.id === comparison.recommendation.quoteId) : undefined;
 
   return (
     <div className="card p-4" data-testid="rfq">
@@ -178,48 +199,188 @@ function RfqCard({
       )}
 
       {canSeeQuotes && quotes.length > 0 && (
-        <table className="w-full text-right text-sm">
-          <thead>
-            <tr className="border-b border-slate-800 text-xs text-slate-500">
-              <th className="px-1 py-1 font-medium">المورّد</th>
-              <th className="px-1 py-1 font-medium">السعر</th>
-              <th className="px-1 py-1 font-medium">الحالة</th>
-              {canManageQuotes && <th className="px-1 py-1" />}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-800/60">
-            {quotes.map((q) => {
-              const isLow = q.amount != null && q.amount === lowest && q.status !== "rejected";
-              return (
-                <tr key={q.id} className={q.status === "rejected" ? "text-slate-600" : "text-slate-200"}>
-                  <td className="px-1 py-1.5">
-                    {supplierName(q)}
-                    {isLow && <span className="ms-1 rounded bg-emerald-500/15 px-1 text-[10px] text-emerald-300">الأقل</span>}
-                  </td>
-                  <td className={`px-1 py-1.5 ${q.status === "accepted" ? "font-bold text-emerald-300" : ""}`}>
-                    {q.amount != null ? formatMoney(q.amount, currency) : "—"}
-                  </td>
-                  <td className="px-1 py-1.5 text-xs">
-                    {q.status === "accepted" ? <span className="text-emerald-400">معتمد ✓</span> : q.status === "rejected" ? "مرفوض" : "مستلم"}
-                  </td>
-                  {canManageQuotes && (
-                    <td className="px-1 py-1.5">
-                      <div className="flex items-center justify-end gap-2">
-                        {q.status !== "accepted" && (
-                          <button type="button" aria-label={`اعتماد ${supplierName(q)}`} disabled={busy} onClick={() => start(() => acceptQuote(rfq.id, q.id))} className="text-slate-500 hover:text-emerald-400"><Check size={15} /></button>
-                        )}
-                        <DeleteBtn onClick={() => deleteQuote(q.id)} label={`حذف عرض ${supplierName(q)}`} />
-                      </div>
-                    </td>
-                  )}
+        <div className="space-y-3" data-testid="quote-comparison">
+          {awarded ? (
+            <p className="rounded-lg border border-emerald-900/60 bg-emerald-950/30 p-3 text-sm text-emerald-200" data-testid="award-record">
+              <Award size={14} className="me-1 inline" aria-hidden />
+              رُسّي على <strong>{supplierName(awarded)}</strong>
+              {awarded.awarded_by && <> بواسطة {people[awarded.awarded_by] ?? "عضو"}</>}
+              {awarded.awarded_at && <> · <bdi>{formatDateTime(awarded.awarded_at)}</bdi></>}
+              {awarded.award_reason && <span className="mt-1 block text-xs text-emerald-300/90">السبب: {awarded.award_reason}</span>}
+            </p>
+          ) : (
+            <div className="rounded-lg border border-sky-900/60 bg-sky-950/20 p-3 text-sm" data-testid="recommendation">
+              <p className="mb-1 flex items-center gap-1 text-xs font-medium text-sky-200">
+                <Scale size={13} aria-hidden /> توصية آلية من البيانات المُدخلة فقط · الترسية قرار المخوّل
+              </p>
+              <p className="text-slate-200">{recommended ? <>الأنسب: <strong>{supplierName(recommended)}</strong></> : "لا توصية حاليًا"}</p>
+              <ul className="mt-1 list-disc space-y-0.5 pe-4 ps-5 text-xs text-slate-400">
+                {comparison.recommendation.reasons.map((r) => <li key={r}>{r}</li>)}
+                {comparison.recommendation.caveats.map((c) => <li key={c} className="text-amber-300/90">تنبيه: {c}</li>)}
+              </ul>
+            </div>
+          )}
+          {comparison.notes.map((n) => <p key={n} className="text-xs text-amber-300">{n}</p>)}
+
+          <div className="-mx-1 overflow-x-auto">
+            <table className="w-full min-w-[720px] text-right text-sm">
+              <thead>
+                <tr className="border-b border-slate-800 text-xs text-slate-500">
+                  <th className="px-1 py-1 font-medium">المورّد</th>
+                  <th className="px-1 py-1 font-medium">السعر</th>
+                  <th className="px-1 py-1 font-medium">الأساس</th>
+                  <th className="px-1 py-1 font-medium">الصلاحية</th>
+                  <th className="px-1 py-1 font-medium">التوريد</th>
+                  <th className="px-1 py-1 font-medium">الدفع</th>
+                  <th className="px-1 py-1 font-medium">ملاحظات</th>
+                  {canManageQuotes && <th className="px-1 py-1" />}
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60">
+                {comparison.rows.map((row) => {
+                  const q = quotes.find((x) => x.id === row.quote.id)!;
+                  return (
+                    <QuoteComparisonRow
+                      key={q.id}
+                      quote={q}
+                      name={supplierName(q)}
+                      row={row}
+                      currency={currency}
+                      canManage={canManageQuotes}
+                      onDelete={() => deleteQuote(q.id)}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
       )}
 
       {canManageQuotes && <QuoteForm projectId={projectId} rfqId={rfq.id} suppliers={suppliers} resetKey={quotes.length} />}
+    </div>
+  );
+}
+
+const FLAG_TONE = { critical: "bg-red-950 text-red-200", warning: "bg-amber-950 text-amber-200", info: "bg-slate-800 text-slate-300" } as const;
+
+function QuoteComparisonRow({
+  quote, name, row, currency, canManage, onDelete,
+}: {
+  quote: QuoteRow;
+  name: string;
+  row: ReturnType<typeof compareQuotes>["rows"][number];
+  currency: string;
+  canManage: boolean;
+  onDelete: () => void;
+}) {
+  const [mode, setMode] = useState<"none" | "edit" | "award">("none");
+  const rejected = quote.status === "rejected";
+  const accepted = quote.status === "accepted";
+  const cols = canManage ? 8 : 7;
+  return (
+    <>
+      <tr className={rejected ? "text-slate-600" : "text-slate-200"} data-testid="quote-row">
+        <td className="px-1 py-1.5">
+          {name}
+          {row.lowest && <span className="ms-1 rounded bg-emerald-500/15 px-1 text-[10px] text-emerald-300">الأقل</span>}
+          {accepted && <span className="ms-1 rounded bg-emerald-600/30 px-1 text-[10px] text-emerald-200">مُرسّى</span>}
+          {rejected && <span className="ms-1 text-[10px]">(مستبعد)</span>}
+        </td>
+        <td className={`px-1 py-1.5 ${accepted ? "font-bold text-emerald-300" : ""}`}>
+          {quote.amount !== null ? formatMoney(Number(quote.amount), currency) : "—"}
+          {row.abovePct !== null && <span className="ms-1 text-[10px] text-slate-500">+{row.abovePct}%</span>}
+        </td>
+        <td className="px-1 py-1.5 text-xs">{SCOPE_BASIS_LABEL[quote.scope_basis]}</td>
+        <td className="px-1 py-1.5 text-xs">{quote.valid_until ? <bdi>{formatDate(quote.valid_until)}</bdi> : "—"}</td>
+        <td className="px-1 py-1.5 text-xs">{quote.lead_time_days !== null ? <>{quote.lead_time_days} يوم{row.deliveryDate && <span className="block text-[10px] text-slate-500"><bdi>{formatDate(row.deliveryDate)}</bdi></span>}</> : "—"}</td>
+        <td className="px-1 py-1.5 text-xs">{quote.payment_terms || "—"}</td>
+        <td className="px-1 py-1.5">
+          <div className="flex flex-wrap gap-1">
+            {row.flags.map((f) => <span key={f.code} className={`rounded px-1 text-[10px] ${FLAG_TONE[f.severity]}`}>{f.message}</span>)}
+          </div>
+        </td>
+        {canManage && (
+          <td className="px-1 py-1.5">
+            <div className="flex items-center justify-end gap-2">
+              <button type="button" aria-label={`تفاصيل عرض ${name}`} onClick={() => setMode(mode === "edit" ? "none" : "edit")} className="text-slate-500 hover:text-white"><Pencil size={14} /></button>
+              {!accepted && quote.amount !== null && (
+                <button type="button" aria-label={`ترسية على ${name}`} onClick={() => setMode(mode === "award" ? "none" : "award")} className="text-slate-500 hover:text-emerald-400"><Award size={15} /></button>
+              )}
+              <DeleteBtn onClick={onDelete} label={`حذف عرض ${name}`} />
+            </div>
+          </td>
+        )}
+      </tr>
+      {mode !== "none" && (
+        <tr>
+          <td colSpan={cols} className="bg-slate-950/60 px-2 py-3">
+            {mode === "edit" ? <QuoteDetailsForm quote={quote} name={name} onDone={() => setMode("none")} /> : <AwardForm quote={quote} name={name} onDone={() => setMode("none")} />}
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+function QuoteDetailsForm({ quote, name, onDone }: { quote: QuoteRow; name: string; onDone: () => void }) {
+  const [busy, start] = useTransition();
+  const [error, setError] = useState<string | null>(null);
+  const submit = (f: FormData) =>
+    start(async () => {
+      setError(null);
+      const lead = String(f.get("lead_time_days") ?? "").trim();
+      const amount = String(f.get("amount") ?? "").replace(/[, ]/g, "").trim();
+      const r = await updateQuoteDetails(quote.id, {
+        amount: amount ? Number(amount) : null,
+        scope_basis: String(f.get("scope_basis")) as ScopeBasis,
+        exclusions: String(f.get("exclusions") ?? ""),
+        valid_until: String(f.get("valid_until") ?? "") || null,
+        lead_time_days: lead ? Number(lead) : null,
+        payment_terms: String(f.get("payment_terms") ?? ""),
+      });
+      if (r.error) setError(r.error);
+      else onDone();
+    });
+  return (
+    <form action={submit} className="grid gap-2 sm:grid-cols-3" aria-label={`تفاصيل عرض ${name}`}>
+      <label className="text-xs text-slate-400">السعر<input name="amount" inputMode="decimal" defaultValue={quote.amount ?? ""} className="field mt-1" /></label>
+      <label className="text-xs text-slate-400">أساس التسعير
+        <select name="scope_basis" defaultValue={quote.scope_basis} className="field mt-1">
+          {(Object.keys(SCOPE_BASIS_LABEL) as ScopeBasis[]).map((b) => <option key={b} value={b}>{SCOPE_BASIS_LABEL[b]}</option>)}
+        </select>
+      </label>
+      <label className="text-xs text-slate-400">صالح حتى<input name="valid_until" type="date" defaultValue={quote.valid_until ?? ""} className="field mt-1" /></label>
+      <label className="text-xs text-slate-400">مدة التوريد (أيام)<input name="lead_time_days" type="number" min={0} max={730} defaultValue={quote.lead_time_days ?? ""} className="field mt-1" /></label>
+      <label className="text-xs text-slate-400">شروط الدفع<input name="payment_terms" maxLength={300} defaultValue={quote.payment_terms} className="field mt-1" /></label>
+      <label className="text-xs text-slate-400 sm:col-span-3">الاستثناءات (ما لا يشمله العرض)<textarea name="exclusions" rows={2} maxLength={2000} defaultValue={quote.exclusions} className="field mt-1" /></label>
+      <div className="flex gap-2 sm:col-span-3">
+        <button className="btn-primary" disabled={busy}>{busy ? "…" : "حفظ التفاصيل"}</button>
+        <button type="button" className="btn-ghost" onClick={onDone}>إلغاء</button>
+      </div>
+      {error && <p role="alert" className="text-sm text-red-400 sm:col-span-3">{error}</p>}
+    </form>
+  );
+}
+
+function AwardForm({ quote, name, onDone }: { quote: QuoteRow; name: string; onDone: () => void }) {
+  const [busy, start] = useTransition();
+  const [reason, setReason] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  return (
+    <div className="space-y-2" role="group" aria-label={`ترسية على ${name}`}>
+      <p className="text-xs text-slate-300">ترسية الطلب على <strong>{name}</strong>. تُستبعد باقي العروض ويُسجَّل اسمك ووقت القرار وسببه.</p>
+      <label className="sr-only" htmlFor={`award-${quote.id}`}>سبب الترسية</label>
+      <input id={`award-${quote.id}`} value={reason} onChange={(e) => setReason(e.target.value)} maxLength={1000}
+        placeholder="سبب الترسية (إلزامي)، مثال: أقل سعر مكتمل والتوريد قبل موعد الفعالية" className="field" />
+      <div className="flex gap-2">
+        <button type="button" className="btn-primary" disabled={busy || !reason.trim()}
+          onClick={() => start(async () => { setError(null); const r = await awardQuote(quote.id, reason); if (r.error) setError(r.error); else onDone(); })}>
+          {busy ? "…" : "تأكيد الترسية"}
+        </button>
+        <button type="button" className="btn-ghost" onClick={onDone}>إلغاء</button>
+      </div>
+      {error && <p role="alert" className="text-sm text-red-400">{error}</p>}
     </div>
   );
 }

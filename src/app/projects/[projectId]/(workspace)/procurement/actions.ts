@@ -3,7 +3,7 @@
 import { refresh } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import type { ActionState } from "../../../actions";
-import type { QuoteStatus, RfqStatus } from "@/lib/types";
+import type { QuoteRow, QuoteStatus, RfqStatus } from "@/lib/types";
 import { permissionMessage } from "@/lib/permissions";
 
 const text = (f: FormData, k: string) => String(f.get(k) ?? "").trim();
@@ -128,14 +128,61 @@ export async function deleteQuote(id: string) {
   refresh();
 }
 
-/** Accept one quote: reject the rest in its RFQ and mark the RFQ awarded. */
-export async function acceptQuote(rfqId: string, quoteId: string) {
+export type QuoteResult = { error?: string; ok?: boolean };
+
+function quoteMessage(error: { code?: string; message?: string }): string {
+  if (error.code === "23514") return /reason/i.test(error.message ?? "") ? "اكتب سبب الترسية." : "قيمة غير صالحة في تفاصيل العرض.";
+  if (error.code === "23505") return "تمت ترسية عرض آخر في هذا الطلب. حدّث الصفحة.";
+  if (error.code === "22023") return "لا يمكن ترسية عرض بلا سعر.";
+  return permissionMessage(error) ?? "تعذّر تنفيذ الإجراء.";
+}
+
+/**
+ * Awards a quote, with a reason, in one database transaction (award_quote): the other quotes are set
+ * aside and the RFQ is marked awarded. The database records who awarded and when; nothing is automatic.
+ */
+export async function awardQuote(quoteId: string, reason: string): Promise<QuoteResult> {
+  const why = reason.trim();
+  if (!why) return { error: "اكتب سبب الترسية." };
   const supabase = await createClient();
-  const { error: rej } = await supabase.from("quotes").update({ status: "rejected" }).eq("rfq_id", rfqId).neq("id", quoteId);
-  if (rej) throw new Error(rej.message);
-  const { error: acc } = await supabase.from("quotes").update({ status: "accepted" }).eq("id", quoteId);
-  if (acc) throw new Error(acc.message);
-  const { error: aw } = await supabase.from("rfqs").update({ status: "awarded" }).eq("id", rfqId);
-  if (aw) throw new Error(aw.message);
+  const { error } = await supabase.rpc("award_quote", { qid: quoteId, reason: why.slice(0, 1000) });
+  if (error) return { error: quoteMessage(error) };
   refresh();
+  return { ok: true };
+}
+
+export type QuoteDetails = {
+  scope_basis?: QuoteRow["scope_basis"];
+  exclusions?: string;
+  valid_until?: string | null;
+  lead_time_days?: number | null;
+  payment_terms?: string;
+  amount?: number | null;
+};
+
+/** Saves the comparison details of a quote (scope basis, exclusions, validity, lead time, payment terms). */
+export async function updateQuoteDetails(id: string, details: QuoteDetails): Promise<QuoteResult> {
+  const patch: QuoteDetails = {};
+  if (details.scope_basis !== undefined) patch.scope_basis = details.scope_basis;
+  if (details.exclusions !== undefined) patch.exclusions = details.exclusions.trim().slice(0, 2000);
+  if (details.payment_terms !== undefined) patch.payment_terms = details.payment_terms.trim().slice(0, 300);
+  if (details.valid_until !== undefined) {
+    if (details.valid_until && !/^\d{4}-\d{2}-\d{2}$/.test(details.valid_until)) return { error: "تاريخ الصلاحية غير صالح." };
+    patch.valid_until = details.valid_until || null;
+  }
+  if (details.lead_time_days !== undefined) {
+    const d = details.lead_time_days;
+    if (d !== null && (!Number.isInteger(d) || d < 0 || d > 730)) return { error: "مدة التوريد بالأيام بين 0 و730." };
+    patch.lead_time_days = d;
+  }
+  if (details.amount !== undefined) {
+    if (details.amount !== null && (!Number.isFinite(details.amount) || details.amount < 0)) return { error: "السعر غير صالح." };
+    patch.amount = details.amount;
+  }
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("quotes").update(patch).eq("id", id).select("id");
+  if (error) return { error: quoteMessage(error) };
+  if (!data?.length) return { error: permissionMessage({ code: "42501" }) };
+  refresh();
+  return { ok: true };
 }

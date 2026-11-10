@@ -25,6 +25,11 @@ Before Phase 2, modules were only checked with throw-away scripts against produc
 
 ## Test runs
 
+### 2026-11-10 · Supplier quote comparison and award (Workflow D)
+- **Database:** PASS, 208 of 208 (new `quotes_award.test.sql`: 16 — comparison fields, no pre-awarded inserts, reason required, unpriced not awardable, award stamped with who/when/why, others set aside, RFQ awarded, award details immutable, one award per RFQ, award can move with a new reason, finance viewers and non-finance editors cannot award).
+- **Unit:** `quote-compare.test.ts` 7 of 7 (lowest and percentages, validity, late delivery, missing data, recommendation rules, mixed bases, rejected quotes).
+- **End-to-end:** `E2E_NAMESPACE=quotes E2E_PORT=3208 npx playwright test e2e/quote-comparison.spec.ts`. PASS, 3 of 3 (finance viewer sees flags and the labelled recommendation but cannot award; admin edits details and awards with a reason, recorded; non-finance editor sees no prices).
+
 ### 2026-11-10 · Shared AI findings + tender requirements register (Workflow A)
 - **Database:** `npx supabase test db`. PASS, 192 of 192 (new `ai_findings_tender.test.sql`: 32 — proposals only, provenance immutable, reviewer stamped by the database, decide once / reopen, finance-only gating, owner and evidence rules, calendar feed, activity log, document deletion not blocked).
 - **Unit:** `npx vitest run`. PASS, 270 of 270 (new: excerpt location and page correction with Arabic normalisation, page budgeting, tender output parsing and verification, mock output, compliance arithmetic).

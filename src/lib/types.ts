@@ -293,6 +293,14 @@ export type QuoteRow = {
   notes: string;
   status: QuoteStatus;
   sort_order: number;
+  scope_basis: "unspecified" | "supply_only" | "supply_install" | "service" | "rental";
+  exclusions: string;
+  valid_until: string | null;
+  lead_time_days: number | null;
+  payment_terms: string;
+  award_reason: string;
+  awarded_by: string | null;
+  awarded_at: string | null;
 };
 
 export type InventoryItemRow = {
