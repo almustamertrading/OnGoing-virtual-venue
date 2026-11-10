@@ -51,4 +51,5 @@ The execution backlog for the Phase 2 directive.
 |---|---|---|---|
 | S5-1 | Measure, then batch the project workspace count queries into one RPC; stream the workspace header (TD-09) | P2 | NOT STARTED |
 | S5-2 | Deduplicate utilities, UI/UX consistency pass | P3 | NOT STARTED |
-| S6-1 | Full regression, production build, deployment readiness checklist | P1 | NOT STARTED |
+| S6-1 | Full regression, production build, deployment readiness checklist | P1 | VERIFIED for `stage3` (CI green; 61/61 e2e on a production build) |
+| S6-2 | Release S3-4 readiness: mirror verification on production + S1-5, exact rollback, compatibility, pre-flight | P0 | READY (awaiting approval after S1-5, B-11): [report](releases/2026-11-S3-4/READINESS.md) |

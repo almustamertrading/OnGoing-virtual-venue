@@ -14,3 +14,4 @@ Items that need the owner, money, credentials or an outside party. Development c
 | B-08 | Approval for release S1-5: snapshot, two migrations, deploy | Production RBAC enforcement | Owner (explicitly required) | [Readiness report](releases/2026-11-S1-5/READINESS.md): mirror-verified migration, exact rollback, runbook |
 | B-09 | AFC portal (ac27loc) data requires a login | Importing AFC venue data | Owner (credentials or exports) | — |
 | B-10 | A hosted staging project costs money | A shared staging URL | Owner | Local Supabase in Docker serves development and CI (TD-01) |
+| B-11 | Approval for release S3-4 (Stage 3 modules, Proposal Builder Phase 2, AI cost control): snapshot, two migrations, deploy | Production rollout of Stages 3–4 | Owner, after B-08 (S1-5) is live | [Readiness report](releases/2026-11-S3-4/READINESS.md): mirror-verified on production + S1-5, exact rollback that keeps new data, runbook |
