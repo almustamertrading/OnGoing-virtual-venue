@@ -111,7 +111,8 @@ is the single owner of migrations, shared types and docs.
 - **Dependencies:** Reports, M2–M5 for richer inputs.
 - **Status (2026-11-10):** increment 1 verified: live summary from one RLS-scoped function, labels, rule-based
   suggestions, AI recommendations checked against the facts they cite, briefs private to author and admins.
-  Next: stored weekly snapshots with week-over-week change, budget against the priced BOQ, email digest (P-06).
+  Increment 2 (same day): weekly snapshots per user with the change since last week (finance figures never
+  stored). Next: budget against the priced BOQ, email digest (P-06).
 
 ### Later
 BOQ ingestion from Excel and version comparison (Workflow B, needs a spreadsheet parser decision; PDF extraction

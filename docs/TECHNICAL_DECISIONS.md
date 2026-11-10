@@ -165,7 +165,9 @@ unsupported numbers mark it unverified). Facts are recomputed on the server for 
 browser. Briefs are findings in the shared layer, readable only by their author and organisation admins (S-17).
 
 **Consequences.** The summary cannot disagree with the underlying modules, since it reads the same tables under
-the same rules. Week-over-week comparison needs stored snapshots, which this increment does not keep yet.
+the same rules. Week-over-week change uses one private, immutable snapshot per user per week (Sunday start),
+recorded after the page renders from server-side figures; finance figures are never stored, so losing finance
+access also removes them from the history.
 
 ## TD-13 · AI quantities enter the BOQ only through a person's verification (2026-11-10)
 

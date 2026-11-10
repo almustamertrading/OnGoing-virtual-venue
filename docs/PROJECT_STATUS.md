@@ -42,7 +42,7 @@ Detail: [DEVELOPMENT_TASKS.md](DEVELOPMENT_TASKS.md).
 | Tender requirements register (AI, Workflow A) | VERIFIED locally (32 pgTAP + requirements e2e, mock AI) | `stage3` |
 | Supplier quote comparison and reasoned award (Workflow D) | VERIFIED locally (16 pgTAP + quote-comparison e2e) | `stage3` |
 | Event operations: field reports, AI action items to tasks, risk log (Workflow E) | VERIFIED locally (22 pgTAP + operations e2e, mock AI) | `stage3`; photos and handover checklist next |
-| Management summary with labelled facts, rule suggestions and checked AI recommendations (Workflow F) | VERIFIED locally (31 pgTAP + summary e2e, mock AI) | `stage3`; weekly snapshots and email digest next |
+| Management summary with labelled facts, rule suggestions, checked AI recommendations and weekly change (Workflow F) | VERIFIED locally (40 pgTAP + summary e2e, mock AI) | `stage3`; email digest next (P-06) |
 | BOQ extraction from PDFs with per-line human verification (Workflow B) | VERIFIED locally (14 pgTAP + boq-extract e2e, mock AI) | `stage3`; Excel import and version comparison next |
 | BOQ checker (rule-based, Workflow B) | VERIFIED locally (110 unit + boq-check e2e) | `stage3`; no schema change |
 | Public marketing site | VERIFIED (smoke 1: loads) | |

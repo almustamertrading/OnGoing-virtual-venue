@@ -5,14 +5,15 @@ import { AppHeader } from "@/components/app-header";
 import { Restricted } from "@/components/restricted";
 import { rejectFinding, reopenFinding } from "@/lib/ai/review-actions";
 import { getAiStatus } from "@/lib/ai/status";
-import { formatDateTime } from "@/lib/format";
-import { buildFacts, ruleSuggestions } from "@/lib/management";
+import { formatDate, formatDateTime } from "@/lib/format";
+import { buildFacts, factDeltas, ruleSuggestions, weekStart } from "@/lib/management";
 import { loadManagementSummary } from "@/lib/management-brief";
 import { getMyOrganization } from "@/lib/project";
 import { createClient } from "@/lib/supabase/server";
 import type { AiFindingRow } from "@/lib/types";
 import { acceptBrief } from "./actions";
 import { BriefPanel } from "./brief-panel";
+import { SnapshotRecorder } from "./snapshot-recorder";
 import {
   ApprovalsDetails, AttentionDetails, FinanceDetails, Legend, ProcurementDetails, RisksDetails, SectionCard, SuggestionsCard,
 } from "./sections";
@@ -64,6 +65,14 @@ export default async function SummaryPage() {
   const facts = buildFacts(summary, currency);
   const suggestions = ruleSuggestions(summary, currency);
   const canBrief = org.access.isAdmin || org.role === "manager" || org.access.projectManager;
+  // This user's two latest weekly snapshots: is this week's taken yet, and what was last week's?
+  const thisWeek = weekStart(summary.today);
+  const { data: snaps } = await supabase
+    .from("management_snapshots").select("week_start, facts, created_at")
+    .eq("organization_id", org.id).eq("user_id", userId).order("week_start", { ascending: false }).limit(2);
+  const snapshots = (snaps as { week_start: string; facts: unknown; created_at: string }[] | null) ?? [];
+  const previous = snapshots.find((x) => x.week_start < thisWeek) ?? null;
+  const deltas = previous ? factDeltas(facts, previous.facts) : {};
   const [aiStatus, briefs] = canBrief
     ? await Promise.all([
         getAiStatus(supabase, "management_brief"),
@@ -75,13 +84,21 @@ export default async function SummaryPage() {
 
   return shell(
     <>
+      <SnapshotRecorder needed={!snapshots.some((x) => x.week_start === thisWeek)} />
       <Legend />
+      <p className="text-xs text-slate-400" data-testid="snapshot-note">
+        {previous ? (
+          <>التغير بجانب كل رقم مقارنةً بلقطة أسبوع <bdi>{formatDate(previous.week_start)}</bdi> (حُفظت <bdi>{formatDateTime(previous.created_at)}</bdi>).</>
+        ) : (
+          "تُحفظ لقطة من أرقامك (دون المالية) مرة كل أسبوع، وستظهر هنا التغيرات عن الأسبوع الماضي."
+        )}
+      </p>
       <div className="grid gap-5 lg:grid-cols-2">
-        <SectionCard id="attention" facts={facts}><AttentionDetails s={summary} /></SectionCard>
-        <SectionCard id="approvals" facts={facts}><ApprovalsDetails s={summary} /></SectionCard>
-        <SectionCard id="procurement" facts={facts}><ProcurementDetails s={summary} /></SectionCard>
-        <SectionCard id="risks" facts={facts}><RisksDetails s={summary} /></SectionCard>
-        <SectionCard id="pipeline" facts={facts} />
+        <SectionCard id="attention" facts={facts} deltas={deltas}><AttentionDetails s={summary} /></SectionCard>
+        <SectionCard id="approvals" facts={facts} deltas={deltas}><ApprovalsDetails s={summary} /></SectionCard>
+        <SectionCard id="procurement" facts={facts} deltas={deltas}><ProcurementDetails s={summary} /></SectionCard>
+        <SectionCard id="risks" facts={facts} deltas={deltas}><RisksDetails s={summary} /></SectionCard>
+        <SectionCard id="pipeline" facts={facts} deltas={deltas} />
         {summary.financeAccess ? (
           <SectionCard id="finance" facts={facts}><FinanceDetails s={summary} currency={currency} /></SectionCard>
         ) : (

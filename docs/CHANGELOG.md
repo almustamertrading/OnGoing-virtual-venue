@@ -31,6 +31,8 @@ All notable changes. Dates are UTC.
   each user's access. Facts, estimates and recommendations are labelled; suggestions from fixed rules show their
   reasons; optional AI recommendations cite the facts they rest on, every number is checked against them, and
   they stay private to their author (and organisation admins).
+- The management summary keeps a weekly snapshot of each user's figures (never finance figures) and shows the
+  change of each figure since last week.
 - BOQ extraction from tender PDFs on the Pricing tab: the AI copies item numbers, descriptions, units and
   quantities as written, each with its page, its quote and automatic checks; a line joins the BOQ only when an
   editor verifies it, and the line keeps its source. Prices are never extracted.

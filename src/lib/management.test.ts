@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
-  buildFacts, extractNumbers, MANAGEMENT_SCHEMA, managementPrompt, mockManagementOutput, normalizeSummary, parseManagementBrief, ruleSuggestions,
+  buildFacts, extractNumbers, factDeltas, MANAGEMENT_SCHEMA, managementPrompt, mockManagementOutput, normalizeSummary, parseManagementBrief,
+  ruleSuggestions, snapshotFacts, weekStart,
 } from "./management";
 
 // The shape returned by public.management_summary (see the migration), with finance access.
@@ -195,5 +196,40 @@ describe("schema and prompt", () => {
     expect(prompt).toContain("Today: 2026-11-10");
     expect(prompt).toContain("finance.low_margin_proposals | estimate | عروض مفتوحة بهامش متوقع أقل من 10% | 1");
     expect(prompt.trim().endsWith("===== END OF FACTS =====")).toBe(true);
+  });
+});
+
+describe("weekly snapshots", () => {
+  it("starts weeks on Sunday", () => {
+    expect(weekStart("2026-11-10")).toBe("2026-11-08"); // Tuesday
+    expect(weekStart("2026-11-08")).toBe("2026-11-08"); // Sunday
+    expect(weekStart("2026-11-14")).toBe("2026-11-08"); // Saturday
+    expect(weekStart("2027-01-01")).toBe("2026-12-27"); // across a year
+  });
+
+  it("stores every fact but the finance ones", () => {
+    const snap = snapshotFacts(buildFacts(normalizeSummary(raw)));
+    expect(snap["tasks.overdue"]).toBe(4);
+    expect(snap["tasks.overdue.2026-002"]).toBe(3);
+    expect(Object.keys(snap).some((k) => k.startsWith("finance."))).toBe(false);
+  });
+
+  it("computes the change per fact against the previous snapshot, finance excluded", () => {
+    const facts = buildFacts(normalizeSummary(raw));
+    const deltas = factDeltas(facts, { "tasks.overdue": 1, "pipeline.open_value": 900000, "finance.overdue_amount": 1, "risks.high": "x" });
+    expect(deltas["tasks.overdue"]).toEqual({ previous: 1, delta: 3 });
+    expect(deltas["pipeline.open_value"]).toEqual({ previous: 900000, delta: -50000 });
+    expect(deltas["finance.overdue_amount"]).toBeUndefined();
+    expect(deltas["risks.high"]).toBeUndefined();
+    expect(factDeltas(facts, null)).toEqual({});
+  });
+
+  it("knows which way is better for each fact", () => {
+    const byId = new Map(buildFacts(normalizeSummary(raw)).map((f) => [f.id, f.better]));
+    expect(byId.get("tasks.overdue")).toBe("down");
+    expect(byId.get("tasks.overdue.2026-002")).toBe("down");
+    expect(byId.get("tasks.done_week")).toBe("up");
+    expect(byId.get("pipeline.open_value")).toBe("up");
+    expect(byId.get("rfqs.open")).toBeNull();
   });
 });

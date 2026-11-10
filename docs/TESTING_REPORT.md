@@ -9,8 +9,8 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 |---|---|---|---|
 | Typecheck | `npm run typecheck` | — | PASS |
 | Lint (own source; vendored MapLibre worker ignored) | `npm run lint` | — | PASS, 0 problems |
-| Unit tests (Vitest) | `npm test` | 432 | PASS (`stage3`) |
-| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations, management summary, BOQ extraction) | `npx supabase test db` | 275 | PASS (`stage3`) |
+| Unit tests (Vitest) | `npm test` | 436 | PASS (`stage3`) |
+| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations, management summary, BOQ extraction, snapshots) | `npx supabase test db` | 284 | PASS (`stage3`, fresh reset) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
 | End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker, management summary, BOQ extraction | `E2E_PROD=1 npx playwright test` | 8 logins + 79 tests | PASS (87/87, `stage3`) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
@@ -24,6 +24,13 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-10 · Weekly management snapshots (Workflow F, increment 2)
+- **Database:** `npx supabase db reset` then `npx supabase test db`. PASS, 284 of 284 (new `management_snapshots.test.sql`: 9 — own snapshot recorded; one per week; weeks start on Sunday; finance figures refused; no snapshot for someone else; no updates; not readable even by an organisation admin; not from another organisation; read back unchanged).
+- **Bug found and fixed before commit:** UPDATE on the new table did not raise an error because Supabase's default privileges grant it to `authenticated` (RLS still blocked every row, silently). The migration now revokes all privileges and grants only select, insert and delete.
+- **Unit:** `npx vitest run`. PASS, 436 of 436 (new: Sunday week start across a year end, stored facts exclude finance, change per fact against the previous snapshot, which direction is better).
+- **Full suite:** `E2E_PROD=1 npx playwright test`. PASS, 87 of 87 (production build, 2.5 min).
+- **End-to-end:** `E2E_NAMESPACE=summary E2E_PORT=3210 npx playwright test e2e/summary.spec.ts`. PASS, 8 logins + 4 of 4: with last week's snapshot seeded, the overdue figure shows `+N` in red where N equals the database count, figures missing from that snapshot and finance figures show no change, and this week's snapshot is recorded after the page renders with the same figures and no finance keys; a user without a previous snapshot sees the explanation instead.
 
 ### 2026-11-10 · AI BOQ extraction with per-line human verification (Workflow B, increment 2)
 - **Database:** `npx supabase test db`. PASS, 275 of 275 (new `boq_extraction.test.sql`: 14 — feature logged; a viewer cannot verify; an accepted line joins the BOQ with quantity, unit, item number and source and no price; the finding records who verified it and what it became; decided once; a missing quantity stays empty; wrong kinds refused; BOQ lines and requirements cannot link to another project's finding, a same-project link is allowed; deleting the finding keeps the verified line).

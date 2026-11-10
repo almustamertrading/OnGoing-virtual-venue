@@ -30,9 +30,16 @@ function riyadh(offsetDays: number): string {
   return d.toISOString().slice(0, 10);
 }
 
+/** Sunday of the current week in Riyadh, offset by whole weeks. */
+function sunday(offsetWeeks: number): string {
+  const dow = new Date(`${riyadh(0)}T00:00:00Z`).getUTCDay();
+  return riyadh(-dow + 7 * offsetWeeks);
+}
+
 async function cleanUp() {
   const client = db();
   const { organizationId } = readSeed();
+  await client.from("management_snapshots").delete().eq("organization_id", organizationId);
   await client.from("ai_findings").delete().eq("organization_id", organizationId).eq("workflow", "management");
   // So the duplicate guard never holds back a rerun with the same figures.
   await client.from("ai_usage_logs").delete().eq("organization_id", organizationId).eq("feature", "management_brief");
@@ -70,6 +77,10 @@ test.beforeAll(async () => {
   must(await client.from("project_risks").insert({ project_id: projectId, organization_id: organizationId, kind: "issue", title: "QA summary power supply", impact: "high", created_by: by }).select("id"), "risk");
   must(await client.from("project_requirements").insert({ project_id: projectId, organization_id: organizationId, title: "QA summary bank guarantee", due_date: riyadh(2), created_by: by }).select("id"), "requirement");
   must(await client.from("proposals").insert({ organization_id: organizationId, title: `QA SUMMARY proposal ${run}`, status: "under_review", owner_id: by, created_by: by }).select("id"), "proposal");
+  // Last week's snapshot for the admin: no overdue tasks and no high risks then.
+  must(await client.from("management_snapshots").insert({
+    organization_id: organizationId, user_id: by, week_start: sunday(-1), facts: { "tasks.overdue": 0, "risks.high": 0 },
+  }).select("id"), "snapshot");
 });
 
 test.afterAll(cleanUp);
@@ -91,6 +102,23 @@ test.describe("the organisation admin", () => {
     const { count } = await db().from("tasks").select("id, projects!inner(organization_id)", { count: "exact", head: true })
       .eq("projects.organization_id", organizationId).neq("status", "done").lt("due_date", riyadh(0));
     await expect(page.getByTestId("fact-tasks.overdue")).toHaveAttribute("data-value", String(count));
+
+    // Change since last week's snapshot: worse (red) for overdue work; facts the snapshot lacked show none.
+    await expect(page.getByTestId("snapshot-note")).toContainText("مقارنةً بلقطة أسبوع");
+    await expect(page.getByTestId("delta-tasks.overdue")).toHaveAttribute("data-delta", String(count));
+    await expect(page.getByTestId("delta-tasks.overdue")).toContainText(`+${count}`);
+    await expect(page.getByTestId("delta-tasks.overdue")).toHaveClass(/text-red-300/);
+    await expect(page.getByTestId("delta-tasks.blocked")).toHaveCount(0);
+    await expect(page.getByTestId("delta-finance.overdue_amount")).toHaveCount(0);
+    // This week's snapshot is recorded after the page renders, from server-side figures, without finance.
+    await expect.poll(async () => {
+      const { data } = await db().from("management_snapshots").select("facts").eq("organization_id", organizationId)
+        .eq("user_id", readSeed().userIds.admin).eq("week_start", sunday(0)).maybeSingle();
+      return data?.facts as Record<string, number> | undefined;
+    }).toMatchObject({ "tasks.overdue": count });
+    const { data: snap } = await db().from("management_snapshots").select("facts").eq("organization_id", organizationId)
+      .eq("user_id", readSeed().userIds.admin).eq("week_start", sunday(0)).single();
+    expect(Object.keys(snap!.facts as object).some((k) => k.startsWith("finance."))).toBe(false);
 
     const ours = page.getByTestId("overdue-by-project").getByRole("listitem").filter({ hasText: PROJECT });
     await expect(ours).toHaveAttribute("data-count", "2");
@@ -157,6 +185,7 @@ test.describe("a sales editor on the project (no finance, no management role)", 
     await page.waitForLoadState("networkidle");
     await expect(page.getByTestId("overdue-by-project").getByRole("listitem").filter({ hasText: PROJECT })).toHaveAttribute("data-count", "2");
     await expect(page.getByTestId("restricted")).toContainText("المؤشرات المالية");
+    await expect(page.getByTestId("snapshot-note")).toContainText("تُحفظ لقطة من أرقامك");
     await expect(page.getByTestId("summary-section-finance")).toHaveCount(0);
     await expect(page.getByTestId("fact-finance.overdue_amount")).toHaveCount(0);
     await expect(page.getByTestId("open-rfqs").getByRole("listitem").filter({ hasText: "QA summary staging" })).not.toContainText("عروض مسعّرة");

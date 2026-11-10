@@ -166,6 +166,8 @@ export type Fact = {
   href?: string;
   /** Computed from finance-only data. */
   finance?: boolean;
+  /** Which way is an improvement, for the week-over-week change ("down": fewer is better). */
+  better?: "up" | "down" | null;
 };
 
 export const SECTION_LABEL: Record<SectionId, string> = {
@@ -236,7 +238,45 @@ export function buildFacts(s: ManagementSummary, currency = "SAR"): Fact[] {
       { id: "finance.low_margin_proposals", section: "finance", kind: "estimate", label: "عروض مفتوحة بهامش متوقع أقل من 10%", value: f.lowMarginProposals.length, display: count(f.lowMarginProposals.length), finance: true },
     );
   }
-  return facts;
+  return facts.map((f) => ({ ...f, better: betterDirection(f.id) }));
+}
+
+const UP = new Set(["tasks.done_week", "pipeline.open", "pipeline.open_value", "pipeline.awaiting_client", "pipeline.awaiting_client_value"]);
+const NEUTRAL = new Set(["tasks.due_week", "milestones.upcoming", "rfqs.open", "projects.active"]);
+function betterDirection(id: string): Fact["better"] {
+  if (UP.has(id)) return "up";
+  if (NEUTRAL.has(id)) return null;
+  return "down";
+}
+
+// ---------------------------------------------------------------------------
+// Weekly snapshots
+// ---------------------------------------------------------------------------
+
+/** The Sunday that starts the week of a YYYY-MM-DD date (the Saudi working week starts on Sunday). */
+export function weekStart(iso: string): string {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - d.getUTCDay());
+  return d.toISOString().slice(0, 10);
+}
+
+/** What a weekly snapshot stores: each fact's value by id, never finance figures. */
+export function snapshotFacts(facts: readonly Fact[]): Record<string, number> {
+  return Object.fromEntries(facts.filter((f) => !f.finance && !f.id.startsWith("finance.")).map((f) => [f.id, f.value]));
+}
+
+export type FactDelta = { previous: number; delta: number };
+
+/** Change of each fact since a previous snapshot; facts the snapshot did not hold get no entry. */
+export function factDeltas(facts: readonly Fact[], previous: unknown): Record<string, FactDelta> {
+  const prev = previous && typeof previous === "object" && !Array.isArray(previous) ? (previous as Record<string, unknown>) : {};
+  const out: Record<string, FactDelta> = {};
+  for (const f of facts) {
+    const p = prev[f.id];
+    if (f.finance || typeof p !== "number" || !Number.isFinite(p)) continue;
+    out[f.id] = { previous: p, delta: Math.round((f.value - p) * 100) / 100 };
+  }
+  return out;
 }
 
 // ---------------------------------------------------------------------------

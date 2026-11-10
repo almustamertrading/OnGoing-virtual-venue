@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AlertTriangle, CircleAlert, Info } from "lucide-react";
 import { arabicDays, formatDate, formatDateTime, formatMoney } from "@/lib/format";
-import { SECTION_LABEL, type Fact, type ManagementSummary, type SectionId, type Suggestion } from "@/lib/management";
+import { SECTION_LABEL, type Fact, type FactDelta, type ManagementSummary, type SectionId, type Suggestion } from "@/lib/management";
 
 const KIND = {
   fact: { label: "حقيقة", tone: "bg-emerald-500/10 text-emerald-300" },
@@ -25,11 +25,25 @@ export function Legend() {
   );
 }
 
-function FactRow({ fact }: { fact: Fact }) {
+/** Change since last week's snapshot: red when it got worse, green when it improved, grey when neutral. */
+function DeltaBadge({ fact, delta }: { fact: Fact; delta: FactDelta }) {
+  const d = delta.delta;
+  const good = fact.better === "down" ? d < 0 : fact.better === "up" ? d > 0 : null;
+  const tone = d === 0 || good === null ? "text-slate-400" : good ? "text-emerald-300" : "text-red-300";
+  const text = d === 0 ? "=" : `${d > 0 ? "+" : "−"}${Math.abs(d).toLocaleString("en-US")}`;
+  return (
+    <span className={`text-[11px] tabular-nums ${tone}`} data-testid={`delta-${fact.id}`} data-delta={d} title={`الأسبوع الماضي: ${delta.previous.toLocaleString("en-US")}`}>
+      <span className="sr-only">التغير عن الأسبوع الماضي: </span><bdi>{text}</bdi>
+    </span>
+  );
+}
+
+function FactRow({ fact, delta }: { fact: Fact; delta?: FactDelta }) {
   const kind = KIND[fact.kind];
   return (
     <div className="flex items-baseline gap-2 py-1.5" data-testid={`fact-${fact.id}`} data-value={fact.value}>
       <dt className="min-w-0 flex-1 text-sm text-slate-300">{fact.label}</dt>
+      {delta && <DeltaBadge fact={fact} delta={delta} />}
       <span className={`rounded px-1.5 py-0.5 text-[10px] ${kind.tone}`}>{kind.label}</span>
       <dd className={`text-base font-semibold tabular-nums ${fact.value > 0 ? "text-white" : "text-slate-500"}`}>
         {fact.href ? <Link href={fact.href} className="hover:underline"><bdi>{fact.display}</bdi></Link> : <bdi>{fact.display}</bdi>}
@@ -39,13 +53,15 @@ function FactRow({ fact }: { fact: Fact }) {
 }
 
 /** One section: its facts (per-project facts are listed under the details instead), then details. */
-export function SectionCard({ id, facts, children }: { id: SectionId; facts: Fact[]; children?: React.ReactNode }) {
+export function SectionCard({
+  id, facts, deltas = {}, children,
+}: { id: SectionId; facts: Fact[]; deltas?: Record<string, FactDelta>; children?: React.ReactNode }) {
   const shown = facts.filter((f) => f.section === id && !/^tasks\.overdue\./.test(f.id));
   return (
     <section className="card p-5" aria-labelledby={`section-${id}-title`} data-testid={`summary-section-${id}`}>
       <h2 id={`section-${id}-title`} className="mb-2 font-semibold text-white">{SECTION_LABEL[id]}</h2>
       <dl className="divide-y divide-slate-800/70">
-        {shown.map((f) => <FactRow key={f.id} fact={f} />)}
+        {shown.map((f) => <FactRow key={f.id} fact={f} delta={deltas[f.id]} />)}
       </dl>
       {children}
     </section>
