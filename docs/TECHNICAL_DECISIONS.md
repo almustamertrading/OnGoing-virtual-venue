@@ -144,3 +144,21 @@ finding data cannot assign work to an outsider. Report text is fenced as data in
 **Consequences.** No new task model, and the risk log can feed the management summary (Workflow F). The
 report keeps a link to every risk it produced; deleting a report keeps its tasks and risks.
 
+## TD-12 · Management summary: facts from one RLS-scoped function, AI may only recommend (2026-11-10)
+
+**Context.** Owners want a weekly picture across projects: overdue work, decisions waiting, procurement
+bottlenecks, risks, pipeline and finance warnings. The brief requires real data only, never invented KPIs, and a
+clear line between facts, estimates and AI recommendations. Figures must also respect each person's access.
+
+**Decision.** One security-invoker function, `management_summary(org)`, computes every figure as the caller, so
+RLS decides what counts; finance facts are returned only with finance access (null, never a misleading zero) and
+supplier quote counts only with project finance access. The page labels each figure as a fact or an estimate
+(today only the margin of an open proposal if won), and shows suggestions from fixed rules with their reasons.
+The AI never produces a figure for display: it receives the facts as data with stable ids, must cite the ids each
+recommendation rests on, and every number in its text is checked against the cited facts (unknown ids or
+unsupported numbers mark it unverified). Facts are recomputed on the server for each request, never taken from the
+browser. Briefs are findings in the shared layer, readable only by their author and organisation admins (S-17).
+
+**Consequences.** The summary cannot disagree with the underlying modules, since it reads the same tables under
+the same rules. Week-over-week comparison needs stored snapshots, which this increment does not keep yet.
+

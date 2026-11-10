@@ -20,7 +20,7 @@ const SEVERITY: Record<AiFindingRow["severity"], { label: string; tone: string }
  */
 export function AiFindingsPanel({
   title, findings, kindLabel, documents, people, canReview, acceptLabels = {}, defaultAcceptLabel = "اعتماد", copyKinds = [], emptyText,
-  sourceLabel, onAccept, onReject, onReopen,
+  sourceLabel, verifiedText, unverifiedText, onAccept, onReject, onReopen,
 }: {
   title: string;
   findings: AiFindingRow[];
@@ -38,6 +38,9 @@ export function AiFindingsPanel({
   emptyText: string;
   /** Shown as the source when a finding comes from text rather than a document (e.g. "the report"). */
   sourceLabel?: string;
+  /** Wording of the source check, when the source is not a document (e.g. figures checked against data). */
+  verifiedText?: string;
+  unverifiedText?: string;
   onAccept: (id: string, kind: string, note: string) => Promise<Result>;
   onReject: (id: string, note: string) => Promise<Result>;
   onReopen: (id: string) => Promise<Result>;
@@ -74,6 +77,8 @@ export function AiFindingsPanel({
                     key={f.id}
                     finding={f}
                     documentTitle={f.document_id ? documents[f.document_id] : sourceLabel}
+                    verifiedText={verifiedText}
+                    unverifiedText={unverifiedText}
                     canReview={canReview}
                     acceptLabel={acceptLabels[f.kind] ?? defaultAcceptLabel}
                     copyable={copyKinds.includes(f.kind)}
@@ -103,7 +108,9 @@ export function AiFindingsPanel({
   );
 }
 
-function SourceLine({ finding, documentTitle }: { finding: AiFindingRow; documentTitle?: string }) {
+function SourceLine({
+  finding, documentTitle, verifiedText = "المصدر مُتحقَّق منه", unverifiedText = "لم يُعثر على النص المقتبس في الملف، راجع المصدر",
+}: { finding: AiFindingRow; documentTitle?: string; verifiedText?: string; unverifiedText?: string }) {
   if (!finding.source_excerpt && !finding.source_page) return null;
   const corrected = finding.data?.page_corrected === true;
   return (
@@ -113,9 +120,9 @@ function SourceLine({ finding, documentTitle }: { finding: AiFindingRow; documen
         <span>{documentTitle ?? "مصدر محذوف"}</span>
         {finding.source_page && <span>· صفحة {finding.source_page}{corrected ? " (صُحّح رقم الصفحة)" : ""}</span>}
         {finding.source_verified ? (
-          <span className="ms-auto inline-flex items-center gap-1 text-emerald-300"><BadgeCheck size={13} aria-hidden /> المصدر مُتحقَّق منه</span>
+          <span className="ms-auto inline-flex items-center gap-1 text-emerald-300"><BadgeCheck size={13} aria-hidden /> {verifiedText}</span>
         ) : (
-          <span className="ms-auto inline-flex items-center gap-1 text-amber-300"><TriangleAlert size={13} aria-hidden /> لم يُعثر على النص المقتبس في الملف، راجع المصدر</span>
+          <span className="ms-auto inline-flex items-center gap-1 text-amber-300"><TriangleAlert size={13} aria-hidden /> {unverifiedText}</span>
         )}
       </p>
       {finding.source_excerpt && (
@@ -126,10 +133,12 @@ function SourceLine({ finding, documentTitle }: { finding: AiFindingRow; documen
 }
 
 function FindingCard({
-  finding, documentTitle, canReview, acceptLabel, copyable, onAccept, onReject,
+  finding, documentTitle, verifiedText, unverifiedText, canReview, acceptLabel, copyable, onAccept, onReject,
 }: {
   finding: AiFindingRow;
   documentTitle?: string;
+  verifiedText?: string;
+  unverifiedText?: string;
   canReview: boolean;
   acceptLabel: string;
   copyable: boolean;
@@ -161,7 +170,7 @@ function FindingCard({
         <p className="mt-1 text-xs text-slate-400">المسؤول المقترح: <bdi>{finding.data.suggested_assignee_label}</bdi></p>
       )}
       {finding.detail && <p className="mt-1 text-sm text-slate-400" dir="auto">{finding.detail}</p>}
-      <SourceLine finding={finding} documentTitle={documentTitle} />
+      <SourceLine finding={finding} documentTitle={documentTitle} verifiedText={verifiedText} unverifiedText={unverifiedText} />
       <div className="mt-3 flex flex-wrap items-center gap-2">
         {canReview && (
           <>

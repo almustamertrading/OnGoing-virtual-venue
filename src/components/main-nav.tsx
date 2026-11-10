@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, CalendarDays, FileText, FolderKanban, Files, Settings } from "lucide-react";
+import { BarChart3, CalendarDays, FileText, FolderKanban, Files, LayoutDashboard, Settings } from "lucide-react";
 
 const LINKS = [
   { href: "/projects", label: "Projects", icon: FolderKanban },
+  { href: "/summary", label: "Summary", icon: LayoutDashboard },
   { href: "/proposals", label: "Proposals", icon: FileText },
   { href: "/calendar", label: "Calendar", icon: CalendarDays },
   { href: "/documents", label: "Documents", icon: Files },

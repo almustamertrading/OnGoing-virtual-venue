@@ -15,8 +15,8 @@ export type AiLimits = {
 };
 
 const DEFAULTS: AiLimits = {
-  perHour: { proposal_draft: 10, rfp_extract: 10, tender_analysis: 10, ops_extract: 20 },
-  perDay: { proposal_draft: 40, rfp_extract: 30, tender_analysis: 30, ops_extract: 80 },
+  perHour: { proposal_draft: 10, rfp_extract: 10, tender_analysis: 10, ops_extract: 20, management_brief: 6 },
+  perDay: { proposal_draft: 40, rfp_extract: 30, tender_analysis: 30, ops_extract: 80, management_brief: 20 },
   orgMonthlyTokens: 3_000_000,
   duplicateWindowMinutes: 10,
   timeoutMs: 55_000,
@@ -41,12 +41,14 @@ export function readAiLimits(env: Env = process.env): AiLimits {
       rfp_extract: positiveInt(env.AI_LIMIT_RFP_EXTRACT_PER_HOUR, DEFAULTS.perHour.rfp_extract),
       tender_analysis: positiveInt(env.AI_LIMIT_TENDER_ANALYSIS_PER_HOUR, DEFAULTS.perHour.tender_analysis),
       ops_extract: positiveInt(env.AI_LIMIT_OPS_EXTRACT_PER_HOUR, DEFAULTS.perHour.ops_extract),
+      management_brief: positiveInt(env.AI_LIMIT_MANAGEMENT_BRIEF_PER_HOUR, DEFAULTS.perHour.management_brief),
     },
     perDay: {
       proposal_draft: positiveInt(env.AI_LIMIT_PROPOSAL_DRAFT_PER_DAY, DEFAULTS.perDay.proposal_draft),
       rfp_extract: positiveInt(env.AI_LIMIT_RFP_EXTRACT_PER_DAY, DEFAULTS.perDay.rfp_extract),
       tender_analysis: positiveInt(env.AI_LIMIT_TENDER_ANALYSIS_PER_DAY, DEFAULTS.perDay.tender_analysis),
       ops_extract: positiveInt(env.AI_LIMIT_OPS_EXTRACT_PER_DAY, DEFAULTS.perDay.ops_extract),
+      management_brief: positiveInt(env.AI_LIMIT_MANAGEMENT_BRIEF_PER_DAY, DEFAULTS.perDay.management_brief),
     },
     orgMonthlyTokens: positiveInt(env.AI_ORG_MONTHLY_TOKEN_LIMIT, DEFAULTS.orgMonthlyTokens),
     duplicateWindowMinutes: positiveInt(env.AI_DUPLICATE_WINDOW_MINUTES, DEFAULTS.duplicateWindowMinutes),

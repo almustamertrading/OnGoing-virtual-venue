@@ -7,8 +7,8 @@ const limits = readAiLimits({});
 
 describe("readAiLimits", () => {
   it("uses safe defaults", () => {
-    expect(limits.perHour).toEqual({ proposal_draft: 10, rfp_extract: 10, tender_analysis: 10, ops_extract: 20 });
-    expect(limits.perDay).toEqual({ proposal_draft: 40, rfp_extract: 30, tender_analysis: 30, ops_extract: 80 });
+    expect(limits.perHour).toEqual({ proposal_draft: 10, rfp_extract: 10, tender_analysis: 10, ops_extract: 20, management_brief: 6 });
+    expect(limits.perDay).toEqual({ proposal_draft: 40, rfp_extract: 30, tender_analysis: 30, ops_extract: 80, management_brief: 20 });
     expect(limits.orgMonthlyTokens).toBe(3_000_000);
     expect(limits.duplicateWindowMinutes).toBe(10);
     // Under the hosting platform's 60 s function limit; abandoned requests stop blocking soon after.

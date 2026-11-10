@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatDate, formatDateTime, isIsoDate } from "./format";
+import { arabicDays, formatDate, formatDateTime, isIsoDate } from "./format";
 
 describe("formatDate", () => {
   it("formats an ISO date without time zone shifts", () => {
@@ -33,5 +33,11 @@ describe("isIsoDate", () => {
 
   it("rejects other formats", () => {
     for (const s of ["", "15/03/2027", "2027-3-15", "2027-03-15T10:00", " 2027-03-15", "٢٠٢٧-٠٣-١٥"]) expect(isIsoDate(s)).toBe(false);
+  });
+});
+
+describe("arabicDays", () => {
+  it("agrees the noun with the number", () => {
+    expect([1, 2, 3, 6, 10, 11, 25, 100].map(arabicDays)).toEqual(["يوم واحد", "يومان", "3 أيام", "6 أيام", "10 أيام", "11 يومًا", "25 يومًا", "100 يومًا"]);
   });
 });

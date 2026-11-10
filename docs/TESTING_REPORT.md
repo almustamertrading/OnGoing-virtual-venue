@@ -9,10 +9,10 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 |---|---|---|---|
 | Typecheck | `npm run typecheck` | — | PASS |
 | Lint (own source; vendored MapLibre worker ignored) | `npm run lint` | — | PASS, 0 problems |
-| Unit tests (Vitest) | `npm test` | 294 | PASS (`stage3`) |
-| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations) | `npx supabase test db` | 230 | PASS (`stage3`) |
+| Unit tests (Vitest) | `npm test` | 421 | PASS (`stage3`) |
+| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations, management summary) | `npx supabase test db` | 261 | PASS (`stage3`, fresh reset) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
-| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker | `E2E_PROD=1 npx playwright test` | 8 logins + 72 tests | PASS (80/80, `stage3`) |
+| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker, management summary | `E2E_PROD=1 npx playwright test` | 8 logins + 76 tests | PASS (84/84, `stage3`) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
 
 **How to run locally:**
@@ -24,6 +24,15 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-10 · Management summary (Workflow F)
+- **Database:** `npx supabase db reset` then `npx supabase test db`. PASS, 261 of 261 (new `management_summary.test.sql`: 31 — every section counted from live data as the caller; finance facts null without finance access; quote counts hidden without project finance access; a project manager outside a project sees none of its facts; only managers save briefs; a finance-based brief needs finance access; briefs readable by their author and organisation admins only; other organisation-level findings unchanged; author reviews own brief; other organisations refused).
+- **Bug caught by the existing suite before commit:** the first draft of the migration rewrote the findings insert policy and dropped its finance-only clause; `ai_findings_tender.test.sql` failed two assertions, the clause was restored and a new assertion pins it.
+- **Local migration history repaired:** the three earlier Stage 7 migrations had been applied with psql and were missing from the local history, so `migration up` tried to re-apply them. A full `db reset` re-applied all 31 migrations cleanly from scratch.
+- **Unit:** `npx vitest run`. PASS, 421 of 421 (new `management.test.ts` 16: database JSON reading, facts and labels, estimates, finance gating, rule order and reasons, number extraction, recommendation checks for unknown facts and unsupported numbers, mock output, schema, prompt fencing; `format.test.ts`: Arabic day counts).
+- **End-to-end:** `E2E_NAMESPACE=summary E2E_PORT=3210 npx playwright test e2e/summary.spec.ts e2e/operations.spec.ts e2e/requirements.spec.ts`. PASS, 8 logins + 15 of 15. Summary: admin sees every section, the overdue total equals a direct database count, finance details and rule suggestions; AI recommendations (mock) verified, accepted and rejected with a note, stored finance-only as the admin's; a sales editor sees the project's facts but no finance, quote counts or briefs (the invoice number is absent from the page); a project manager outside the project sees none of its facts and none of the admin's recommendations.
+- **Full suite:** `E2E_PROD=1 npx playwright test`. PASS, 84 of 84 (production build, 2.7 min).
+- **Visual check:** desktop and 375 px screenshots reviewed; detail rows now keep a minimum title width so badges wrap below on phones.
 
 ### 2026-11-10 · BOQ checker (Workflow B rules), merged from a parallel worktree
 - **Unit:** `npx vitest run`. PASS, 404 of 404 on the merged tree (new `boq-check.test.ts`: 110 — every rule, severities and order, Arabic and English normalisation, units, duplicates and conflicts, provisional sums, finance-only checks and their absence without finance access, categories).

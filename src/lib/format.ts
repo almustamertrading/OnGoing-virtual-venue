@@ -42,6 +42,14 @@ export function formatDate(iso: string | null | undefined) {
   return `${d} ${month} ${y}`;
 }
 
+/** "N days" in Arabic with the right number agreement (1, 2, 3–10, 11 and more). */
+export function arabicDays(n: number): string {
+  if (n === 1) return "يوم واحد";
+  if (n === 2) return "يومان";
+  if (n >= 3 && n <= 10) return `${n} أيام`;
+  return `${n} يومًا`;
+}
+
 /** A real calendar date written YYYY-MM-DD. "2027-02-30" is not one, although Date.parse accepts it. */
 export function isIsoDate(s: string): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;

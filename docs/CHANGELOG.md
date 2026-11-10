@@ -26,6 +26,11 @@ All notable changes. Dates are UTC.
   - Event operations (Workflow E): field reports of eight types; AI proposes action items, issues, risks and
     decisions; accepted action items become tasks with a suggested assignee and due date; issues and risks
     go to a new risk log linked to their report.
+- Management summary (`/summary`, Workflow F): overdue and blocked work, pending decisions, procurement
+  bottlenecks, risks, pipeline and, for finance users, finance warnings, all computed live from system data under
+  each user's access. Facts, estimates and recommendations are labelled; suggestions from fixed rules show their
+  reasons; optional AI recommendations cite the facts they rest on, every number is checked against them, and
+  they stay private to their author (and organisation admins).
 - BOQ checker on the project Pricing tab and the proposal BOQ: missing quantities and units, unpriced lines,
   duplicates, unit and quantity conflicts, provisional sums, vague descriptions and suggested procurement
   categories; for finance users also below-cost lines and margin outliers. It only reports.
