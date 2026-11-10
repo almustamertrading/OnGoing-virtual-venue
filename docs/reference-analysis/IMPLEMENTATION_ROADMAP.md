@@ -98,6 +98,9 @@ is the single owner of migrations, shared types and docs.
   mitigation, status); milestones linked.
 - **DB:** `ops_reports`, `project_risks`. **Tests:** pgTAP, unit, e2e. **Complexity:** M.
 - **Dependencies:** S-1, Tasks, Documents.
+- **Status (2026-11-10):** increment 1 verified (reports, AI extraction, action items to tasks, risk log).
+  Next: photos from Documents on a report, link a report to a milestone, handover checklist, per-sign
+  wayfinding installation status.
 
 ### M6 Management intelligence (Workflow F)
 - **Story:** as an owner, I want a weekly summary of status, budget vs actual, procurement bottlenecks, overdue

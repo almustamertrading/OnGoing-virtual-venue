@@ -126,3 +126,21 @@ findings, sources and decisions.
 system. The audit trail (what the AI said, where, which request, who decided) is uniform. Excerpt checking
 makes unverifiable claims visible instead of hiding them.
 
+## TD-11 · Operations findings become tasks and a separate risk log (2026-11-10)
+
+**Context.** Field reports (site visits, inspections, minutes, handovers) produce three kinds of follow-up:
+work someone must do, problems that exist now, and things that may go wrong. Tasks already exist with
+assignees, due dates and a board; there was no place for issues and risks.
+
+**Decision.** Accepted action items become ordinary tasks, so they appear on the task board, in the calendar
+and in the delivery report without new screens. Issues and risks go to a new `project_risks` log (impact,
+likelihood for risks only, mitigation, owner, status, source report), because a risk is watched and
+mitigated rather than ticked off. Both conversions are security-invoker database functions
+(`accept_finding_as_task`, `accept_finding_as_risk`) that run under the reviewer's own rights in one
+transaction. The AI's suggested assignee is a whole-word match against project members and is checked again
+by the function at accept time: anyone no longer in the project or organisation is dropped, so crafted
+finding data cannot assign work to an outsider. Report text is fenced as data in the prompt.
+
+**Consequences.** No new task model, and the risk log can feed the management summary (Workflow F). The
+report keeps a link to every risk it produced; deleting a report keeps its tasks and risks.
+

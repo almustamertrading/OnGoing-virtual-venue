@@ -1,4 +1,5 @@
 import { locateExcerpt, sentences } from "./doc-intel/text";
+import { isIsoDate } from "./format";
 import type { RequirementCategory, RequirementStatus } from "./types";
 
 // Tender intelligence (Workflow A): what the AI is asked for, how its answer is checked, and the register's
@@ -133,7 +134,6 @@ export type TenderFinding = {
 };
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.replace(/\s+/g, " ").trim().slice(0, max) : "");
-const isDate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(`${s}T00:00:00Z`));
 
 /**
  * Reads and checks the model's findings against the document's pages. Unknown kinds and empty titles are
@@ -170,7 +170,7 @@ export function parseTenderFindings(text: string, pages: readonly string[]): Ten
       page: check.page,
       excerpt,
       verified: check.verified,
-      data: { category, due_date: isDate(due) ? due : "", mandatory: r.mandatory !== false, ...(check.corrected ? { page_corrected: true } : {}) },
+      data: { category, due_date: isIsoDate(due) ? due : "", mandatory: r.mandatory !== false, ...(check.corrected ? { page_corrected: true } : {}) },
     });
     if (out.length >= 80) break;
   }

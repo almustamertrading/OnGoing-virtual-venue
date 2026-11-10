@@ -26,6 +26,7 @@ export function WorkspaceTabs({
     { href: `${base}/structure`, label: "Structure", key: "structure" },
     { href: `${base}/evaluation`, label: "Evaluation", key: "evaluation" },
     { href: `${base}/tasks`, label: "Tasks", key: "tasks" },
+    { href: `${base}/operations`, label: "Operations", key: "operations" },
     { href: `${base}/team`, label: "Team", key: "team" },
     { href: `${base}/venues`, label: "Venues", key: "venues" },
     { href: `${base}/layouts`, label: "Layouts", key: "layouts" },

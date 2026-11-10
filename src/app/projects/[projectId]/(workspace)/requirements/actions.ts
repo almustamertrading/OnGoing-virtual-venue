@@ -7,10 +7,10 @@ import { permissionMessage } from "@/lib/permissions";
 import { createClient } from "@/lib/supabase/server";
 import { REGISTER_KINDS, REQUIREMENT_CATEGORIES } from "@/lib/tender";
 import { analyzeTenderDocument } from "@/lib/tender-analysis";
+import { acceptFindingVia, type ReviewResult } from "@/lib/ai/review-actions";
 import type { RequirementCategory, RequirementStatus } from "@/lib/types";
 
 export type AnalysisState = { error?: string; code?: AiErrorCode; message?: string; ok?: boolean };
-export type ReviewResult = { error?: string; ok?: boolean };
 
 function reviewMessage(error: { code?: string; message?: string }): string {
   if (/already reviewed|Reopen a reviewed/i.test(error.message ?? "")) return "تمت مراجعة هذه النتيجة من قبل. حدّث الصفحة.";
@@ -39,37 +39,7 @@ export async function analyzeTender(projectId: string, _prev: AnalysisState, for
 
 /** Accepts a finding: requirement-type findings become register rows (one transaction); others are acknowledged. */
 export async function acceptFinding(findingId: string, kind: string, note: string): Promise<ReviewResult> {
-  const supabase = await createClient();
-  if (REGISTER_KINDS.has(kind)) {
-    const { error } = await supabase.rpc("accept_finding_as_requirement", { fid: findingId, note: note.slice(0, 1000) });
-    if (error) return { error: reviewMessage(error) };
-  } else {
-    const { data, error } = await supabase
-      .from("ai_findings").update({ status: "accepted", review_note: note.slice(0, 1000) }).eq("id", findingId).select("id");
-    if (error) return { error: reviewMessage(error) };
-    if (!data?.length) return { error: permissionMessage({ code: "42501" }) };
-  }
-  refresh();
-  return { ok: true };
-}
-
-export async function rejectFinding(findingId: string, note: string): Promise<ReviewResult> {
-  const supabase = await createClient();
-  const { data, error } = await supabase
-    .from("ai_findings").update({ status: "rejected", review_note: note.slice(0, 1000) }).eq("id", findingId).select("id");
-  if (error) return { error: reviewMessage(error) };
-  if (!data?.length) return { error: permissionMessage({ code: "42501" }) };
-  refresh();
-  return { ok: true };
-}
-
-export async function reopenFinding(findingId: string): Promise<ReviewResult> {
-  const supabase = await createClient();
-  const { data, error } = await supabase.from("ai_findings").update({ status: "proposed" }).eq("id", findingId).select("id");
-  if (error) return { error: reviewMessage(error) };
-  if (!data?.length) return { error: permissionMessage({ code: "42501" }) };
-  refresh();
-  return { ok: true };
+  return acceptFindingVia(REGISTER_KINDS.has(kind) ? "accept_finding_as_requirement" : null, findingId, note);
 }
 
 export type RegisterState = { error?: string; ok?: boolean; nonce?: number };

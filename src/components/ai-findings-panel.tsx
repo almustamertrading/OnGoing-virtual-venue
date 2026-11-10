@@ -20,7 +20,7 @@ const SEVERITY: Record<AiFindingRow["severity"], { label: string; tone: string }
  */
 export function AiFindingsPanel({
   title, findings, kindLabel, documents, people, canReview, acceptLabels = {}, defaultAcceptLabel = "اعتماد", copyKinds = [], emptyText,
-  onAccept, onReject, onReopen,
+  sourceLabel, onAccept, onReject, onReopen,
 }: {
   title: string;
   findings: AiFindingRow[];
@@ -36,6 +36,8 @@ export function AiFindingsPanel({
   /** Kinds whose title is text to copy (e.g. clarification questions). */
   copyKinds?: string[];
   emptyText: string;
+  /** Shown as the source when a finding comes from text rather than a document (e.g. "the report"). */
+  sourceLabel?: string;
   onAccept: (id: string, kind: string, note: string) => Promise<Result>;
   onReject: (id: string, note: string) => Promise<Result>;
   onReopen: (id: string) => Promise<Result>;
@@ -71,7 +73,7 @@ export function AiFindingsPanel({
                   <FindingCard
                     key={f.id}
                     finding={f}
-                    documentTitle={f.document_id ? documents[f.document_id] : undefined}
+                    documentTitle={f.document_id ? documents[f.document_id] : sourceLabel}
                     canReview={canReview}
                     acceptLabel={acceptLabels[f.kind] ?? defaultAcceptLabel}
                     copyable={copyKinds.includes(f.kind)}
@@ -108,7 +110,7 @@ function SourceLine({ finding, documentTitle }: { finding: AiFindingRow; documen
     <div className="mt-2 rounded-md border border-slate-800 bg-slate-950/60 p-2 text-xs">
       <p className="flex flex-wrap items-center gap-1 text-slate-400">
         <FileText size={13} aria-hidden />
-        <span>{documentTitle ?? "مستند محذوف"}</span>
+        <span>{documentTitle ?? "مصدر محذوف"}</span>
         {finding.source_page && <span>· صفحة {finding.source_page}{corrected ? " (صُحّح رقم الصفحة)" : ""}</span>}
         {finding.source_verified ? (
           <span className="ms-auto inline-flex items-center gap-1 text-emerald-300"><BadgeCheck size={13} aria-hidden /> المصدر مُتحقَّق منه</span>
@@ -155,6 +157,9 @@ function FindingCard({
         <p className="min-w-0 flex-1 text-sm font-medium text-slate-100" dir="auto">{finding.title}</p>
         {due && <span className="text-xs text-slate-400">الموعد: <bdi>{due}</bdi></span>}
       </div>
+      {typeof finding.data?.suggested_assignee_label === "string" && (
+        <p className="mt-1 text-xs text-slate-400">المسؤول المقترح: <bdi>{finding.data.suggested_assignee_label}</bdi></p>
+      )}
       {finding.detail && <p className="mt-1 text-sm text-slate-400" dir="auto">{finding.detail}</p>}
       <SourceLine finding={finding} documentTitle={documentTitle} />
       <div className="mt-3 flex flex-wrap items-center gap-2">

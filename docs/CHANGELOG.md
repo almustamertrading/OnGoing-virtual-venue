@@ -16,6 +16,17 @@ All notable changes. Dates are UTC.
   requests and approval, locked approved content, version history with a view and PDF of every version,
   atomic conversion to a project (TD-08).
 
+- AI operations workflows on one shared findings layer (TD-10): every AI result is a finding with its source
+  (document and page, or the report text), a check that the quoted excerpt really is in the source, and a
+  recorded human decision.
+  - Tender requirements register (Workflow A): AI reads a tender PDF page by page; accepted findings become
+    register rows with owner, due date, status and evidence; compliance summary; due dates in the calendar.
+  - Supplier quote comparison (Workflow D): flags for price, validity, lead time against the event date and
+    missing information; a labelled recommendation; a human award with a required reason, one per RFQ.
+  - Event operations (Workflow E): field reports of eight types; AI proposes action items, issues, risks and
+    decisions; accepted action items become tasks with a suggested assignee and due date; issues and risks
+    go to a new risk log linked to their report.
+
 ### Security
 - S-13 to S-15 found and fixed before release; S-16 accepted and documented.
 

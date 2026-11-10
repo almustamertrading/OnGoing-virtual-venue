@@ -1,6 +1,6 @@
 # Project status
 
-Last updated: 2026-11-09 · Development branch `stage3` · Release candidate `public-site` · Production deploys from `phase-1-foundation` (Netlify).
+Last updated: 2026-11-10 · Development branch `stage3` · Release candidate `public-site` · Production deploys from `phase-1-foundation` (Netlify).
 
 Statuses: NOT STARTED · IN PROGRESS · BLOCKED · IMPLEMENTED · TESTED · VERIFIED (automated tests pass).
 
@@ -39,6 +39,9 @@ Detail: [DEVELOPMENT_TASKS.md](DEVELOPMENT_TASKS.md).
 | Global calendar | VERIFIED locally (calendar e2e, pgTAP) | `stage3` |
 | Central documents | VERIFIED locally (documents e2e, pgTAP) | `stage3` |
 | Reports & analytics | VERIFIED locally (reports e2e, pgTAP) | `stage3` |
+| Tender requirements register (AI, Workflow A) | VERIFIED locally (32 pgTAP + requirements e2e, mock AI) | `stage3` |
+| Supplier quote comparison and reasoned award (Workflow D) | VERIFIED locally (16 pgTAP + quote-comparison e2e) | `stage3` |
+| Event operations: field reports, AI action items to tasks, risk log (Workflow E) | VERIFIED locally (22 pgTAP + operations e2e, mock AI) | `stage3`; photos and handover checklist next |
 | Public marketing site | VERIFIED (smoke 1: loads) | |
 
 ## Environments

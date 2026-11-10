@@ -42,6 +42,13 @@ export function formatDate(iso: string | null | undefined) {
   return `${d} ${month} ${y}`;
 }
 
+/** A real calendar date written YYYY-MM-DD. "2027-02-30" is not one, although Date.parse accepts it. */
+export function isIsoDate(s: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const t = Date.parse(`${s}T00:00:00Z`);
+  return !Number.isNaN(t) && new Date(t).toISOString().slice(0, 10) === s;
+}
+
 const RIYADH_PARTS = new Intl.DateTimeFormat("en-CA", {
   timeZone: "Asia/Riyadh", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
 });

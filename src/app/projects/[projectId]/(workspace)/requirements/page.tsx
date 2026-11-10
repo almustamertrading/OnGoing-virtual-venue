@@ -4,7 +4,8 @@ import { todayIso } from "@/lib/format";
 import { getProjectContext } from "@/lib/project";
 import { KIND_LABEL, REGISTER_KINDS } from "@/lib/tender";
 import type { AiFindingRow, ProjectRequirementRow } from "@/lib/types";
-import { acceptFinding, rejectFinding, reopenFinding } from "./actions";
+import { rejectFinding, reopenFinding } from "@/lib/ai/review-actions";
+import { acceptFinding } from "./actions";
 import { RequirementsRegister } from "./requirements-register";
 import { TenderAnalysisPanel } from "./tender-analysis-panel";
 

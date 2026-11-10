@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatDate, formatDateTime } from "./format";
+import { formatDate, formatDateTime, isIsoDate } from "./format";
 
 describe("formatDate", () => {
   it("formats an ISO date without time zone shifts", () => {
@@ -17,5 +17,21 @@ describe("formatDateTime", () => {
   it("returns an empty string for missing or invalid input", () => {
     expect(formatDateTime(null)).toBe("");
     expect(formatDateTime("not a date")).toBe("");
+  });
+});
+
+describe("isIsoDate", () => {
+  it("accepts real calendar dates only", () => {
+    expect(isIsoDate("2027-02-28")).toBe(true);
+    expect(isIsoDate("2028-02-29")).toBe(true);
+    // Date.parse rolls these over into the next month; they are not dates.
+    expect(isIsoDate("2027-02-29")).toBe(false);
+    expect(isIsoDate("2027-02-30")).toBe(false);
+    expect(isIsoDate("2027-04-31")).toBe(false);
+    expect(isIsoDate("2027-13-01")).toBe(false);
+  });
+
+  it("rejects other formats", () => {
+    for (const s of ["", "15/03/2027", "2027-3-15", "2027-03-15T10:00", " 2027-03-15", "٢٠٢٧-٠٣-١٥"]) expect(isIsoDate(s)).toBe(false);
   });
 });

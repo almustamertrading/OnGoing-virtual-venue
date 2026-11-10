@@ -630,3 +630,40 @@ export type ProjectRequirementRow = {
   updated_at: string;
 };
 
+// ---------------- Event operations (migration 20261110120000) ----------------
+
+export type OpsReportRow = {
+  id: string;
+  project_id: string;
+  organization_id: string;
+  kind: import("./ops").OpsReportKind;
+  title: string;
+  report_date: string;
+  location: string;
+  attendees: string;
+  body: string;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type ProjectRiskRow = {
+  id: string;
+  project_id: string;
+  organization_id: string;
+  kind: "issue" | "risk";
+  title: string;
+  description: string;
+  impact: "low" | "medium" | "high";
+  likelihood: "low" | "medium" | "high" | null;
+  mitigation: string;
+  owner_id: string | null;
+  due_date: string | null;
+  status: "open" | "mitigating" | "closed";
+  source_report_id: string | null;
+  finding_id: string | null;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+};
+

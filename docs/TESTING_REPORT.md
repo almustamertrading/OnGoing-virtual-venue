@@ -9,8 +9,8 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 |---|---|---|---|
 | Typecheck | `npm run typecheck` | — | PASS |
 | Lint (own source; vendored MapLibre worker ignored) | `npm run lint` | — | PASS, 0 problems |
-| Unit tests (Vitest) | `npm test` | 252 | PASS (`stage3`) |
-| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2) | `npx supabase test db` | 160 | PASS (`stage3`, fresh reset) |
+| Unit tests (Vitest) | `npm test` | 294 | PASS (`stage3`) |
+| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations) | `npx supabase test db` | 230 | PASS (`stage3`) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
 | End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow | `E2E_PROD=1 npx playwright test` | 8 logins + 53 tests | PASS (61/61, `stage3`) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
@@ -24,6 +24,12 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-10 · Event operations: reports, risk log, AI action items (Workflow E)
+- **Database:** `npx supabase test db`. PASS, 230 of 230 (new `ops_reports.test.sql`: 22 — members read and editors write reports and the log, viewers and outsiders refused, owner must belong to the project or organisation, an action item becomes a task in one transaction with the suggested assignee and due date, an assignee outside the project and organisation is dropped, issues and risks join the log with their source report, likelihood only for risks, decide once, wrong kinds refused, viewers cannot accept).
+- **Unit:** `npx vitest run`. PASS, 294 of 294 (new `ops.test.ts` 15: whole-word assignee matching, parsing, excerpt verification, dates, defaults, caps, mock output, schema shape, prompt fencing; `format.test.ts`: strict ISO dates).
+- **End-to-end:** `E2E_NAMESPACE=operations E2E_PORT=3209 npx playwright test e2e/operations.spec.ts e2e/requirements.spec.ts`. PASS, 8 logins + 11 of 11 with the mock AI: create and edit a venue inspection report; extraction with verified excerpts and a suggested assignee; a repeat run held back by the duplicate guard; accepted action item becomes a task (assignee, due date, decision trail checked in the database); issues and risks join the log linked to the report; rejection with a note; decision recorded; owner, status, manual entry and closing in the log; viewer read-only. The tender spec re-ran because its date parsing changed.
+- **Bug found and fixed:** `Date.parse` accepts impossible dates such as 2027-02-30 (it rolls them into March), so the tender and operations parsers could show such a date on a finding card. The database already discarded it on accept. Both parsers now use a strict `isIsoDate`.
 
 ### 2026-11-10 · Supplier quote comparison and award (Workflow D)
 - **Database:** PASS, 208 of 208 (new `quotes_award.test.sql`: 16 — comparison fields, no pre-awarded inserts, reason required, unpriced not awardable, award stamped with who/when/why, others set aside, RFQ awarded, award details immutable, one award per RFQ, award can move with a new reason, finance viewers and non-finance editors cannot award).

@@ -13,6 +13,8 @@ const NOUN: Record<string, string> = {
   comments: "a map comment",
   panoramas: "360° photo",
   project_requirements: "tender requirement",
+  ops_reports: "operations report",
+  project_risks: "risk log item",
 };
 
 const FIELD: Record<string, string> = {

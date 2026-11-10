@@ -30,6 +30,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     { count: inventoryCount },
     { count: documentsCount },
     { count: requirementsCount },
+    { count: openRisksCount },
   ] = await Promise.all([
     supabase.from("tasks").select("id", { count: "exact", head: true }).eq("project_id", projectId).neq("status", "done"),
     supabase.from("venues").select("id", { count: "exact", head: true }).eq("project_id", projectId),
@@ -49,6 +50,8 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
     supabase.from("documents").select("id", { count: "exact", head: true }).eq("project_id", projectId),
     // Open tender requirements (not met, not "not applicable").
     supabase.from("project_requirements").select("id", { count: "exact", head: true }).eq("project_id", projectId).in("status", ["open", "in_progress"]),
+    // Open issues and risks.
+    supabase.from("project_risks").select("id", { count: "exact", head: true }).eq("project_id", projectId).neq("status", "closed"),
   ]);
 
   return (
@@ -93,6 +96,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
                 inventory: inventoryCount ?? 0,
                 documents: documentsCount ?? 0,
                 requirements: requirementsCount ?? 0,
+                operations: openRisksCount ?? 0,
                 team: members.length,
               }}
             />
