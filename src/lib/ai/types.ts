@@ -1,7 +1,7 @@
 import type Anthropic from "@anthropic-ai/sdk";
 
-export type AiFeature = "rfp_extract" | "proposal_draft" | "tender_analysis" | "ops_extract" | "management_brief";
-export const AI_FEATURES: readonly AiFeature[] = ["rfp_extract", "proposal_draft", "tender_analysis", "ops_extract", "management_brief"];
+export type AiFeature = "rfp_extract" | "proposal_draft" | "tender_analysis" | "ops_extract" | "management_brief" | "boq_extract";
+export const AI_FEATURES: readonly AiFeature[] = ["rfp_extract", "proposal_draft", "tender_analysis", "ops_extract", "management_brief", "boq_extract"];
 
 export type AiErrorCode =
   | "not_configured"

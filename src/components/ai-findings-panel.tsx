@@ -132,6 +132,24 @@ function SourceLine({
   );
 }
 
+/** Automatic checks a workflow ran on the finding (e.g. "the quantity appears in the quoted text"). */
+function Checks({ finding }: { finding: AiFindingRow }) {
+  const raw = finding.data?.checks;
+  const checks = Array.isArray(raw)
+    ? raw.filter((c): c is { label: string; ok: boolean } => !!c && typeof c === "object" && typeof (c as { label?: unknown }).label === "string")
+    : [];
+  if (checks.length === 0) return null;
+  return (
+    <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="فحوص آلية" data-testid="finding-checks">
+      {checks.map((c) => (
+        <li key={c.label} className={`inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] ${c.ok ? "bg-emerald-500/10 text-emerald-300" : "bg-amber-500/15 text-amber-300"}`}>
+          {c.ok ? <BadgeCheck size={12} aria-hidden /> : <TriangleAlert size={12} aria-hidden />} {c.label}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function FindingCard({
   finding, documentTitle, verifiedText, unverifiedText, canReview, acceptLabel, copyable, onAccept, onReject,
 }: {
@@ -170,6 +188,7 @@ function FindingCard({
         <p className="mt-1 text-xs text-slate-400">المسؤول المقترح: <bdi>{finding.data.suggested_assignee_label}</bdi></p>
       )}
       {finding.detail && <p className="mt-1 text-sm text-slate-400" dir="auto">{finding.detail}</p>}
+      <Checks finding={finding} />
       <SourceLine finding={finding} documentTitle={documentTitle} verifiedText={verifiedText} unverifiedText={unverifiedText} />
       <div className="mt-3 flex flex-wrap items-center gap-2">
         {canReview && (

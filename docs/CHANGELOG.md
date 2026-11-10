@@ -31,6 +31,9 @@ All notable changes. Dates are UTC.
   each user's access. Facts, estimates and recommendations are labelled; suggestions from fixed rules show their
   reasons; optional AI recommendations cite the facts they rest on, every number is checked against them, and
   they stay private to their author (and organisation admins).
+- BOQ extraction from tender PDFs on the Pricing tab: the AI copies item numbers, descriptions, units and
+  quantities as written, each with its page, its quote and automatic checks; a line joins the BOQ only when an
+  editor verifies it, and the line keeps its source. Prices are never extracted.
 - New proposals start with the organisation's default VAT from Settings (still editable per proposal).
 - BOQ checker on the project Pricing tab and the proposal BOQ: missing quantities and units, unpriced lines,
   duplicates, unit and quantity conflicts, provisional sums, vague descriptions and suggested procurement

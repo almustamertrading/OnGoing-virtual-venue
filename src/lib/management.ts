@@ -1,4 +1,7 @@
+import { extractNumbers } from "./doc-intel/text";
 import { formatDate, formatMoney } from "./format";
+
+export { extractNumbers };
 
 // Management intelligence (Workflow F). Facts come only from the database function management_summary,
 // computed as the signed-in user. This module turns them into labelled facts, rule-based suggestions, and
@@ -381,16 +384,6 @@ export function managementPrompt(facts: readonly Fact[], today: string): string 
 ===== FACTS (id | kind | label | value) =====
 ${lines.join("\n")}
 ===== END OF FACTS =====`;
-}
-
-const ARABIC_DIGITS = /[٠-٩۰-۹]/g;
-/** The numbers written in a text, normalised (Arabic-Indic digits, thousands separators, leading zeros). */
-export function extractNumbers(text: string): string[] {
-  const western = text
-    .replace(ARABIC_DIGITS, (d) => String((d.charCodeAt(0) & 0xf) % 10))
-    .replace(/(\d)[,٬](?=\d{3}\b)/g, "$1")
-    .replace(/(\d)٫(\d)/g, "$1.$2");
-  return [...new Set((western.match(/\d+(?:\.\d+)?/g) ?? []).map((n) => String(Number(n))))];
 }
 
 export type BriefRecommendation = {

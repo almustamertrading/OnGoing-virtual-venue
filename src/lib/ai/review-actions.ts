@@ -37,7 +37,7 @@ export async function reopenFinding(findingId: string): Promise<ReviewResult> {
 
 /** Accept through a workflow's database function (one transaction), or acknowledge when there is none. */
 export async function acceptFindingVia(rpc: string | null, findingId: string, note: string): Promise<ReviewResult> {
-  const allowed = new Set(["accept_finding_as_requirement", "accept_finding_as_task", "accept_finding_as_risk"]);
+  const allowed = new Set(["accept_finding_as_requirement", "accept_finding_as_task", "accept_finding_as_risk", "accept_finding_as_boq_item"]);
   const supabase = await createClient();
   if (rpc) {
     if (!allowed.has(rpc)) return { error: "إجراء غير معروف." };

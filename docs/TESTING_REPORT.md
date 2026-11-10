@@ -9,10 +9,10 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 |---|---|---|---|
 | Typecheck | `npm run typecheck` | — | PASS |
 | Lint (own source; vendored MapLibre worker ignored) | `npm run lint` | — | PASS, 0 problems |
-| Unit tests (Vitest) | `npm test` | 421 | PASS (`stage3`) |
-| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations, management summary) | `npx supabase test db` | 261 | PASS (`stage3`, fresh reset) |
+| Unit tests (Vitest) | `npm test` | 432 | PASS (`stage3`) |
+| Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations, management summary, BOQ extraction) | `npx supabase test db` | 275 | PASS (`stage3`) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
-| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker, management summary | `E2E_PROD=1 npx playwright test` | 8 logins + 76 tests | PASS (84/84, `stage3`) |
+| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker, management summary, BOQ extraction | `E2E_PROD=1 npx playwright test` | 8 logins + 79 tests | PASS (87/87, `stage3`) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
 
 **How to run locally:**
@@ -24,6 +24,13 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-10 · AI BOQ extraction with per-line human verification (Workflow B, increment 2)
+- **Database:** `npx supabase test db`. PASS, 275 of 275 (new `boq_extraction.test.sql`: 14 — feature logged; a viewer cannot verify; an accepted line joins the BOQ with quantity, unit, item number and source and no price; the finding records who verified it and what it became; decided once; a missing quantity stays empty; wrong kinds refused; BOQ lines and requirements cannot link to another project's finding, a same-project link is allowed; deleting the finding keeps the verified line).
+- **Unit:** `npx vitest run`. PASS, 432 of 432 (new `boq-extract.test.ts` 11: quantity normalisation and refusal of ranges, percentages and words; quote and quantity checks; missing quantities never guessed; Arabic lines and digits; page correction; invented quotes unverified; mock output; schema; prompt fencing).
+- **End-to-end:** `E2E_NAMESPACE=boqx E2E_PORT=3211 npx playwright test e2e/boq-extract.spec.ts`. PASS, 8 logins + 3 of 3 on a real two-page text PDF with the mock AI: three lines extracted with page 2, quotes and checks (two quantities found in their quotes, one missing); nothing in the BOQ before verification; a verified line joins the BOQ with its item number, quantity and source badge; a rejected line never does; the database links accepted findings and BOQ lines both ways and records the verifier; a viewer sees the lines and decisions but cannot extract or verify.
+- **Full suite:** `E2E_PROD=1 npx playwright test`. PASS, 87 of 87 (production build, 2.6 min).
+- **Bug found and fixed:** the shared PDF reader refused files with under 200 characters of text as scans, which also refused a short genuine BOQ. It now counts non-space characters with a threshold of 60; scans without a text layer still yield almost none.
 
 ### 2026-11-10 · Workspace tabs: instant-navigation warnings (TD-09 correction)
 - **Check (development server, not a test suite):** a Playwright script signed in as the QA admin opened every workspace tab on `next dev` against the local stack, and the server log was searched for "uncached data". Before: tasks, pricing, finance and activity logged it (4 of 7 sampled tabs; the three with their own `loading.tsx` did not). After adding `loading.tsx` to the 13 tabs without one: 0 warnings across all 17 tabs and the summary, reports and projects pages. The venues tab never reaches network idle because its map requests external tiles the sandbox blocks; it was checked with a load-based wait.

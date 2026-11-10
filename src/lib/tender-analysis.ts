@@ -4,11 +4,10 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { aiErrorMessage } from "./ai/config";
 import { runAi } from "./ai/run";
 import { AiError } from "./ai/types";
-import { readPdfPages } from "./doc-intel/pdf";
+import { loadProjectPdf } from "./doc-intel/load";
 import { pagedText } from "./doc-intel/text";
 import { mockTenderOutput, parseTenderFindings, TENDER_SCHEMA, TENDER_SYSTEM, tenderPrompt } from "./tender";
 
-const MAX_BYTES = 25 * 1024 * 1024;
 const MAX_PROMPT_CHARS = 150_000;
 
 export type TenderAnalysisResult = { created: number; verified: number; pagesRead: number; truncated: boolean };
@@ -22,30 +21,13 @@ export async function analyzeTenderDocument(
   supabase: SupabaseClient,
   opts: { projectId: string; documentId: string; force?: boolean },
 ): Promise<TenderAnalysisResult> {
-  const { data: doc } = await supabase
-    .from("documents")
-    .select("id, organization_id, project_id, title, file_name, mime_type, size_bytes, storage_path")
-    .eq("id", opts.documentId)
-    .maybeSingle();
-  if (!doc || doc.project_id !== opts.projectId) throw new AiError("failed", "المستند غير موجود في هذا المشروع، أو ليست لديك صلاحية عليه.");
-  const isPdf = String(doc.mime_type ?? "").includes("pdf") || String(doc.file_name).toLowerCase().endsWith(".pdf");
-  if (!isPdf) throw new AiError("failed", "التحليل متاح لملفات PDF فقط حاليًا.");
-  if (Number(doc.size_bytes) > MAX_BYTES) throw new AiError("too_large", "الملف أكبر من 25 ميغابايت. قسّمه أو ارفع الجزء الخاص بالشروط.");
-
-  const { data: blob, error: dlError } = await supabase.storage.from("documents").download(doc.storage_path as string);
-  if (dlError || !blob) throw new AiError("failed", "تعذّر قراءة الملف من المستندات. حاول مجددًا.");
-  const bytes = new Uint8Array(await blob.arrayBuffer());
-  const pages = await readPdfPages(bytes).catch(() => [] as string[]);
-  const textChars = pages.reduce((n, p) => n + p.length, 0);
-  if (textChars < 200) {
-    throw new AiError("failed", "لا يحتوي الملف على نص قابل للقراءة (ربما ممسوح ضوئيًا). ارفع نسخة نصية من الكراسة.");
-  }
+  const { doc, pages } = await loadProjectPdf(supabase, opts.projectId, opts.documentId, "الشروط");
   const paged = pagedText(pages, MAX_PROMPT_CHARS);
 
   const result = await runAi(
     supabase,
     {
-      organizationId: doc.organization_id as string,
+      organizationId: doc.organization_id,
       feature: "tender_analysis",
       // The same document content analysed twice within minutes is a repeat.
       hashParts: [opts.documentId, createHash("sha256").update(pages.join("\f")).digest("hex")],

@@ -167,3 +167,19 @@ browser. Briefs are findings in the shared layer, readable only by their author 
 **Consequences.** The summary cannot disagree with the underlying modules, since it reads the same tables under
 the same rules. Week-over-week comparison needs stored snapshots, which this increment does not keep yet.
 
+## TD-13 · AI quantities enter the BOQ only through a person's verification (2026-11-10)
+
+**Context.** The brief requires that AI-generated quantities never become approved commercial values without
+human verification. BOQ lines extracted from a tender PDF are exactly such quantities.
+
+**Decision.** The AI copies lines as written (item number, description, unit, quantity) and never prices, totals
+or converts; a missing quantity stays empty. Each line is a finding with its page and quote, and two automatic
+checks shown as badges: the quote is on that page, and the quantity appears in the quote. Nothing reaches
+`boq_items` until a project editor accepts the line; `accept_finding_as_boq_item` inserts it in the same
+transaction that stamps the reviewer, so every AI-originated BOQ line has a recorded verifier. The line keeps its
+source and a link to the finding (links must stay within the project, S-18). Editors can still correct the
+quantity afterwards; manual lines are unaffected.
+
+**Consequences.** The BOQ checker (M1) then runs on verified lines. Excel input and comparing two extractions
+(addendum against original) build on the same findings.
+

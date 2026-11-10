@@ -62,6 +62,12 @@ export type BoqItemRow = {
   unit_price: number | null;
   notes: string;
   sort_order: number;
+  /** The client's item number, when the line came from a document. */
+  item_ref?: string;
+  /** Where the line came from (document and page), when extracted and verified. */
+  source_ref?: string;
+  /** The AI finding a person verified to create this line. */
+  finding_id?: string | null;
 };
 
 export type EvaluationCriterionRow = {

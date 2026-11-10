@@ -114,8 +114,8 @@ is the single owner of migrations, shared types and docs.
   Next: stored weekly snapshots with week-over-week change, budget against the priced BOQ, email digest (P-06).
 
 ### Later
-BOQ ingestion from Excel and PDF with per-line verification and version comparison (Workflow B, needs a
-spreadsheet parser decision); addendum comparison and document classification (A); purchase orders and
+BOQ ingestion from Excel and version comparison (Workflow B, needs a spreadsheet parser decision; PDF extraction
+with per-line verification was verified on 2026-11-10); addendum comparison and document classification (A); purchase orders and
 deliveries (D); AI value report (hours saved, labelled estimates); chat assistant in the team's messenger
 (external integration, needs a decision).
 

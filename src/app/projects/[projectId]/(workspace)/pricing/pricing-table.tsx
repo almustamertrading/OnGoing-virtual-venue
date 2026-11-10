@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useTransition } from "react";
-import { Trash2 } from "lucide-react";
+import { FileCheck2, Trash2 } from "lucide-react";
 import { BoqCheckPanel } from "@/components/boq-check-panel";
 import { formatMoney } from "@/lib/format";
 import type { BoqItemRow } from "@/lib/types";
@@ -65,7 +65,15 @@ export function PricingTable({
             <tbody className="divide-y divide-slate-800">
               {items.map((it) => (
                 <tr key={it.id} id={`${ROW_ANCHOR}${it.id}`} className="align-top">
-                  <td className="px-2 py-2 text-slate-100">{it.description}</td>
+                  <td className="px-2 py-2 text-slate-100" data-testid="boq-description">
+                    {it.item_ref && <span className="me-1 text-xs text-slate-500">{it.item_ref}</span>}
+                    {it.description}
+                    {it.source_ref && (
+                      <span className="mt-0.5 flex items-center gap-1 text-[11px] text-violet-300" data-testid="boq-source">
+                        <FileCheck2 size={12} aria-hidden /> مُتحقَّق من الملف · {it.source_ref}
+                      </span>
+                    )}
+                  </td>
                   <td className="px-2 py-2 text-slate-400">{it.unit || "—"}</td>
                   <td className="px-2 py-2 text-slate-300">
                     {canEdit ? (

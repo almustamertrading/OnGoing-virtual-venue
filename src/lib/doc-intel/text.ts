@@ -60,3 +60,13 @@ export function sentences(text: string): string[] {
     .map((s) => s.replace(/\s+/g, " ").trim())
     .filter((s) => s.length >= 12);
 }
+
+const ARABIC_DIGITS = /[\u0660-\u0669\u06F0-\u06F9]/g;
+/** The numbers written in a text, normalised (Arabic-Indic digits, thousands separators, leading zeros). */
+export function extractNumbers(text: string): string[] {
+  const western = text
+    .replace(ARABIC_DIGITS, (d) => String((d.charCodeAt(0) & 0xf) % 10))
+    .replace(/(\d)[,\u066C](?=\d{3}\b)/g, "$1")
+    .replace(/(\d)\u066B(\d)/g, "$1.$2");
+  return [...new Set((western.match(/\d+(?:\.\d+)?/g) ?? []).map((n) => String(Number(n))))];
+}
