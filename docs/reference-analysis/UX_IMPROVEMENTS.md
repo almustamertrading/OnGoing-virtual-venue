@@ -6,7 +6,7 @@ system. Nothing of the reference's look, text or artwork is reused.
 | Pattern observed | Why it works | How OnGoing applies it | Status |
 |---|---|---|---|
 | Every workflow states inputs → outputs → flagged items → approver | Users know what the AI did and who signs off | Findings panel shows the source, the proposed value, the severity and who reviewed it; approval buttons only for people who can approve | Planned (S-1) |
-| Exceptions first | Busy managers act on problems, not on lists | Each module leads with an issues summary (BOQ checker, procurement flags, missing requirements, overdue work) | M1 in progress; others per milestone |
+| Exceptions first | Busy managers act on problems, not on lists | Each module leads with an issues summary (BOQ checker, procurement flags, missing requirements, overdue work) | Done for the BOQ checker (M1), procurement flags (M3) and the register summary (M2); others per milestone |
 | Source shown next to each number | Trust and audit | Document, page and excerpt with a "verified" badge on AI findings; report figures link to their module | Planned (S-1, M6) |
 | Honest labelling of demos and estimates | Credibility | Mock AI badge (done); reports label facts, estimates and AI recommendations differently | Partly done |
 | Calculators show their formula and caveats | Users can check the arithmetic | Margin, VAT and comparison figures show how they are computed (tooltips / small print) | Planned (M3, M4) |

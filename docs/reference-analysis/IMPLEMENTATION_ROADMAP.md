@@ -39,7 +39,7 @@ is the single owner of migrations, shared types and docs.
 
 ## Workflow milestones
 
-### M1 BOQ checker (Workflow B, rule-based) — in progress (parallel worktree)
+### M1 BOQ checker (Workflow B, rule-based) — verified 2026-11-10
 - **Story:** as an estimator, I want obvious BOQ problems flagged before pricing.
 - **Acceptance:** flags missing quantities, unpriced lines, missing/unknown units, duplicates, unit and quantity
   conflicts, provisional sums, vague descriptions; finance users also see below-cost and margin outliers;

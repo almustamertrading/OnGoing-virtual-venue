@@ -12,7 +12,7 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 | Unit tests (Vitest) | `npm test` | 294 | PASS (`stage3`) |
 | Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations) | `npx supabase test db` | 230 | PASS (`stage3`) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
-| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow | `E2E_PROD=1 npx playwright test` | 8 logins + 53 tests | PASS (61/61, `stage3`) |
+| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker | `E2E_PROD=1 npx playwright test` | 8 logins + 72 tests | PASS (80/80, `stage3`) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
 
 **How to run locally:**
@@ -24,6 +24,12 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-10 · BOQ checker (Workflow B rules), merged from a parallel worktree
+- **Unit:** `npx vitest run`. PASS, 404 of 404 on the merged tree (new `boq-check.test.ts`: 110 — every rule, severities and order, Arabic and English normalisation, units, duplicates and conflicts, provisional sums, finance-only checks and their absence without finance access, categories).
+- **End-to-end (worktree):** `E2E_NAMESPACE=boqcheck E2E_PORT=3206 npx playwright test e2e/boq-check.spec.ts`. PASS, 8 logins + 5 of 5 (sales on the Pricing tab, finance on a proposal with below-cost and low-margin lines, non-finance proposal view with no cost checks, 375 px on both pages); boq-check + reports + smoke together 35 of 35 (no leftovers for exact-figure specs).
+- **Full suite on the merged tree:** `E2E_PROD=1 npx playwright test`. PASS, 80 of 80 (8 logins + 72 tests, production build, 2.9 min), with Workflow E and the BOQ checker together.
+- **Review before merge:** `unit_cost` is passed to the checker only when the viewer may see costs, finance messages show a margin percentage and never an amount, and the panel changes no data.
 
 ### 2026-11-10 · Event operations: reports, risk log, AI action items (Workflow E)
 - **Database:** `npx supabase test db`. PASS, 230 of 230 (new `ops_reports.test.sql`: 22 — members read and editors write reports and the log, viewers and outsiders refused, owner must belong to the project or organisation, an action item becomes a task in one transaction with the suggested assignee and due date, an assignee outside the project and organisation is dropped, issues and risks join the log with their source report, likelihood only for risks, decide once, wrong kinds refused, viewers cannot accept).

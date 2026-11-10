@@ -16,6 +16,8 @@ Classification: **IMPLEMENTED** · **PARTIAL** · **MISSING** · **NOT RELEVANT*
 | 2026-11-10 | A: document classification, addendum comparison | MISSING | MISSING (next increments) | — |
 | 2026-11-10 | D: price comparison, specification/exclusions, lead time and validity, missing information, recommendation with reasons, approval (reasoned human award, never automatic) | PARTIAL / MISSING | IMPLEMENTED (increment 1) | Procurement comparison view; pgTAP 16; e2e `quote-comparison.spec.ts` |
 | 2026-11-10 | D: quote document ingestion (AI), item-to-quotation matching | MISSING | MISSING (next) | — |
+| 2026-11-10 | B: quantity and unit validation, duplicate detection, conflicting quantities or units, missing specification flags (vague descriptions), suggested procurement categories | MISSING | IMPLEMENTED (rule-based, increment 1) | BOQ checker panel; unit 110; e2e `boq-check.spec.ts` |
+| 2026-11-10 | C: pricing anomaly detection (below cost, margin outliers, missing cost; finance only) | MISSING | IMPLEMENTED (rule-based) | BOQ checker with `finance: true` on proposals |
 | 2026-11-10 | E: site visit and venue inspection reports, production updates and daily reports, meeting minutes | MISSING | IMPLEMENTED (increment 1: typed reports with notes; photo attachments and type-specific fields not yet) | Operations tab; e2e `operations.spec.ts` |
 | 2026-11-10 | E: issues and risk log; action item extraction with assignment suggestions | MISSING | IMPLEMENTED (increment 1) | `project_risks`, `accept_finding_as_task`; pgTAP 22; e2e `operations.spec.ts` |
 | 2026-11-10 | E: handover / handback reporting; wayfinding installation and inspection | MISSING / PARTIAL | PARTIAL (report types exist; venue checklist and per-sign installation status not yet) | — |

@@ -26,6 +26,9 @@ All notable changes. Dates are UTC.
   - Event operations (Workflow E): field reports of eight types; AI proposes action items, issues, risks and
     decisions; accepted action items become tasks with a suggested assignee and due date; issues and risks
     go to a new risk log linked to their report.
+- BOQ checker on the project Pricing tab and the proposal BOQ: missing quantities and units, unpriced lines,
+  duplicates, unit and quantity conflicts, provisional sums, vague descriptions and suggested procurement
+  categories; for finance users also below-cost lines and margin outliers. It only reports.
 
 ### Security
 - S-13 to S-15 found and fixed before release; S-16 accepted and documented.
