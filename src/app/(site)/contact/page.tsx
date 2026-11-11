@@ -4,51 +4,40 @@ import { company } from "@/lib/site-content";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
-  title: `تواصل معنا | ${company.nameAr}`,
-  description: `تواصل مع ${company.legalAr} لتخطيط وتنفيذ فعاليتك القادمة.`,
+  title: `تواصل معنا | ${company.nameEn}`,
+  description: `تواصل مع ${company.legalAr} (${company.nameEn}) لتخطيط وتنفيذ فعاليتك القادمة.`,
+};
+
+const Row = ({ icon, label, value, href, ltr = false }: { icon: React.ReactNode; label: string; value: string; href?: string; ltr?: boolean }) => {
+  const inner = (
+    <>
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-line text-gold">{icon}</span>
+      <div className="min-w-0">
+        <p className="eyebrow text-left">{label}</p>
+        <p dir={ltr ? "ltr" : undefined} className={`mt-1 font-bold text-sand ${ltr ? "la text-left" : ""}`}>{value}</p>
+      </div>
+    </>
+  );
+  const cls = "flex items-center gap-4 border-b border-line py-5 transition hover:text-gold";
+  return href ? <a href={href} className={cls}>{inner}</a> : <div className={cls}>{inner}</div>;
 };
 
 export default function ContactPage() {
   const wa = `https://wa.me/${company.phoneLink.replace("+", "")}`;
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-16">
-      <h1 className="text-3xl font-extrabold text-white sm:text-5xl">تواصل معنا</h1>
-      <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-        عندك فعالية أو مشروع؟ تواصل معنا ونبدأ من الفكرة حتى التشغيل.
-      </p>
+    <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:py-20">
+      <p className="eyebrow text-left">Contact</p>
+      <h1 className="mt-3 text-4xl font-extrabold text-sand sm:text-5xl">تواصل معنا</h1>
+      <span className="rule-dot mt-6" aria-hidden />
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">عندك فعالية أو مشروع؟ تواصل معنا ونبدأ من الفكرة حتى التشغيل.</p>
 
-      <div className="mt-10 grid gap-8 lg:grid-cols-2">
-        <div className="space-y-4">
-          <a href={`tel:${company.phoneLink}`} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-emerald-400/40">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400"><Phone size={20} /></span>
-            <div>
-              <p className="text-xs text-slate-400">اتصال</p>
-              <p dir="ltr" className="text-left font-bold text-white">{company.phone}</p>
-            </div>
-          </a>
-          <a href={wa} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-emerald-400/40">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400"><MessageCircle size={20} /></span>
-            <div>
-              <p className="text-xs text-slate-400">واتساب</p>
-              <p dir="ltr" className="text-left font-bold text-white">{company.phone}</p>
-            </div>
-          </a>
-          <a href={`mailto:${company.email}`} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-emerald-400/40">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/15 text-sky-400"><Mail size={20} /></span>
-            <div>
-              <p className="text-xs text-slate-400">البريد</p>
-              <p className="font-bold text-white">{company.email}</p>
-            </div>
-          </a>
-          <div className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-500/15 text-rose-400"><MapPin size={20} /></span>
-            <div>
-              <p className="text-xs text-slate-400">العنوان</p>
-              <p className="font-medium text-slate-200">{company.address}</p>
-            </div>
-          </div>
+      <div className="mt-12 grid gap-12 lg:grid-cols-2">
+        <div className="border-t border-line">
+          <Row icon={<Phone size={18} />} label="Call" value={company.phone} href={`tel:${company.phoneLink}`} ltr />
+          <Row icon={<MessageCircle size={18} />} label="WhatsApp" value={company.phone} href={wa} ltr />
+          <Row icon={<Mail size={18} />} label="Email" value={company.email} href={`mailto:${company.email}`} ltr />
+          <Row icon={<MapPin size={18} />} label="Office" value={company.address} />
         </div>
-
         <ContactForm />
       </div>
     </section>

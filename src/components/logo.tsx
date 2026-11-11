@@ -1,14 +1,10 @@
-import { MapPinned } from "lucide-react";
+import Image from "next/image";
 
 export function Logo({ className = "", compact = false }: { className?: string; compact?: boolean }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 text-slate-950">
-        <MapPinned size={18} />
-      </span>
-      <span className={`${compact ? "hidden sm:inline" : ""} text-lg font-semibold tracking-tight text-white`}>
-        OnGoing <span className="text-emerald-400">Virtual Venue</span>
-      </span>
+    <div className={`flex items-center gap-3 ${className}`}>
+      <Image src="/brand/wordmark-dark.svg" alt="Ongoing Events" width={515} height={96} priority className={`${compact ? "h-6" : "h-8"} w-auto`} />
+      <span className={`${compact ? "hidden md:inline" : ""} border-l border-slate-700 pl-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400`}>Platform</span>
     </div>
   );
 }
