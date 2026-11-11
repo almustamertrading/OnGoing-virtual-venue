@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistSans = localFont({
+  variable: "--font-geist-sans",
+  display: "swap",
+  src: [
+    { path: "../fonts/geist-sans-latin-400-normal.woff2", weight: "400" },
+    { path: "../fonts/geist-sans-latin-500-normal.woff2", weight: "500" },
+    { path: "../fonts/geist-sans-latin-600-normal.woff2", weight: "600" },
+    { path: "../fonts/geist-sans-latin-700-normal.woff2", weight: "700" },
+  ],
+});
+const geistMono = localFont({ variable: "--font-geist-mono", display: "swap", src: "../fonts/geist-mono-latin-400-normal.woff2" });
 
 export const metadata: Metadata = {
   title: "OnGoing Virtual Venue",
