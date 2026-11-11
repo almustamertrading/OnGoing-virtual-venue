@@ -12,14 +12,14 @@ export function LoginForm({ next }: { next: string }) {
 
   return (
     <div className="card w-full max-w-sm p-6">
-      <div className="mb-6 grid grid-cols-2 rounded-lg bg-slate-950 p-1 text-sm">
+      <div className="mb-6 grid grid-cols-2 rounded-sm bg-slate-950 p-1 text-sm">
         {(["signin", "signup"] as const).map((m) => (
           <button
             key={m}
             type="button"
             onClick={() => setMode(m)}
-            className={`rounded-md py-1.5 font-medium ${
-              mode === m ? "bg-slate-800 text-white" : "text-slate-400 hover:text-slate-200"
+            className={`rounded-sm py-1.5 font-medium ${
+              mode === m ? "bg-slate-800 text-emerald-300" : "text-slate-400 hover:text-slate-200"
             }`}
           >
             {m === "signin" ? "Sign in" : "Create account"}

@@ -18,6 +18,31 @@
   --color-muted2: #5e574d;
   --font-ar: var(--font-ar);
   --font-la: var(--font-la);
+
+  /* Internal platform: remap Tailwind's slate/emerald scales to the brand's warm
+     neutrals and gold, so every screen follows the identity without per-file edits. */
+  --color-slate-50: #f7f3ea;
+  --color-slate-100: #efe9dd;
+  --color-slate-200: #ddd6c8;
+  --color-slate-300: #c9c2b5;
+  --color-slate-400: #9d968c;
+  --color-slate-500: #78716a;
+  --color-slate-600: #4a4550;
+  --color-slate-700: #2b2830;
+  --color-slate-800: #1c1a1d;
+  --color-slate-900: #151317;
+  --color-slate-950: #0f0e10;
+  --color-emerald-50: #fbf4e4;
+  --color-emerald-100: #f3e3be;
+  --color-emerald-200: #edd091;
+  --color-emerald-300: #e8be6c;
+  --color-emerald-400: #e0a94e;
+  --color-emerald-500: #e0a94e;
+  --color-emerald-600: #c8923c;
+  --color-emerald-700: #a3752c;
+  --color-emerald-800: #7a5718;
+  --color-emerald-900: #4a3512;
+  --color-emerald-950: #2a2114;
 }
 
 :root {
@@ -25,18 +50,18 @@
 }
 
 body {
-  background: #0b1120;
-  color: #e2e8f0;
+  background: #121014;
+  color: #efe9dd;
 }
 
 @utility field {
-  @apply w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500;
+  @apply w-full rounded-sm border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500;
 }
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 rounded-sm px-3 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
 }
 @utility btn-primary {
-  @apply btn bg-emerald-500 text-slate-950 hover:bg-emerald-400;
+  @apply btn bg-emerald-500 text-[#121014] hover:bg-emerald-300;
 }
 @utility btn-ghost {
   @apply btn border border-slate-700 text-slate-200 hover:bg-slate-800;
@@ -45,25 +70,25 @@ body {
   @apply btn border border-red-900 text-red-300 hover:bg-red-950;
 }
 @utility card {
-  @apply rounded-xl border border-slate-800 bg-slate-900/60;
+  @apply rounded-sm border border-slate-700 bg-slate-900/70;
 }
 @utility label {
-  @apply mb-1 block text-xs font-medium uppercase tracking-wide text-slate-400;
+  @apply mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-400;
 }
 
 /* MapLibre controls in dark UI */
 .maplibregl-ctrl-group {
-  background: #0f172a !important;
+  background: #151317 !important;
 }
 .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
   filter: invert(1);
 }
 .maplibregl-ctrl-attrib {
-  background: rgba(15, 23, 42, 0.75) !important;
-  color: #cbd5e1;
+  background: rgba(18, 16, 20, 0.75) !important;
+  color: #c9c2b5;
 }
 .maplibregl-ctrl-attrib a {
-  color: #e2e8f0;
+  color: #efe9dd;
 }
 
 /* Map pins */
@@ -88,7 +113,7 @@ body {
   opacity: 0.75;
 }
 .comment-pin.active {
-  outline: 3px solid #10b981;
+  outline: 3px solid #e0a94e;
 }
 .pano-pin {
   display: flex;
