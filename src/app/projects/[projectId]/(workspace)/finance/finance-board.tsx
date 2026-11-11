@@ -37,7 +37,7 @@ export function FinanceBoard({
     { k: "المصروفات", v: m(spent), tone: "text-amber-300" },
     { k: "المفوتر", v: m(invoiced) },
     { k: "المحصّل", v: m(paid), tone: "text-emerald-300" },
-    { k: "الهامش التقديري", v: basis ? m(margin) : "—", tone: !basis ? "text-white" : margin >= 0 ? "text-emerald-300" : "text-red-300" },
+    { k: "الهامش التقديري", v: basis ? m(margin) : "—", tone: !basis ? "text-slate-100" : margin >= 0 ? "text-emerald-300" : "text-red-300" },
   ];
 
   return (
@@ -46,7 +46,7 @@ export function FinanceBoard({
         {cards.map((c) => (
           <div key={c.k} className="card p-3">
             <p className="text-xs text-slate-500">{c.k}</p>
-            <p className={`mt-1 text-sm font-bold ${c.tone ?? "text-white"}`}>{c.v}</p>
+            <p className={`mt-1 text-sm font-bold ${c.tone ?? "text-slate-100"}`}>{c.v}</p>
           </div>
         ))}
       </section>
@@ -54,7 +54,7 @@ export function FinanceBoard({
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Invoices */}
         <section className="card p-5">
-          <h2 className="font-semibold text-white">الفواتير</h2>
+          <h2 className="font-semibold text-slate-100">الفواتير</h2>
           <p className="mb-3 text-xs text-slate-500">فواتير العميل وحالة التحصيل.</p>
           {invoices.length === 0 ? (
             <p className="mb-3 text-sm text-slate-500">لا توجد فواتير.</p>
@@ -70,7 +70,7 @@ export function FinanceBoard({
 
         {/* Expenses */}
         <section className="card p-5">
-          <h2 className="font-semibold text-white">المصروفات</h2>
+          <h2 className="font-semibold text-slate-100">المصروفات</h2>
           <p className="mb-3 text-xs text-slate-500">التكاليف الفعلية على المشروع.</p>
           {expenses.length === 0 ? (
             <p className="mb-3 text-sm text-slate-500">لا توجد مصروفات.</p>
@@ -97,7 +97,7 @@ function InvoiceRowItem({ inv, currency, canEdit }: { inv: InvoiceRow; currency:
         <p className="truncate text-slate-100">{inv.title} {inv.number && <span className="text-xs text-slate-500">#{inv.number}</span>}</p>
         {inv.due_date && <p className="text-xs text-slate-500">الاستحقاق: {formatDate(inv.due_date)}</p>}
       </div>
-      <span className="font-medium text-white">{formatMoney(inv.amount, currency)}</span>
+      <span className="font-medium text-slate-100">{formatMoney(inv.amount, currency)}</span>
       {canEdit ? (
         <select
           aria-label={`حالة فاتورة ${inv.title}`}

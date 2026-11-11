@@ -22,7 +22,7 @@ export function StructureList({
   return (
     <section dir="rtl" className="card p-5" data-testid="structure">
       <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-semibold text-white">هيكل فريق العمل</h2>
+        <h2 className="font-semibold text-slate-100">هيكل فريق العمل</h2>
         <span className="flex items-center gap-1 text-xs text-slate-400"><Users size={13} /> {total} فرد في {roles.length} دور</span>
       </div>
       <p className="mb-4 text-xs text-slate-500">الأدوار المطلوبة لتنفيذ نطاق العمل. مقترحة من الكراسة وقابلة للتعديل.</p>

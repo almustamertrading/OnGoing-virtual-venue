@@ -62,7 +62,7 @@ export function TaskBoard({
               key={String(m)}
               type="button"
               onClick={() => setMine(m)}
-              className={`rounded-md px-3 py-1 ${mine === m ? "bg-slate-700 text-white" : "text-slate-400"}`}
+              className={`rounded-md px-3 py-1 ${mine === m ? "bg-slate-700 text-slate-100" : "text-slate-400"}`}
             >
               {m ? "Mine" : "All tasks"}
             </button>
@@ -81,8 +81,8 @@ export function TaskBoard({
       {adding && (
         <form action={addAction} className="card grid gap-3 p-4 sm:grid-cols-2" data-testid="new-task">
           <div className="sm:col-span-2 flex items-center justify-between">
-            <h3 className="font-semibold text-white">New task</h3>
-            <button type="button" aria-label="Close" onClick={() => setAdding(false)} className="text-slate-400 hover:text-white"><X size={16} /></button>
+            <h3 className="font-semibold text-slate-100">New task</h3>
+            <button type="button" aria-label="Close" onClick={() => setAdding(false)} className="text-slate-400 hover:text-slate-100"><X size={16} /></button>
           </div>
           <input name="title" required autoFocus placeholder="What needs doing?" aria-label="Task title" className="field sm:col-span-2" />
           <textarea name="description" rows={2} placeholder="Details (optional)" aria-label="Task details" className="field sm:col-span-2" />

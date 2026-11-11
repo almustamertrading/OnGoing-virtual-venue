@@ -163,7 +163,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
     <div className="flex h-dvh flex-col">
       {/* Top bar */}
       <header className="flex h-12 shrink-0 items-center gap-3 border-b border-slate-800 bg-slate-950 px-3">
-        <Link href={`/projects/${projectId}/venues`} className="flex items-center gap-1 text-sm text-slate-400 hover:text-white">
+        <Link href={`/projects/${projectId}/venues`} className="flex items-center gap-1 text-sm text-slate-400 hover:text-slate-100">
           <ChevronLeft size={16} /> <span className="hidden max-w-40 truncate sm:inline">{projectName}</span>
         </Link>
         <button
@@ -175,7 +175,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
         >
           {panelOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
         </button>
-        <h1 className="min-w-0 truncate text-sm font-semibold text-white">{venue.name}</h1>
+        <h1 className="min-w-0 truncate text-sm font-semibold text-slate-100">{venue.name}</h1>
         <span className="rounded bg-slate-800 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-slate-300">{role}</span>
         <div className="flex-1" />
         <div className="flex items-center -space-x-1.5" data-testid="presence">
@@ -217,7 +217,7 @@ export function VenueEditor({ projectId, projectName, venue, role, userId, email
                 key={id}
                 type="button"
                 onClick={() => setTab(id)}
-                className={`flex items-center justify-center gap-1 py-2.5 ${tab === id ? "border-b-2 border-emerald-500 text-white" : "text-slate-400 hover:text-slate-200"}`}
+                className={`flex items-center justify-center gap-1 py-2.5 ${tab === id ? "border-b-2 border-emerald-500 text-slate-100" : "text-slate-400 hover:text-slate-200"}`}
               >
                 {icon} {label}
               </button>

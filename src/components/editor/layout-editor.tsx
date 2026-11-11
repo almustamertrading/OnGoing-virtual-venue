@@ -281,9 +281,9 @@ export function LayoutEditor({
   return (
     <div className="flex h-dvh flex-col bg-[#0b1120] text-slate-200">
       <header className="flex items-center gap-2 border-b border-slate-800 bg-slate-950 px-3 py-2 text-sm">
-        <Link href={`/projects/${projectId}/layouts`} className="text-slate-400 hover:text-white">المخططات</Link>
+        <Link href={`/projects/${projectId}/layouts`} className="text-slate-400 hover:text-slate-100">المخططات</Link>
         <ChevronRight size={14} className="text-slate-600" />
-        <span className="truncate font-medium text-white">{layout.name}</span>
+        <span className="truncate font-medium text-slate-100">{layout.name}</span>
         <span className="ml-auto hidden text-xs text-slate-500 md:inline">{projectName}</span>
         {canEdit && bg.path && (
           <button
@@ -308,11 +308,11 @@ export function LayoutEditor({
             <div className="mb-2 space-y-1.5 rounded-lg border border-slate-800 bg-slate-900 p-2">
               <div className="flex items-center gap-1">
                 <input type="number" min={1} max={20} value={seatsPerTable} onChange={(e) => setSeatsPerTable(Number(e.target.value))} className="w-12 rounded border border-slate-700 bg-slate-950 px-1 py-0.5 text-center" />
-                <button onClick={addSeatedTable} disabled={!bg.path} className="flex-1 rounded bg-emerald-600/90 px-2 py-1 font-medium text-white hover:bg-emerald-600 disabled:opacity-40">طاولة + كراسي</button>
+                <button onClick={addSeatedTable} disabled={!bg.path} className="flex-1 rounded bg-emerald-600/90 px-2 py-1 font-medium text-slate-100 hover:bg-emerald-600 disabled:opacity-40">طاولة + كراسي</button>
               </div>
               <div className="flex items-center gap-1">
                 <input type="number" min={1} max={40} value={rowLen} onChange={(e) => setRowLen(Number(e.target.value))} className="w-12 rounded border border-slate-700 bg-slate-950 px-1 py-0.5 text-center" />
-                <button onClick={addRow} disabled={!bg.path} className="flex-1 rounded bg-slate-700 px-2 py-1 font-medium text-white hover:bg-slate-600 disabled:opacity-40">صف كراسي</button>
+                <button onClick={addRow} disabled={!bg.path} className="flex-1 rounded bg-slate-700 px-2 py-1 font-medium text-slate-100 hover:bg-slate-600 disabled:opacity-40">صف كراسي</button>
               </div>
             </div>
 
@@ -371,7 +371,7 @@ export function LayoutEditor({
           </svg>
 
           {scaleMode && (
-            <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full bg-emerald-600/90 px-3 py-1 text-xs text-white">
+            <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full bg-emerald-600/90 px-3 py-1 text-xs text-slate-100">
               اضغط نقطتين على مسافة معروفة لضبط المقياس
             </div>
           )}
@@ -401,7 +401,7 @@ export function LayoutEditor({
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-6">
               <div className="pointer-events-auto card max-w-sm p-6 text-center">
                 <Upload className="mx-auto mb-3 text-emerald-400" size={28} />
-                <h3 className="font-semibold text-white">ارفع مخطط القاعة</h3>
+                <h3 className="font-semibold text-slate-100">ارفع مخطط القاعة</h3>
                 <p className="mb-4 mt-1 text-xs text-slate-400">صورة المخطط (JPG/PNG/WebP حتى 25MB) تكون خلفية توزّع عليها العناصر.</p>
                 {canEdit ? (
                   <label className="btn-primary inline-flex cursor-pointer items-center gap-2">
@@ -429,7 +429,7 @@ export function LayoutEditor({
         {sel && (
           <aside dir="rtl" className="w-60 shrink-0 overflow-y-auto border-r border-slate-800 bg-slate-950 p-3">
             <div className="mb-3 flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-white">{assetOf(sel.kind).label}</h3>
+              <h3 className="text-sm font-semibold text-slate-100">{assetOf(sel.kind).label}</h3>
               {canEdit && (
                 <div className="flex items-center gap-2">
                   <button onClick={() => duplicateItem(sel)} aria-label="تكرار" className="text-slate-500 hover:text-emerald-400"><Copy size={15} /></button>

@@ -89,7 +89,7 @@ export function LayersPanel({
                 <button
                   type="button"
                   onClick={() => toggleHidden(layer.id)}
-                  className="text-slate-400 hover:text-white"
+                  className="text-slate-400 hover:text-slate-100"
                   aria-label={isHidden ? `Show ${layer.name}` : `Hide ${layer.name}`}
                 >
                   {isHidden ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -129,7 +129,7 @@ export function LayersPanel({
                           <button
                             type="button"
                             onClick={() => onSelectFeature(f)}
-                            className={`block w-full truncate rounded px-1.5 py-1 text-left text-xs ${f.id === selectedId ? "bg-slate-700 text-white" : "text-slate-300 hover:bg-slate-800"}`}
+                            className={`block w-full truncate rounded px-1.5 py-1 text-left text-xs ${f.id === selectedId ? "bg-slate-700 text-slate-100" : "text-slate-300 hover:bg-slate-800"}`}
                           >
                             {f.name || `Unnamed ${f.geometry.type === "Polygon" ? "area" : f.geometry.type === "LineString" ? "line" : "point"}`}
                           </button>

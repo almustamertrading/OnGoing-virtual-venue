@@ -46,7 +46,7 @@ export function ProcurementBoard({
     <div dir="rtl" className="grid gap-6 lg:grid-cols-[1fr_340px]">
       {/* RFQs */}
       <section>
-        <h2 className="mb-1 font-semibold text-white">طلبات عروض الأسعار (RFQ)</h2>
+        <h2 className="mb-1 font-semibold text-slate-100">طلبات عروض الأسعار (RFQ)</h2>
         <p className="mb-4 text-xs text-slate-500">اطلب عروضًا من الموردين لكل بند، قارن الأسعار، واعتمد الأفضل.</p>
 
         {canEdit && <RfqForm projectId={projectId} resetKey={rfqs.length} />}
@@ -74,7 +74,7 @@ export function ProcurementBoard({
       {/* Suppliers directory */}
       <section className="card h-fit p-4">
         <button type="button" onClick={() => setShowSuppliers((v) => !v)} className="flex w-full items-center justify-between">
-          <h3 className="font-semibold text-white">دليل الموردين <span className="text-xs text-slate-500">({suppliers.length})</span></h3>
+          <h3 className="font-semibold text-slate-100">دليل الموردين <span className="text-xs text-slate-500">({suppliers.length})</span></h3>
           <ChevronDown size={16} className={`text-slate-400 transition ${showSuppliers ? "rotate-180" : ""}`} />
         </button>
 
@@ -142,7 +142,7 @@ function RfqCard({
   return (
     <div className="card p-4" data-testid="rfq">
       <div className="mb-3 flex flex-wrap items-center gap-2">
-        <h3 className="font-semibold text-white">{rfq.title}</h3>
+        <h3 className="font-semibold text-slate-100">{rfq.title}</h3>
         {rfq.category && <span className="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-300">{rfq.category}</span>}
         <span className={`rounded-full px-2 py-0.5 text-xs ${st.tone}`}>{st.label}</span>
         {rfq.due_date && <span className="text-xs text-slate-500">آخر موعد: {formatDate(rfq.due_date)}</span>}

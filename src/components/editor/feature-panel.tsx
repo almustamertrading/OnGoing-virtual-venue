@@ -25,8 +25,8 @@ export function FeaturePanel({
   return (
     <div className="w-full space-y-3 rounded-xl border border-slate-700 bg-slate-900 p-4 md:w-72 md:shadow-2xl" data-testid="feature-panel">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-white">{kind}</h3>
-        <button type="button" onClick={onClose} className="text-slate-400 hover:text-white" aria-label="Close">
+        <h3 className="text-sm font-semibold text-slate-100">{kind}</h3>
+        <button type="button" onClick={onClose} className="text-slate-400 hover:text-slate-100" aria-label="Close">
           <X size={16} />
         </button>
       </div>

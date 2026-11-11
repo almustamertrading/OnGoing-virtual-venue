@@ -85,7 +85,7 @@ export function VenueCreator({ projectId }: { projectId: string }) {
 
   return (
     <form action={action} className="card space-y-4 p-5">
-      <h2 className="font-semibold text-white">Add a venue</h2>
+      <h2 className="font-semibold text-slate-100">Add a venue</h2>
       <div>
         <label className="label" htmlFor="venue-name">Venue name</label>
         <input id="venue-name" name="name" required placeholder="e.g. National Stadium" className="field" />

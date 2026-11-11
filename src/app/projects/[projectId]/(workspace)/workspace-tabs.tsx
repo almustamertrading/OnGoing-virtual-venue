@@ -31,7 +31,7 @@ export function WorkspaceTabs({ projectId, counts }: { projectId: string; counts
             key={t.key}
             href={t.href}
             aria-current={active ? "page" : undefined}
-            className={`whitespace-nowrap border-b-2 px-3 py-2.5 text-sm ${active ? "border-emerald-500 text-white" : "border-transparent text-slate-400 hover:text-slate-200"}`}
+            className={`whitespace-nowrap border-b-2 px-3 py-2.5 text-sm ${active ? "border-emerald-500 text-slate-100" : "border-transparent text-slate-400 hover:text-slate-200"}`}
           >
             {t.label}
             {counts[t.key] ? <span className="ml-1.5 text-xs text-slate-500">{counts[t.key]}</span> : null}

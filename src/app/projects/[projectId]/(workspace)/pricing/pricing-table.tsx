@@ -36,7 +36,7 @@ export function PricingTable({
   return (
     <section dir="rtl" className="card p-5" data-testid="pricing">
       <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-semibold text-white">نموذج التسعير — جدول الكميات</h2>
+        <h2 className="font-semibold text-slate-100">نموذج التسعير — جدول الكميات</h2>
         <span className="text-xs text-slate-500">{priced}/{items.length} بند مُسعّر</span>
       </div>
       <p className="mb-4 text-xs text-slate-500">الكميات من الكراسة. أدخل سعر الوحدة ويُحسب الإجمالي تلقائيًا.</p>
@@ -119,7 +119,7 @@ export function PricingTable({
             </tbody>
             <tfoot>
               <tr className="border-t border-slate-700">
-                <td className="px-2 py-2.5 font-semibold text-white" colSpan={4}>الإجمالي التقديري</td>
+                <td className="px-2 py-2.5 font-semibold text-slate-100" colSpan={4}>الإجمالي التقديري</td>
                 <td className="px-2 py-2.5 font-bold text-emerald-300" colSpan={canEdit ? 2 : 1}>
                   {formatMoney(grand, currency)}
                 </td>

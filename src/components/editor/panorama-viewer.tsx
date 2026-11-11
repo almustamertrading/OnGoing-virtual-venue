@@ -79,13 +79,13 @@ export function PanoramaViewer({
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-black" data-testid="panorama-viewer">
       <div className="flex h-12 shrink-0 items-center gap-3 border-b border-slate-800 bg-slate-950 px-3">
-        <span className="rounded bg-sky-500 px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">360°</span>
-        <p className="min-w-0 flex-1 truncate text-sm font-medium text-white">{pano.title}</p>
+        <span className="rounded bg-sky-500 px-1.5 py-0.5 text-[10px] font-bold uppercase text-slate-100">360°</span>
+        <p className="min-w-0 flex-1 truncate text-sm font-medium text-slate-100">{pano.title}</p>
         <span className="text-xs text-slate-500">{index + 1} / {panoramas.length}</span>
         <button type="button" className="btn-ghost py-1 text-xs" onClick={() => onShowOnMap(pano)}>
           <MapPin size={14} /> Show on map
         </button>
-        <button type="button" onClick={onClose} aria-label="Close viewer" className="text-slate-300 hover:text-white">
+        <button type="button" onClick={onClose} aria-label="Close viewer" className="text-slate-300 hover:text-slate-100">
           <X size={20} />
         </button>
       </div>
@@ -104,7 +104,7 @@ export function PanoramaViewer({
               type="button"
               aria-label="Previous photo"
               onClick={() => setIndex((index - 1 + panoramas.length) % panoramas.length)}
-              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white hover:bg-black/80"
+              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-slate-100 hover:bg-black/80"
             >
               <ChevronLeft size={22} />
             </button>
@@ -112,7 +112,7 @@ export function PanoramaViewer({
               type="button"
               aria-label="Next photo"
               onClick={() => setIndex((index + 1) % panoramas.length)}
-              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white hover:bg-black/80"
+              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-slate-100 hover:bg-black/80"
             >
               <ChevronRight size={22} />
             </button>
