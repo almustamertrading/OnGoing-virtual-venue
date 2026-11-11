@@ -2,6 +2,8 @@ import { getProjectContext } from "@/lib/project";
 import type { LayoutRow, VenueRow } from "@/lib/types";
 import { LayoutsList } from "./layouts-list";
 
+export const metadata = { title: "المخططات | OnGoing" };
+
 export default async function LayoutsPage({ params }: PageProps<"/projects/[projectId]/layouts">) {
   const { projectId } = await params;
   const { supabase, canEdit } = await getProjectContext(projectId);

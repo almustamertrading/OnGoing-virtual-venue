@@ -45,7 +45,7 @@ export default async function DomainsPage() {
           </p>
           <p className="mt-1 text-slate-400">
             يمنحه مدير المنظمة بعد ذلك صلاحيات إضافية من صفحة{" "}
-            <Link href="/settings/members" className="text-emerald-300 hover:underline">الأعضاء</Link>. إزالة نطاق توقف
+            <Link href="/settings/members" className="text-emerald-300 underline underline-offset-2">الأعضاء</Link>. إزالة نطاق توقف
             الانضمام التلقائي الجديد ولا تُخرج الأعضاء الحاليين. أضف فقط نطاقات تملكها منظمتك.
           </p>
         </div>

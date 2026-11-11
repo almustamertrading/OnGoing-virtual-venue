@@ -25,7 +25,7 @@ const ITEM_ANCHOR = "proposal-item-";
 
 export function ProposalWorkspace({
   email, companyName, currency, canEdit, isManager, canDelete, canSeeCost, proposal, sections, items, client,
-  versions, reviews, people, templateName, aiStatus,
+  versions, reviews, people, templateName, aiStatus, projectAccess = null,
 }: {
   email: string;
   companyName: string;
@@ -48,6 +48,8 @@ export function ProposalWorkspace({
   people: Record<string, string>;
   templateName: string | null;
   aiStatus: AiStatus | null;
+  /** The project this proposal became: "open" if the viewer can open it, "restricted" if they are not on it. */
+  projectAccess?: "open" | "restricted" | null;
 }) {
   const [busy, start] = useTransition();
   const orgId = proposal.organization_id;
@@ -84,6 +86,7 @@ export function ProposalWorkspace({
         <section className="card mb-5 p-5">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="min-w-0 flex-1">
+              <h1 className="sr-only">{proposal.title}</h1>
               <p className="font-mono text-xs text-slate-500">
                 {proposal.reference} · {PROPOSAL_TYPE[proposal.proposal_type].label}
                 {templateName && <span className="font-sans"> · قالب: {templateName}</span>}
@@ -104,7 +107,14 @@ export function ProposalWorkspace({
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <a href={`/proposals/${proposal.id}/print`} target="_blank" rel="noreferrer" className="btn-ghost"><Download size={15} /> تصدير PDF</a>
-            {proposal.project_id && <Link href={`/projects/${proposal.project_id}`} className="btn-ghost"><FileText size={15} /> المشروع المرتبط</Link>}
+            {proposal.project_id && projectAccess === "open" && (
+              <Link href={`/projects/${proposal.project_id}`} className="btn-ghost"><FileText size={15} /> المشروع المرتبط</Link>
+            )}
+            {proposal.project_id && projectAccess === "restricted" && (
+              <span className="flex items-center gap-1 self-center text-xs text-slate-400" data-testid="project-restricted">
+                <FileText size={14} aria-hidden /> تحوّل إلى مشروع لست عضوًا فيه؛ اطلب الإضافة من مدير المشروع.
+              </span>
+            )}
             {canDelete && (
               <button className="btn-ghost ms-auto text-red-400 hover:text-red-300" disabled={busy} onClick={() => confirm("حذف العرض نهائيًا؟") && start(() => deleteProposal(proposal.id))}>
                 <Trash2 size={15} /> حذف

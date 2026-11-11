@@ -2,6 +2,8 @@ import { getProjectContext } from "@/lib/project";
 import type { InventoryItemRow } from "@/lib/types";
 import { InventoryBoard } from "./inventory-board";
 
+export const metadata = { title: "المخزون | OnGoing" };
+
 export default async function InventoryPage({ params }: PageProps<"/projects/[projectId]/inventory">) {
   const { projectId } = await params;
   const { supabase, orgRole, organization, access } = await getProjectContext(projectId);

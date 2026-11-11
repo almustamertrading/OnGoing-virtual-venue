@@ -94,7 +94,7 @@ function WeekRow({
                     ? "bg-emerald-500 font-bold text-slate-950"
                     : inMonth
                       ? "text-slate-200 hover:bg-slate-800"
-                      : "text-slate-600 hover:bg-slate-800"
+                      : "text-slate-500 hover:bg-slate-800"
                 }`}
               >
                 {Number(day.slice(8))}

@@ -11,6 +11,8 @@ import {
 } from "@/lib/documents";
 import type { DocumentRow } from "@/lib/types";
 
+export const metadata = { title: "مستندات المشروع | OnGoing" };
+
 export default async function ProjectDocumentsPage({ params, searchParams }: PageProps<"/projects/[projectId]/documents">) {
   const { projectId } = await params;
   const { supabase, project, members, canEdit, canSeeFinance } = await getProjectContext(projectId);

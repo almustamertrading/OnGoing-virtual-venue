@@ -2,6 +2,8 @@ import { getProjectContext } from "@/lib/project";
 import type { TeamRoleRow } from "@/lib/types";
 import { StructureList } from "./structure-list";
 
+export const metadata = { title: "الهيكل | OnGoing" };
+
 export default async function StructurePage({ params }: PageProps<"/projects/[projectId]/structure">) {
   const { projectId } = await params;
   const { supabase, canEdit } = await getProjectContext(projectId);

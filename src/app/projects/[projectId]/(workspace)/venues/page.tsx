@@ -4,6 +4,8 @@ import { getProjectContext } from "@/lib/project";
 import type { VenueRow } from "@/lib/types";
 import { VenueCreator } from "./venue-creator";
 
+export const metadata = { title: "الأماكن | OnGoing" };
+
 export default async function VenuesPage({ params }: PageProps<"/projects/[projectId]/venues">) {
   const { projectId } = await params;
   const { supabase, canEdit } = await getProjectContext(projectId);

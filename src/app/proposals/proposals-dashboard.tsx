@@ -97,9 +97,9 @@ export function ProposalsDashboard({
         <div className="mb-4 flex flex-wrap gap-2">
           <div className="relative flex-1">
             <Search size={15} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-500" />
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="بحث بالاسم أو المرجع أو العميل" className="field pr-9" />
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="بحث بالاسم أو المرجع أو العميل" aria-label="بحث في العروض" className="field pr-9" />
           </div>
-          <select value={status} onChange={(e) => setStatus(e.target.value as ProposalStatus | "all")} className="field w-44">
+          <select value={status} onChange={(e) => setStatus(e.target.value as ProposalStatus | "all")} aria-label="تصفية حسب الحالة" className="field w-44">
             <option value="all">كل الحالات</option>
             {Object.entries(PROPOSAL_STATUS).map(([v, s]) => <option key={v} value={v}>{s.label}</option>)}
           </select>
@@ -199,7 +199,7 @@ function CreateProposalDialog({
           </div>
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="label mb-0">العميل</label>
+              <label className="label mb-0" htmlFor={newClient ? "pr-new-client" : "pr-client"}>العميل</label>
               {clients.length > 0 && (
                 <button type="button" className="text-xs text-emerald-400 hover:underline" onClick={() => setNewClient((v) => !v)}>
                   {newClient ? "اختر عميلًا موجودًا" : "عميل جديد"}
@@ -207,9 +207,9 @@ function CreateProposalDialog({
               )}
             </div>
             {newClient ? (
-              <input name="new_client" placeholder="اسم العميل" className="field" />
+              <input id="pr-new-client" name="new_client" placeholder="اسم العميل" className="field" />
             ) : (
-              <select name="client_id" className="field" defaultValue="">
+              <select id="pr-client" name="client_id" className="field" defaultValue="">
                 <option value="">بدون عميل</option>
                 {clients.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>

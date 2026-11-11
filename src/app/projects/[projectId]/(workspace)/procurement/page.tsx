@@ -3,6 +3,8 @@ import { getProjectContext } from "@/lib/project";
 import type { QuoteRow, RfqRow, SupplierRow } from "@/lib/types";
 import { ProcurementBoard } from "./procurement-board";
 
+export const metadata = { title: "المشتريات | OnGoing" };
+
 export default async function ProcurementPage({ params }: PageProps<"/projects/[projectId]/procurement">) {
   const { projectId } = await params;
   const { supabase, canEdit, organization, access, orgRole, canSeeFinance, project, members } = await getProjectContext(projectId);

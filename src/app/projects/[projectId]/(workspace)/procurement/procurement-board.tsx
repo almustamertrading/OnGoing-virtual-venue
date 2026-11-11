@@ -280,7 +280,7 @@ function QuoteComparisonRow({
   const cols = canManage ? 8 : 7;
   return (
     <>
-      <tr className={rejected ? "text-slate-600" : "text-slate-200"} data-testid="quote-row">
+      <tr className={rejected ? "text-slate-500" : "text-slate-200"} data-testid="quote-row">
         <td className="px-1 py-1.5">
           {name}
           {row.lowest && <span className="ms-1 rounded bg-emerald-500/15 px-1 text-[10px] text-emerald-300">الأقل</span>}

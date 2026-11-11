@@ -3,6 +3,8 @@ import { getProjectContext } from "@/lib/project";
 import type { LayoutRow } from "@/lib/types";
 import { LayoutEditor } from "@/components/editor/layout-editor";
 
+export const metadata = { title: "محرر المخطط | OnGoing" };
+
 export default async function LayoutEditorPage({ params }: PageProps<"/projects/[projectId]/layouts/[layoutId]">) {
   const { projectId, layoutId } = await params;
   const { supabase, project, role, email } = await getProjectContext(projectId);

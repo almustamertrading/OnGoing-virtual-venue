@@ -113,7 +113,7 @@ export function TaskBoard({
           return (
             <div key={col} className="rounded-xl border border-slate-800 bg-slate-900/40 p-3" data-testid={`column-${col}`}>
               <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
-                {TASK_STATUS[col]} <span className="text-slate-600">{list.length}</span>
+                {TASK_STATUS[col]} <span className="text-slate-500">{list.length}</span>
               </h3>
               <ul className="space-y-2">
                 {list.map((t) => {

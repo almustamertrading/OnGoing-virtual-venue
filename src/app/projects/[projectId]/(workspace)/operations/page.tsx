@@ -5,6 +5,8 @@ import { getProjectContext } from "@/lib/project";
 import type { OpsReportRow, ProjectRiskRow } from "@/lib/types";
 import { ReportForm, RiskLog } from "./operations-client";
 
+export const metadata = { title: "العمليات | OnGoing" };
+
 export default async function OperationsPage({ params }: PageProps<"/projects/[projectId]/operations">) {
   const { projectId } = await params;
   const { supabase, canEdit, members, project } = await getProjectContext(projectId);

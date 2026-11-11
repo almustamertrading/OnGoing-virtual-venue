@@ -2,6 +2,8 @@ import { getProjectContext } from "@/lib/project";
 import type { ScopeItemRow } from "@/lib/types";
 import { ScopeList } from "./scope-list";
 
+export const metadata = { title: "النطاق | OnGoing" };
+
 export default async function ScopePage({ params }: PageProps<"/projects/[projectId]/scope">) {
   const { projectId } = await params;
   const { supabase, canEdit } = await getProjectContext(projectId);

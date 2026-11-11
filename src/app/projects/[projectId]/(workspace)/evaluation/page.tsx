@@ -2,6 +2,8 @@ import { getProjectContext } from "@/lib/project";
 import type { EvaluationCriterionRow } from "@/lib/types";
 import { KpiList } from "./kpi-list";
 
+export const metadata = { title: "التقييم | OnGoing" };
+
 export default async function EvaluationPage({ params }: PageProps<"/projects/[projectId]/evaluation">) {
   const { projectId } = await params;
   const { supabase, canEdit } = await getProjectContext(projectId);

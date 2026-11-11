@@ -11,6 +11,8 @@ import type { AiFindingRow, OpsReportRow } from "@/lib/types";
 import { acceptOpsFinding } from "../actions";
 import { OpsExtractPanel, ReportForm } from "../operations-client";
 
+export const metadata = { title: "تقرير ميداني | OnGoing" };
+
 export default async function OpsReportPage({ params }: PageProps<"/projects/[projectId]/operations/[reportId]">) {
   const { projectId, reportId } = await params;
   const { supabase, canEdit, members, project } = await getProjectContext(projectId);

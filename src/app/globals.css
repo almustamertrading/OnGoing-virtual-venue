@@ -7,6 +7,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Secondary text (slate-500) is lightened so it meets WCAG AA contrast (4.5:1) on every dark surface the app
+   uses: at least 4.6:1 on slate-800 cards, 5.7:1 on slate-900 and 6.4:1 on the page background. The default
+   (#62748e) measured 3.1-4.2:1 in an axe audit. Used only for text and placeholders. */
+@theme {
+  --color-slate-500: #8292a8;
+}
+
 :root {
   color-scheme: dark;
 }

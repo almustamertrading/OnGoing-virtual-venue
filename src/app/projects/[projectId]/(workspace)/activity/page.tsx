@@ -2,6 +2,8 @@ import { ActivityList } from "@/components/activity-list";
 import { getProjectContext } from "@/lib/project";
 import type { ActivityRow } from "@/lib/types";
 
+export const metadata = { title: "سجل النشاط | OnGoing" };
+
 export default async function ActivityPage({ params }: PageProps<"/projects/[projectId]/activity">) {
   const { projectId } = await params;
   const { supabase, members } = await getProjectContext(projectId);

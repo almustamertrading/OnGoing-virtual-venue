@@ -283,7 +283,7 @@ export function LayoutEditor({
       <header className="flex items-center gap-2 border-b border-slate-800 bg-slate-950 px-3 py-2 text-sm">
         <Link href={`/projects/${projectId}/layouts`} className="text-slate-400 hover:text-white">المخططات</Link>
         <ChevronRight size={14} className="text-slate-600" />
-        <span className="truncate font-medium text-white">{layout.name}</span>
+        <h1 className="truncate font-medium text-white">{layout.name}</h1>
         <span className="ml-auto hidden text-xs text-slate-500 md:inline">{projectName}</span>
         {canEdit && bg.path && (
           <button
@@ -307,11 +307,11 @@ export function LayoutEditor({
             <p className="px-1 pb-1 font-semibold text-slate-300">توزيع الجلوس</p>
             <div className="mb-2 space-y-1.5 rounded-lg border border-slate-800 bg-slate-900 p-2">
               <div className="flex items-center gap-1">
-                <input type="number" min={1} max={20} value={seatsPerTable} onChange={(e) => setSeatsPerTable(Number(e.target.value))} className="w-12 rounded border border-slate-700 bg-slate-950 px-1 py-0.5 text-center" />
+                <input type="number" min={1} max={20} aria-label="عدد الكراسي حول الطاولة" value={seatsPerTable} onChange={(e) => setSeatsPerTable(Number(e.target.value))} className="w-12 rounded border border-slate-700 bg-slate-950 px-1 py-0.5 text-center" />
                 <button onClick={addSeatedTable} disabled={!bg.path} className="flex-1 rounded bg-emerald-600/90 px-2 py-1 font-medium text-white hover:bg-emerald-600 disabled:opacity-40">طاولة + كراسي</button>
               </div>
               <div className="flex items-center gap-1">
-                <input type="number" min={1} max={40} value={rowLen} onChange={(e) => setRowLen(Number(e.target.value))} className="w-12 rounded border border-slate-700 bg-slate-950 px-1 py-0.5 text-center" />
+                <input type="number" min={1} max={40} aria-label="عدد الكراسي في الصف" value={rowLen} onChange={(e) => setRowLen(Number(e.target.value))} className="w-12 rounded border border-slate-700 bg-slate-950 px-1 py-0.5 text-center" />
                 <button onClick={addRow} disabled={!bg.path} className="flex-1 rounded bg-slate-700 px-2 py-1 font-medium text-white hover:bg-slate-600 disabled:opacity-40">صف كراسي</button>
               </div>
             </div>

@@ -3,6 +3,8 @@ import type { MilestoneRow, ScopeItemRow, TaskRow } from "@/lib/types";
 import { MilestonesPanel } from "./milestones-panel";
 import { TaskBoard } from "./task-board";
 
+export const metadata = { title: "المهام | OnGoing" };
+
 export default async function TasksPage({ params, searchParams }: PageProps<"/projects/[projectId]/tasks">) {
   const { projectId } = await params;
   const sp = await searchParams;

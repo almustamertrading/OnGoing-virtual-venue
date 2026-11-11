@@ -3,6 +3,8 @@ import { getProjectContext } from "@/lib/project";
 import type { VenueRow } from "@/lib/types";
 import { EditorLoader } from "@/components/editor/editor-loader";
 
+export const metadata = { title: "خريطة المكان | OnGoing" };
+
 export default async function VenuePage({ params }: PageProps<"/projects/[projectId]/venues/[venueId]">) {
   const { projectId, venueId } = await params;
   const { supabase, project, role, userId, email } = await getProjectContext(projectId);

@@ -7,6 +7,8 @@ import type { ActivityRow, ClientRow, MilestoneRow, ScopeItemRow, TaskRow } from
 import { ProjectDetails } from "./project-details";
 import { DeleteProjectButton } from "./delete-project-button";
 
+export const metadata = { title: "نظرة عامة على المشروع | OnGoing" };
+
 export default async function OverviewPage({ params }: PageProps<"/projects/[projectId]">) {
   const { projectId } = await params;
   // Overdue counts depend on today's date, so render at request time (Cache Components rule).

@@ -9,6 +9,7 @@ system. Nothing of the reference's look, text or artwork is reused.
 | Exceptions first | Busy managers act on problems, not on lists | Each module leads with an issues summary (BOQ checker, procurement flags, missing requirements, overdue work) | Done for the BOQ checker (M1), procurement flags (M3), the register summary (M2) and the management summary (M6) |
 | Source shown next to each number | Trust and audit | Document, page and excerpt with a "verified" badge on AI findings; report figures link to their module | Planned (S-1, M6) |
 | Honest labelling of demos and estimates | Credibility | Mock AI badge (done); reports label facts, estimates and AI recommendations differently | Partly done |
+| Accessible to everyone (WCAG 2.1 AA) | Readable secondary text, labelled controls, honest error pages | Contrast token raised, controls labelled, branded not-found and error pages; `scripts/qa/site-crawl.mjs` runs axe on every page | Done 2026-11-11 (0 violations) |
 | Calculators show their formula and caveats | Users can check the arithmetic | Margin, VAT and comparison figures show how they are computed (tooltips / small print) | Planned (M3, M4) |
 | Same structure in Arabic and English, right to left | Regional fit | OnGoing is Arabic-first and right to left; navigation still mixes English labels — unify labels to Arabic with English kept only where users expect it (codes, file names) | Planned |
 | Phone layout without sideways scrolling | Field use | Already a test requirement for new pages (375 px); apply to older tabs (pricing, procurement) | Ongoing |

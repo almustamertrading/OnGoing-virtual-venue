@@ -7,6 +7,8 @@ import type {
 } from "@/lib/types";
 import { ProposalWorkspace } from "./proposal-workspace";
 
+export const metadata = { title: "عرض سعر | OnGoing" };
+
 export default async function ProposalPage({ params }: PageProps<"/proposals/[id]">) {
   const { id } = await params;
   if (!(await getUserId())) redirect(`/login?next=/proposals/${id}`);
@@ -64,6 +66,11 @@ export default async function ProposalPage({ params }: PageProps<"/proposals/[id
     ((profiles as { id: string; email: string; display_name: string | null }[]) ?? []).map((p) => [p.id, p.display_name || p.email]),
   );
 
+  // A converted proposal links to its project only for people who can open it (RLS decides: members and admins).
+  const { data: linkedProject } = proposal.project_id
+    ? await supabase.from("projects").select("id").eq("id", proposal.project_id).maybeSingle()
+    : { data: null };
+
   const canEdit = Boolean(org?.access.sales);
   const isManager = org?.role === "admin" || org?.role === "manager";
   const aiStatus = canEdit ? await getAiStatus(supabase, "proposal_draft") : null;
@@ -87,6 +94,7 @@ export default async function ProposalPage({ params }: PageProps<"/proposals/[id
       people={people}
       templateName={(template as { name: string } | null)?.name ?? null}
       aiStatus={aiStatus}
+      projectAccess={proposal.project_id ? (linkedProject ? "open" : "restricted") : null}
     />
   );
 }

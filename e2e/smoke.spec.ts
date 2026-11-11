@@ -49,7 +49,7 @@ test.describe("project access", () => {
     const outsider = await browser.newContext({ storageState: authFile("outsider") });
     const page = await outsider.newPage();
     await page.goto(`/projects/${projectId}`);
-    await expect(page.getByText("This page could not be found.")).toBeVisible();
+    await expect(page.getByTestId("not-found")).toContainText("الصفحة غير موجودة");
     await expectNoText(page, QA.project);
     await outsider.close();
   });
@@ -207,3 +207,26 @@ test.describe("as the organisation admin", () => {
     await expect(page.getByLabel("كمية QA stage build")).toBeVisible();
   });
 });
+
+test.describe("after the conversion", () => {
+  test("13. the proposal links to its project only for people who can open it", async ({ browser }) => {
+    const { proposalId } = readSeed();
+    // The converter (admin) is on the new project: the link works.
+    const admin = await browser.newContext({ storageState: authFile("admin") });
+    const adminPage = await admin.newPage();
+    await adminPage.goto(`/proposals/${proposalId}`);
+    await adminPage.getByRole("link", { name: "المشروع المرتبط" }).click();
+    await expect(adminPage).toHaveURL(/\/projects\/[0-9a-f-]{36}$/);
+    await expect(adminPage.getByRole("heading", { name: QA.proposal })).toBeVisible();
+    await admin.close();
+
+    // Sales can read the proposal but is not on the project: a note instead of a link to a "not found" page.
+    const sales = await browser.newContext({ storageState: authFile("sales") });
+    const salesPage = await sales.newPage();
+    await salesPage.goto(`/proposals/${proposalId}`);
+    await expect(salesPage.getByTestId("project-restricted")).toContainText("تحوّل إلى مشروع لست عضوًا فيه");
+    await expect(salesPage.getByRole("link", { name: "المشروع المرتبط" })).toHaveCount(0);
+    await sales.close();
+  });
+});
+

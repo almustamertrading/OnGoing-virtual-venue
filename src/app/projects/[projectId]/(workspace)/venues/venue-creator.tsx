@@ -106,8 +106,8 @@ export function VenueCreator({ projectId }: { projectId: string }) {
             placeholder="Search a stadium, address or city"
             className="field"
           />
-          <button type="button" onClick={runSearch} className="btn-ghost" disabled={searching}>
-            <Search size={16} />
+          <button type="button" onClick={runSearch} className="btn-ghost" disabled={searching} aria-label="Search for the place">
+            <Search size={16} aria-hidden />
           </button>
         </div>
         {results.length > 0 && (

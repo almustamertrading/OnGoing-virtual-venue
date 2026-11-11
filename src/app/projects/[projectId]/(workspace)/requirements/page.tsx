@@ -9,6 +9,8 @@ import { acceptFinding } from "./actions";
 import { RequirementsRegister } from "./requirements-register";
 import { TenderAnalysisPanel } from "./tender-analysis-panel";
 
+export const metadata = { title: "متطلبات العطاء | OnGoing" };
+
 export default async function RequirementsPage({ params }: PageProps<"/projects/[projectId]/requirements">) {
   const { projectId } = await params;
   const { supabase, canEdit, members, project } = await getProjectContext(projectId);

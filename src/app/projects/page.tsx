@@ -9,6 +9,8 @@ import type { ClientRow, ProjectRow, ProjectStatus } from "@/lib/types";
 import { CreateProject } from "./create-project";
 import { RfpImport } from "./rfp-import";
 
+export const metadata = { title: "المشاريع | OnGoing" };
+
 const ACTIVE: ProjectStatus[] = ["lead", "proposal", "confirmed", "in_progress", "on_hold"];
 
 export default async function ProjectsPage({ searchParams }: PageProps<"/projects">) {

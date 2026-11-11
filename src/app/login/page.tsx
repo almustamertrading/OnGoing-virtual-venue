@@ -4,6 +4,8 @@ import { getUserId } from "@/lib/supabase/server";
 import { LoginForm } from "./login-form";
 import { Logo } from "@/components/logo";
 
+export const metadata = { title: "تسجيل الدخول | OnGoing" };
+
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
   const params = await searchParams;
   const next = safeNext(params.next);

@@ -43,10 +43,13 @@ function FactRow({ fact, delta }: { fact: Fact; delta?: FactDelta }) {
   return (
     <div className="flex items-baseline gap-2 py-1.5" data-testid={`fact-${fact.id}`} data-value={fact.value}>
       <dt className="min-w-0 flex-1 text-sm text-slate-300">{fact.label}</dt>
-      {delta && <DeltaBadge fact={fact} delta={delta} />}
-      <span className={`rounded px-1.5 py-0.5 text-[10px] ${kind.tone}`}>{kind.label}</span>
-      <dd className={`text-base font-semibold tabular-nums ${fact.value > 0 ? "text-white" : "text-slate-500"}`}>
-        {fact.href ? <Link href={fact.href} className="hover:underline"><bdi>{fact.display}</bdi></Link> : <bdi>{fact.display}</bdi>}
+      {/* A <dl> row may only hold <dt> and <dd>: the badges live inside the value. */}
+      <dd className="flex items-baseline gap-2">
+        {delta && <DeltaBadge fact={fact} delta={delta} />}
+        <span className={`rounded px-1.5 py-0.5 text-[10px] ${kind.tone}`}>{kind.label}</span>
+        <span className={`text-base font-semibold tabular-nums ${fact.value > 0 ? "text-white" : "text-slate-400"}`}>
+          {fact.href ? <Link href={fact.href} className="hover:underline"><bdi>{fact.display}</bdi></Link> : <bdi>{fact.display}</bdi>}
+        </span>
       </dd>
     </div>
   );

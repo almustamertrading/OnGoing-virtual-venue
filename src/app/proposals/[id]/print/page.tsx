@@ -87,14 +87,14 @@ export default async function ProposalPrintPage({ params, searchParams }: PagePr
         <header className="mb-10 flex items-center justify-between border-b-2 border-emerald-600 pb-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-sm font-black text-white">OG</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-700 text-sm font-black text-white">OG</span>
               <span className="text-xl font-extrabold text-slate-900">{company}</span>
             </div>
-            <p className="mt-1 text-xs text-slate-500">لإدارة وتنظيم الفعاليات</p>
+            <p className="mt-1 text-xs text-slate-600">لإدارة وتنظيم الفعاليات</p>
           </div>
           <div className="text-left">
             <p className="font-mono text-sm font-bold text-emerald-700">{p.reference}</p>
-            <p className="text-xs text-slate-500">{p.versionLabel}</p>
+            <p className="text-xs text-slate-600">{p.versionLabel}</p>
           </div>
         </header>
 
@@ -102,10 +102,10 @@ export default async function ProposalPrintPage({ params, searchParams }: PagePr
           <p className="text-sm font-semibold text-emerald-700">{PROPOSAL_TYPE[p.proposal_type].label}</p>
           <h1 className="mt-1 text-3xl font-extrabold text-slate-900">{p.title}</h1>
           <div className="mt-4 grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-slate-600">
-            {cl && <p><span className="text-slate-400">العميل:</span> {cl.name}</p>}
-            {p.issue_date && <p><span className="text-slate-400">تاريخ العرض:</span> {formatDate(p.issue_date)}</p>}
-            {p.valid_until && <p><span className="text-slate-400">صالح حتى:</span> {formatDate(p.valid_until)}</p>}
-            {cl?.contact_name && <p><span className="text-slate-400">جهة التواصل:</span> {cl.contact_name}</p>}
+            {cl && <p><span className="text-slate-600">العميل:</span> {cl.name}</p>}
+            {p.issue_date && <p><span className="text-slate-600">تاريخ العرض:</span> {formatDate(p.issue_date)}</p>}
+            {p.valid_until && <p><span className="text-slate-600">صالح حتى:</span> {formatDate(p.valid_until)}</p>}
+            {cl?.contact_name && <p><span className="text-slate-600">جهة التواصل:</span> {cl.contact_name}</p>}
           </div>
         </div>
 
@@ -140,7 +140,7 @@ export default async function ProposalPrintPage({ params, searchParams }: PagePr
               <tbody>
                 {billable.map((i, idx) => (
                   <tr key={idx}>
-                    <td className="border border-slate-200 px-2 py-1.5 text-slate-800">{i.description}{i.category && <span className="text-xs text-slate-400"> · {i.category}</span>}</td>
+                    <td className="border border-slate-200 px-2 py-1.5 text-slate-800">{i.description}{i.category && <span className="text-xs text-slate-600"> · {i.category}</span>}</td>
                     <td className="border border-slate-200 px-2 py-1.5 text-slate-700">{i.quantity}</td>
                     <td className="border border-slate-200 px-2 py-1.5 text-slate-700">{i.unit || "—"}</td>
                     <td className="border border-slate-200 px-2 py-1.5 text-slate-700">{m(i.unit_price)}</td>
@@ -165,7 +165,7 @@ export default async function ProposalPrintPage({ params, searchParams }: PagePr
           </section>
         )}
 
-        <footer className="mt-12 border-t border-slate-200 pt-4 text-center text-xs text-slate-400">
+        <footer className="mt-12 border-t border-slate-200 pt-4 text-center text-xs text-slate-600">
           <p>{company} · {p.reference} · مستند سري — للعميل المعني فقط</p>
         </footer>
       </div>

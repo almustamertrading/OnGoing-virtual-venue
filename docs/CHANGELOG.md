@@ -44,6 +44,15 @@ All notable changes. Dates are UTC.
 ### Security
 - S-13 to S-15 found and fixed before release; S-16 accepted and documented.
 
+### Fixed (website test, 2026-11-11)
+- A converted proposal linked everyone to its project, which only members can open; non-members now see a
+  short note instead of a link to a "not found" page.
+- Branded Arabic not-found and error pages replace the framework's English defaults.
+- Accessibility (WCAG 2.1 AA): secondary text contrast raised on every dark surface and on the client PDF;
+  labels on the search button, filter selects and seating inputs; valid list markup on the summary;
+  in-text links underlined. An axe audit of every page now reports no violations.
+- Every page has its own title; the proposal and layout editor pages have a heading.
+
 ## Unreleased: Phase 2, Stage 1 (security and data hygiene)
 
 ### Added

@@ -38,7 +38,7 @@ export function TenderAnalysisPanel({
         <p role="status" className="text-sm text-slate-400">الذكاء الاصطناعي غير مفعّل على هذا الخادم. يمكنك إضافة المتطلبات يدويًا.</p>
       ) : documents.length === 0 ? (
         <p className="text-sm text-slate-400">
-          لا توجد ملفات PDF في مستندات المشروع. <Link href={`/projects/${projectId}/documents`} className="text-emerald-400 hover:underline">ارفع الكراسة في المستندات</Link> ثم عُد إلى هنا.
+          لا توجد ملفات PDF في مستندات المشروع. <Link href={`/projects/${projectId}/documents`} className="text-emerald-400 underline underline-offset-2">ارفع الكراسة في المستندات</Link> ثم عُد إلى هنا.
         </p>
       ) : (
         <form action={action} className="flex flex-wrap items-end gap-2">

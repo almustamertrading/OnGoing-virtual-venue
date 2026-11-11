@@ -4,6 +4,8 @@ import type { BoqItemRow, ExpenseRow, InvoiceRow } from "@/lib/types";
 import { FinanceBoard } from "./finance-board";
 import { boqTotal } from "@/lib/money";
 
+export const metadata = { title: "المالية | OnGoing" };
+
 export default async function FinancePage({ params }: PageProps<"/projects/[projectId]/finance">) {
   const { projectId } = await params;
   const { supabase, project, organization, canSeeFinance } = await getProjectContext(projectId);

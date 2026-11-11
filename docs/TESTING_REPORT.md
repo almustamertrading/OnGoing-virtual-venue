@@ -12,7 +12,8 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 | Unit tests (Vitest) | `npm test` | 436 | PASS (`stage3`) |
 | Database tests (pgTAP: RLS, capabilities, tenant integrity, Stage 3, Proposal Phase 2, AI findings, quote award, operations, management summary, BOQ extraction, snapshots) | `npx supabase test db` | 284 | PASS (`stage3`, fresh reset) |
 | Migration data-move check | `./scripts/db/check-rbac-backfill.sh` | 6 checks | PASS |
-| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker, management summary, BOQ extraction | `E2E_PROD=1 npx playwright test` | 8 logins + 79 tests | PASS (87/87, `stage3`) |
+| End-to-end (Playwright, production build): smoke, account, settings, calendar, documents, reports, proposal workflow, requirements, quote comparison, operations, BOQ checker, management summary, BOQ extraction | `E2E_PROD=1 npx playwright test` | 8 logins + 80 tests | PASS (88/88, `stage3`) |
+| Site crawl: every route × every role, phone width, links, axe WCAG 2.1 AA | `node scripts/qa/site-crawl.mjs …` (see its header) | 403 visits | PASS (0 issues, 0 axe violations, 2026-11-11) |
 | CI pipeline | `.github/workflows/ci.yml` | all of the above | configured; see CI runs |
 
 **How to run locally:**
@@ -24,6 +25,21 @@ A feature is **VERIFIED** only when its automated tests pass. Manual or ad-hoc c
 Before Phase 2, modules were only checked with throw-away scripts against production. Those checks are replaced by the suites above.
 
 ## Test runs
+
+### 2026-11-11 · Website test: every page as every role, desktop and phone
+- **Automated suites (commit `25b4a27`, then again after the fixes):** typecheck and lint PASS; unit 436 of 436; database 284 of 284; end-to-end on a production build 87 of 87, then 88 of 88 with the new smoke test 13; CI green on `25b4a27`.
+- **Site crawl:** `scripts/qa/site-crawl.mjs` (how to run is in its header) on a production build against the local stack. It visits all 42 routes as the signed-out visitor and as admin, finance, sales, project manager, operations, viewer and an outsider from another organisation. It also opens 20 key pages at 375 px and follows every internal link it finds: 403 to 408 page visits per run. It records crashes, console errors, failed requests, not-found screens, redirects, horizontal scrolling, unnamed controls, timings, and axe-core 4.10.3 (WCAG 2.1 A/AA) results for the visitor, admin and viewer.
+- **First run:**
+  - Clean: no crashes, console errors, failed requests or session problems; signed-out visitors were sent to sign-in from all 35 platform pages; nothing scrolled sideways on phones; median time to first byte 8 ms (local); slowest page 2.9 s (the venue map).
+  - Found: a converted proposal linked everyone who could read it to a project only its converter could open, which showed the framework's English 404 page (5 broken links); there was no app not-found or error page at all; 83 axe violations, among them 632 elements of secondary text below 4.5:1 contrast (Tailwind `slate-500`, #62748e, at 3.1 to 4.2:1 on the dark surfaces), an unnamed search button, unlabelled selects and number inputs, a `<dl>` with badges outside `<dt>`/`<dd>` on the summary, and links distinguished only by colour; 23 pages shared the default title; two pages had no heading.
+- **Fixed:**
+  - The proposal page links to its project only for people who can open it; the others see a note (smoke test 13).
+  - Branded Arabic not-found, error and global-error pages (the error page shows a reference code, never server details).
+  - Secondary text colour raised to #8292a8, at least 4.6:1 on every dark surface; the white print page uses darker greys and a darker brand green.
+  - Labels on the unnamed controls, valid summary markup, underlined in-text links.
+  - Titles on 23 pages; headings on the proposal and layout editor pages.
+- **Final run:** 403 visits, every check zero, 0 axe violations. The 42 not-found screens are all access rules working as intended: the outsider on another organisation's project or proposal (22), and the project manager, who is not a member of the seeded project (20).
+- **Two invalid crawl runs, discarded:** stopping the server by its command line left Next.js's renamed `next-server` process running. It kept serving the previous build after a rebuild, so pages loaded without their stylesheet, and those runs measured old code. The script header now says to stop it by port (`fuser -k 3300/tcp`). Separately, the end-to-end setup re-seeds the QA organisation, which had removed the crawl's venue, layout and report records. The detector also missed the new branded not-found page; it now recognises it, and the final run recreated the records.
 
 ### 2026-11-10 · Weekly management snapshots (Workflow F, increment 2)
 - **Database:** `npx supabase db reset` then `npx supabase test db`. PASS, 284 of 284 (new `management_snapshots.test.sql`: 9 — own snapshot recorded; one per week; weeks start on Sunday; finance figures refused; no snapshot for someone else; no updates; not readable even by an organisation admin; not from another organisation; read back unchanged).

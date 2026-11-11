@@ -8,6 +8,8 @@ import { acceptBoqFinding } from "./actions";
 import { BoqExtractPanel } from "./boq-extract-panel";
 import { PricingTable } from "./pricing-table";
 
+export const metadata = { title: "التسعير وجدول الكميات | OnGoing" };
+
 export default async function PricingPage({ params }: PageProps<"/projects/[projectId]/pricing">) {
   const { projectId } = await params;
   const { supabase, canEdit, organization, members } = await getProjectContext(projectId);
