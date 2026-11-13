@@ -21,7 +21,7 @@ export function PlanList({
 
   return (
     <section dir="rtl" className="card p-5" data-testid="plan">
-      <h2 className="font-semibold text-white">خطة إدارة المشروع</h2>
+      <h2 className="font-semibold text-slate-100">خطة إدارة المشروع</h2>
       <p className="mb-4 text-xs text-slate-500">مراحل التنفيذ من التجهيز حتى التسليم، بجدولها الزمني. مقترحة من الكراسة وقابلة للتعديل.</p>
 
       {phases.length === 0 ? (

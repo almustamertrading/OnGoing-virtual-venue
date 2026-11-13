@@ -101,10 +101,10 @@ export function RfpImport({ organizationId, clients }: { organizationId: string;
     <div dir="rtl" className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 p-4 sm:items-center">
       <div className="card w-full max-w-lg bg-slate-900 p-5">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-semibold text-white">
+          <h2 className="font-semibold text-slate-100">
             {data ? "راجع البيانات المستخرجة" : "ابدأ مشروعًا من ملف RFP"}
           </h2>
-          <button type="button" onClick={close} aria-label="إغلاق" className="text-slate-400 hover:text-white">
+          <button type="button" onClick={close} aria-label="إغلاق" className="text-slate-400 hover:text-slate-100">
             <X size={18} />
           </button>
         </div>

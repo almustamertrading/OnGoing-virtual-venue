@@ -28,7 +28,7 @@ export function InventoryBoard({
   return (
     <section dir="rtl" className="card p-5" data-testid="inventory">
       <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-semibold text-white">المخزون والمعدّات</h2>
+        <h2 className="font-semibold text-slate-100">المخزون والمعدّات</h2>
         <span className="text-xs text-slate-400">القيمة الإجمالية: <span className="font-bold text-emerald-300">{formatMoney(totalValue, currency)}</span></span>
       </div>
       <p className="mb-4 text-xs text-slate-500">سجلّ معدّات ومخزون الشركة (مشترك بين كل المشاريع).</p>

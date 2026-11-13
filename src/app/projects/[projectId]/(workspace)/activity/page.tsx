@@ -23,7 +23,7 @@ export default async function ActivityPage({ params }: PageProps<"/projects/[pro
 
   return (
     <section className="card max-w-3xl p-5">
-      <h2 className="mb-1 font-semibold text-white">Activity</h2>
+      <h2 className="mb-1 font-semibold text-slate-100">Activity</h2>
       <p className="mb-5 text-xs text-slate-500">Every change to this project, newest first. Times are Riyadh time.</p>
       <ActivityList items={rows} people={people} grouped />
     </section>

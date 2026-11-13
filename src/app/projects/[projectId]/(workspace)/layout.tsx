@@ -42,7 +42,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
   return (
     <>
       <AppHeader email={email}>
-        <Link href="/projects" className="hover:text-white">Projects</Link>
+        <Link href="/projects" className="hover:text-slate-100">Projects</Link>
         <ChevronRight size={14} />
         <span className="truncate text-slate-200">{project.code}</span>
       </AppHeader>
@@ -52,7 +52,7 @@ export default async function WorkspaceLayout({ children, params }: LayoutProps<
           <div className="flex flex-wrap items-start gap-3">
             <div className="min-w-0 flex-1">
               <p className="font-mono text-xs text-slate-500">{project.code} · {PROJECT_TYPE[project.project_type]}</p>
-              <h1 className="mt-1 truncate text-2xl font-semibold text-white">{project.name}</h1>
+              <h1 className="mt-1 truncate text-2xl font-semibold text-slate-100">{project.name}</h1>
               <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-400">
                 <span>{client?.name ?? "No client yet"}</span>
                 {(project.start_date || project.end_date) && (

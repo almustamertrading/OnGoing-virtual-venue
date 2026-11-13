@@ -49,7 +49,7 @@ export default async function OverviewPage({ params }: PageProps<"/projects/[pro
           {stats.map((x) => (
             <Link key={x.label} href={`/projects/${projectId}/${x.href}`} className="card p-3 hover:border-slate-600">
               <p className="text-xs text-slate-500">{x.label}</p>
-              <p className={`mt-1 text-lg font-semibold ${x.tone ?? "text-white"}`}>{x.value}</p>
+              <p className={`mt-1 text-lg font-semibold ${x.tone ?? "text-slate-100"}`}>{x.value}</p>
             </Link>
           ))}
         </section>
@@ -68,7 +68,7 @@ export default async function OverviewPage({ params }: PageProps<"/projects/[pro
 
         <section className="card p-5">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-white">Recent activity</h2>
+            <h2 className="font-semibold text-slate-100">Recent activity</h2>
             <Link href={`/projects/${projectId}/activity`} className="text-xs text-emerald-400 hover:underline">See all</Link>
           </div>
           <ActivityList items={(activity as ActivityRow[]) ?? []} people={people} />
@@ -78,7 +78,7 @@ export default async function OverviewPage({ params }: PageProps<"/projects/[pro
       <aside className="space-y-6">
         <section className="card p-5">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-white">Next milestones</h2>
+            <h2 className="font-semibold text-slate-100">Next milestones</h2>
             <Link href={`/projects/${projectId}/tasks`} className="text-xs text-emerald-400 hover:underline">Manage</Link>
           </div>
           {upcoming.length === 0 ? (
@@ -99,7 +99,7 @@ export default async function OverviewPage({ params }: PageProps<"/projects/[pro
 
         <section className="card p-5">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-white">Team</h2>
+            <h2 className="font-semibold text-slate-100">Team</h2>
             <Link href={`/projects/${projectId}/team`} className="text-xs text-emerald-400 hover:underline">Manage</Link>
           </div>
           <ul className="space-y-2 text-sm">

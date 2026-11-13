@@ -23,7 +23,7 @@ export function MilestonesPanel({
 
   return (
     <section className="card p-5" data-testid="milestones">
-      <h2 className="mb-3 font-semibold text-white">Milestones</h2>
+      <h2 className="mb-3 font-semibold text-slate-100">Milestones</h2>
       {milestones.length === 0 && <p className="mb-3 text-sm text-slate-500">No milestones yet.</p>}
       <ul className="space-y-2">
         {milestones.map((m) => {

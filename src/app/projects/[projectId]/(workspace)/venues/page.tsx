@@ -28,7 +28,7 @@ export default async function VenuesPage({ params }: PageProps<"/projects/[proje
               >
                 <MapPin size={18} className="text-emerald-400" />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-medium text-white">{v.name}</p>
+                  <p className="truncate font-medium text-slate-100">{v.name}</p>
                   {v.address && <p className="truncate text-xs text-slate-400">{v.address}</p>}
                 </div>
                 <span className="text-xs text-emerald-400">Open planner</span>

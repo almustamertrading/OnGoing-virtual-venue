@@ -28,7 +28,7 @@ export function MembersPanel({
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
       <section className="card p-5" data-testid="team">
-        <h2 className="mb-4 font-semibold text-white">Team and responsibilities</h2>
+        <h2 className="mb-4 font-semibold text-slate-100">Team and responsibilities</h2>
         <ul className="divide-y divide-slate-800">
           {members.map((m) => (
             <li key={m.user_id} className="flex flex-wrap items-center gap-3 py-3">
@@ -85,7 +85,7 @@ export function MembersPanel({
 
       {isOwner && (
         <form action={action} className="card space-y-3 p-5" key={members.length}>
-          <h2 className="font-semibold text-white">Add a teammate</h2>
+          <h2 className="font-semibold text-slate-100">Add a teammate</h2>
           <div>
             <label className="label" htmlFor="member-email">Email</label>
             <input id="member-email" name="email" type="email" required placeholder="their account email" className="field" />

@@ -26,7 +26,7 @@ export function LayoutsList({
   return (
     <div dir="rtl" className="grid gap-6 lg:grid-cols-[1fr_320px]">
       <section>
-        <h2 className="mb-1 font-semibold text-white">مخططات القاعات (Layout)</h2>
+        <h2 className="mb-1 font-semibold text-slate-100">مخططات القاعات (Layout)</h2>
         <p className="mb-4 text-xs text-slate-500">
           وزّع الطاولات والمسرح والـAVL ومخارج الطوارئ على مخطط القاعة الداخلي. ارفع صورة المخطط وابدأ التوزيع.
         </p>
@@ -38,7 +38,7 @@ export function LayoutsList({
               <li key={l.id} className="card p-0">
                 <Link
                   href={`/projects/${projectId}/layouts/${l.id}`}
-                  className="flex items-center gap-3 p-4 transition hover:bg-white/[0.03]"
+                  className="flex items-center gap-3 p-4 transition hover:bg-slate-800"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400">
                     <LayoutDashboard size={18} />
@@ -71,7 +71,7 @@ export function LayoutsList({
 
       {canEdit && (
         <section className="card h-fit p-5">
-          <h3 className="mb-3 font-semibold text-white">مخطط جديد</h3>
+          <h3 className="mb-3 font-semibold text-slate-100">مخطط جديد</h3>
           <form action={action} className="space-y-3" key={layouts.length}>
             <div>
               <label className="label" htmlFor="l-name">اسم المخطط</label>

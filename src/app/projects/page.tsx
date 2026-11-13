@@ -58,7 +58,7 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-semibold text-white">Projects</h1>
+            <h1 className="text-2xl font-semibold text-slate-100">Projects</h1>
             <p className="text-sm text-slate-400">{org ? org.name : "Projects you have been invited to"}</p>
           </div>
           {org && (
@@ -81,7 +81,7 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
             <Link
               key={t.key}
               href={t.key === "active" ? "/projects" : `/projects?status=${t.key}`}
-              className={`rounded-md px-3 py-1.5 text-sm ${filter === t.key ? "bg-slate-800 text-white" : "text-slate-400 hover:text-white"}`}
+              className={`rounded-md px-3 py-1.5 text-sm ${filter === t.key ? "bg-slate-800 text-slate-100" : "text-slate-400 hover:text-slate-100"}`}
             >
               {t.label} <span className="text-slate-500">{t.count}</span>
             </Link>
@@ -108,7 +108,7 @@ export default async function ProjectsPage({ searchParams }: PageProps<"/project
                     <StatusBadge status={p.status} />
                     <span className="ml-auto text-xs text-slate-400 sm:hidden">{openByProject.get(p.id) ?? 0} open</span>
                   </div>
-                  <p className="mt-1 font-medium text-white sm:truncate">{p.name}</p>
+                  <p className="mt-1 font-medium text-slate-100 sm:truncate">{p.name}</p>
                   <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-slate-400">
                     <span>{p.client_id ? clientName.get(p.client_id) ?? "Client" : "No client"}</span>
                     <span>{PROJECT_TYPE[p.project_type]}</span>

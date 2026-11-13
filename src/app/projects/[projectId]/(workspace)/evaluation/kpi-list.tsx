@@ -26,7 +26,7 @@ export function KpiList({
   return (
     <section dir="rtl" className="card p-5" data-testid="evaluation">
       <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-semibold text-white">معايير التقييم (KPIs)</h2>
+        <h2 className="font-semibold text-slate-100">معايير التقييم (KPIs)</h2>
         <span className="text-xs text-slate-400">
           {met}/{criteria.length} محقّق
           {totalWeight > 0 && <> · {Math.round(metWeight)}٪ من {Math.round(totalWeight)}٪ وزنًا</>}

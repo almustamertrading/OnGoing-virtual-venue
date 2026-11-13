@@ -26,7 +26,7 @@ export function ScopeList({
 
   return (
     <section className="card p-5" data-testid={`scope-${kind}`}>
-      <h2 className="font-semibold text-white">{kind === "scope" ? "Scope of work" : "Deliverables"}</h2>
+      <h2 className="font-semibold text-slate-100">{kind === "scope" ? "Scope of work" : "Deliverables"}</h2>
       <p className="mb-4 text-xs text-slate-500">
         {kind === "scope" ? "What the project includes and excludes." : "What you hand to the client, with due dates."}
       </p>

@@ -28,7 +28,7 @@ export function ProjectDetails({
   if (editing) {
     return (
       <section className="card p-5">
-        <h2 className="mb-4 font-semibold text-white">Edit project details</h2>
+        <h2 className="mb-4 font-semibold text-slate-100">Edit project details</h2>
         <ProjectForm
           organizationId={project.organization_id}
           clients={clients}
@@ -60,7 +60,7 @@ export function ProjectDetails({
   return (
     <section className="card p-5" data-testid="project-details">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <h2 className="font-semibold text-white">Key information</h2>
+        <h2 className="font-semibold text-slate-100">Key information</h2>
         <div className="flex items-center gap-2">
           {isOwner && (
             <select
